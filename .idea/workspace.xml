@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="136bb368-98eb-4a84-a825-a6951d1be4ec" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/adverts/advert1545mp/Browser stats.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/adverts/advert1545mp/Cash Payment.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/adverts/advert1545mp/Marketing (1).gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/adverts/trinck/podium.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/adverts/trinck574487/Cash Payment.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/adverts/trinck574n/pngegg (29).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/profiles/mouloungui/Marketing (1).gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/profiles/trinck/Cash Payment.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gateway-service/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gateway-service/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gateway-service/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gateway-service/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gateway-service/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gateway-service/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gateway-service/src/main/java/org/mts/gatewayservice/GatewayServiceApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gateway-service/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gateway-service/src/test/java/org/mts/gatewayservice/GatewayServiceApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images-service/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images-service/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images-service/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images-service/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images-service/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images-service/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images-service/src/main/java/org/mts/imagesservice/ImagesServiceApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images-service/src/main/java/org/mts/imagesservice/configs/Config.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images-service/src/main/java/org/mts/imagesservice/configs/MVCConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images-service/src/main/java/org/mts/imagesservice/configs/StorageMediasSources.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images-service/src/main/java/org/mts/imagesservice/dtos/ImageContentInputDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images-service/src/main/java/org/mts/imagesservice/dtos/ImageContentOutputDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images-service/src/main/java/org/mts/imagesservice/dtos/MediaInputDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images-service/src/main/java/org/mts/imagesservice/dtos/MediaOutputDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images-service/src/main/java/org/mts/imagesservice/entities/GenericsFieldsEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images-service/src/main/java/org/mts/imagesservice/entities/IconContent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images-service/src/main/java/org/mts/imagesservice/entities/ImageContent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images-service/src/main/java/org/mts/imagesservice/entities/Media.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images-service/src/main/java/org/mts/imagesservice/repositories/MediaRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images-service/src/main/java/org/mts/imagesservice/services/IMediaService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images-service/src/main/java/org/mts/imagesservice/services/IServiceStorage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images-service/src/main/java/org/mts/imagesservice/services/MediaService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images-service/src/main/java/org/mts/imagesservice/services/ServiceStorage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images-service/src/main/java/org/mts/imagesservice/utilities/MappingUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images-service/src/main/java/org/mts/imagesservice/web/AdvertsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images-service/src/main/java/org/mts/imagesservice/web/MediaStoreController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images-service/src/main/resources/app.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images-service/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images-service/src/test/java/org/mts/imagesservice/ImagesServiceApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/clients/AnnounceRestClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/configs/Config.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/dtos/CityInputDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/dtos/CityOutputDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/dtos/CountryInputDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/dtos/CountryOutputDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/dtos/GeoZoneInputDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/dtos/GeoZoneOutputDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/entities/City.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/entities/Country.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/entities/GenericsFieldsEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/entities/GeoZone.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/remote_entities/Announce.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/repositories/CityRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/repositories/CountryRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/repositories/GeoZoneRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/services/CityService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/services/CountryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/services/GeoZoneService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/services/ICityService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/services/ICountryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/services/IGeoZoneService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/utilities/LocationUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/web/CityController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/web/CountryController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/web/GeoZoneController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/mts/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/web/UsersManagement.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$MAVEN_REPOSITORY$/jakarta/persistence/jakarta.persistence-api/3.1.0/jakarta.persistence-api-3.1.0-sources.jar!/jakarta/persistence/Column.java" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2fG0EG4IR93mpeBZTB5WsROyIAb" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;OverrideImplement.generate.javadoc&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.ConfigServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.DiscoveryServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.GatewayServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ImagesServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.LocationServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.UsersServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/trinc/IdeaProjects/bazaroo_v1/src/main/java/org/mts/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;spring&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\trinc\IdeaProjects\bazaroo_v1\assets\adverts\fg4g5" />
+      <recent name="C:\Users\trinc\IdeaProjects\bazaroo_v1\assets\adverts" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="MicronautRunConfigurationType" />
+        <option value="QuarkusRunConfigurationType" />
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.ImagesServiceApplication">
+    <configuration name="ConfigServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="config-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.mts.configservice.ConfigServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DiscoveryServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="discovery-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.mts.discoveryservice.DiscoveryServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GatewayServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="gateway-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.mts.gatewayservice.GatewayServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ImagesServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="images-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.mts.imagesservice.ImagesServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LocationServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="location-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.mts.locationservice.LocationServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UsersServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="users-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.mts.usersservice.UsersServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-17.0.10-corretto-17.0.10-4caba194b151-5cd809f4" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="136bb368-98eb-4a84-a825-a6951d1be4ec" name="Changes" comment="" />
+      <created>1713411994614</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1713411994614</updated>
+      <workItem from="1713411995729" duration="2969000" />
+      <workItem from="1713415469227" duration="18526000" />
+      <workItem from="1713667078105" duration="1376000" />
+      <workItem from="1713670657129" duration="2480000" />
+      <workItem from="1713673537411" duration="9987000" />
+      <workItem from="1713715831346" duration="3829000" />
+      <workItem from="1713731210269" duration="2582000" />
+      <workItem from="1713782349449" duration="44199000" />
+      <workItem from="1713929685591" duration="32669000" />
+      <workItem from="1714055348050" duration="18298000" />
+      <workItem from="1714177366119" duration="37982000" />
+      <workItem from="1714389671328" duration="51669000" />
+      <workItem from="1714531715054" duration="365000" />
+      <workItem from="1714532144394" duration="30608000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/mts/Main.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
