@@ -31,9 +31,6 @@ public class ServiceStorage implements IServiceStorage{
 
     @Autowired
     private StorageMediasSources mediasSources;
-//    private Path adverts;
-//    private Path profiles;
-//    private Path icons;
 
 
 
@@ -50,6 +47,8 @@ public class ServiceStorage implements IServiceStorage{
 
     }
 
+
+
     private Path  creatDirectory(Path path){
 
         try {
@@ -60,6 +59,8 @@ public class ServiceStorage implements IServiceStorage{
         }
 
     }
+
+
 
     @Override
     public Path load(String filename, Path source) {
@@ -77,6 +78,8 @@ public class ServiceStorage implements IServiceStorage{
             throw new RuntimeException("Error: " + e.getMessage());
         }
     }
+
+
 
     @Override
     public Resource loadAsResource(String filename, Path source) {
@@ -96,12 +99,12 @@ public class ServiceStorage implements IServiceStorage{
     }
 
 
+
     @Override
     public void deleteAll(String source) {
 
         Path rootMedia = Paths.get(source);
         FileSystemUtils.deleteRecursively(rootMedia.toFile());
-
     }
 
 
@@ -123,6 +126,8 @@ public class ServiceStorage implements IServiceStorage{
         return medias;
     }
 
+
+
     @Override
     public Stream<Path> loadAll(String source, int dept) {
 
@@ -134,6 +139,8 @@ public class ServiceStorage implements IServiceStorage{
         }
 
     }
+
+
 
     @Override
     public Media store(MultipartFile file, String filename, String id, Path root,Class< ? extends Media> mediaClass){
@@ -148,8 +155,6 @@ public class ServiceStorage implements IServiceStorage{
         }else if(id!=null && !id.isEmpty()){
            root = root.resolve(id);
         }
-
-
 
 
         try {
@@ -181,10 +186,8 @@ public class ServiceStorage implements IServiceStorage{
 
 
         String[] partPath = root.toString().split("\\\\");
-
-        media.setUrl(String.join("/", partPath));
+        media.setPath(String.join("/", partPath));
         return media;
-
     }
 
 }
