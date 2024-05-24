@@ -8,23 +8,12 @@ import org.mts.announcesservice.enums.FieldType;
 @EqualsAndHashCode(callSuper = true)
 @Entity
 @Data
-@AllArgsConstructor
-@Builder
 @NoArgsConstructor
+@Builder
 public class Radio extends Check{
 
-    @OneToOne
-    private CheckUnit checked;
     @Enumerated(EnumType.STRING)
     private final FieldType type = FieldType.RADIO;
-
-    public boolean setChecked(CheckUnit checkUnit){
-        if(this.checkUnits.contains(checkUnit)){
-            this.checked = checkUnit;
-            return  true;
-        }
-        return false;
-    }
 
 
     /**
@@ -33,5 +22,14 @@ public class Radio extends Check{
     @Override
     public FieldType getType() {
         return this.type;
+    }
+
+    /**
+     * @param id
+     */
+    @Override
+    public void check(Long id) {
+        this.checkUnits.stream().filter(u-> u.getChecked().equals(true)).forEach(u->u.setChecked(false));
+        this.checkUnits.stream().filter(u->u.getId().equals(id)).findFirst().ifPresent(u->u.setChecked(!u.getChecked()));
     }
 }

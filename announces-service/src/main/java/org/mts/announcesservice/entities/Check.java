@@ -4,8 +4,8 @@ package org.mts.announcesservice.entities;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
@@ -15,7 +15,7 @@ import java.util.Set;
 public abstract class Check extends Field {
 
     @OneToMany(mappedBy = "check", orphanRemoval = true, cascade = CascadeType.PERSIST)
-    protected Set<CheckUnit> checkUnits = new HashSet<>();
+    protected List<CheckUnit> checkUnits = new ArrayList<>();
 
 
     protected void addCheckUnit(CheckUnit unit){
@@ -25,4 +25,6 @@ public abstract class Check extends Field {
     protected boolean removeCheckUnit(CheckUnit unit){
        return this.checkUnits.remove(unit);
     }
+
+    public abstract void check(Long id);
 }

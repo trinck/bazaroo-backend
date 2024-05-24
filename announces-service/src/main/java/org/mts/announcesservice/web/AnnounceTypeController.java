@@ -3,6 +3,7 @@ package org.mts.announcesservice.web;
 
 import jakarta.validation.constraints.NotEmpty;
 import org.modelmapper.ModelMapper;
+import org.mts.announcesservice.dtos.AnnounceOutputDTO;
 import org.mts.announcesservice.dtos.AnnounceTypeInputDTO;
 import org.mts.announcesservice.dtos.AnnounceTypeOutputDTO;
 import org.mts.announcesservice.dtos.CategoryOutputDTO;
@@ -70,4 +71,5 @@ public class AnnounceTypeController {
         map.put("content", types.getContent().stream().map(c->this.modelMapper.map(c, AnnounceTypeOutputDTO.class)).toList());
         return map;
     }
+
 }

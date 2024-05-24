@@ -12,5 +12,5 @@ import lombok.*;
 public class TextInputDTO extends FieldInputDTO {
 
     @Size(max = 500, message = "Max size 500")
-    private String value = "";
+    private String dataValue = "";
 }

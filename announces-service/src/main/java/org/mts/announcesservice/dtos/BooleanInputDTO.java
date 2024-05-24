@@ -9,5 +9,5 @@ import lombok.*;
 @AllArgsConstructor
 @Builder
 public class BooleanInputDTO extends FieldInputDTO{
-    private Boolean value = true;
+    private Boolean dataValue = true;
 }

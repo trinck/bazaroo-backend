@@ -6,8 +6,9 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
+
 
 @Data
 @NoArgsConstructor
@@ -18,5 +19,5 @@ public class AnnounceTypeOutputDTO {
 
     private String id;
     private String name;
-    private Set<CategoryFieldOutputDTO> fields = new HashSet<>();
+    private List<CategoryFieldOutputDTO> fields = new ArrayList<>();
 }

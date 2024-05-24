@@ -3,8 +3,9 @@ package org.mts.announcesservice.dtos;
 
 import lombok.*;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
+
 
 @EqualsAndHashCode(callSuper = true)
 @Data
@@ -13,5 +14,5 @@ import java.util.Set;
 @Builder
 public class CheckInputDTO extends FieldInputDTO{
 
-    protected Set<CheckUnitInputDTO> checkUnits = new HashSet<>();
+    protected List<CheckUnitInputDTO> checkUnits = new ArrayList<>();
 }

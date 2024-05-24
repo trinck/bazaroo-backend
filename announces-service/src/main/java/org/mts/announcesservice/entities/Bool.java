@@ -14,7 +14,7 @@ import org.mts.announcesservice.enums.FieldType;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Table(name = "BBoolean")
+@Table(name = "Boolean")
 public class Bool extends Field{
 
     private Boolean dataValue = true;

@@ -23,10 +23,10 @@ public class AnnounceType {
     @GeneratedValue(strategy = GenerationType.UUID )
     private String id;
     @Column(nullable = false)
-    @NotEmpty(message = "Name type must be initialized")
     private String name;
 
     @ManyToOne
+    @JoinColumn(nullable = false)
     private Category category;
 
     @OneToMany(mappedBy = "announceType", cascade = CascadeType.PERSIST, orphanRemoval = true)

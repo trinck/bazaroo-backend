@@ -12,5 +12,5 @@ import lombok.*;
 public class ShortTextInputDTO extends FieldInputDTO{
 
     @Size(max = 255, message = "Short text size must be smaller than 255")
-    private String value = "";
+    private String dataValue = "";
 }
