@@ -1,6 +1,5 @@
 package org.mts.locationservice.web;
 
-import jakarta.ws.rs.NotFoundException;
 import org.modelmapper.ModelMapper;
 import org.mts.locationservice.dtos.GeoZoneInputDTO;
 import org.mts.locationservice.dtos.GeoZoneOutputDTO;
@@ -21,45 +20,34 @@ public class GeoZoneController {
 
     @Autowired
     private ModelMapper modelMapper;
-    @GetMapping("/index/{id}")
-    public GeoZoneOutputDTO getGeoZoneById(@PathVariable Long id){
-
-        GeoZone geoZone = this.iGeoZoneService.getZoneById(id);
-
-        if(geoZone == null){
-            throw new NotFoundException("Zone with id:"+id+" doesn't exists");
-        }
-
-        return convertToOutputDto(geoZone);
+    @GetMapping("/{id}")
+    public GeoZoneOutputDTO getGeoZoneById(@PathVariable String id){
+        return convertToOutputDto(this.iGeoZoneService.getZoneById(id));
     }
 
-    @GetMapping("/delete/{id}")
-    public GeoZoneOutputDTO deleteGeoZoneById(@PathVariable Long id){
-
-        GeoZone zone = this.iGeoZoneService.deleteZoneById(id);
-
-        if(zone == null){
-            throw new NotFoundException("Zone with id:"+id+" doesn't exists");
-        }
-        return convertToOutputDto(zone);
+    @DeleteMapping("/{id}")
+    public GeoZoneOutputDTO deleteGeoZoneById(@PathVariable String id){
+        return convertToOutputDto(this.iGeoZoneService.deleteZoneById(id));
     }
 
 
-    @GetMapping("/geoZones")
+    @GetMapping
     public List<GeoZoneOutputDTO> getGeoZones(){
-        List<GeoZone> geoZones = this.iGeoZoneService.getZones();
-        return  geoZones.stream().map(this::convertToOutputDto).toList();
-
+        return  this.iGeoZoneService.getZones().stream().map(this::convertToOutputDto).toList();
     }
 
 
-    @PostMapping("/save")
+    @PostMapping
     public GeoZoneOutputDTO addGeoZone(@RequestBody GeoZoneInputDTO geoZoneInputDTO){
 
         GeoZone zone = convertToEntity(geoZoneInputDTO);
-        zone = this.iGeoZoneService.save(zone);
+        return convertToOutputDto(this.iGeoZoneService.save(zone));
+    }
 
-        return convertToOutputDto(zone);
+    @PutMapping("/{id}")
+    public GeoZoneOutputDTO addGeoZone(@PathVariable String id,@RequestBody GeoZoneInputDTO geoZoneInputDTO){
+        GeoZone zone = convertToEntity(geoZoneInputDTO);
+        return convertToOutputDto(this.iGeoZoneService.update(zone));
     }
 
 
@@ -67,18 +55,10 @@ public class GeoZoneController {
         return modelMapper.map(geoZone, GeoZoneOutputDTO.class);
     }
 
-    private GeoZoneInputDTO convertToInputDto(GeoZone geoZone) {
-        return modelMapper.map(geoZone, GeoZoneInputDTO.class);
-    }
 
     private GeoZone convertToEntity(GeoZoneInputDTO geoZoneInputDTO) {
         return modelMapper.map(geoZoneInputDTO, GeoZone.class);
     }
-
-    private GeoZone convertToEntity(GeoZoneOutputDTO geoZoneOutputDTO) {
-        return modelMapper.map(geoZoneOutputDTO, GeoZone.class);
-    }
-
 
 
 }

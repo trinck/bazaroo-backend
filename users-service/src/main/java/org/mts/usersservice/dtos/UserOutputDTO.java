@@ -1,6 +1,7 @@
 package org.mts.usersservice.dtos;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.mts.usersservice.entities.Auth;
 import org.mts.usersservice.enums.Gender;
 
@@ -10,19 +11,21 @@ import java.util.List;
 
 
 @Data
+@NoArgsConstructor
 public class UserOutputDTO {
 
-    private String id;
-    private String firstname;
-    private String lastname;
-    private Date birthday;
-    private String address;
-    private String avatar;
-    private Gender gender;
-    private Boolean active;
-    private Boolean verified;
-    private String profileUrl;
-    private AuthOutputDTO auth;
-    private String cityId;
-    private List<ContactOutputDTO> contacts = new ArrayList<>();
+    protected String id;
+    protected String firstname;
+    protected String lastname;
+    protected Date birthday;
+    protected String address;
+    protected String avatar;
+    protected String email;
+    protected Gender gender;
+    protected Boolean active;
+    protected Boolean verified;
+    protected String profileUrl;
+    protected AuthOutputDTO auth;
+    protected String cityId;
+    protected List<ContactOutputDTO> contacts = new ArrayList<>();
 }

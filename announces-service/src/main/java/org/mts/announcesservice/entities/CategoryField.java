@@ -14,15 +14,17 @@ import org.mts.announcesservice.enums.FieldType;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "classe")
+@DiscriminatorValue("CategoryField")
 public class CategoryField {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    protected Long id;
     @NotEmpty
-    private String fieldName;
+    protected String fieldName;
     @Enumerated(EnumType.STRING)
-    private FieldType type;
-
+    protected FieldType type;
     @ManyToOne
     private AnnounceType announceType;
 }

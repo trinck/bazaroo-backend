@@ -16,5 +16,5 @@ public interface IAuthService {
     public Page<Auth> getAuths(Pageable pageable);
     public List<Auth> getListAuths();
    public Auth loadAuthByUsername(String username);
-   public Auth loadAuthByEmail(String email);
+
 }

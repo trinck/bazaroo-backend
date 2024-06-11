@@ -1,0 +1,26 @@
+<mat-toolbar class="">
+  <img src="assets/icons/logo.svg" #logo id="logo" alt="logo">
+  <span class="spacer">
+    Bazaroo
+  </span>
+
+  <button mat-button routerLink="home"> Home</button>
+  <button mat-button routerLink="boutiques"> Boutiques</button>
+  <button mat-button routerLink="magazines"> magazines</button>
+  <button mat-button id="profile"[matMenuTriggerFor]="menu" >
+    <span style="display: flex; gap:4px;">
+      <img src="assets/icons/profile_fill.png" class="profile-image" alt="profile-image">
+       <span style="align-content: center" class="profile-text">trinck Mouloungui</span>
+      <mat-icon>arrow_drop_down</mat-icon>
+    </span>
+    <mat-menu #menu>
+      <button mat-menu-item>Mes annonces <mat-icon>filter_none</mat-icon></button>
+      <button mat-menu-item> Mes favoris <mat-icon>favorite_outline</mat-icon></button>
+      <button mat-menu-item>Chat<mat-icon> chat_bubble_outline</mat-icon></button>
+      <button mat-menu-item>Réglage <mat-icon>settings</mat-icon></button>
+      <button mat-menu-item>Se déconnecter<mat-icon>exit_to_app</mat-icon></button>
+    </mat-menu>
+  </button>
+
+  <button  mat-button  style="background-color: #3498db; color: white"  class="button-radius-5">Nouvelle annonce <mat-icon>add_box</mat-icon> </button>
+</mat-toolbar>

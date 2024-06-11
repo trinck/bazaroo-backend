@@ -1,6 +1,5 @@
 package org.mts.locationservice.dtos;
 
-import jakarta.persistence.Column;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,7 +10,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class GeoZoneInputDTO {
 
-    private Long id;
+    private String id;
     private Double latitude;
     private Double longitude;
     private String name;

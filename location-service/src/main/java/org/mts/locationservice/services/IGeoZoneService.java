@@ -10,9 +10,10 @@ public interface IGeoZoneService {
 
     public List<GeoZone> getZones();
     public Page<GeoZone> getZonesPages(Pageable pageable);
-    public GeoZone getZoneById(Long id);
+    public GeoZone getZoneById(String id);
     public GeoZone addZone(GeoZone zone);
-    public GeoZone deleteZoneById(Long id);
+    public GeoZone deleteZoneById(String id);
     public GeoZone save(GeoZone geoZone);
+    public GeoZone update(GeoZone geoZone);
     public Page<GeoZone> getZoneByName(String name, Pageable pageable);
 }

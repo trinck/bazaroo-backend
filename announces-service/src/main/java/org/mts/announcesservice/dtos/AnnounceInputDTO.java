@@ -16,7 +16,7 @@ public class AnnounceInputDTO {
     private String id;
     private Double price;
     private String cityId;
-    private Long locationId;
+    private String locationId;
     private String title;
     private String address;
     private String description;

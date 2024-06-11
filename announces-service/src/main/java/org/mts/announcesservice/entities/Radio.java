@@ -10,6 +10,7 @@ import org.mts.announcesservice.enums.FieldType;
 @Data
 @NoArgsConstructor
 @Builder
+@Table(name = "radios")
 public class Radio extends Check{
 
     @Enumerated(EnumType.STRING)

@@ -41,7 +41,7 @@ public class CountryService implements ICountryService{
      */
     @Override
     public Country getCountryById(String id) {
-        return this.countryRepository.findById(id).orElse(null);
+        return this.countryRepository.findById(id).orElseThrow();
     }
 
     /**
@@ -49,7 +49,16 @@ public class CountryService implements ICountryService{
      * @return
      */
     @Override
-    public Country addCountry(Country country) {
+    public Country save(Country country) {
+        return this.countryRepository.save(country);
+    }
+
+    /**
+     * @param country
+     * @return
+     */
+    @Override
+    public Country update(Country country) {
         return this.countryRepository.save(country);
     }
 
@@ -60,12 +69,8 @@ public class CountryService implements ICountryService{
     @Override
     public Country deleteCountryById(String id) {
 
-        Country country = null;
-        if(this.countryRepository.existsById(id)){
-
-            country = this.countryRepository.findById(id).orElse(null);
-            this.countryRepository.deleteById(id);
-        }
+        Country country = this.countryRepository.findById(id).orElseThrow();
+        this.countryRepository.deleteById(id);
         return country;
     }
 
@@ -75,7 +80,6 @@ public class CountryService implements ICountryService{
      */
     @Override
     public Page<Country> getCountryByName(String name, Pageable pageable) {
-
         return this.countryRepository.findByNameContains(name, pageable);
     }
 

@@ -18,8 +18,6 @@ public class Auth {
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
     @Column(unique = true)
-    private String email;
-    @Column(unique = true)
     private String username;
     private String password;
     @OneToOne(mappedBy = "auth", cascade = CascadeType.ALL, orphanRemoval = true)

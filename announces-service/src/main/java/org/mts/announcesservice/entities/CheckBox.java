@@ -11,6 +11,7 @@ import org.mts.announcesservice.enums.FieldType;
 @Data
 @NoArgsConstructor
 @Builder
+@Table(name = "checkbox")
 public class CheckBox extends Check{
 
     @Enumerated(EnumType.STRING)

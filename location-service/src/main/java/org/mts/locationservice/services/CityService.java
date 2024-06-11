@@ -44,7 +44,7 @@ public class CityService implements ICityService{
      */
     @Override
     public City getCityById(String id) {
-        return this.cityRepository.findById(id).orElse(null);
+        return this.cityRepository.findById(id).orElseThrow();
     }
 
     /**
@@ -52,7 +52,16 @@ public class CityService implements ICityService{
      * @return
      */
     @Override
-    public City addCity(City city) {
+    public City saveCity(City city) {
+        return this.cityRepository.save(city);
+    }
+
+    /**
+     * @param city
+     * @return
+     */
+    @Override
+    public City updateCity(City city) {
         return this.cityRepository.save(city);
     }
 
@@ -62,13 +71,8 @@ public class CityService implements ICityService{
      */
     @Override
     public City deleteCiyById(String id) {
-
-        City city = null;
-        if(this.cityRepository.existsById(id)){
-            city = this.cityRepository.findById(id).orElse(null);
-            this.cityRepository.deleteById(id);
-
-        }
+        City city = this.cityRepository.findById(id).orElseThrow();
+        this.cityRepository.deleteById(id);
         return city;
     }
 

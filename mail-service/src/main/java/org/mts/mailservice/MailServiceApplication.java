@@ -8,7 +8,6 @@ import org.springframework.context.annotation.PropertySource;
 
 @SpringBootApplication
 
-@PropertySource("classpath:app.properties")
 @EnableConfigurationProperties({MailAuthConfig.class})
 public class MailServiceApplication {
 

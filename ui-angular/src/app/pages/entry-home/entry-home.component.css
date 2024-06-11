@@ -1,0 +1,61 @@
+
+
+.app-entry-content{
+  display: flex;
+  flex-direction: column;
+  gap: 80px
+}
+
+.app-section-announces-title {
+  display: flex;
+  margin-bottom: 10px;
+  gap: 4px;
+}
+
+.category-container {
+  display: flex;
+  gap: 20px;
+}
+
+.category-card-primary {
+  background-color: rgba(52,152,219,0.1);
+}
+
+.category-card-green{
+  background-color: rgba(0,193,96,0.1);
+}
+
+
+.category-card-teal{
+  background-color: rgba(0,128,128,0.1);
+}
+
+.category-card-violet{
+  background-color: rgba(106,13,173,0.1);
+}
+
+
+.category-card{
+  width:150px;
+  height:150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+}
+
+
+.category-icon{
+  font-size: 42px;
+  width: max-content;
+  height: max-content;
+}
+
+
+.category-text {
+  font-size: 15px;
+  text-align: center;
+  font-family: sans-serif;
+  font-weight: lighter;
+}

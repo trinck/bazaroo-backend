@@ -40,7 +40,7 @@ public class GeoZoneService implements IGeoZoneService{
      * @return
      */
     @Override
-    public GeoZone getZoneById(Long id) {
+    public GeoZone getZoneById(String id) {
 
         return this.geoZoneRepository.findById(id).orElse(null);
     }
@@ -59,12 +59,9 @@ public class GeoZoneService implements IGeoZoneService{
      * @return
      */
     @Override
-    public GeoZone deleteZoneById(Long id) {
-        GeoZone zone = null;
-        if(this.geoZoneRepository.existsById(id)){
-            zone = this.geoZoneRepository.findById(id).orElse(null);
-            this.geoZoneRepository.deleteById(id);
-        }
+    public GeoZone deleteZoneById(String id) {
+        GeoZone zone = this.geoZoneRepository.findById(id).orElseThrow();
+        this.geoZoneRepository.deleteById(id);
         return zone;
     }
 
@@ -74,6 +71,15 @@ public class GeoZoneService implements IGeoZoneService{
      */
     @Override
     public GeoZone save(GeoZone geoZone) {
+        return this.geoZoneRepository.save(geoZone);
+    }
+
+    /**
+     * @param geoZone
+     * @return
+     */
+    @Override
+    public GeoZone update(GeoZone geoZone) {
         return this.geoZoneRepository.save(geoZone);
     }
 

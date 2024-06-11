@@ -1,0 +1,54 @@
+
+
+  <div style="height: 100vh; width: 435px;display: flex;flex-direction: column">
+    <span mat-dialog-title>
+      Choisir les categories
+    </span>
+    <mat-divider></mat-divider>
+
+
+    <div style="padding: 20px;max-height: 100%; overflow-y: scroll;flex: 1 1 auto">
+
+      <mat-button-toggle-group appearance="legacy" style="width: 100%;" hideSingleSelectionIndicator>
+      <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
+        <!-- This is the tree node template for leaf nodes -->
+        <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding>
+          <!-- utiliser un bouton désactivé pour fournir un remplissage pour la feuille d’arbre -->
+          <span *ngIf="node.parentId" style="width: 5px"></span>
+          <mat-button-toggle  class="category-item-button ">
+            {{node.name}}
+            <mat-icon class="icon-f-32 category-icon-violet">store</mat-icon>
+          </mat-button-toggle>
+
+        </mat-tree-node>
+        <!-- Il s’agit du modèle de nœud d’arborescence pour les nœuds extensibles -->
+        <mat-tree-node *matTreeNodeDef="let node;when: hasChild" matTreeNodePadding>
+          <mat-button-toggle  matTreeNodeToggle
+                  [attr.aria-label]="'Toggle ' + node.name" class="category-item-button">
+            <mat-icon class="icon-f-32 category-icon-green" >shop</mat-icon>
+            {{node.name}}
+            <mat-icon   class="mat-icon-rtl-mirror icon-end">
+              {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+            </mat-icon>
+          </mat-button-toggle>
+        </mat-tree-node>
+      </mat-tree>
+      </mat-button-toggle-group>
+    </div>
+
+
+
+    <mat-divider style=""></mat-divider>
+    <div mat-dialog-actions style="">
+      <button mat-flat-button class="" style="border-radius: var(--app-button-radius)">
+        Confirmer
+        <mat-icon iconPositionEnd  class=" icon-end">
+          chevron_right
+        </mat-icon>
+      </button>
+    </div>
+
+
+  </div>
+
+

@@ -1,5 +1,6 @@
 package org.mts.imagesservice.services;
 
+import jakarta.transaction.Transactional;
 import org.mts.imagesservice.entities.Media;
 import org.mts.imagesservice.repositories.MediaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,7 +32,6 @@ public class MediaService implements IMediaService{
      */
     @Override
     public Page<Media> getMediasByNameContains(String name, Pageable pageable) {
-
         return this.mediaRepository.findByNameContains(name,pageable);
     }
 
@@ -58,7 +58,20 @@ public class MediaService implements IMediaService{
      * @return
      */
     @Override
+    @Transactional
     public Media save(Media media) {
+
+        Media mediaSaved = this.mediaRepository.save(media);
+        media.setUrl(mediaSaved.getUrl()+mediaSaved.getId());
+        return mediaSaved;
+    }
+
+    /**
+     * @param media
+     * @return
+     */
+    @Override
+    public Media update(Media media) {
         return this.mediaRepository.save(media);
     }
 
@@ -67,8 +80,13 @@ public class MediaService implements IMediaService{
      * @return
      */
     @Override
+    @Transactional
     public List<Media> addAll(List<Media> medias) {
-        return this.mediaRepository.saveAll(medias);
+        List<Media> mediasList = this.mediaRepository.saveAll(medias);
+        for (Media m: mediasList){
+            m.setUrl(m.getUrl()+m.getId());
+        }
+        return mediasList;
     }
 
     /**
@@ -78,11 +96,20 @@ public class MediaService implements IMediaService{
     @Override
     public Media deleteMediaById(Long id) {
 
-        Media media = null;
-        if(this.mediaRepository.existsById(id)){
-            media = this.mediaRepository.findById(id).orElse(null);
-            this.mediaRepository.deleteById(id);
-        }
+        Media media = this.mediaRepository.findById(id).orElseThrow();
+        this.mediaRepository.deleteById(id);
+
         return media;
     }
+
+    /**
+     * @param path
+     * @return
+     */
+    @Override
+    public List<Media> getMediasByPathContains(String path) {
+        return this.mediaRepository.findAllByPathContains(path);
+    }
+
+
 }

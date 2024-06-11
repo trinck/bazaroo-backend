@@ -1,0 +1,24 @@
+<mat-toolbar>
+  <div class="form" ngForm >
+    <mat-form-field subscriptSizing="dynamic" appearance="outline"  class="small border-none hover-none" >
+      <input matInput type="text" placeholder="Titre de l'annonce">
+    </mat-form-field>
+
+   <button (click)="openCategoryDialog();" mat-flat-button class="form-button" style="display: flex; justify-content: start">
+     <mat-icon  style="color: teal;">category</mat-icon>
+       Catégories
+     <mat-icon iconPositionEnd style="flex: 1 1 auto; text-align: end">navigate_next</mat-icon>
+   </button>
+
+     <button (click)="openCitiesDialog()" mat-flat-button class="form-button" style="display: flex; justify-content: start">
+       <mat-icon matIconPrefix color=""> location_on</mat-icon>
+       Ville, region
+       <mat-icon iconPositionEnd style="flex: 1 1 auto; text-align: end">navigate_next</mat-icon>
+     </button>
+    <button mat-flat-button type="submit" class="search-button" style=""> Rechercher <mat-icon>search</mat-icon></button>
+  </div>
+</mat-toolbar>
+
+
+
+

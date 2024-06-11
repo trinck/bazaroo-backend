@@ -10,7 +10,7 @@ import org.mts.locationservice.entities.GenericsFieldsEntity;
 @AllArgsConstructor
 public class GeoZoneOutputDTO extends GenericsFieldsEntity {
 
-    private Long id;
+    private String id;
     private Double latitude;
     private Double longitude;
     private String name;

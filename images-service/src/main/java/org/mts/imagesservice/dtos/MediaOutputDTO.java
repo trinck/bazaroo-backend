@@ -21,5 +21,7 @@ public class MediaOutputDTO extends GenericsFieldsEntity {
 
     private String url;
 
+    private String path;
+
     private Long size;
 }

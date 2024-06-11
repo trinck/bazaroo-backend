@@ -12,18 +12,19 @@ import java.util.Date;
 @Data
 public abstract class UserInputDTO {
 
-    private String id;
-    private String firstname;
-    private String lastname;
-    private Date birthday;
-    private String address;
-    private String avatar;
-    private Gender gender;
-    private Boolean active;
-    private Boolean verified;
-    private String profileUrl;
-    private AuthInputDTO auth;
-    private String cityId;
+    protected String id;
+    protected String firstname;
+    protected String lastname;
+    protected Date birthday;
+    protected String address;
+    protected String avatar;
+    protected Gender gender;
+    protected Boolean active;
+    protected Boolean verified;
+    protected String email;
+    protected String profileUrl;
+    protected AuthInputDTO auth;
+    protected String cityId;
 
 
 

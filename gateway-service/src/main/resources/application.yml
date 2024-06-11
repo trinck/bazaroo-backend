@@ -1,0 +1,15 @@
+spring:
+  cloud:
+    gateway:
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowed-origins:
+              - "*"
+            allowed-headers:
+              - '*'
+            allowed-methods:
+              - GET
+              - POST
+              - DELETE
+              - PUT

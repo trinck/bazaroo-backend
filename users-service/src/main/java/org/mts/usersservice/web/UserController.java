@@ -30,14 +30,14 @@ public class UserController {
     private IClientService iClientService;
 
 
-    @PostMapping("/clients/save")
+    @PostMapping("/clients")
     public ClientOutputDTO createUser(@RequestBody ClientInputDTO dto){
         Client user = this.modelMapper.map(dto, Client.class);
         return this.modelMapper.map(this.userService.creatUser(user),ClientOutputDTO.class);
     }
 
 
-    @PostMapping("/employees/save")
+    @PostMapping("/employees")
     public EmployeeOutputDTO createEmployee(@RequestBody EmployeeInputDTO dto){
         Employee employee = this.modelMapper.map(dto, Employee.class);
         return this.modelMapper.map(this.employeeService.creatEmployee(employee),EmployeeOutputDTO.class);
@@ -56,28 +56,15 @@ public class UserController {
     }
 
 
-    @PostMapping("/{id}/delete")
+    @DeleteMapping("/{id}")
     public UserOutputDTO deleteAccount(@PathVariable String id){
       return  this.modelMapper.map(this.userService.deleteUserById(id), UserOutputDTO.class);
     }
 
 
-    @PutMapping("/{id}/profile/{url}")
-    public ResponseEntity<String> profileUpdate(@PathVariable String id,@PathVariable String url ){
-       this.userService.updateProfile(id, url);
-       return new ResponseEntity<>(url,HttpStatus.OK);
-    }
 
-    @PutMapping("/{id}/active")
-    public ResponseEntity<UserOutputDTO> activeUpdate(@PathVariable String id, @RequestParam Boolean active){
 
-        User user = this.userService.getUserById(id);
-        user.setActive(active);
-        UserOutputDTO dto = this.modelMapper.map(this.userService.updateUser(user), UserOutputDTO.class);
-        return new ResponseEntity<>(dto,HttpStatus.OK);
-    }
-
-    @PutMapping("/employees/{id}/update")
+    @PutMapping("/employees/{id}")
     public EmployeeOutputDTO updateEmployee(@RequestBody EmployeeInputDTO employeeInputDTO){
         Employee employee = this.modelMapper.map(employeeInputDTO, Employee.class);
         return this.modelMapper.map(this.employeeService.updateEmployee(employee),EmployeeOutputDTO.class );
@@ -85,7 +72,7 @@ public class UserController {
 
 
 
-    @PutMapping("/clients/{id}/update")
+    @PutMapping("/clients/{id}")
     public ClientOutputDTO updateClient(@RequestBody ClientInputDTO clientInputDTO){
         Client client = this.modelMapper.map(clientInputDTO, Client.class);
         return this.modelMapper.map(this.iClientService.updateClient(client),ClientOutputDTO.class );
@@ -104,7 +91,7 @@ public class UserController {
     }
 
 
-    @GetMapping("/")
+    @GetMapping
     public List<UserOutputDTO> getUsers(){
         return this.userService.getListUsers().stream().map(emp->this.modelMapper.map(emp,UserOutputDTO.class )).toList();
     }

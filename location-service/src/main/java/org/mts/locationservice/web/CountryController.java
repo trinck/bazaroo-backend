@@ -1,13 +1,11 @@
 package org.mts.locationservice.web;
 
-import jakarta.ws.rs.NotFoundException;
 import org.modelmapper.ModelMapper;
 import org.mts.locationservice.dtos.CountryInputDTO;
 import org.mts.locationservice.dtos.CountryOutputDTO;
 import org.mts.locationservice.entities.Country;
 import org.mts.locationservice.services.ICountryService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 
@@ -23,46 +21,35 @@ public class CountryController {
     private ModelMapper modelMapper;
 
 
-    @GetMapping("/index/{id}")
+    @GetMapping("/{id}")
     public CountryOutputDTO getCountryById(@PathVariable String id){
-
-        Country country = this.iCountryService.getCountryById(id);
-
-        if(country == null){
-            throw new NotFoundException("Country with id:"+id+" doesn't exists");
-        }
-
-        return modelMapper.map(country, CountryOutputDTO.class);
+        return this.modelMapper.map(this.iCountryService.getCountryById(id), CountryOutputDTO.class);
     }
 
-    @GetMapping("/delete/{id}")
+    @DeleteMapping("/{id}")
     public CountryOutputDTO deleteCountryById(@PathVariable String id){
-
-        Country country = this.iCountryService.deleteCountryById(id);
-
-        if(country == null){
-            throw new NotFoundException("Country with id:"+id+" doesn't exists");
-        }
-
-        return convertToOutputDto(country);
+        return convertToOutputDto(this.iCountryService.deleteCountryById(id));
     }
 
 
-    @GetMapping("/countries")
+    @GetMapping
     public List<CountryOutputDTO> getAllCountries(){
-        List<Country> countries = this.iCountryService.getCountries();
-      return  countries.stream().map(this::convertToOutputDto).toList();
+      return  this.iCountryService.getCountries().stream().map(this::convertToOutputDto).toList();
 
     }
 
 
-    @PostMapping(value = "/save")
+    @PostMapping
     public CountryOutputDTO addCountry(@RequestBody CountryInputDTO countryInputDTO){
-
         Country country = modelMapper.map(countryInputDTO, Country.class);
-        countryInputDTO.setId(this.iCountryService.addCountry(country).getId());
+        return convertToOutputDto( this.iCountryService.save(country));
+    }
 
-        return convertToOutputDto( country);
+
+    @PutMapping
+    public CountryOutputDTO updateCountry(@RequestBody CountryInputDTO countryInputDTO){
+        Country country = modelMapper.map(countryInputDTO, Country.class);
+        return convertToOutputDto( this.iCountryService.update(country));
     }
 
 

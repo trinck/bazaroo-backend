@@ -1,0 +1,35 @@
+<div class="app-section-announces" style="">
+  <div  *ngFor="let  an of announces" style="">
+    <mat-card  >
+      <div mat-card-image class="app-card-image-container"  style="">
+        <img mat-card-image   [ngSrc]="an.media" width="340" style=""  height="250" alt="announces image"/>
+        <span mat-card-image class="meche">
+          <div class="app-card-mini-info">
+            <span class="app-card-mini-info-unit" >
+              <mat-icon>image</mat-icon>
+               <span class="app-card-mini-info-unit-text" style="">9</span>
+            </span>
+
+             <span class="app-card-mini-info-unit" >
+              <mat-icon>store</mat-icon>
+               <span class="app-card-mini-info-unit-text" style="">boutique</span>
+            </span>
+          </div>
+        </span>
+      </div>
+
+      <mat-card-content>
+        <mat-card-title style="font-size: 17px">{{an.title}}</mat-card-title>
+        <mat-card-subtitle style="font-size: 20px; color: var(--app-primary)" >{{an.price|currency:'USD'}}</mat-card-subtitle>
+      </mat-card-content>
+      <mat-card-actions align="end">
+        <button mat-icon-button><mat-icon>favorite_border</mat-icon></button>
+        <button mat-icon-button> <mat-icon>share</mat-icon></button>
+
+      </mat-card-actions>
+    </mat-card>
+
+  </div>
+
+
+</div>

@@ -33,4 +33,12 @@ public class AnnounceType {
     private List<CategoryField> fields = new ArrayList<>();
 
 
+    public void addCategoryField(CategoryField field){
+        if(fields.stream().anyMatch(f->f.getFieldName().equals(field.getFieldName())))throw new IllegalArgumentException("Field with name "+field.getFieldName()+" already exists");;
+        field.setAnnounceType(this);
+        if(field instanceof CategoryFieldCheck){
+            ((CategoryFieldCheck) field).getFieldCheckUnits().forEach(u->u.setCategoryField((CategoryFieldCheck)field));
+        }
+        this.fields.add(field);
+    }
 }

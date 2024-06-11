@@ -86,12 +86,7 @@ public class AuthService implements IAuthService{
         return this.authRepository.findByUsername(username).orElseThrow();
     }
 
-    /**
-     * @param email
-     * @return
-     */
-    @Override
-    public Auth loadAuthByEmail(String email) {
-        return this.authRepository.findByEmail(email).orElseThrow();
-    }
+
+
+
 }

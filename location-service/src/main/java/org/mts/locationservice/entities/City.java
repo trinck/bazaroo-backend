@@ -18,6 +18,8 @@ public class City extends GenericsFieldsEntity {
     private String id;
     @Column(nullable = false)
     private String name;
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    private GeoZone location;
 
     @ManyToOne
     private Country country;

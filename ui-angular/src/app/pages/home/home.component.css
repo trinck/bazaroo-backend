@@ -1,0 +1,43 @@
+mat-toolbar{
+
+  width: 100%;
+  box-shadow: var(--app-toolbar-shadow);
+  margin-bottom: 10px;
+  padding: var(--app-toolbar-padding);
+
+}
+
+
+mat-toolbar form{
+
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  flex: 1;
+  align-items: center;
+}
+
+
+
+mat-form-field.small {
+  --mat-form-field-container-height: 45px;
+  --mat-form-field-container-vertical-padding: 8px;
+  width: 30%;
+}
+
+mat-toolbar form mat-form-field{
+  background-color: rgb(242,242,242);
+}
+
+:hover mat-form-field.hover-none{
+  --mdc-outlined-text-field-outline-color: rgba(255,255,255,0);
+}
+
+mat-form-field.border-none{
+  --mdc-outlined-text-field-outline-color: rgba(255,255,255,0);
+}
+
+
+.search-button {
+  border-radius: 5px;
+}

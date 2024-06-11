@@ -1,5 +1,6 @@
 package org.mts.announcesservice.entities;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -17,6 +18,7 @@ import org.mts.announcesservice.enums.FieldType;
 public class ShortText extends Field{
 
     @Size(max = 255, message = "Short text size must be smaller than 255")
+    @Column(name = "shortTextValue")
     private String dataValue = "";
 
     @Enumerated(EnumType.STRING)

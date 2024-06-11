@@ -21,7 +21,7 @@ public class RoleController {
     @Autowired
     private IRoleService roleService;
 
-    @PostMapping("/create")
+    @PostMapping
     public RoleOutputDTO createRole(@RequestBody RoleInputDTO roleInputDTO){
         Role role = this.modelMapper.map(roleInputDTO, Role.class);
         return this.modelMapper.map(this.roleService.creatRole(role), RoleOutputDTO.class);
@@ -40,7 +40,7 @@ public class RoleController {
         return this.modelMapper.map(this.roleService.deleteRoleById(id), RoleOutputDTO.class);
     }
 
-    @GetMapping("/")
+    @GetMapping
     public List<RoleOutputDTO> getRoles(){
         return this.roleService.getListRoles().stream().map(r->this.modelMapper.map(r,RoleOutputDTO.class)).toList();
     }

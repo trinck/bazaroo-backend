@@ -15,10 +15,10 @@ public abstract class GenericsFieldsEntity {
 
 
 
-    private Date createdAt;
-    private Date lastModifiedAt;
-    private String history;
-    private Boolean verified = false;
-    private Boolean active = true;
+    protected Date createdAt;
+    protected Date lastModifiedAt;
+    protected String history;
+    protected Boolean verified = false;
+    protected Boolean active = true;
 
 }

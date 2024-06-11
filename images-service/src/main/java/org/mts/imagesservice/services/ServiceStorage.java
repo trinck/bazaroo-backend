@@ -2,37 +2,31 @@ package org.mts.imagesservice.services;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.apache.commons.lang3.SystemUtils;
 import org.mts.imagesservice.configs.StorageMediasSources;
 import org.mts.imagesservice.entities.IconContent;
 import org.mts.imagesservice.entities.ImageContent;
 import org.mts.imagesservice.entities.Media;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.system.SystemProperties;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
-import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Service;
 import org.springframework.util.FileSystemUtils;
-import org.springframework.util.SystemPropertyUtils;
 import org.springframework.web.multipart.MultipartFile;
+
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.nio.file.*;
 import java.util.*;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 @Service
 @Data
 @NoArgsConstructor
-public class ServiceStorage implements IServiceStorage{
+public class ServiceStorage implements IServiceStorage {
 
 
     @Autowired
     private StorageMediasSources mediasSources;
-
-
 
 
     @Override
@@ -41,25 +35,23 @@ public class ServiceStorage implements IServiceStorage{
         Path adverts = Paths.get(this.mediasSources.getAdverts());
         Path profiles = Paths.get(this.mediasSources.getProfiles());
         Path icons = Paths.get(this.mediasSources.getIcons());
-            creatDirectory(adverts);
-            creatDirectory(profiles);
-            creatDirectory(icons);
+        creatDirectory(adverts);
+        creatDirectory(profiles);
+        creatDirectory(icons);
 
     }
 
 
-
-    private Path  creatDirectory(Path path){
+    private Path creatDirectory(Path path) {
 
         try {
-           return Files.createDirectories(path);
+            return Files.createDirectories(path);
 
         } catch (IOException e) {
             throw new RuntimeException("Could not initialize folder for medias folder!");
         }
 
     }
-
 
 
     @Override
@@ -80,16 +72,15 @@ public class ServiceStorage implements IServiceStorage{
     }
 
 
-
     @Override
     public Resource loadAsResource(String filename, Path source) {
 
         try {
             Path file = source.resolve(filename);
-            Resource resource = new UrlResource(file.toUri());
+            Resource resource = new UrlResource(source.toUri());
 
             if (resource.exists() || resource.isReadable()) {
-                return  resource;
+                return resource;
             } else {
                 throw new RuntimeException("Could not read the file!");
             }
@@ -97,7 +88,6 @@ public class ServiceStorage implements IServiceStorage{
             throw new RuntimeException("Error: " + e.getMessage());
         }
     }
-
 
 
     @Override
@@ -109,23 +99,22 @@ public class ServiceStorage implements IServiceStorage{
 
 
     @Override
-    public List<Media> storeAll(List<MultipartFile> files, String source,String id, Class<? extends Media> mediaType) {
+    public List<Media> storeAll(List<MultipartFile> files, String source, String id, Class<? extends Media> mediaType) {
 
-        List<Media> medias =  new ArrayList<>();
+        List<Media> medias = new ArrayList<>();
 
         Path path = Paths.get(source);
         creatDirectory(path);
 
-        for(MultipartFile file : files ) {
+        for (MultipartFile file : files) {
 
             String fileName = file.getOriginalFilename();
-            medias.add(store(file,fileName, id,path, mediaType ));
+            medias.add(store(file, fileName, id, path, mediaType));
 
-            }
+        }
 
         return medias;
     }
-
 
 
     @Override
@@ -141,25 +130,24 @@ public class ServiceStorage implements IServiceStorage{
     }
 
 
-
     @Override
-    public Media store(MultipartFile file, String filename, String id, Path root,Class< ? extends Media> mediaClass){
+    public Media store(MultipartFile file, String filename, String id, Path root, Class<? extends Media> mediaClass) {
         String mediaType = mediaClass.getTypeName();
-        Media media = mediaType.equals(ImageContent.class.getName())? new ImageContent(): new IconContent();
+        Media media = mediaType.equals(ImageContent.class.getName()) ? new ImageContent() : new IconContent();
         media.setSize(file.getSize());
         media.setType(file.getContentType());
 
-        if(id!=null && !id.isEmpty() && !root.resolve(id).toFile().exists()){
+        if (id != null && !id.isEmpty() && !root.resolve(id).toFile().exists()) {
             root = creatDirectory(root.resolve(id));
 
-        }else if(id!=null && !id.isEmpty()){
-           root = root.resolve(id);
+        } else if (id != null && !id.isEmpty()) {
+            root = root.resolve(id);
         }
 
 
         try {
             Path resolvedPath = root.resolve(filename);
-            Files.copy(file.getInputStream(),resolvedPath);
+            Files.copy(file.getInputStream(), resolvedPath);
             media.setName(filename);
             root = resolvedPath;
         } catch (Exception e) {
@@ -168,7 +156,7 @@ public class ServiceStorage implements IServiceStorage{
                 try {
 
                     Date date = new Date();
-                    String compositeName = date.getTime()+filename;
+                    String compositeName = date.getTime() + filename;
                     Path resolvedPath = root.resolve(compositeName);
                     Files.copy(file.getInputStream(), resolvedPath);
                     media.setName(compositeName);

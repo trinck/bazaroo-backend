@@ -1,7 +1,6 @@
 package org.mts.locationservice.web;
 
 
-import jakarta.ws.rs.NotFoundException;
 import org.modelmapper.ModelMapper;
 import org.mts.locationservice.dtos.CityInputDTO;
 import org.mts.locationservice.dtos.CityOutputDTO;
@@ -25,67 +24,40 @@ public class CityController {
     private ICountryService iCountryService;
     @Autowired
     private ModelMapper modelMapper;
-    @GetMapping("/index/{id}")
+    @GetMapping("/{id}")
     public CityOutputDTO getCityById(@PathVariable String id){
-
-        City city = this.iCityService.getCityById(id);
-
-        if(city == null){
-            throw new NotFoundException("City with id:"+id+" doesn't exists");
-        }
-
-        return convertToOutputDto(city);
+        return convertToOutputDto(this.iCityService.getCityById(id));
     }
 
-    @GetMapping("/delete/{id}")
+    @DeleteMapping("/{id}")
     public CityOutputDTO deleteCityById(@PathVariable String id){
-
-        City city = this.iCityService.deleteCiyById(id);
-
-        if(city == null){
-            throw new NotFoundException("City with id:"+id+" doesn't exists");
-        }
-
-        return convertToOutputDto(city);
+        return convertToOutputDto(this.iCityService.deleteCiyById(id));
     }
 
 
-    @GetMapping("/cities")
+    @GetMapping
     public List<CityOutputDTO> getAllCities(){
-        List<City> cities = this.iCityService.getCities();
-        return  cities.stream().map(this::convertToOutputDto).toList();
-
+        return  this.iCityService.getCities().stream().map(this::convertToOutputDto).toList();
     }
 
 
-    @PostMapping("/save")
-    public CityOutputDTO addCity(@RequestBody CityInputDTO cityInputDTO){
+    @PostMapping("/{countryId}")
+    public CityOutputDTO addCity(@PathVariable String countryId,@RequestBody CityInputDTO cityInputDTO){
 
-        Country country = this.iCountryService.getCountryById(cityInputDTO.getCountryId());
-        if(country == null){
-            throw  new IllegalArgumentException("The city whose must receive the city doesn't exists");
-        }
-
+        Country country = this.iCountryService.getCountryById(countryId);
         City city = convertToEntity(cityInputDTO);
         city.setCountry(country);
-        return convertToOutputDto( this.iCityService.addCity(city));
+        return convertToOutputDto( this.iCityService.saveCity(city));
     }
+
+
 
 
     private CityOutputDTO convertToOutputDto(City city) {
         return modelMapper.map(city, CityOutputDTO.class);
     }
-
-    private CityInputDTO convertToInputDto(City city) {
-        return modelMapper.map(city, CityInputDTO.class);
-    }
-
     private City convertToEntity(CityInputDTO cityInputDTO) {
         return modelMapper.map(cityInputDTO, City.class);
-    }
-
-    private City convertToEntity(CityOutputDTO cityOutputDTO) {
-        return modelMapper.map(cityOutputDTO, City.class);
     }
 
 }

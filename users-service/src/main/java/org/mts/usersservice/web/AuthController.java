@@ -106,18 +106,11 @@ public class AuthController {
 
 
     @GetMapping("/login")
-    public AuthOutputDTO login(@RequestParam String email, @RequestParam String password){
-        return this.modelMapper.map(this.iAuthService.loadAuthByEmail(email), AuthOutputDTO.class);
+    public AuthOutputDTO login(@RequestParam String username, @RequestParam String password){
+        return this.modelMapper.map(this.iAuthService.loadAuthByUsername(username), AuthOutputDTO.class);
     }
 
-    
-    @PostMapping("/verified/{email}")
-    public AuthOutputDTO verified(@PathVariable String email){
-       Auth auth = this.iAuthService.loadAuthByEmail(email);
-       auth.getUser().setVerified(true);
-       auth = this.iAuthService.updateAuth(auth);
-        return this.modelMapper.map(auth, AuthOutputDTO.class);
-    }
+
 
 
 

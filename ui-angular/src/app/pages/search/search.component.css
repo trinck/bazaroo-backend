@@ -1,0 +1,64 @@
+.categories-button {
+  background-color: rgb(242,242,242);
+  border-radius: var(--app-button-radius);
+  color: black;
+  height: 48px;
+}
+
+.categories-button:hover{
+  background-color: rgb(228, 228, 228);
+}
+
+.categories-button mat-icon{
+  font-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+
+#section-vip{
+  display: flex;
+  row-gap: 10px;
+  flex-direction: column;
+  align-items: center;
+  width: 25%;
+  flex-shrink: 0;
+  position: sticky;
+  top: 0;
+  align-self: baseline;
+  padding: 5px 0 0 0;
+}
+
+#announces-section{
+
+  align-content: start;
+  display:flex;
+  row-gap: 10px;
+  flex-wrap: wrap;
+  justify-content:space-between;
+}
+
+#announce-and-vip-section{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  gap: 30px;
+}
+#section-content{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+#search-navigation {
+  display: flex;
+  align-items: center
+}
+
+#search-navigation .navigation-link{
+  color: var(--app-primary);
+  font-size: smaller;
+}
+.clickable{
+  cursor: pointer;
+}

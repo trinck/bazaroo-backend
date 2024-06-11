@@ -3,24 +3,21 @@ package org.mts.announcesservice.web;
 
 import jakarta.validation.constraints.NotEmpty;
 import org.modelmapper.ModelMapper;
-import org.mts.announcesservice.dtos.CategoryFieldInputDTO;
-import org.mts.announcesservice.dtos.CategoryFieldOutputDTO;
+import org.mts.announcesservice.dtos.CategoryFieldObjectInputDTO;
 import org.mts.announcesservice.dtos.CategoryFieldInputDTO;
 import org.mts.announcesservice.dtos.CategoryFieldOutputDTO;
 import org.mts.announcesservice.entities.CategoryField;
 import org.mts.announcesservice.entities.AnnounceType;
-import org.mts.announcesservice.entities.CategoryField;
+import org.mts.announcesservice.entities.CategoryFieldCheck;
 import org.mts.announcesservice.service.IAnnounceTypeService;
 import org.mts.announcesservice.service.ICategoryFieldService;
-import org.mts.announcesservice.service.ICategoryFieldService;
-import org.mts.announcesservice.service.ICategoryService;
 import org.mts.announcesservice.utilities.WebUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+
 import java.util.Map;
 
 @RestController
@@ -36,14 +33,15 @@ public class CategoryFieldController {
 
 
     @PostMapping("/{id}")
-    public CategoryFieldOutputDTO create(@PathVariable String id, @RequestBody CategoryFieldInputDTO dto){
-        CategoryField categoryField = this.modelMapper.map(dto, CategoryField.class);
+    public CategoryFieldOutputDTO create(@PathVariable String id, @RequestBody CategoryFieldObjectInputDTO dto){
+        CategoryField categoryField = null;
+        switch (dto.getType()){
+            case CHECKBOX, RADIO -> { categoryField = this.modelMapper.map(dto, CategoryFieldCheck.class); }
+            default -> { categoryField = this.modelMapper.map(dto, CategoryField.class); }
+        }
+
         AnnounceType announceType = this.announceTypeService.getByID(id);
-        List<CategoryField> exists =  announceType.getFields().stream().filter(f->f.getFieldName().equals(categoryField.getFieldName())).toList();
-
-        if(!exists.isEmpty()){throw new IllegalArgumentException("Field with name "+categoryField.getFieldName()+" already exists");}
-
-        categoryField.setAnnounceType(announceType);
+        announceType.addCategoryField(categoryField);
         return  this.modelMapper.map(this.categoryFieldService.create(categoryField), CategoryFieldOutputDTO.class);
     }
 

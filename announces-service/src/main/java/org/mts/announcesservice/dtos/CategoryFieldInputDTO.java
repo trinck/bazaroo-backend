@@ -7,13 +7,16 @@ import lombok.NoArgsConstructor;
 import org.mts.announcesservice.enums.FieldType;
 
 
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 public class CategoryFieldInputDTO {
 
-    private Long id;
-    private String fieldName;
-    private FieldType type;
+    protected Long id;
+    protected String fieldName;
+    protected FieldType type;
+
+
 }

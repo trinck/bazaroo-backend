@@ -20,24 +20,26 @@ public abstract class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private String id;
-    private String firstname;
-    private String lastname;
-    private Date birthday;
-    private String address;
-    private String avatar;
+    protected String id;
+    protected String firstname;
+    protected String lastname;
+    @Column(unique = true)
+    protected String email;
+    protected Date birthday;
+    protected String address;
+    protected String avatar;
 
     @Enumerated(EnumType.STRING)
-    private Gender gender;
-    private Boolean active;
-    private Boolean verified;
-    private String profileUrl;
+    protected Gender gender;
+    protected Boolean active;
+    protected Boolean verified;
+    protected String profileUrl;
 
     @OneToOne(orphanRemoval = true)
-    private Auth auth;
-    private String cityId;
+    protected Auth auth;
+    protected String cityId;
 
     @OneToMany(mappedBy = "user")
-    private List<Contact> contacts = new ArrayList<>();
+    protected List<Contact> contacts = new ArrayList<>();
 
 }

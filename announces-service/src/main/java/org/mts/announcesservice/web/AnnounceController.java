@@ -3,19 +3,24 @@ package org.mts.announcesservice.web;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import jakarta.validation.constraints.NotEmpty;
+import lombok.AllArgsConstructor;
+import lombok.Data;
 import org.modelmapper.ModelMapper;
+import org.mts.announcesservice.clients.MediasClient;
 import org.mts.announcesservice.dtos.*;
 import org.mts.announcesservice.entities.*;
+import org.mts.announcesservice.enums.AnnounceStatus;
+import org.mts.announcesservice.remote_entities.Media;
 import org.mts.announcesservice.service.IAnnounceService;
 import org.mts.announcesservice.service.IAnnounceTypeService;
 import org.mts.announcesservice.service.IFieldService;
+import org.mts.announcesservice.utilities.WebUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 @RestController
 @RequestMapping("announces")
@@ -29,13 +34,13 @@ public class AnnounceController {
     private IFieldService fieldService;
     @Autowired
     private IAnnounceTypeService announceTypeService;
+    @Autowired
+    private MediasClient mediasClient;
 
 
 
     @PostMapping("/{type}")
     public AnnounceOutputDTO create(@PathVariable String type, @RequestBody AnnounceInputDTO dto){
-
-
         AnnounceType announceType = this.announceTypeService.getByID(type);
         /***
          * *************************************
@@ -50,6 +55,8 @@ public class AnnounceController {
                 .description(dto.getDescription())
                 .locationId(dto.getLocationId())
                 .postedAt(new Date())
+                .status(AnnounceStatus.ACTIVE)
+                .userId(UUID.randomUUID().toString())
                 .fields(new ArrayList<>())
                 .build();
 
@@ -105,4 +112,32 @@ public class AnnounceController {
         check.setName(dto.getName());
         return checkUnits;
     }
+
+
+    @GetMapping("/{id}")
+    public AnnounceWithMedias getById(@PathVariable String id){
+        List<Media> medias = this.mediasClient.getAdvertMedias(id);
+        return  new AnnounceWithMedias(this.modelMapper.map(this.announceService.getByID(id), AnnounceOutputDTO.class),medias);
+    }
+
+
+    @DeleteMapping("/{id}")
+    public AnnounceOutputDTO delete(@PathVariable String id){
+        return this.modelMapper.map(this.announceService.deleteById(id), AnnounceOutputDTO.class);
+    }
+
+
+    @GetMapping
+    public Map<String, Object> getAll(@RequestParam(defaultValue = "5") int size, @RequestParam(defaultValue = "0") int page){
+
+        Page<Announce> announces = this.announceService.getAnnounces(PageRequest.of(page, size));
+        Map<String, Object> map = WebUtils.pageToMap(announces);
+        map.put("content", announces.getContent().stream().map(c->this.modelMapper.map(c, AnnounceOutputDTO.class)).toList());
+        return map;
+
+    }
+
+
+
+
 }

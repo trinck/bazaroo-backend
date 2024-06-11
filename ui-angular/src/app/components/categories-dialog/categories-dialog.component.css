@@ -1,0 +1,18 @@
+.category-item-button{
+  border-radius: var(--app-button-radius);
+  display: flex;
+  width: 100%;
+  justify-content: start!important;
+  height: 60px;
+}
+
+.icon-end{
+  flex: 1 1 auto;
+  text-align: end;
+}
+
+.icon-f-32{
+  width: 32px;
+  font-size: 32px;
+  height: auto;
+}

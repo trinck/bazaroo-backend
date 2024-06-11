@@ -14,7 +14,9 @@ public interface IMediaService {
     public Page<Media> getMediasByTypeContains(String type, Pageable pageable);
     public List<Media> getAllMedias();
     public Media save(Media media);
+    public Media update(Media media);
     public List<Media> addAll(List<Media> medias);
     public Media deleteMediaById(Long id);
+    public List<Media> getMediasByPathContains(String path);
 
 }
