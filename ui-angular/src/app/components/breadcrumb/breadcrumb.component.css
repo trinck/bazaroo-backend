@@ -1,0 +1,19 @@
+.breadcrumb {
+  background: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  list-style-type: none;
+}
+.breadcrumb li{
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumb li a{
+  text-decoration: none;
+}
+
+.breadcrumb-item.active {
+  color: #555;
+}

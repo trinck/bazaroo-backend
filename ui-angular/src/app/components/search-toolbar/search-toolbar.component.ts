@@ -4,6 +4,7 @@ import {CategoriesDialogComponent} from "../categories-dialog/categories-dialog.
 import {Category} from "../../models/Category";
 import {City} from "../../models/City";
 import {CitiesDialogComponent} from "../cities-dialog/cities-dialog.component";
+import {DrawerService} from "../../services/drawer.service";
 
 @Component({
   selector: 'app-search-toolbar',
@@ -11,23 +12,23 @@ import {CitiesDialogComponent} from "../cities-dialog/cities-dialog.component";
   styleUrl: './search-toolbar.component.css'
 })
 export class SearchToolbarComponent {
-  category: Category= {title:"Informatique", icon:"url de l'icon",
-    subCategories:[
-      {title:"Asus i7 4eg", icon: "icon1"},
-      {title:"Samsung Laoptop", icon: "icon1", subCategories:[
-          {title:"Tablette", icon: "icon1",parentId:"f14ff8fv688"}
-        ]},
-      {title:"Tablette apple", icon: "icon1"}
-    ]}
-  city: City = {name:"Libreville", location:{name:"banco", latitude:85, longitude:3.5}}
-  constructor(public dialog:MatDialog) {
+  category: Category= {title:"Informatique", iconUrl:"url de l'icon",color:"category-icon-red"}
+  city: City = {id:"r4re454e",name:"Libreville", countryId:"rzgrhe5h455he"}
+  constructor(public dialog:MatDialog, private drawerService: DrawerService) {
   }
 
    openCategoryDialog(){
-   const dialog = this.dialog.open(CategoriesDialogComponent,{data:{title:this.category.title,icon:this.category.icon}})
+   const dialog = this.dialog.open(CategoriesDialogComponent,{data:{title:this.category.title,icon:this.category.iconUrl}})
   }
   openCitiesDialog(){
-    const dialog = this.dialog.open(CitiesDialogComponent,{data:{name:this.city.name,location: this.city.location}})
+    const dialog = this.dialog.open(CitiesDialogComponent,{data:{name:this.city.name}})
   }
 
+  openCategoryDrawer(){
+    this.drawerService.toggleDrawer("drawer","category")
+  }
+
+  openCityDrawer(){
+    this.drawerService.toggleDrawer("drawer","city")
+  }
 }

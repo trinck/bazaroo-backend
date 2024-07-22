@@ -4,9 +4,9 @@ import org.mts.locationservice.entities.GeoZone;
 public interface LocationUtils {
 
 
-    public Double distanceBetweenKlm(GeoZone zoneA, GeoZone zoneB);
+    public Double distanceBetweenKm(GeoZone zoneA, GeoZone zoneB);
 
-    public boolean isInRadiusKlm(GeoZone center, Double radius, GeoZone toCheck);
+    public boolean isInRadiusKm(GeoZone center, Double radius, GeoZone toCheck);
 
 
 }

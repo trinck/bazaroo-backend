@@ -17,7 +17,7 @@ import { BoutiqueComponent } from './pages/boutique/boutique.component';
 import { MagazineComponent } from './pages/magazine/magazine.component';
 import { FooterComponent } from './components/footer/footer.component';
 import {MatSelect, MatSelectModule} from "@angular/material/select";
-import { BanierPubComponent } from './components/banier-pub/banier-pub.component';
+import { BannerPubComponent } from './components/banner-pub/banner-pub.component';
 import { SectionAnnouncesComponent } from './components/section-announces/section-announces.component';
 import {MatCard, MatCardModule} from "@angular/material/card";
 import {NgOptimizedImage} from "@angular/common";
@@ -34,6 +34,13 @@ import { CategoriesDialogComponent } from './components/categories-dialog/catego
 import { CitiesDialogComponent } from './components/cities-dialog/cities-dialog.component';
 import {MatTreeModule} from "@angular/material/tree";
 import {MatButtonToggleModule} from "@angular/material/button-toggle";
+import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {MatBadgeModule} from "@angular/material/badge";
+import {NgxMapboxGLModule} from "ngx-mapbox-gl";
+import { BzrMapComponent } from './components/bzr-map/bzr-map.component';
+import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
+import { AnnounceViewComponent } from './pages/announce-view/announce-view.component';
+import { TextIconComponent } from './components/text-icon/text-icon.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +50,7 @@ import {MatButtonToggleModule} from "@angular/material/button-toggle";
     BoutiqueComponent,
     MagazineComponent,
     FooterComponent,
-    BanierPubComponent,
+    BannerPubComponent,
     SectionAnnouncesComponent,
     AnnounceComponent,
     SearchComponent,
@@ -52,6 +59,10 @@ import {MatButtonToggleModule} from "@angular/material/button-toggle";
     AnnounceVipComponent,
     CategoriesDialogComponent,
     CitiesDialogComponent,
+    BzrMapComponent,
+    BreadcrumbComponent,
+    AnnounceViewComponent,
+    TextIconComponent,
   ],
   imports: [
     BrowserModule,
@@ -72,7 +83,12 @@ import {MatButtonToggleModule} from "@angular/material/button-toggle";
     ReactiveFormsModule,
     MatDialogModule,
     MatTreeModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    HttpClientModule,
+    MatBadgeModule,
+    NgxMapboxGLModule.withConfig({
+      accessToken: 'pk.eyJ1IjoibW91bG91bmd1aSIsImEiOiJjbDM0bDdhcWowNWwyM2twNXNubGRkaWh6In0.k6mHuqWTuQx3IF6RWmu8OQ' // Remplacez par votre clé API Mapbox
+    })
   ],
   providers: [
     provideAnimationsAsync()

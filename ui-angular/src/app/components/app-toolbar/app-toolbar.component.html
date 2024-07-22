@@ -1,13 +1,19 @@
-<mat-toolbar class="">
-  <img src="assets/icons/logo.svg" #logo id="logo" alt="logo">
-  <span class="spacer">
-    Bazaroo
-  </span>
+<mat-toolbar class="" style="gap: 10px" >
+  <div id="logo-container">
+    <img src="assets/icons/logo.svg" #logo id="logo" alt="logo">
+    <span id="app-name"> Bazaroo</span>
+  </div>
 
   <button mat-button routerLink="home"> Home</button>
   <button mat-button routerLink="boutiques"> Boutiques</button>
   <button mat-button routerLink="magazines"> magazines</button>
-  <button mat-button id="profile"[matMenuTriggerFor]="menu" >
+
+  <!-- spacer  -->
+  <span class="spacer">
+  </span>
+  <!-- --------------  -->
+
+  <button mat-button id="profile" [matMenuTriggerFor]="menu" >
     <span style="display: flex; gap:4px;">
       <img src="assets/icons/profile_fill.png" class="profile-image" alt="profile-image">
        <span style="align-content: center" class="profile-text">trinck Mouloungui</span>

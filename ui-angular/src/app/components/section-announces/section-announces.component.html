@@ -1,9 +1,10 @@
-<div class="app-section-announces" style="">
-  <div  *ngFor="let  an of announces" style="">
-    <mat-card  >
-      <div mat-card-image class="app-card-image-container"  style="">
-        <img mat-card-image   [ngSrc]="an.media" width="340" style=""  height="250" alt="announces image"/>
-        <span mat-card-image class="meche">
+<div style="position: relative">
+  <div class="app-section-announces" #container  style="">
+    <div  *ngFor="let  an of announces" style="">
+      <mat-card  style="width: 300px; max-height: 360px" (click)="viewAnnounce(an)">
+        <div mat-card-image class="app-card-image-container"  style="">
+          <img mat-card-image   [src]="an.media"  alt="announces image" width="100%" height="250px"/>
+          <span mat-card-image class="wrapper">
           <div class="app-card-mini-info">
             <span class="app-card-mini-info-unit" >
               <mat-icon>image</mat-icon>
@@ -16,20 +17,32 @@
             </span>
           </div>
         </span>
-      </div>
+        </div>
 
-      <mat-card-content>
-        <mat-card-title style="font-size: 17px">{{an.title}}</mat-card-title>
-        <mat-card-subtitle style="font-size: 20px; color: var(--app-primary)" >{{an.price|currency:'USD'}}</mat-card-subtitle>
-      </mat-card-content>
-      <mat-card-actions align="end">
-        <button mat-icon-button><mat-icon>favorite_border</mat-icon></button>
-        <button mat-icon-button> <mat-icon>share</mat-icon></button>
+        <mat-card-content>
+          <mat-card-title style="font-size: 17px">{{an.title}}</mat-card-title>
+          <mat-card-subtitle style="font-size: 20px; color: var(--app-primary)" >{{an.price|currency:'USD'}}</mat-card-subtitle>
+        </mat-card-content>
+        <mat-card-actions align="end">
+          <button mat-icon-button (click)="alert('add to favoris'); $event.stopPropagation()"><mat-icon>favorite_border</mat-icon></button>
+          <button mat-icon-button (click)="alert('share announce');$event.stopPropagation()"> <mat-icon>share</mat-icon></button>
 
-      </mat-card-actions>
-    </mat-card>
+        </mat-card-actions>
+      </mat-card>
+
+    </div>
 
   </div>
 
+
+<div class="scrolling-actions">
+  <button mat-icon-button class="button-scroll left" (click)="scrollingLeft(container)" style="" >
+    <mat-icon >navigate_before</mat-icon>
+  </button>
+
+  <button mat-icon-button  class="button-scroll right" (click)="scrollingRight(container)" style="" >
+    <mat-icon >navigate_next</mat-icon>
+  </button>
+</div>
 
 </div>

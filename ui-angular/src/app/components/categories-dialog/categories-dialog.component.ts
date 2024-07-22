@@ -1,10 +1,9 @@
-import {Component, Inject, OnInit} from '@angular/core';
-import {SearchToolbarComponent} from "../search-toolbar/search-toolbar.component";
-import {MAT_DIALOG_DATA, MatDialogConfig, MatDialogRef} from "@angular/material/dialog";
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {Category} from "../../models/Category";
 import {FlatTreeControl} from "@angular/cdk/tree";
 import {FlatCategoryNode} from "../../models/FlatCategoryNode";
-import {MatTreeFlatDataSource, MatTreeFlattener} from "@angular/material/tree";
+import {MatTree, MatTreeFlatDataSource, MatTreeFlattener} from "@angular/material/tree";
+import {CategoryService} from "../../services/category.service";
 
 @Component({
   selector: 'app-categories-dialog',
@@ -14,26 +13,19 @@ import {MatTreeFlatDataSource, MatTreeFlattener} from "@angular/material/tree";
 export class CategoriesDialogComponent implements OnInit{
 
 
-  list: Category[]= [
-    {title:"Asus i7 4eg", icon: "icon1"},
-    {title:"Samsung Laoptop", icon: "icon1", subCategories:[
-        {title:"Tablette", icon: "icon1", parentId:"okgkùekg7ege7gg"}
-      ]},
 
-    {title:"Samsung Laoptop", icon: "icon1", subCategories:[
-        {title:"Tablette", icon: "icon1",parentId:"r5rggrr8g8gr8", subCategories:[
-            {title:"Samsung Laoptop",parentId:"e88e6g86rg8", icon: "icon1", subCategories:[
-                {title:"Tablette", icon: "icon1",parentId:"r77rr6r335zrg"}
-              ]}
-          ]}
-      ]}
-  ];
+
+  @ViewChild("tree1") tree1 : MatTree<any>|undefined=undefined;
 
   private _transformer = (node: Category, level: number) => {
     return {
       expandable: !!node.subCategories && node.subCategories.length > 0,
       name: node.title,
       level: level,
+      category: node,
+      parentId: node.parentCategoryId,
+      iconUrl: node.iconUrl,
+      color: node.color
     };
   };
 
@@ -55,22 +47,46 @@ export class CategoriesDialogComponent implements OnInit{
 
   hasChild = (_: number, node: FlatCategoryNode) => node.expandable;
 
+  currentLevel = 0;
+  currentNode: FlatCategoryNode | null = null;
+  slideTree =false;
+  currentDataSource = new MatTreeFlatDataSource(this.treeControl, this.treeFlattener);
 
-  constructor(
-    public dialogRef: MatDialogRef<SearchToolbarComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: Category,
+  constructor(private categoriesService:CategoryService
   ) {
-    this.list.push(this.data);
-    this.dataSource.data = this.list;
-    this.dialogRef.addPanelClass('border-radius-dialog');
+
   }
 
   ngOnInit(): void {
-    const matDialogConfig = new MatDialogConfig()
-    matDialogConfig.position = { right: `0`, top: `0` };
-    this.dialogRef.updatePosition(matDialogConfig.position);
+    /** this.categoriesService.getCategories().subscribe(value => {
+      this.dataSource.data = (value as any).content as Category[]
+    })*/
+
+    this.dataSource.data = this.categoriesService.getCategoriesTest()
+
   }
 
 
+  onNodeClick(node: FlatCategoryNode, $event: MouseEvent) {
 
+    this.currentNode = node;
+    if (this.treeControl.getLevel(node) === 1 && node.expandable && this.currentLevel == 0) {
+      this.currentLevel = 1;
+      this.slideTree=true;
+      this.currentDataSource.data = [node.category]
+
+    }
+  }
+
+  goBack() {
+    this.currentLevel = 0;
+    this.currentNode = null;
+    this.slideTree=false;
+  }
+
+  onConfirm(){
+    if(this.currentNode?.category){
+      this.categoriesService.setSelectedCategory(this.currentNode?.category);
+    }
+  }
 }

@@ -8,26 +8,42 @@
       <button mat-icon-button routerLink="/search"> <mat-icon color="primary">apps</mat-icon> </button>
     </div>
     <div class="category-container" style="">
-      <div   class="category-card category-card-primary">
-        <mat-icon class="category-icon category-icon-primary">directions_car</mat-icon>
-        <span class="category-text"> Voiture et vihicules</span>
+      <div   class="category-card category-card-primary clickable">
+        <div class="category-header">
+          <mat-icon class="category-icon category-icon-primary">directions_car</mat-icon>
+        </div>
+        <div class="category-content">
+          <span>Voiture et vihicules</span>
+        </div>
       </div>
 
 
-      <div  class="category-card category-card-green">
-        <mat-icon class="category-icon category-icon-green"  >store</mat-icon>
-        <span class="category-text" > Vêtement et accesoirs</span>
+      <div  class="category-card category-card-green clickable">
+        <div class="category-header">
+          <mat-icon class="category-icon category-icon-green "  >store</mat-icon>
+        </div>
+        <div class="category-content">
+          <span  > Vêtement et accesoirs</span>
+        </div>
       </div>
 
-      <div  class="category-card category-card-violet">
-        <mat-icon class="category-icon category-icon-violet"  >laptop</mat-icon>
-        <span class="category-text" > Informatique et Multimedia</span>
+      <div  class="category-card category-card-violet clickable">
+        <div class="category-header">
+          <mat-icon class="category-icon category-icon-violet"  >laptop</mat-icon>
+        </div>
+       <div class="category-content">
+         <span > Informatique et Multimedia</span>
+       </div>
       </div>
 
 
-      <div  class="category-card category-card-teal">
-        <mat-icon class="category-icon category-icon-teal"  >laptop</mat-icon>
-        <span class="category-text" > Informatique et Multimedia</span>
+      <div  class="category-card category-card-teal clickable">
+        <div class="category-header">
+          <mat-icon class="category-icon category-icon-teal"  >laptop</mat-icon>
+        </div>
+        <div class="category-content">
+          <span  > Informatique et Multimedia</span>
+        </div>
       </div>
 
     </div>
@@ -40,7 +56,7 @@
     <div class="app-section-announces-title">
       <mat-icon class="premium">workspace_premium</mat-icon>
       <h6 style="font-size: 20px; flex: 1 1 auto"> Selection premium</h6>
-      <button mat-button color="primary" routerLink="/search"> Voire plus <mat-icon iconPositionEnd>navigate_next</mat-icon> </button>
+      <button mat-button color="primary" routerLink="/home/search"> Voire plus <mat-icon iconPositionEnd>navigate_next</mat-icon> </button>
     </div>
     <app-section-announces></app-section-announces>
   </section>
@@ -50,7 +66,7 @@
     <div style="" class="app-section-announces-title">
       <mat-icon color="primary">apartment</mat-icon>
       <h6  style="font-size: 20px; flex: 1 1 auto"> Nouvelles annonces d'immobilier</h6>
-      <button mat-button color="primary" routerLink="/search"> Voire plus <mat-icon iconPositionEnd>navigate_next</mat-icon> </button>
+      <button mat-button color="primary" routerLink="/home/search"> Voire plus <mat-icon iconPositionEnd>navigate_next</mat-icon> </button>
     </div>
     <app-section-announces></app-section-announces>
   </section>
@@ -60,7 +76,7 @@
     <div class="app-section-announces-title">
       <mat-icon color="primary">directions_car</mat-icon>
       <h6  style="font-size: 20px; flex: 1 1 auto"> Nouvelles annonces de voiture</h6>
-      <button mat-button color="primary" routerLink="/search"> Voire plus <mat-icon iconPositionEnd>navigate_next</mat-icon> </button>
+      <button mat-button color="primary" routerLink="/home/search"> Voire plus <mat-icon iconPositionEnd>navigate_next</mat-icon> </button>
     </div>
     <app-section-announces></app-section-announces>
   </section>
@@ -70,7 +86,7 @@
     <div class="app-section-announces-title">
       <mat-icon color="primary">smartphone</mat-icon>
       <h6 style="font-size: 20px; flex: 1 1 auto"> Nouvelles annonces de telephone</h6>
-      <button mat-button color="primary" routerLink="/search"> Voire plus <mat-icon iconPositionEnd>navigate_next</mat-icon> </button>
+      <button mat-button color="primary" routerLink="/home/search"> Voire plus <mat-icon iconPositionEnd>navigate_next</mat-icon> </button>
     </div>
     <app-section-announces></app-section-announces>
   </section>

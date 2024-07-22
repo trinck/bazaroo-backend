@@ -7,6 +7,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.mts.locationservice.entities.GenericsFieldsEntity;
 
+import java.util.List;
+
 @NoArgsConstructor
 @Data
 @AllArgsConstructor
@@ -15,6 +17,6 @@ public class CityOutputDTO extends GenericsFieldsEntity {
     private String id;
     private String name;
     private String countryId;
-    private GeoZoneOutputDTO location;
+    private List<StreetOutputDTO> streets;
 
 }

@@ -1,15 +1,15 @@
 package org.mts.locationservice.entities;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @AllArgsConstructor
-@Getter
-@Setter
+@Data
+@Builder
 @NoArgsConstructor
 public class City extends GenericsFieldsEntity {
 
@@ -18,10 +18,10 @@ public class City extends GenericsFieldsEntity {
     private String id;
     @Column(nullable = false)
     private String name;
-    @ManyToOne(cascade = CascadeType.PERSIST)
-    private GeoZone location;
-
     @ManyToOne
     private Country country;
+
+    @OneToMany(mappedBy = "city", cascade = CascadeType.PERSIST)
+    private List<Street> streets = new ArrayList<>();
 
 }

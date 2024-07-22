@@ -3,7 +3,7 @@
   background-size: cover;
 }
 
-.app-card-image-container .meche {
+.app-card-image-container .wrapper {
   display: flex;
   align-items: end;
   background-color: rgba(0,0,0,0.1);
@@ -26,4 +26,34 @@
   padding: 5px 0 5px 0;
 }
 
+mat-card{
+  cursor: pointer;
+}
 
+.button-scroll {
+pointer-events: auto;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.32);
+}
+
+.button-scroll.right{
+
+}
+
+.button-scroll.left{
+
+}
+
+.scrolling-actions {
+  position: absolute;
+  top: 0;
+  width: calc(100% - 20px);
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  align-items: center;
+  pointer-events: none;
+  padding: 10px;
+
+
+}

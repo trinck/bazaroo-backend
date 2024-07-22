@@ -1,0 +1,74 @@
+<div class="content">
+  <div class="flex-container" style="gap: 5px; margin-top: 50px">
+
+    <div class="announce-container">
+      <div  id="medias-container">
+        <div #medias_view id="medias-view">
+          <div *ngFor="let media of announces[0].medias; " class="media-view" >
+            <img [src]="media.url" alt="photo">
+          </div>
+        </div>
+        <div id="medias-wrapper">
+          <div class="media-wrapper-header"></div>
+          <div class="media-wrapper-content">
+            <button mat-icon-button class="btn-scrolling-left" (click)="scrollingLeft(medias_view)"> <mat-icon >navigate_before</mat-icon> </button>
+           <span class="v-separator"></span>
+            <button mat-icon-button class="btn-scrolling-right" (click)="scrollingRight(medias_view)"> <mat-icon>navigate_next</mat-icon></button>
+          </div>
+          <div class="media-wrapper-footer"></div>
+        </div>
+      </div>
+      <div id="announce-details">
+        <div id="section-1" style="display: flex;">
+          <div>
+            <span style="font-size: x-large">Titre de l'annonce</span>
+            <div class="flex-container" style="gap: 14px">
+              <span class="text-icon"><mat-icon class="mat-icon-f15">place</mat-icon>Banco</span>
+              <span class="text-icon"> <mat-icon class="mat-icon-f15">watch_later</mat-icon> Il y a 14 minutes</span>
+            </div>
+          </div>
+         @if(announce.price){
+           <span class="v-separator"></span>
+           <div style="font-size: xx-large; color: var(--app-primary)">
+             {{announce.price.valueOf()| currency:'USD'}}
+           </div>
+         }
+        </div>
+
+        <mat-divider></mat-divider>
+
+        <div id="section-2" style="display: flex;">
+          <div id="profile-container" class="flex-container"style="align-items: center" >
+            <img src="assets/icons/profile_fill.png" class="profile-image" alt="profile-image">
+            <div id="profile-content" style="display: flex; flex-direction: column;padding:5px;">
+              <span id="profile-name" matCardTitle>Mouloungui Ibiatsi</span>
+              <app-text-icon font-size="12px" icon-name="store">Boutique</app-text-icon>
+            </div>
+          </div>
+          <span class="v-separator"></span>
+          <div id="profile-contact"></div>
+        </div>
+        <mat-divider></mat-divider>
+        <mat-divider></mat-divider>
+        <mat-divider></mat-divider>
+
+      </div>
+
+    </div>
+
+
+    <div id="ad-container">
+
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+
+
+</div>

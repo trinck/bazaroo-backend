@@ -1,21 +1,77 @@
 
 
-<div  style="height: 100vh; width: 435px">
-    <span mat-dialog-title>
-      Choisir la region
+<div style="display: flex;flex-direction: column; height: 100%;">
+  <div style="padding: 10px">
+      <span mat-dialog-title style="">
+      Choisir les regions
     </span>
+  </div>
+
   <mat-divider></mat-divider>
-   <div >
-     <div >
-       <ol>
-         <li>{{data.name}}</li>
-         <ol>
-           <li>{{data.location.latitude}}</li>
-           <li>{{data.location.longitude}}</li>
-         </ol>
-       </ol>
-     </div>
-   </div>
+
+  <div id="city-search-container" style="display: flex; width: 100%; padding: 10px; box-sizing: border-box ">
+    <mat-form-field appearance="outline" style="width: 100%" subscriptSizing="dynamic" class="small border-none hover-none">
+      <input type="search" matInput placeholder="rechercher" id="search-input">
+      <mat-icon matIconPrefix>search</mat-icon>
+    </mat-form-field>
+  </div>
+
+  <mat-divider></mat-divider>
+
+    <div class="action-container" style="">
+      <button  mat-icon-button (click)="back()" *ngIf="slideOut">
+       <mat-icon>
+         arrow_back
+       </mat-icon>
+      </button>
+      <button mat-button (click)="clear()" *ngIf="!listCity.selectedOptions.isEmpty()">
+        Effacer
+      </button>
+    </div>
+
+
+
+  <div style=" position: relative;flex-grow: 1; box-sizing: border-box; padding: 10px; overflow-y: auto; overflow-x: hidden">
+
+    <mat-selection-list  #listCity [class]="slideOut? 'slide-out': ''" id="listCity" style=" z-index: 2" >
+      @for (c of cities; track c){
+        <mat-list-option #lo   [value]="c.name" togglePosition="before" (click)="next(c,lo)"  >
+          <div style="display: flex; gap: 10px; justify-content: space-between; align-items: center; position: relative;padding: 4px; ">
+            <span>{{c.name}}</span>
+           @if(streets?.at(0)?.cityId == c.id && listStreet.selectedOptions.selected.length>0){
+             <span class="app-bg-primary badge " style="color: blue" >{{listStreet.selectedOptions.selected.length}}</span>
+           } @else if (list?.selectedOptions?.isSelected(lo)){
+             <!-- show message 'toute la ville' if option is selected -->
+             <span class="app-bg-primary badge" style="color: blue">Toute la ville</span>
+           }
+          </div>
+          <mat-icon matListItemIcon>navigate_next</mat-icon>
+        </mat-list-option>
+      }
+    </mat-selection-list>
+
+
+     <mat-selection-list id="listStreet" [class]="slideOut? 'slide-in':'' "  #listStreet style="z-index: 1;">
+     @for (s of streets; track s){
+         <mat-list-option [value]="s.name" togglePosition="before" >
+           <span>{{s.name}}</span>
+         </mat-list-option>
+     }
+    </mat-selection-list>
+
+  </div>
+
+
+
+  <mat-divider style=""></mat-divider>
+  <div mat-dialog-actions class="actions" >
+    <button mat-flat-button class="confirm" >
+      Confirmer
+      <mat-icon iconPositionEnd  class=" icon-end">
+        chevron_right
+      </mat-icon>
+    </button>
+  </div>
 
 
 </div>

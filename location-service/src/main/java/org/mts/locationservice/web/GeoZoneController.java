@@ -4,7 +4,9 @@ import org.modelmapper.ModelMapper;
 import org.mts.locationservice.dtos.GeoZoneInputDTO;
 import org.mts.locationservice.dtos.GeoZoneOutputDTO;
 import org.mts.locationservice.entities.GeoZone;
+import org.mts.locationservice.entities.Street;
 import org.mts.locationservice.services.IGeoZoneService;
+import org.mts.locationservice.services.IStreetService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,6 +22,9 @@ public class GeoZoneController {
 
     @Autowired
     private ModelMapper modelMapper;
+
+    @Autowired
+    private IStreetService iStreetService;
     @GetMapping("/{id}")
     public GeoZoneOutputDTO getGeoZoneById(@PathVariable String id){
         return convertToOutputDto(this.iGeoZoneService.getZoneById(id));
@@ -37,16 +42,20 @@ public class GeoZoneController {
     }
 
 
-    @PostMapping
-    public GeoZoneOutputDTO addGeoZone(@RequestBody GeoZoneInputDTO geoZoneInputDTO){
+    @PostMapping("/{streetId}")
+    public GeoZoneOutputDTO saveGeoZone(@PathVariable String streetId ,@RequestBody GeoZoneInputDTO geoZoneInputDTO){
 
         GeoZone zone = convertToEntity(geoZoneInputDTO);
+        Street street = this.iStreetService.getStreetById(streetId);
+        zone.setId(null);
+        zone.setStreet(street);
         return convertToOutputDto(this.iGeoZoneService.save(zone));
     }
 
     @PutMapping("/{id}")
-    public GeoZoneOutputDTO addGeoZone(@PathVariable String id,@RequestBody GeoZoneInputDTO geoZoneInputDTO){
+    public GeoZoneOutputDTO modifyGeoZone(@PathVariable String id,@RequestBody GeoZoneInputDTO geoZoneInputDTO){
         GeoZone zone = convertToEntity(geoZoneInputDTO);
+        zone.setId(id);
         return convertToOutputDto(this.iGeoZoneService.update(zone));
     }
 

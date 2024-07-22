@@ -11,5 +11,4 @@ public class CityInputDTO {
 
     private String id;
     private String name;
-    private GeoZoneInputDTO location;
 }

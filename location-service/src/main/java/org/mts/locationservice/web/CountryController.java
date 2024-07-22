@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -34,8 +35,10 @@ public class CountryController {
 
     @GetMapping
     public List<CountryOutputDTO> getAllCountries(){
-      return  this.iCountryService.getCountries().stream().map(this::convertToOutputDto).toList();
 
+        List<Country> countries =  this.iCountryService.getCountries();
+        if(countries.isEmpty())return new ArrayList<>();
+        return  this.iCountryService.getCountries().stream().map(this::convertToOutputDto).toList();
     }
 
 

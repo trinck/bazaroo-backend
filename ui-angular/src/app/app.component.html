@@ -2,17 +2,28 @@
 
 
 
-<mat-sidenav-container style="height:100vh" hasBackdrop="true">
-  <mat-sidenav #drawer style="" position="start">
+<mat-sidenav-container style="height:100vh;" hasBackdrop="true">
+  <mat-sidenav #sidenav style="" position="start">
     side 1
   </mat-sidenav>
-  <mat-sidenav #drawer2 style="" position="end">
-    side 2
+  <mat-sidenav #drawer style="border-radius: 0;" position="end">
+
+    <div style="height: 100%; box-sizing: border-box; overflow-x: hidden">
+      <ng-container *ngIf="drawerContent=='category'" style="">
+        <app-categories-dialog>
+        </app-categories-dialog>
+      </ng-container>
+
+      <ng-container *ngIf="drawerContent=='city'">
+        <app-cities-dialog>
+        </app-cities-dialog>
+      </ng-container>
+    </div>
+
   </mat-sidenav>
-  <mat-sidenav-content>
-    <app-toolbar style="position: sticky; top: 0; z-index: 1" ></app-toolbar>
-    <div style="margin-top: 5px">
-      <button mat-raised-button (click)="drawer.toggle()">Toggle drawer</button>
+  <mat-sidenav-content style="overflow-x: hidden!important;">
+    <app-toolbar style="position: sticky; top: 0; z-index: 4" ></app-toolbar>
+    <div style="margin-top: 5px; ">
       <router-outlet></router-outlet>
     </div>
   </mat-sidenav-content>

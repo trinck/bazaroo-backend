@@ -7,8 +7,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.ArrayList;
-import java.util.List;
 
 @AllArgsConstructor
 @Getter
@@ -22,7 +20,8 @@ public class GeoZone extends GenericsFieldsEntity{
     private String id;
     private Double latitude;
     private Double longitude;
-    @Column(unique = true)
     private String name;
+    @ManyToOne()
+    private Street street;
 
 }

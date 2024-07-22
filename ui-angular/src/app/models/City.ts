@@ -1,4 +1,8 @@
+import {Street} from "./Street";
+
 export interface City {
-  name:String;
-  location: {name:String,longitude:number,latitude:number};
+  name:String,
+  id:String,
+  countryId:String,
+  streets?: Street[]
 }

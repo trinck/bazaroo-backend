@@ -12,6 +12,7 @@ import java.util.List;
 @AllArgsConstructor
 @Data
 @NoArgsConstructor
+@Builder
 public class Country extends GenericsFieldsEntity{
 
     @Id
@@ -21,6 +22,6 @@ public class Country extends GenericsFieldsEntity{
     private String name;
     @Column(unique = true)
     private String code;
-    @OneToMany(mappedBy = "country")
+    @OneToMany(mappedBy = "country", cascade = CascadeType.PERSIST)
     private List<City> cities = new ArrayList<>();
 }

@@ -3,7 +3,7 @@
 .app-entry-content{
   display: flex;
   flex-direction: column;
-  gap: 80px
+  gap: 60px
 }
 
 .app-section-announces-title {
@@ -41,21 +41,33 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 10px;
   align-items: center;
 }
 
 
 .category-icon{
   font-size: 42px;
-  width: max-content;
-  height: max-content;
+  width: fit-content;
+  height: fit-content;
 }
 
 
-.category-text {
+.category-content {
   font-size: 15px;
   text-align: center;
-  font-family: sans-serif;
-  font-weight: lighter;
+  font-weight: inherit;
+  flex: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
+
+.category-header {
+
+  flex: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+

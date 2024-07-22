@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BanierPubComponent } from './banier-pub.component';
+import { BreadcrumbComponent } from './breadcrumb.component';
 
-describe('BanierPubComponent', () => {
-  let component: BanierPubComponent;
-  let fixture: ComponentFixture<BanierPubComponent>;
+describe('BreadcrumbComponent', () => {
+  let component: BreadcrumbComponent;
+  let fixture: ComponentFixture<BreadcrumbComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [BanierPubComponent]
+      declarations: [BreadcrumbComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(BanierPubComponent);
+    fixture = TestBed.createComponent(BreadcrumbComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

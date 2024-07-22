@@ -1,0 +1,30 @@
+
+ .info-icon{
+  align-content: center;
+   text-align: start;
+   width: max-content;
+   height: min-content;
+}
+
+.info-container {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  border-radius: var(--app-button-radius);
+  background-color: rgba(0,0,0,0.9);
+  width: min-content;
+  padding-right: 4px;
+  padding-left: 4px;
+
+}
+
+.info-text{
+  width: min-content;
+  line-height: 20px;
+}
+
+ .info-text, .info-icon{
+   color: white;
+ }
