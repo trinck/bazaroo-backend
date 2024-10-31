@@ -1,16 +1,16 @@
 export interface Media {
 
-  id : Number,
+  id : number,
 
   // Mime type of the media (e.g. "image/png", "image/jpeg", "video/mp4")
-  type : String,
+  type : string,
 
   // Name of the media (e.g. "my-image.png")
-  name : String,
+  name : string,
 
-  url : String,
+  url : string,
 
-  path : String,
+  path : string,
 
-  size : Number
+  size : number
 }

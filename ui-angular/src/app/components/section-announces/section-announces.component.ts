@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {AnnouncesService} from "../../services/announces.service";
 import {Route, Router} from "@angular/router";
 
@@ -10,8 +10,9 @@ import {Route, Router} from "@angular/router";
 export class SectionAnnouncesComponent implements OnInit{
 
   announces!: any;
-  url!:String;
 
+ @Input() url:String | null = null;
+  scrollStep = 30;
   ngOnInit(): void {
     this.announces = [
       {title:"Pc asus i7 dernière den", description:"elegivgleigvleie", media:"assets/images/pngegg (20).png", price:25, id:"hfhld" },
@@ -30,11 +31,13 @@ export class SectionAnnouncesComponent implements OnInit{
     protected readonly alert = alert;
 
   scrollingRight($event: HTMLDivElement) {
-     $event.scrollBy({left:300, behavior:'smooth'});
+    let card = document.querySelectorAll("mat-card")[0];
+     $event.scrollBy({left:card.clientWidth + this.scrollStep, behavior:'smooth'});
   }
 
   scrollingLeft($event: HTMLDivElement) {
-    $event.scrollBy({left:-300, behavior:'smooth'});
+    let card = document.querySelectorAll("mat-card")[0];
+    $event.scrollBy({left:- (card.clientWidth + this.scrollStep), behavior:'smooth'});
   }
 
   viewAnnounce(an: any) {

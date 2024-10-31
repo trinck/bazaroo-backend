@@ -1,24 +1,28 @@
 import { AnnounceType } from "./AnnounceType";
 import { Category } from "./Category";
-import { Field } from "./Field";
 import { GeoZone } from "./GeoZone";
 import {Media} from "./Media";
+import {Text} from "./Text";
+import {Radio_Check} from "./Radio_Check";
+import {ShortText} from "./ShortText";
+import {BzBoolean} from "./BzBoolean";
+import {Street} from "./Street";
 
 export interface Announce {
 
-  id : String,
+  id : string,
   type? : AnnounceType,
-  price?: Number,
-  cityId : String,
-  locationId? : String,
+  price?: number,
+  street? : Street,
   location : GeoZone,
-  title? : String,
+  title? : string,
   postedAt? : Date,
-  address? : String,
-  description? : String,
-  userId : String,
-  status : String,
+  address? : string,
+  tel? : string,
+  description? : string,
+  userId : string,
+  status : string,
   category : Category,
-  fields? : Field[],
-  medias? : Media[]
+  fields : (Text|Radio_Check|ShortText|BzBoolean)[],
+  medias : Media[]
 }

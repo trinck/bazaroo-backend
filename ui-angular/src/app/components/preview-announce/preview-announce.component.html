@@ -1,0 +1,15 @@
+
+<div style="display: flex; gap: 2px;  padding: 10px; overflow: hidden">
+
+    <img [src]="medias.imagePreview.at(0)" alt="image d'annonce" width="200px" height="150px"   style="object-fit: cover">
+
+  <mat-divider [vertical]="true" style="--mat-divider-width: 1px"></mat-divider>
+  <div style="margin-left:10px;  display: flex; flex-direction: column; gap: 3px; ">
+    <span style="" class="announce-title">{{step2FormGroup.get('title')?.value}}</span>
+    <span class="description" style="">{{step2FormGroup.get('description')?.value}}</span>
+    <div style="display: flex; gap: 5px; font-size: 12px; color: darkgrey" *ngIf="location">
+     <fa-icon [icon]="['fas', 'location-arrow']"></fa-icon>
+      <span class="location" style="">{{location.city?.name+'-'+location.street?.name}}</span>
+    </div>
+  </div>
+</div>

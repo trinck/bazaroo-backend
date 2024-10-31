@@ -21,10 +21,6 @@ public class Street {
     private String id;
     private String name;
     private Long zip;
-
-    @OneToMany(cascade = CascadeType.PERSIST, mappedBy = "street", orphanRemoval = true)
-    private List<GeoZone> locations = new ArrayList<>();
-
     @ManyToOne(cascade = CascadeType.PERSIST)
     private City city;
 }

@@ -1,74 +1,105 @@
-<div class="content">
-  <div class="flex-container" style="gap: 5px; margin-top: 50px">
+<div class="flex-container" style="flex-direction: column; gap: 30px">
+  <div class="content">
+    <div class="flex-container" style="gap: 5px; margin-top: 30px">
 
-    <div class="announce-container">
-      <div  id="medias-container">
-        <div #medias_view id="medias-view">
-          <div *ngFor="let media of announces[0].medias; " class="media-view" >
-            <img [src]="media.url" alt="photo">
+      <div class="announce-container">
+        <app-medias-view-slide [announce]="announce"></app-medias-view-slide>
+        <div id="announce-details">
+          <div id="section-1" style="display: flex;">
+            <div>
+              <span style="" id="announce-title">{{announce.title}}</span>
+              <div class="flex-container" style="gap: 14px">
+                <span class="text-icon"  ><mat-icon class="mat-icon-f15" >place</mat-icon>
+                  {{ announce.street?.name }}</span>
+                <span class="text-icon"> <mat-icon class="mat-icon-f15">watch_later</mat-icon> {{announce.postedAt|amTimeAgo}}</span>
+              </div>
+            </div>
+            @if(announce.price){
+              <span class="v-separator"></span>
+              <div style="font-size: xx-large; color: var(--app-primary)">
+                {{announce.price.valueOf()| currency:'USD'}}
+              </div>
+            }
           </div>
-        </div>
-        <div id="medias-wrapper">
-          <div class="media-wrapper-header"></div>
-          <div class="media-wrapper-content">
-            <button mat-icon-button class="btn-scrolling-left" (click)="scrollingLeft(medias_view)"> <mat-icon >navigate_before</mat-icon> </button>
-           <span class="v-separator"></span>
-            <button mat-icon-button class="btn-scrolling-right" (click)="scrollingRight(medias_view)"> <mat-icon>navigate_next</mat-icon></button>
+
+          <mat-divider></mat-divider>
+
+          <div id="section-2" style="display: flex;">
+            <div id="profile-container" class="flex-container" style="align-items: center" >
+              <img src="assets/icons/profile_fill.png" class="profile-image" alt="profile-image">
+              <div id="profile-content" style="display: flex; flex-direction: column;padding:5px;">
+                <span id="profile-name" matCardTitle>Mouloungui Ibiatsi</span>
+                <app-text-icon class="clickable" font-size="12px" icon-name="store">Boutique</app-text-icon>
+              </div>
+            </div>
+            <span class="v-separator"></span>
+            <div class="profile-contacts" style=" align-items: center">
+              <button mat-icon-button style=" font-size: 22px; background-color: rgba(0,128,0,0.17)">
+                <fa-icon [fixedWidth]="true" [icon]="['fab','whatsapp']" [style]="{'color':'green', 'align-self':'center'}" ></fa-icon>
+              </button>
+
+              <button mat-icon-button style=" font-size: 22px; background-color: rgba(0,92,187,0.14)">
+                <fa-icon [fixedWidth]="true" [icon]="['far','comment']" [style]="{'color':'#005cbb', 'align-self':'center'}" ></fa-icon>
+              </button>
+              <button mat-flat-button >Contacter le vendeur <mat-icon>phone</mat-icon></button>
+            </div>
           </div>
-          <div class="media-wrapper-footer"></div>
+          <mat-divider></mat-divider>
+
+          <div id="section-3" style="display: flex; flex-direction: column; gap: 10px">
+            <span mat-dialog-title style="font-size: large">Description</span>
+            <div style="" id="announce-description">
+              {{announce.description}}
+            </div>
+          </div>
+          <mat-divider></mat-divider>
+
+          <div id="section-4" style="display: flex; white-space: wrap; flex-wrap: wrap;gap: 20px ">
+            <ng-template [ngIf]="fieldsDeep0.includes(field.type)" *ngFor="let field of announce.fields">
+              <div   style="width:calc(50% - 10px); flex-shrink: 0;display: flex; justify-content: space-between ">
+                <span style="font-weight: 500">{{field.name}}</span>
+                @if (field.type === "RADIO"){
+                  <span  style="font-weight: normal">{{ getCheckedRatioField( Object.getOwnPropertyDescriptor(field, 'checkUnits')?.value)?.name }}</span>
+                } @else {
+                  <span  style="font-weight: normal">{{  Object.getOwnPropertyDescriptor(field, 'dataValue')?.value }}</span>
+                }
+
+              </div>
+            </ng-template>
+          </div>
+
+          <mat-divider></mat-divider>
+
+          <div id="section-5" style="display: flex; flex-direction: column; gap: 10px">
+            <span mat-dialog-title style="font-size: x-large">Où se situe l'annonce</span>
+            <app-bzr-map-view></app-bzr-map-view>
+          </div>
+
         </div>
+
       </div>
-      <div id="announce-details">
-        <div id="section-1" style="display: flex;">
-          <div>
-            <span style="font-size: x-large">Titre de l'annonce</span>
-            <div class="flex-container" style="gap: 14px">
-              <span class="text-icon"><mat-icon class="mat-icon-f15">place</mat-icon>Banco</span>
-              <span class="text-icon"> <mat-icon class="mat-icon-f15">watch_later</mat-icon> Il y a 14 minutes</span>
-            </div>
-          </div>
-         @if(announce.price){
-           <span class="v-separator"></span>
-           <div style="font-size: xx-large; color: var(--app-primary)">
-             {{announce.price.valueOf()| currency:'USD'}}
-           </div>
-         }
-        </div>
 
-        <mat-divider></mat-divider>
 
-        <div id="section-2" style="display: flex;">
-          <div id="profile-container" class="flex-container"style="align-items: center" >
-            <img src="assets/icons/profile_fill.png" class="profile-image" alt="profile-image">
-            <div id="profile-content" style="display: flex; flex-direction: column;padding:5px;">
-              <span id="profile-name" matCardTitle>Mouloungui Ibiatsi</span>
-              <app-text-icon font-size="12px" icon-name="store">Boutique</app-text-icon>
-            </div>
-          </div>
-          <span class="v-separator"></span>
-          <div id="profile-contact"></div>
-        </div>
-        <mat-divider></mat-divider>
-        <mat-divider></mat-divider>
-        <mat-divider></mat-divider>
+      <div id="ad-container">
 
       </div>
 
     </div>
 
 
-    <div id="ad-container">
 
+    <!-- section announces potential -->
+    <div class="flex-container" style="flex-direction: column; gap: 10px; margin-top: 50px">
+      <span matDialogTitle style="font-size: large">Vous seriez peut-être interressé par </span>
+      <app-section-announces ></app-section-announces>
     </div>
+
+
 
   </div>
 
 
 
-
-
-
-
-
-
+  <!-- footer -->
+  <app-footer></app-footer>
 </div>

@@ -1,0 +1,17 @@
+
+
+<div [formGroup]="formGroup" >
+  <div  [formArrayName]="formArrayName" >
+    <div [formGroupName]="formGroupName$">
+      <div class="check-container" formArrayName="checkUnits">
+        <label class="check-item"
+               *ngFor="let check of formArray?.controls; let i = index" [formGroupName]="i">
+          <input  type="checkbox"   formControlName="checked" >
+          <span class="check-name">{{ check.get("name")?.value }}</span>
+        </label>
+      </div>
+    </div>
+
+  </div>
+</div>
+

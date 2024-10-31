@@ -1,0 +1,22 @@
+<div class="container">
+  <h5>Photos de l'annonce</h5>
+  <div class="upload-section" [class]="dragAreaClass" (drop)="onDrop($event)"  (dragover)="onDragOver($event)" (dragleave)="onDragLeave($event)">
+    <label for="image-upload" class="upload-label">
+      <input type="file" id="image-upload" (change)="onFileChange($event)" multiple>
+      <mat-icon class="upload-icon">photo_camera</mat-icon>
+      <span class="upload-text">{{textLabel}}</span>
+    </label>
+  </div>
+  <div class="image-preview">
+    <div *ngFor="let img of files?.imagePreview; let i = index" class="image-item" (dragstart)="$event.preventDefault()"
+         (drop)="$event.preventDefault()">
+      <img [src]="img" alt="Image Preview">
+      <span class="image-number">{{i + 1}}</span>
+      <button mat-icon-button class="delete-button" (click)="removeImage(i)">
+        <mat-icon class="mat-icon-f23">
+          delete_outline
+        </mat-icon>
+      </button>
+    </div>
+  </div>
+</div>

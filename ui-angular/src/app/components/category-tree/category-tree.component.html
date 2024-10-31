@@ -1,0 +1,114 @@
+<div style="display: flex;flex-direction: column; height: 100%;">
+  <div style="padding: 20px">
+      <span mat-dialog-title style="">
+      Choisir les categories
+    </span>
+  </div>
+  <mat-divider style="--mat-divider-width: 2px"></mat-divider>
+  @if (slideTree) {
+    <div style="padding: 10px">
+      <button style="justify-content: start" mat-button (click)="goBack()">
+        Retour à toutes les catégories
+        <mat-icon> arrow_back</mat-icon>
+      </button>
+    </div>
+    <mat-divider style="--mat-divider-width: 2px"></mat-divider>
+  }
+
+
+  <div class="tree-container" style="">
+
+
+    <mat-tree id="tree1" #tree1 [class]="slideTree? 'slideOut':''" [dataSource]="dataSource" [treeControl]="treeControl"
+              style="z-index: 2; height: 100%;">
+      <!-- This is the tree node template for leaf nodes -->
+      <mat-tree-node *matTreeNodeDef="let node" [matTreeNodePadding]="node.level * 0.5">
+
+        <button mat-button class="category-item-button " [class]="currentNode?.name == node.name? 'active-button':''"
+                (click)="onNodeClick(node,$event)">
+          <div class="category-item-button-content">
+            <fa-icon class="mat-icon-f24" [fixedWidth]="true" [class]="node.color" [icon]="node.iconUrl"></fa-icon>
+            {{ node.name }}
+          </div>
+        </button>
+
+      </mat-tree-node>
+      <!-- Il s’agit du modèle de nœud d’arborescence pour les nœuds extensibles -->
+      <mat-tree-node *matTreeNodeDef="let node;when: hasChild" [matTreeNodePadding]="node.level * 0.5">
+        @if (treeControl.getLevel(node) == 1) {
+          <button mat-button [class]="currentNode?.name == node.name? 'active-button':''"
+                  [attr.aria-label]="'Toggle ' + node.name" (click)="onNodeClick(node,$event)"
+                  class="category-item-button">
+            <div class="category-item-button-content">
+              <fa-icon class="mat-icon-f24" [class]="node.color" [icon]="node.iconUrl"></fa-icon>
+              {{ node.name }}
+            </div>
+            <mat-icon iconPositionEnd class="mat-icon-rtl-mirror icon-end">
+              {{ treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right' }}
+            </mat-icon>
+          </button>
+        } @else {
+          <button mat-button matTreeNodeToggle [class]="currentNode?.name == node.name? 'active-button':''"
+                  [attr.aria-label]="'Toggle ' + node.name" (click)="onNodeClick(node,$event)"
+                  class="category-item-button">
+            <div class="category-item-button-content">
+              <fa-icon class="mat-icon-f24" [class]="node.color" [icon]="node.iconUrl"></fa-icon>
+              {{ node.name }}
+            </div>
+            <mat-icon iconPositionEnd class="mat-icon-rtl-mirror icon-end">
+              {{ treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right' }}
+            </mat-icon>
+          </button>
+        }
+      </mat-tree-node>
+    </mat-tree>
+
+
+    <div id="tree2" style="" [class]="slideTree? 'slide-in':''">
+
+      <mat-tree #subTreeTemplate [dataSource]="currentDataSource" [treeControl]="treeControl">
+        <mat-tree-node *matTreeNodeDef="let node" [matTreeNodePadding]="node.level * 0.5">
+          <button mat-button class="category-item-button" [class]="currentNode?.name == node.name?  'active':''">
+            <div class="category-item-button-content">
+              <fa-icon class="mat-icon-f24" [class]="node.color" [icon]="node.iconUrl"></fa-icon>
+              {{ node.name }}
+            </div>
+          </button>
+        </mat-tree-node>
+        <mat-tree-node *matTreeNodeDef="let node; when: hasChild" [matTreeNodePadding]="node.level * 0.5">
+          @if (treeControl.getLevel(node) == 1) {
+            <button mat-button [class]="currentNode?.name == node.name? 'active-button':''"
+                    [attr.aria-label]="'Toggle ' + node.name" (click)="onNodeClick(node,$event)"
+                    class="category-item-button">
+              <div class="category-item-button-content">
+                <fa-icon class="mat-icon-f24" [class]="node.color" [icon]="node.iconUrl"></fa-icon>
+                {{ node.name }}
+              </div>
+              <mat-icon iconPositionEnd class="mat-icon-rtl-mirror icon-end">
+                {{ treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right' }}
+              </mat-icon>
+            </button>
+          } @else {
+            <button mat-button matTreeNodeToggle [class]="currentNode?.name == node.name? 'active-button':''"
+                    [attr.aria-label]="'Toggle ' + node.name" (click)="onNodeClick(node,$event)"
+                    class="category-item-button">
+              <div class="category-item-button-content">
+                <fa-icon class="mat-icon-f24" [class]="node.color" [icon]="node.iconUrl"></fa-icon>
+                {{ node.name }}
+              </div>
+              <mat-icon iconPositionEnd class="mat-icon-rtl-mirror icon-end">
+                {{ treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right' }}
+              </mat-icon>
+            </button>
+          }
+        </mat-tree-node>
+      </mat-tree>
+    </div>
+
+
+  </div>
+
+
+</div>
+
+

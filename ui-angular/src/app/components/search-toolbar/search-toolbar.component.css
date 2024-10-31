@@ -1,9 +1,8 @@
 mat-toolbar{
 
-  width: 100%;
-  box-shadow: var(--app-toolbar-shadow);
   margin-bottom: 10px;
-  padding: var(--app-toolbar-padding);
+  padding: 0;
+
 
 }
 

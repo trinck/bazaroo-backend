@@ -2,6 +2,7 @@ package org.mts.announcesservice.dtos;
 
 
 import lombok.*;
+import org.mts.announcesservice.entities.GeoZone;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,8 +16,9 @@ public class AnnounceInputDTO {
 
     private String id;
     private Double price;
-    private String cityId;
-    private String locationId;
+    private String streetId;
+    private GeoZone location;
+    private String tel;
     private String title;
     private String address;
     private String description;

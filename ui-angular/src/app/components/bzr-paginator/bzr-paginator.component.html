@@ -1,0 +1,30 @@
+
+
+<div class="flex-container" style="justify-content: center; width: 100%;">
+
+
+  <div class="flex-container" style="gap: 10px; flex-wrap: wrap">
+
+    <button class="paginator-btn"  style="" (click)="toPageBefore()" [disabled]="currentPage === 1">
+      <mat-icon>navigate_before</mat-icon>
+    </button>
+
+    <ng-container *ngFor="let page of paginationButtons" >
+      @if(page ==='...'){
+        <span   class="flex-container" style="align-items: center">
+          <span>{{ page }}</span>
+        </span>
+      } @else {
+        <button  class="paginator-btn" (click)="toPageIndex(page)" [class.active]="page === currentPage" >
+          <span>{{ page }}</span>
+        </button>
+      }
+    </ng-container>
+
+    <button  class="paginator-btn" style="" (click)="toPageNext()" [disabled]="currentPage === pages">
+      <mat-icon>navigate_next</mat-icon>
+    </button>
+  </div>
+
+
+</div>

@@ -6,6 +6,7 @@ import {MagazineComponent} from "./pages/magazine/magazine.component";
 import {SearchComponent} from "./pages/search/search.component";
 import {EntryHomeComponent} from "./pages/entry-home/entry-home.component";
 import {AnnounceViewComponent} from "./pages/announce-view/announce-view.component";
+import {AddAnnounceComponent} from "./pages/add-announce/add-announce.component";
 
 const routes: Routes = [
   {path:"home", component: HomeComponent, children:[
@@ -15,7 +16,8 @@ const routes: Routes = [
   {path:"boutiques", component: BoutiqueComponent},
   {path:"magazines", component: MagazineComponent},
   {path:"announceView/:id", component: AnnounceViewComponent},
-  {path:"", redirectTo:"/home", pathMatch:"full"}
+  {path:"", redirectTo:"/home", pathMatch:"full"},
+  {path:"create-announce", component: AddAnnounceComponent}
 
 ];
 

@@ -1,7 +1,7 @@
 
 export  interface CategoryField{
 
-  id:BigInteger,
-  fieldName:String,
-  type:String
+  id:number,
+  fieldName:string,
+  type:string
 }

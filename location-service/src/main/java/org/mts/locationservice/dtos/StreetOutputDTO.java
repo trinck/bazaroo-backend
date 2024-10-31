@@ -14,6 +14,5 @@ public class StreetOutputDTO {
     private String id;
     private String name;
     private Long zip;
-    private List<GeoZoneOutputDTO> locations = new ArrayList<>();
     private String cityId;
 }

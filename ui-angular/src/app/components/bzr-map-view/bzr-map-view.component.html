@@ -1,0 +1,18 @@
+
+<div>
+  <mgl-map
+    id="map-view"
+    [style.height]="height+'px'"
+    [style]="'mapbox://styles/mapbox/streets-v12'"
+    [zoom]="[13]"
+    [center]="[longitude, latitude]"
+    [cursorStyle]="'pointer'"
+    [attributionControl]="false"
+    [preserveDrawingBuffer]="true"
+    [scrollZoom]="false"
+    (mapCreate)="onMapCreate($event)">
+
+    <mgl-marker [lngLat]="[longitude,latitude]">
+    </mgl-marker>
+  </mgl-map>
+</div>

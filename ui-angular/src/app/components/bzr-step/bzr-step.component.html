@@ -1,0 +1,142 @@
+<div style="display: flex;  gap: 10px; margin-top: 10px; align-items: start">
+  <form class="form" [formGroup]="formGroup" style="">
+
+    <section class="section-form" style="" *ngIf="fields().details && fields().details?.length !== 0">
+      <div class="section-titles" style="">
+        <span class="section-title" style="">Détails de l'annonce</span>
+        <span class="section-subtitle"
+              style="">Ajouter plus de détails sur votre annonce pour un maximum de visbilité</span>
+
+      </div>
+
+      <div class="form-items">
+
+        <!-- form item -->
+        <ng-container *ngFor="let field of fields().details; let last=last">
+
+          @if (field.type === "RADIO") {
+            <div class="form-item form-item-break" style="width: 100%!important;">
+              <div style="display: flex; gap: 10px">
+                <fa-icon [icon]="['fas', 'tags']"></fa-icon>
+                <span>{{ field.fieldName }}</span>
+              </div>
+                <app-bzr-radio [formGroup]="formGroup" formArrayName="objectFields" [formGroupName$]="getObjectFieldsChildIndex(field)"></app-bzr-radio>
+            </div>
+
+          } @else {
+            <div class="form-item" formArrayName="objectFields">
+              <div style="display: flex; gap: 10px">
+                <fa-icon [icon]="['fas', 'tags']"></fa-icon>
+                <span>{{ field.fieldName }}</span>
+              </div>
+
+                <mat-form-field appearance="outline" [formGroupName]="getObjectFieldsChildIndex(field)">
+                  <input  matInput type="text" placeholder="placeholder" name="dataValue" formControlName="dataValue">
+                </mat-form-field>
+
+            </div>
+          }
+        </ng-container>
+
+
+      </div>
+    </section>
+
+    <!-- section form-->
+    <section class="section-form" style="">
+      <div class="section-titles" style="">
+        <span class="section-title" style="">Information de l'annonce</span>
+        <span class="section-subtitle" style="">Une annonce avec un prix exacte et une description bien détaillé a 10 fois plus de visibilité.</span>
+      </div>
+
+      <div class="section-form-items">
+        <!-- form item -->
+        <div class="section-static-form-item">
+          <div style="display: flex; gap: 10px">
+            <fa-icon [icon]="['fas', 'money-check-dollar']"></fa-icon>
+            <span>Prix</span>
+          </div>
+          <mat-form-field appearance="outline">
+            <input matInput type="number" min="0" formControlName="price">
+            <span style="padding: 0 10px 0 10px" matSuffix>$</span>
+          </mat-form-field>
+        </div>
+
+        <!-- form item -->
+        <div class="section-static-form-item">
+          <div style="display: flex; gap: 10px">
+            <fa-icon [icon]="['fas', 't']"></fa-icon>
+            <span>Titre de l'annonce</span>
+          </div>
+          <mat-form-field appearance="outline">
+            <input matInput type="text" formControlName="title">
+          </mat-form-field>
+        </div>
+
+        <!-- form item -->
+        <div class="section-static-form-item">
+          <div style="display: flex; gap: 10px">
+            <fa-icon [icon]="['fas', 'align-left']"></fa-icon>
+            <span>Description de l'annonce</span>
+          </div>
+          <mat-form-field appearance="outline">
+            <textarea matInput rows="8" formControlName="description"></textarea>
+          </mat-form-field>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- section form-->
+    <section class="section-form" style="" *ngIf="fields().moreDetails && fields().moreDetails?.length !== 0">
+      <div class="section-titles" style="">
+        <span class="section-title" style="">Plus de détails</span>
+        <span class="section-subtitle" style="">Ajouter des détails supplémentaires</span>
+
+      </div>
+
+      <div class="form-items">
+
+        <!-- form item -->
+        <ng-container *ngFor="let field of fields().moreDetails; let last=last">
+          <div class="form-item form-item-break" style="width: 100%!important;">
+            <div style="display: flex; gap: 10px">
+              <fa-icon [icon]="['fas', 'tags']"></fa-icon>
+              <span>{{ field.fieldName }}</span>
+            </div>
+
+            <app-bzr-checkbox [formGroup]="formGroup" formArrayName="objectFields" [formGroupName$]="getObjectFieldsChildIndex(field)"></app-bzr-checkbox>
+          </div>
+        </ng-container>
+
+      </div>
+
+    </section>
+
+    <!-- section form-->
+    <div class="steps-actions">
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-flat-button matStepperNext>Next</button>
+    </div>
+  </form>
+
+  <app-info-card *ngIf="infoTitle" [infoTitle]="infoTitle">
+    <div info-text>
+      <p>
+         Pour capter l'intérêt des acheteurs potentiels.
+        Commencez par un titre accrocheur qui résume l'essentiel de votre offre.
+      </p>
+      <p>
+        Dans le corps de la description, fournissez des détails
+        clairs et complets : mentionnez l'état du produit, ses caractéristiques principales,
+        et tout autre information pertinente.
+      </p>
+      <p>
+        Utilisez des phrases courtes et évitez le jargon technique.
+        N'oubliez pas de mettre en avant les avantages et les points forts de votre produit.
+      </p>
+
+    </div>
+  </app-info-card>
+</div>

@@ -1,0 +1,21 @@
+.description {
+           /* Empêche le texte de passer à la ligne suivante */
+  overflow: hidden;            /* Cache le texte qui dépasse du conteneur */
+  text-overflow: ellipsis;     /* Ajoute des points de suspension (...) à la fin du texte qui dépasse */
+  height: 100px;
+  word-break: break-word;
+  -webkit-line-clamp: 3;       /* Limite le texte à 3 lignes */
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  width:70%;
+  color: darkgrey;
+}
+
+.announce-title {
+  white-space: nowrap;         /* Empêche le texte de passer à la ligne suivante */
+  overflow: hidden;            /* Cache le texte qui dépasse du conteneur */
+  text-overflow: ellipsis;     /* Ajoute des points de suspension (...) à la fin du texte qui dépasse */
+  width: 50%;
+  height: 30px;
+}
+

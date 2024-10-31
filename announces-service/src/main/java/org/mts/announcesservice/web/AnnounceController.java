@@ -7,10 +7,12 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.modelmapper.ModelMapper;
 import org.mts.announcesservice.clients.MediasClient;
+import org.mts.announcesservice.clients.StreetClient;
 import org.mts.announcesservice.dtos.*;
 import org.mts.announcesservice.entities.*;
 import org.mts.announcesservice.enums.AnnounceStatus;
 import org.mts.announcesservice.remote_entities.Media;
+import org.mts.announcesservice.remote_entities.Street;
 import org.mts.announcesservice.service.IAnnounceService;
 import org.mts.announcesservice.service.IAnnounceTypeService;
 import org.mts.announcesservice.service.IFieldService;
@@ -36,6 +38,8 @@ public class AnnounceController {
     private IAnnounceTypeService announceTypeService;
     @Autowired
     private MediasClient mediasClient;
+    @Autowired
+    private StreetClient streetClient;
 
 
 
@@ -49,11 +53,11 @@ public class AnnounceController {
 
         Announce announce = Announce.builder()
                 .address(dto.getAddress())
-                .cityId(dto.getCityId())
+                .streetId(dto.getStreetId())
+                .tel(dto.getTel())
                 .price(dto.getPrice())
                 .title(dto.getTitle())
                 .description(dto.getDescription())
-                .locationId(dto.getLocationId())
                 .postedAt(new Date())
                 .status(AnnounceStatus.ACTIVE)
                 .userId(UUID.randomUUID().toString())
@@ -71,7 +75,7 @@ public class AnnounceController {
         ObjectMapper objectMapper = new ObjectMapper();
         for(Object o : dto.getObjectFields()){
             JsonNode node = objectMapper.convertValue(o, JsonNode.class);
-            String fieldType = node.get("fieldType").asText("SHORT_TEXT");
+            String fieldType = node.get("type").asText("SHORT_TEXT");
             Field targetField = null;
             switch (fieldType){
                 case "TEXT" -> targetField = this.modelMapper.map(objectMapper.convertValue(o, TextInputDTO.class), Text.class);
@@ -115,9 +119,14 @@ public class AnnounceController {
 
 
     @GetMapping("/{id}")
-    public AnnounceWithMedias getById(@PathVariable String id){
+    public AnnounceOutputDTO getById(@PathVariable String id){
         List<Media> medias = this.mediasClient.getAdvertMedias(id);
-        return  new AnnounceWithMedias(this.modelMapper.map(this.announceService.getByID(id), AnnounceOutputDTO.class),medias);
+        Announce announceSource = this.announceService.getByID(id);
+        AnnounceOutputDTO announce = this.modelMapper.map(announceSource, AnnounceOutputDTO.class);
+        Street street = this.streetClient.getStreet(announceSource.getStreetId());
+        announce.setMedias(medias);
+        announce.setStreet(street);
+        return  announce;
     }
 
 
@@ -132,7 +141,14 @@ public class AnnounceController {
 
         Page<Announce> announces = this.announceService.getAnnounces(PageRequest.of(page, size));
         Map<String, Object> map = WebUtils.pageToMap(announces);
-        map.put("content", announces.getContent().stream().map(c->this.modelMapper.map(c, AnnounceOutputDTO.class)).toList());
+        map.put("content", announces.getContent().stream().map(c-> {
+            AnnounceOutputDTO ann = this.modelMapper.map(c, AnnounceOutputDTO.class);
+            List<Media> medias = this.mediasClient.getAdvertMedias(ann.getId());
+            Street street = this.streetClient.getStreet(c.getStreetId());
+            ann.setMedias(medias);
+            ann.setStreet(street);
+            return ann;
+        }).toList());
         return map;
 
     }

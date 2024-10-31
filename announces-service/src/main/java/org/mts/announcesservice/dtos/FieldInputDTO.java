@@ -16,6 +16,6 @@ public class FieldInputDTO {
     @NotEmpty
     protected String name;
     @NotNull
-    protected FieldType fieldType;
+    protected FieldType type;
 
 }

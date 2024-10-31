@@ -21,8 +21,13 @@
         </div>
 
         <div id="announce-and-vip-section"  style="">
-          <div  id="announces-section" style="" >
-            <app-announce *ngFor="let  an of announces" [announce]="an" [width]="265" [height]="200"></app-announce>
+          <div id="announces-and-paginator">
+            <div  id="announces-section" style="" >
+              <app-announce *ngFor="let  an of announces" [announce]="an" [width]="265" [height]="200" ></app-announce>
+            </div>
+            <div id="paginator">
+              <app-bzr-paginator  (pageChanged)="toPage($event)"  [pages]="pages" [itemsPerPage]="size" [currentPage]="page" [totalItems]="totalItems"></app-bzr-paginator>
+            </div>
           </div>
 
           <section  id="section-vip" style="">

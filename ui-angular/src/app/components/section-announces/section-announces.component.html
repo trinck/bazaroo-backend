@@ -1,9 +1,8 @@
 <div style="position: relative">
   <div class="app-section-announces" #container  style="">
-    <div  *ngFor="let  an of announces" style="">
-      <mat-card  style="width: 300px; max-height: 360px" (click)="viewAnnounce(an)">
+      <mat-card *ngFor="let  an of announces" style="" (click)="viewAnnounce(an)">
         <div mat-card-image class="app-card-image-container"  style="">
-          <img mat-card-image   [src]="an.media"  alt="announces image" width="100%" height="250px"/>
+          <img mat-card-image class="card-image"  [src]="an.media"  alt="announces image" width="100%" height="250px"/>
           <span mat-card-image class="wrapper">
           <div class="app-card-mini-info">
             <span class="app-card-mini-info-unit" >
@@ -30,7 +29,7 @@
         </mat-card-actions>
       </mat-card>
 
-    </div>
+
 
   </div>
 

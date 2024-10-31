@@ -25,9 +25,11 @@ public class Announce {
     @JoinColumn(unique = false, name = "type_id")
     private AnnounceType type;
     private Double price;
-    private String cityId;
-    private String locationId;
+    private String streetId;
+    @OneToOne(mappedBy = "announce")
+    private GeoZone location;
     private String title;
+    private String tel;
     private Date postedAt;
     private String address;
     private String description;

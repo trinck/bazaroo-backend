@@ -1,6 +1,6 @@
 package org.mts.announcesservice.utilities;
 
-import org.mts.announcesservice.remote_entities.GeoZone;
+import org.mts.announcesservice.entities.GeoZone;
 
 public interface IGeolocationUtils {
 

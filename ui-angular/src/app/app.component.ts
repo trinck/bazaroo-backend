@@ -1,6 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {DrawerService} from "./services/drawer.service";
 import {MatDrawer} from "@angular/material/sidenav";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-root',
@@ -15,7 +16,10 @@ export class AppComponent implements  OnInit{
   drawerContent!: string;
   sidenavContent!: string;
 
-  constructor(private drawerService: DrawerService) { }
+  constructor(private drawerService: DrawerService, protected activatedRoute: ActivatedRoute) {
+
+
+  }
 
 
   ngOnInit() {

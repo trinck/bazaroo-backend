@@ -1,0 +1,25 @@
+<div id="info-container" style=" ">
+  <header id="info-header" style="">
+    <div id="info-header-content" style="">
+      <fa-stack size="1x" style="flex-shrink: 0">
+        <fa-icon [icon]="['fas', 'circle']" style="color: var(--app-primary)" stackItemSize="2x"></fa-icon>
+        <fa-icon [inverse]="true" [icon]="['fas', 'lightbulb']" stackItemSize="1x"></fa-icon>
+      </fa-stack>
+      <span id="info-title" style="">{{ infoTitle }}</span>
+    </div>
+  </header>
+  <section id="body-info" style="">
+    <div style="">
+      <fa-stack size="xs" style="flex-shrink: 0;">
+        <fa-icon [icon]="['far', 'circle']" style="" stackItemSize="2x"></fa-icon>
+        <fa-icon [icon]="['fas', 'exclamation']" stackItemSize="1x"></fa-icon>
+      </fa-stack>
+      <div id="info-text" style="  ">
+                  <span style=" word-wrap: break-word">
+                    <ng-content select="[info-text]">
+                    </ng-content>
+                  </span>
+      </div>
+    </div>
+  </section>
+</div>

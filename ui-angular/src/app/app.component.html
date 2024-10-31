@@ -18,13 +18,23 @@
         <app-cities-dialog>
         </app-cities-dialog>
       </ng-container>
+
+      <ng-container *ngIf="drawerContent=='category-select-dialog'" style="">
+        <app-category-select-dialog>
+        </app-category-select-dialog>
+      </ng-container>
+
+      <ng-container *ngIf="drawerContent=='city-select-dialog'" style="">
+        <app-city-select-dialog>
+        </app-city-select-dialog>
+      </ng-container>
     </div>
 
   </mat-sidenav>
   <mat-sidenav-content style="overflow-x: hidden!important;">
-    <app-toolbar style="position: sticky; top: 0; z-index: 4" ></app-toolbar>
+    <app-toolbar #toolBar style="position: sticky; top: 0; z-index: 4" ></app-toolbar>
     <div style="margin-top: 5px; ">
-      <router-outlet></router-outlet>
+      <router-outlet ></router-outlet>
     </div>
   </mat-sidenav-content>
 </mat-sidenav-container>

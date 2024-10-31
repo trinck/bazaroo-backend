@@ -1,0 +1,46 @@
+#info-container {
+  width: 370px;
+  border: 1px lightgrey solid;
+  border-radius: var(--app-button-radius);
+}
+
+#info-header {
+  text-align: center;
+  justify-content: center;
+  padding: 10px;
+  display: flex;
+}
+
+#info-header-content {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+#info-title {
+  font-size: medium;
+  font-weight: 555;
+  text-align: start;
+  text-wrap: wrap;
+}
+
+#body-info {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+#body-info > div{
+  gap: 5px;
+  border-radius: 5px;
+  padding: 20px;
+  display: flex;
+  color:#3a66d2;
+  box-sizing: border-box;
+  background-color: rgba(58,102,210,0.09);
+}
+
+#info-text {
+  box-sizing: border-box;
+  overflow:hidden;
+}

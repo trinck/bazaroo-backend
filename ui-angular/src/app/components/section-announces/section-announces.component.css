@@ -22,7 +22,7 @@
 .app-section-announces {
   display: flex;
   overflow: hidden;
-  gap: 40px;
+  gap: 30px;
   padding: 5px 0 5px 0;
 }
 
@@ -56,4 +56,14 @@ pointer-events: auto;
   padding: 10px;
 
 
+}
+
+.card-image {
+  object-fit: cover;
+}
+
+mat-card{
+  width: calc((100% / 3) - 20px);
+  max-height: 360px;
+  flex-shrink: 0;
 }

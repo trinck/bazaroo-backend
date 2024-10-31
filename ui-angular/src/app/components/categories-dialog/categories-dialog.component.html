@@ -74,7 +74,7 @@
               } @else {
                 <button mat-button matTreeNodeToggle [class]="currentNode?.name == node.name? 'active-button':''"
                         [attr.aria-label]="'Toggle ' + node.name" (click)="onNodeClick(node,$event)" class="category-item-button">
-                  <mat-icon class="icon-f-32 "  [class]="node.color" >{{node.iconUrl.split("/")[0]}}</mat-icon>
+                  <mat-icon class="icon-f-32 "  [class]="node.color" >{{node.iconUrl}}</mat-icon>
                   {{node.name}}
                   <mat-icon iconPositionEnd  class="mat-icon-rtl-mirror icon-end">
                     {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}

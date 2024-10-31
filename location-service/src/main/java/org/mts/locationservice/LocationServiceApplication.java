@@ -42,20 +42,28 @@ public class LocationServiceApplication implements CommandLineRunner {
         Country country = Country.builder()
                 .name("Gabon")
                 .code("GAB")
+                .cities(new ArrayList<>())
                 .build();
         List<City> cities = new ArrayList<>();
-        String[] citiesNames = {"LIBREVILLE","FRANCEVILLE","PORT-GENTIL", "MAKOKOU","KOULAMOUTOU", "TCHIBANGA"};
+        City lbv = City.builder()
+                .name("LIBREVILLE")
+                .country(country)
+                .build();
+        Street charbonnage = Street.builder().city(lbv).name("Charbonnage").build();
+        lbv.setStreets(List.of(charbonnage));
 
-        for ( int i = 0; i < citiesNames.length; i++){
+        String[] citiesNames = {"FRANCEVILLE","PORT-GENTIL", "MAKOKOU","KOULAMOUTOU", "TCHIBANGA"};
+        country.getCities().add(lbv);
+        for (String citiesName : citiesNames) {
             City city = City.builder()
-                    .name(citiesNames[i])
+                    .name(citiesName)
                     .country(country)
                     .build();
             cities.add(city);
 
         }
 
-        country.setCities(cities);
+        country.getCities().addAll(cities);
         this.iCountryService.save(country);
     }
 }

@@ -1,0 +1,22 @@
+<div  id="medias-container">
+  <div #medias_view id="medias-view">
+    <div *ngFor="let media of announce.medias; " class="media-view" >
+      @if(media.type.includes('image')){
+        <img style="object-fit: cover" [src]="'http://localhost:8888/IMAGES-SERVICE/'+media.url"  (swiperight)="scrollingRight(medias_view)" alt="image" width="100%" height="100%" >
+      } @else {
+        <video controls preload="auto"   style="">
+          <source [src]="media.url">
+        </video>
+      }
+    </div>
+  </div>
+  <div id="medias-wrapper" (swipeleft)="scrollingLeft(medias_view); alert('swipping')">
+    <div class="media-wrapper-header"></div>
+    <div class="media-wrapper-content">
+      <button mat-icon-button class="btn-scrolling-left" (click)="scrollingLeft(medias_view)"> <mat-icon >navigate_before</mat-icon> </button>
+      <span class="v-separator"></span>
+      <button mat-icon-button class="btn-scrolling-right" (click)="scrollingRight(medias_view)"> <mat-icon>navigate_next</mat-icon></button>
+    </div>
+    <div class="media-wrapper-footer"></div>
+  </div>
+</div>

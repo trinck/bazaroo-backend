@@ -1,0 +1,199 @@
+<div class="content">
+
+  <mat-stepper [linear]="false" #stepper>
+    <mat-step [stepControl]="firstFormGroup">
+      <ng-template matStepLabel>Informations générals</ng-template>
+      <div style="display: flex;  gap: 10px; margin-top: 10px; align-items: start">
+        <form class="form" [formGroup]="firstFormGroup" style="">
+
+          <section class="section-form" style="">
+            <div class="section-titles" style="">
+              <span class="section-title" style="">Qu'annoncez-vous aujourd'hui</span>
+              <span class="section-subtitle" style="">Grâce à ces informations les acheteurs peuvent trouver votre annonce plus facilement</span>
+            </div>
+
+            <div class="section-form-items">
+              <!-- form item -->
+              <div class="form-item">
+                <label for="category" class="form-item-label">Catégory</label>
+                <button id="category" mat-stroked-button
+                        style="display: flex; border-radius: var(--app-button-radius); width: 100%; height: 50px; border-color:darkgrey; gap: 10px"
+                        class="" (click)="openCategoryDrawer()" type="button">
+                  <fa-icon class="category-icon-primary" size="xl"
+                           [icon]="currentCategory? currentCategory.iconUrl: 'clipboard-list'"></fa-icon>
+                  <span style="margin-left: 10px">{{ currentCategory?.title }}</span>
+                  <mat-icon iconPositionEnd style="flex: 1 1 auto; text-align: end">navigate_next</mat-icon>
+                </button>
+              </div>
+              <!-- form item -->
+              <div *ngIf="currentCategory?.types" class="form-item">
+                <div style="display: flex; gap: 10px">
+                  <fa-icon [icon]="['fas', 'tags']"></fa-icon>
+                  <span>Type d'annonce</span>
+                </div>
+                <div id="types-container">
+                  <label *ngFor="let type of currentCategory?.types; let first=first" class="adtype-item">
+                    <input [checked]="type === announceType()" type="radio" name="type" [value]="type.id"
+                           (change)="onTypeChecked($event, type)">
+                    <span class="adtype-name">{{ type.name }}</span>
+                  </label>
+                </div>
+              </div>
+
+            </div>
+          </section>
+
+          <!-- section form-->
+
+          <section class="section-form" style="">
+            <div class="section-titles" style="">
+              <span class="section-title" style="">Votre addresse</span>
+              <span class="section-subtitle" style="">Adresse principale de l'annonce</span>
+            </div>
+
+            <div class="section-form-items">
+              <!-- form item -->
+              <div class="form-item">
+                <label for="city" class="form-item-label">Ville-secteur</label>
+                <button id="city" mat-stroked-button
+                        style="display: flex; border-radius: var(--app-button-radius); width: 100%; height: 50px; border-color:darkgrey; gap: 10px"
+                        class="" type="button" (click)="openCityDrawer()">
+                  <fa-icon class="" size="xl" [icon]="['fas', 'location-arrow']"></fa-icon>
+                  <span *ngIf="currentStreet"
+                        style="margin-left: 10px">{{ currentStreet?.city?.name + '-' + currentStreet?.street?.name }}</span>
+                  <mat-icon iconPositionEnd style="flex: 1 1 auto; text-align: end">navigate_next</mat-icon>
+                </button>
+              </div>
+
+            </div>
+          </section>
+
+
+          <!-- section form-->
+          <section class="section-form" style="">
+            <div class="section-titles" style="">
+              <span class="section-title" style="">Vos coordonnées</span>
+              <span class="section-subtitle" style="">Les acheteurs peuvent vous contacter directement sur votre numéro de téléphone.</span>
+            </div>
+
+            <div class="section-form-items">
+              <!-- form item -->
+              <div class="form-item">
+                <div style="display: flex; gap: 10px">
+                  <fa-icon [icon]="['fas', 'phone']"></fa-icon>
+                  <span>Numéro de téléphone</span>
+                </div>
+                <mat-form-field appearance="outline">
+                  <input matInput type="text" placeholder="xx-xx-53-69-12" formControlName="tel">
+                </mat-form-field>
+              </div>
+            </div>
+          </section>
+
+
+          <!-- section form-->
+
+          <div class="steps-actions">
+            <button mat-flat-button matStepperNext>Next</button>
+          </div>
+        </form>
+        <app-info-card infoTitle="Comment définir mon annonce">
+          <div info-text>
+            <p>
+              Sélectionner la catégorie appropriée pour votre annonce peut considérablement augmenter sa visibilité,
+              sa pertinence et son efficacité, tout en évitant d'éventuels refus.
+            </p>
+            <p>
+              Il est crucial d'inclure une adresse postale précise pour que les clients potentiels puissent facilement
+              vous trouver.
+            </p>
+            <p>
+              Assurez-vous également de fournir un numéro de téléphone fiable et de garder vos coordonnées à jour.
+            </p>
+            `
+          </div>
+        </app-info-card>
+      </div>
+    </mat-step>
+
+    <mat-step [stepControl]="secondFormGroup" label="Détails de l'annonce">
+      <app-bzr-step [formGroup]="secondFormGroup" infoTitle="Comment décrire mon annonce"
+                    [type]="announceType">
+
+      </app-bzr-step>
+    </mat-step>
+
+
+    <mat-step>
+      <ng-template matStepLabel>Médias de l'annonce</ng-template>
+      <div style="display: flex;  gap: 10px; margin-top: 10px; align-items: start">
+        <div class="form">
+          <app-medias-uploader></app-medias-uploader>
+          <div class="steps-actions">
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-flat-button matStepperNext>Next</button>
+          </div>
+        </div>
+        <app-info-card infoTitle="Comment joindre la photo et la vidéo sur mon annonce">
+          <div info-text>
+            <p>
+              Joindre des photos et des vidéos à votre annonce est
+              un excellent moyen d'attirer l'attention des acheteurs potentiels.
+            </p>
+            <p>
+              Pour ajouter une photo, cliquez simplement sur
+              la section de téléchargement d'images et sélectionnez
+              les fichiers depuis votre ordinateur.
+            </p>
+            <p>
+              Vous pouvez également glisser-déposer des
+              images directement dans la zone de téléchargement.
+            </p>
+          </div>
+        </app-info-card>
+      </div>
+    </mat-step>
+
+
+    <mat-step>
+      <ng-template matStepLabel>Publication de l'annonce</ng-template>
+      <div style="display: flex;  gap: 10px; margin-top: 10px; align-items: start">
+        <div class="form">
+          <section class="section-form" style="">
+            <div class="section-titles" style="">
+              <span class="section-title" style="">Publier l'annonce</span>
+              <span class="section-subtitle" style="">La vérification des champs renseignés est non négligeable </span>
+            </div>
+
+            <div class="section-form-items">
+              <!-- form item -->
+                <app-preview-announce  [step2FormGroup]="secondFormGroup" [step1FormGroup]="firstFormGroup"></app-preview-announce>
+              <!-- form item -->
+              <div class="form-item">
+                <mat-slide-toggle id="" labelPosition="before" >
+                  <span style="margin-right: 10px">Localisation</span>
+                </mat-slide-toggle>
+              </div>
+            </div>
+          </section>
+
+          <div class="steps-actions" style="">
+            <button mat-button matStepperPrevious>Retour</button>
+            <button mat-flat-button (click)="onSubmit()">Publier</button>
+          </div>
+        </div>
+        <app-info-card infoTitle="Avant de publier">
+          <div info-text>
+            <p>
+              Veuillez vérifier attentivement toutes les informations renseignées dans l'annonce,
+              et vous assurer avant l'envoi, que les informations sont correctes.
+            </p>
+
+          </div>
+        </app-info-card>
+      </div>
+
+    </mat-step>
+  </mat-stepper>
+
+</div>

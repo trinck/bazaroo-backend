@@ -1,0 +1,105 @@
+mat-form-field{
+  background-color: rgb(242,242,242);
+  color: black;
+  border-radius: 28px;
+  --mdc-outlined-text-field-container-shape: 28px;
+}
+
+
+
+.small {
+  --mat-form-field-container-height: 45px;
+  --mat-form-field-container-vertical-padding: 8px;
+
+}
+
+
+:hover mat-form-field.hover-none{
+  --mdc-outlined-text-field-outline-color: rgba(255,255,255,0);
+}
+
+mat-form-field.border-none{
+  --mdc-outlined-text-field-outline-color: rgba(255,255,255,0);
+}
+
+#listStreet {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: calc(100% - 20px);
+  transform: translateX(calc(100% + 20px));
+  transition: transform 0.5s linear;
+}
+
+#listCity {
+  width: calc(100% - 20px);
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  transition: transform 0.5s linear;
+
+}
+
+.slide-out{
+  transform: translateX(calc(-100% - 20px));
+}
+
+.slide-in{
+  transform: translateX(0)!important;
+}
+
+.action-container {
+  display: flex;
+  box-sizing: border-box;
+  column-gap: 5px;
+  padding: 10px;
+  position: relative;
+}
+
+.action-dynamic{
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s linear, transform 1s linear;
+}
+
+.show{
+  opacity: 1;
+  transform: translateY(0)!important;
+}
+
+
+.actions {
+  display: flex;
+  padding: 10px;
+  justify-content: end;
+}
+
+.confirm {
+  border-radius: var(--app-button-radius);
+}
+
+
+.badge {
+  display: inline-block;
+  padding: 0.5em 1em;  /* Ajuste l'espace interne pour adapter le contenu */
+  border-radius: 999px;  /* Bords arrondis */
+  font-size: 0.6em;  /* Taille de la police */
+  line-height: 1;  /* Hauteur de ligne */
+  white-space: nowrap;  /* Empêche le badge de se diviser en plusieurs lignes */
+  text-align: center;  /* Centre le texte */
+  vertical-align: middle;  /* Aligne verticalement au centre */
+}
+
+.badge--large {
+  font-size: 1.5em;
+}
+
+.badge--small {
+  font-size: 0.75em;
+}
+
+mat-divider{
+  --mat-divider-width: 2px;
+  --mat-divider-color: #ededed;
+
+}

@@ -11,6 +11,10 @@
   <!-- spacer  -->
   <span class="spacer">
   </span>
+  <!-- ------notifications--------  -->
+  <button mat-icon-button >
+    <mat-icon matBadge="822" matBadgeColor="primary">notifications</mat-icon>
+  </button>
   <!-- --------------  -->
 
   <button mat-button id="profile" [matMenuTriggerFor]="menu" >
@@ -28,5 +32,5 @@
     </mat-menu>
   </button>
 
-  <button  mat-button  style="background-color: #3498db; color: white"  class="button-radius-5">Nouvelle annonce <mat-icon>add_box</mat-icon> </button>
+  <button  mat-flat-button   class="button-radius-5" routerLink="create-announce" >Nouvelle annonce <mat-icon>add_box</mat-icon> </button>
 </mat-toolbar>

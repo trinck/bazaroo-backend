@@ -5,21 +5,31 @@ import {Country} from "../models/Country";
 import {City} from "../models/City";
 import {Street} from "../models/Street";
 import {Binary} from "@angular/compiler";
+import {BehaviorSubject} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
 export class LocationService {
 
+ private selectedCityFormSource = new BehaviorSubject<{street:Street, city:City } | undefined>(undefined);
+  selectedCityForm$ = this.selectedCityFormSource.asObservable();
+
+  setSelectedCity(location:{street: Street, city:City}){
+    this.selectedCityFormSource.next(location);
+  }
+
+
+
   constructor(private http: HttpClient) { }
-  baseUrl = "http://localhost:8888/LOCATION-SERVICE/countries?";
+  baseUrl = "http://localhost:8888/LOCATION-SERVICE/countries";
   streets: Street[] = [
-    {id:"vb5r6b6r", name:"Cafee", cityId:"dv86rb", locations:[], zip:2700},
-    {id:"5dv6ez68", name:"Hotel", cityId:"dv86rb", locations:[], zip:2700},
-    {id:"8v8e886", name:"Glace shop", cityId:"dv86rb", locations:[], zip:2700},
-    {id:"5ccd", name:"Maison blanche", cityId:"dv86rb", locations:[], zip:2700},
-    {id:"4dd4d", name:"La faillette", cityId:"dv86rb", locations:[], zip:2700},
-    {id:"c5ze88g", name:"Azure", cityId:"dv86rb", locations:[], zip:2700}
+    {id:"vb5r6b6r", name:"Pk8", cityId:"dv86rb", locations:[], zip:2700},
+    {id:"5dv6ez68", name:"Akanda", cityId:"dv86rb", locations:[], zip:2700},
+    {id:"8v8e886", name:"Charbonage", cityId:"dv86rb", locations:[], zip:2700},
+    {id:"5ccd", name:"Sablière", cityId:"dv86rb", locations:[], zip:2700},
+    {id:"4dd4d", name:"Dragage", cityId:"dv86rb", locations:[], zip:2700},
+    {id:"c5ze88g", name:"Louis", cityId:"dv86rb", locations:[], zip:2700}
   ]
   countries: Country[] = [ {name:"Gabon", code:"GAB", id:"jrbe5e68tn", cities:[
 
@@ -63,7 +73,7 @@ export class LocationService {
   }
 
   getCountries(size:number=5, page:number=0){
-    return this.http.get(`${this.baseUrl+"size="+size+"&page="+page}`)
+    return this.http.get(`${this.baseUrl}`)
   }
 
 

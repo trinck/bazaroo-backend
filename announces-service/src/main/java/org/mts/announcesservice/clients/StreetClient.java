@@ -18,7 +18,6 @@ public interface StreetClient {
     default Street getDefaultStreet(String id, Throwable throwable){
         return Street.builder()
                 .zip(0L)
-                .locations(null)
                 .name("undefined")
                 .id("undefined")
                 .cityId("undefined")

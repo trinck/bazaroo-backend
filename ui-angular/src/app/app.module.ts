@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import {BrowserModule, Meta, Title} from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -41,7 +41,28 @@ import { BzrMapComponent } from './components/bzr-map/bzr-map.component';
 import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
 import { AnnounceViewComponent } from './pages/announce-view/announce-view.component';
 import { TextIconComponent } from './components/text-icon/text-icon.component';
-
+import { MediasViewSlideComponent } from './components/medias-view-slide/medias-view-slide.component';
+import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+import { far } from '@fortawesome/free-regular-svg-icons';
+import { fab } from '@fortawesome/free-brands-svg-icons';
+import { BzrMapViewComponent } from './components/bzr-map-view/bzr-map-view.component';
+import {MomentModule} from "ngx-moment";
+import { BzrPaginatorComponent } from './components/bzr-paginator/bzr-paginator.component';
+import {MatRipple} from "@angular/material/core";
+import { AddAnnounceComponent } from './pages/add-announce/add-announce.component';
+import { BzrAppComponent } from './pages/bzr-app/bzr-app.component';
+import { BzrStepperComponent } from './components/bzr-stepper/bzr-stepper.component';
+import {MatStepperModule} from "@angular/material/stepper";
+import { BzrStepComponent } from './components/bzr-step/bzr-step.component';
+import { InfoCardComponent } from './components/info-card/info-card.component';
+import { MediasUploaderComponent } from './components/medias-uploader/medias-uploader.component';
+import { CategoryTreeComponent } from './components/category-tree/category-tree.component';
+import {CategorySelectDialogComponent} from "./components/category-select-dialog/category-select-dialog.component";
+import { BzrRadioComponent } from './components/bzr-radio/bzr-radio.component';
+import { CitySelectDialogComponent } from './components/city-select-dialog/city-select-dialog.component';
+import { PreviewAnnounceComponent } from './components/preview-announce/preview-announce.component';
+import { BzrCheckboxComponent } from './components/bzr-checkbox/bzr-checkbox.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,6 +84,21 @@ import { TextIconComponent } from './components/text-icon/text-icon.component';
     BreadcrumbComponent,
     AnnounceViewComponent,
     TextIconComponent,
+    MediasViewSlideComponent,
+    BzrMapViewComponent,
+    BzrPaginatorComponent,
+    AddAnnounceComponent,
+    BzrAppComponent,
+    BzrStepperComponent,
+    BzrStepComponent,
+    InfoCardComponent,
+    MediasUploaderComponent,
+    CategoryTreeComponent,
+    CategorySelectDialogComponent,
+    BzrRadioComponent,
+    CitySelectDialogComponent,
+    PreviewAnnounceComponent,
+    BzrCheckboxComponent
   ],
   imports: [
     BrowserModule,
@@ -86,13 +122,23 @@ import { TextIconComponent } from './components/text-icon/text-icon.component';
     MatButtonToggleModule,
     HttpClientModule,
     MatBadgeModule,
+    MomentModule,
+    FontAwesomeModule,
+    MatStepperModule,
     NgxMapboxGLModule.withConfig({
       accessToken: 'pk.eyJ1IjoibW91bG91bmd1aSIsImEiOiJjbDM0bDdhcWowNWwyM2twNXNubGRkaWh6In0.k6mHuqWTuQx3IF6RWmu8OQ' // Remplacez par votre clé API Mapbox
-    })
+    }),
+    MatRipple
   ],
   providers: [
-    provideAnimationsAsync()
+    provideAnimationsAsync(), Meta, Title
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+
+
+  constructor(library: FaIconLibrary) {
+    library.addIconPacks(fas, far,fab);
+  }
+}

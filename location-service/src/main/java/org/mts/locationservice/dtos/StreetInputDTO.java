@@ -17,5 +17,5 @@ public class StreetInputDTO {
     private String id;
     private String name;
     private Long zip;
-    private List<GeoZoneInputDTO> locations = new ArrayList<>();
+
 }
