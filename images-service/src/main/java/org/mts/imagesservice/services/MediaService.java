@@ -60,10 +60,7 @@ public class MediaService implements IMediaService{
     @Override
     @Transactional
     public Media save(Media media) {
-
-        Media mediaSaved = this.mediaRepository.save(media);
-        media.setUrl(mediaSaved.getUrl()+mediaSaved.getId());
-        return mediaSaved;
+        return this.mediaRepository.save(media);
     }
 
     /**
@@ -82,11 +79,7 @@ public class MediaService implements IMediaService{
     @Override
     @Transactional
     public List<Media> addAll(List<Media> medias) {
-        List<Media> mediasList = this.mediaRepository.saveAll(medias);
-        for (Media m: mediasList){
-            m.setUrl(m.getUrl()+m.getId());
-        }
-        return mediasList;
+        return this.mediaRepository.saveAll(medias);
     }
 
     /**

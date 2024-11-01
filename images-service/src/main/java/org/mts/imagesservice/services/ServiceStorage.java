@@ -19,13 +19,13 @@ import java.nio.file.*;
 import java.util.*;
 import java.util.stream.Stream;
 
-@Service
+
 @Data
 @NoArgsConstructor
 public class ServiceStorage implements IServiceStorage {
 
 
-    @Autowired
+   // @Autowired
     private StorageMediasSources mediasSources;
 
 

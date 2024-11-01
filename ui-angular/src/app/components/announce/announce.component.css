@@ -37,6 +37,8 @@ mat-card-header mat-card-subtitle mat-icon{
 
 .app-card-image{
   border-radius: var(--app-image-annouce-radius);
+  width: 100%;
+
 }
 
 

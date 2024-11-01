@@ -9,7 +9,7 @@
 
     <!-- Image card content-->
     <div  class="app-card-image-container"  style="margin: 10px; height: 200px">
-      <img [ngSrc]="( announce.medias.length > 0) ? 'http://localhost:8888/IMAGES-SERVICE/'+announce.medias.at(0)?.url : 'null'" alt="announces image" class="app-card-image" fill/>
+      <img [src]="( announce.medias.length > 0) ? announce.medias.at(0)?.url : 'null'" alt="announces image" class="app-card-image" />
       <span mat-card-image class="meche">
           <div class="app-card-mini-info">
             <span class="app-card-mini-info-unit" >

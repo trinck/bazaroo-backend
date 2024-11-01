@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 public interface StreetClient {
 
     @GetMapping("/streets/{id}")
-    @CircuitBreaker(name = "mediaBreaker", fallbackMethod = "getDefaultMedias")
+    @CircuitBreaker(name = "streetBreaker", fallbackMethod = "getDefaultStreet")
     public Street getStreet(@PathVariable String id);
 
     default Street getDefaultStreet(String id, Throwable throwable){

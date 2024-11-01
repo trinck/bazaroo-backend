@@ -1,6 +1,8 @@
 package org.mts.imagesservice.web;
 
 
+import com.cloudinary.Cloudinary;
+import com.cloudinary.utils.ObjectUtils;
 import org.modelmapper.ModelMapper;
 import org.mts.imagesservice.configs.StorageMediasSources;
 import org.mts.imagesservice.dtos.ImageContentOutputDTO;
@@ -19,7 +21,9 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.NoSuchElementException;
 
 
@@ -35,6 +39,8 @@ public class MediaStoreController {
     private StorageMediasSources mediasSources;
     @Autowired
     private ModelMapper modelMapper;
+    @Autowired
+    private Cloudinary cloudinary;
 
 
     @PostMapping(value = "/profiles/{id}/save")
@@ -51,15 +57,16 @@ public class MediaStoreController {
 
     @GetMapping("/adverts/{announceId}")
     public List<MediaOutputDTO> getAdvertMedias(@PathVariable String announceId){
-        return this.mediaService.getMediasByPathContains(this.mediasSources.getAdverts()+"/"+announceId+"/").stream().map(m->this.modelMapper.map(m, MediaOutputDTO.class)).toList();
+        return this.mediaService.getMediasByPathContains("announces/"+announceId+"/").stream().map(m->this.modelMapper.map(m, MediaOutputDTO.class)).toList();
     }
+
 
 
     @PostMapping("/adverts/{id}/save-all")
     public List<MediaOutputDTO> addAdverts(@RequestParam List<MultipartFile> files, @PathVariable String id){
 
         List<Media> mediaList = serviceStorage.storeAll(files, mediasSources.getAdverts(), id,ImageContent.class);
-        mediaList.forEach(media ->media.setUrl("mediaStore/adverts/"+id+"/load/"));
+        //mediaList.forEach(media ->media.setUrl("mediaStore/adverts/"+id+"/load/"));
         return this.mediaService.addAll(mediaList).stream().map(media -> modelMapper.map(media, MediaOutputDTO.class)).toList();
     }
 

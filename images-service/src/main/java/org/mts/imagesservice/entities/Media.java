@@ -27,7 +27,7 @@ public abstract class Media extends GenericsFieldsEntity{
     @Column(nullable = false)
     private String url;
 
-    @Column(nullable = false)
+    @Column
     private String path;
 
     @Column(nullable = false)

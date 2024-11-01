@@ -5,181 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="136bb368-98eb-4a84-a825-a6951d1be4ec" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/repositories/GeoZoneRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/adverts/019dc544-bc68-4d6c-9c2d-e48c34373ea7/c08703745.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/adverts/019dc544-bc68-4d6c-9c2d-e48c34373ea7/images (1).jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/adverts/019dc544-bc68-4d6c-9c2d-e48c34373ea7/images.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/adverts/019dc544-bc68-4d6c-9c2d-e48c34373ea7/télécharger (1).jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/adverts/019dc544-bc68-4d6c-9c2d-e48c34373ea7/télécharger.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/adverts/052230b8-c18b-4eb2-bc2d-b77c2a990f00/c08703745.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/adverts/052230b8-c18b-4eb2-bc2d-b77c2a990f00/images (1).jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/adverts/052230b8-c18b-4eb2-bc2d-b77c2a990f00/télécharger.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/adverts/119c3911-3374-412e-8c7a-a1b70809fcdb/images (1).jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/adverts/1b3d6ee9-b610-4c04-8e26-409233e6bd64/c08703745.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/adverts/1b3d6ee9-b610-4c04-8e26-409233e6bd64/images (1).jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/adverts/1b3d6ee9-b610-4c04-8e26-409233e6bd64/images.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/adverts/1b3d6ee9-b610-4c04-8e26-409233e6bd64/télécharger (1).jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/adverts/1b3d6ee9-b610-4c04-8e26-409233e6bd64/télécharger.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/adverts/29560255-f07a-4e2f-8fbb-6f20a5272813/images (1).jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/adverts/3299f122-38d1-4e69-8b74-e8118fbe713e/c08703745.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/adverts/3299f122-38d1-4e69-8b74-e8118fbe713e/télécharger (1).jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/adverts/3299f122-38d1-4e69-8b74-e8118fbe713e/télécharger.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/adverts/7febb14d-b025-45fc-b6cb-eafdb27b297c/c08703745.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/adverts/7febb14d-b025-45fc-b6cb-eafdb27b297c/images (1).jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/adverts/7febb14d-b025-45fc-b6cb-eafdb27b297c/télécharger (1).jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/adverts/7febb14d-b025-45fc-b6cb-eafdb27b297c/télécharger.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/adverts/80013a53-033b-4186-9d70-8dd7a75e2bea/c08703745.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/adverts/80013a53-033b-4186-9d70-8dd7a75e2bea/images (1).jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/adverts/80013a53-033b-4186-9d70-8dd7a75e2bea/télécharger (1).jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/adverts/80013a53-033b-4186-9d70-8dd7a75e2bea/télécharger.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/adverts/83276447-09fb-40f0-a065-7c5a60286918/images (1).jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/adverts/83276447-09fb-40f0-a065-7c5a60286918/télécharger.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/adverts/9da501f2-cfa6-4dcc-8f9b-a3122f34d598/_9620615e-5638-47e9-89b3-d9b9ba717325.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/adverts/9da501f2-cfa6-4dcc-8f9b-a3122f34d598/c08703745.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/adverts/9da501f2-cfa6-4dcc-8f9b-a3122f34d598/images (1).jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/adverts/9da501f2-cfa6-4dcc-8f9b-a3122f34d598/images.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/adverts/9da501f2-cfa6-4dcc-8f9b-a3122f34d598/télécharger (1).jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/adverts/9da501f2-cfa6-4dcc-8f9b-a3122f34d598/télécharger.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/adverts/a3b65f83-8777-472b-929b-8aa8480fdc13/c08703745.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/adverts/a3b65f83-8777-472b-929b-8aa8480fdc13/images (1).jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/adverts/a3b65f83-8777-472b-929b-8aa8480fdc13/télécharger (1).jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/adverts/a3b65f83-8777-472b-929b-8aa8480fdc13/télécharger.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/adverts/b59dad43-3032-48d0-82fd-d598eedd2f44/c08703745.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/adverts/b59dad43-3032-48d0-82fd-d598eedd2f44/images (1).jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/adverts/b59dad43-3032-48d0-82fd-d598eedd2f44/images.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/adverts/b59dad43-3032-48d0-82fd-d598eedd2f44/télécharger (1).jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/adverts/b59dad43-3032-48d0-82fd-d598eedd2f44/télécharger.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/adverts/b60ed38f-d910-4466-89b6-102b95375f5b/c08703745.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/adverts/b60ed38f-d910-4466-89b6-102b95375f5b/images (1).jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/adverts/b60ed38f-d910-4466-89b6-102b95375f5b/télécharger.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/adverts/bf7e6be2-f28a-401d-a3e5-5bc9acd2ad3e/c08703745.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/adverts/bf7e6be2-f28a-401d-a3e5-5bc9acd2ad3e/images (1).jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/adverts/f7d5e95a-4669-40a1-bb62-adaf1f699fcd/_9620615e-5638-47e9-89b3-d9b9ba717325.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/adverts/f7d5e95a-4669-40a1-bb62-adaf1f699fcd/images.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-angular/public/assets/images/ban1.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-angular/public/assets/images/ban2.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-angular/public/assets/images/ban3.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-angular/public/assets/images/ban4.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-angular/public/assets/images/ban5.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-angular/public/assets/images/v1.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-angular/public/assets/images/v2.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-angular/public/assets/images/v3.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-angular/public/assets/images/v4.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-angular/public/assets/images/v5.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-angular/src/app/components/bzr-paginator/bzr-paginator.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-angular/src/app/components/bzr-paginator/bzr-paginator.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-angular/src/app/components/bzr-paginator/bzr-paginator.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-angular/src/app/components/bzr-paginator/bzr-paginator.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-angular/src/app/components/bzr-stepper/bzr-stepper.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-angular/src/app/components/bzr-stepper/bzr-stepper.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-angular/src/app/components/bzr-stepper/bzr-stepper.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-angular/src/app/components/bzr-stepper/bzr-stepper.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-angular/src/app/components/info-card/info-card.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-angular/src/app/components/info-card/info-card.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-angular/src/app/components/info-card/info-card.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-angular/src/app/components/info-card/info-card.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-angular/src/app/components/medias-uploader/medias-uploader.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-angular/src/app/components/medias-uploader/medias-uploader.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-angular/src/app/components/medias-uploader/medias-uploader.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-angular/src/app/components/medias-uploader/medias-uploader.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-angular/src/app/components/medias-view-slide/medias-view-slide.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-angular/src/app/components/medias-view-slide/medias-view-slide.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-angular/src/app/components/medias-view-slide/medias-view-slide.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-angular/src/app/components/medias-view-slide/medias-view-slide.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-angular/src/app/models/BzBoolean.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-angular/src/app/models/CategoryFieldRadioCheck.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-angular/src/app/models/CheckUnit.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-angular/src/app/models/MapListFromServer.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-angular/src/app/models/Radio_Check.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-angular/src/app/models/ShortText.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-angular/src/app/models/Text.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-angular/src/app/pages/add-announce/add-announce.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-angular/src/app/pages/add-announce/add-announce.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-angular/src/app/pages/add-announce/add-announce.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-angular/src/app/pages/add-announce/add-announce.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-angular/src/app/pages/bzr-app/bzr-app.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-angular/src/app/pages/bzr-app/bzr-app.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-angular/src/app/pages/bzr-app/bzr-app.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui-angular/src/app/pages/bzr-app/bzr-app.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images-service/src/main/java/org/mts/imagesservice/services/ServiceStorageCloud.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/clients/StreetClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/clients/StreetClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/dtos/AnnounceInputDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/dtos/AnnounceInputDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/dtos/AnnounceOutputDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/dtos/AnnounceOutputDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/dtos/FieldInputDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/dtos/FieldInputDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/entities/Announce.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/entities/Announce.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/remote_entities/GeoZone.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/entities/GeoZone.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/remote_entities/Street.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/remote_entities/Street.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/utilities/GeolocationImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/utilities/GeolocationImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/utilities/IGeolocationUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/utilities/IGeolocationUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/web/AnnounceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/web/AnnounceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/adverts/advert1/Cash Payment.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/adverts/advert1/Marketing.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/ui-angular/public/assets/images/Marketing.mp4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/adverts/advert1/_2535c913-5dcd-4431-af29-0a77f0e3d877.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/adverts/c9c3c018-4fa5-40a2-a905-3f5019a39e34/Marketing.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/adverts/c9c3c018-4fa5-40a2-a905-3f5019a39e34/pngegg (29).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/adverts/c9c3c018-4fa5-40a2-a905-3f5019a39e34/pngegg (32).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/adverts/cbe14584-5889-4f0f-8aea-c6be46e2d4e1/1716830659914Marketing.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/adverts/cbe14584-5889-4f0f-8aea-c6be46e2d4e1/1716841934931Marketing.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/adverts/cbe14584-5889-4f0f-8aea-c6be46e2d4e1/1716841935010_2535c913-5dcd-4431-af29-0a77f0e3d877.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/adverts/cbe14584-5889-4f0f-8aea-c6be46e2d4e1/Marketing (1).gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/adverts/cbe14584-5889-4f0f-8aea-c6be46e2d4e1/Marketing.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/adverts/cbe14584-5889-4f0f-8aea-c6be46e2d4e1/_2535c913-5dcd-4431-af29-0a77f0e3d877.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/adverts/cbe14584-5889-4f0f-8aea-c6be46e2d4e1/pngegg (30).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/adverts/cbe14584-5889-4f0f-8aea-c6be46e2d4e1/pngegg (31).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/adverts/cbe14584-5889-4f0f-8aea-c6be46e2d4e1/pngegg (32).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/LocationServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/LocationServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/dtos/GeoZoneInputDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/dtos/GeoZoneOutputDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/dtos/StreetInputDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/dtos/StreetInputDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/dtos/StreetOutputDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/dtos/StreetOutputDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/entities/GeoZone.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/entities/Street.java" beforeDir="false" afterPath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/entities/Street.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/repositories/GeoZoneRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/services/GeoZoneService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/services/IGeoZoneService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/utilities/LocationUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/utilities/LocationUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/web/GeoZoneController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/web/StreetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/web/StreetController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui-angular/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/ui-angular/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui-angular/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/ui-angular/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui-angular/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ui-angular/src/app/app-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui-angular/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/ui-angular/src/app/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui-angular/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ui-angular/src/app/app.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui-angular/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ui-angular/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/images-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images-service/src/main/java/org/mts/imagesservice/configs/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/images-service/src/main/java/org/mts/imagesservice/configs/Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images-service/src/main/java/org/mts/imagesservice/entities/Media.java" beforeDir="false" afterPath="$PROJECT_DIR$/images-service/src/main/java/org/mts/imagesservice/entities/Media.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images-service/src/main/java/org/mts/imagesservice/services/MediaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/images-service/src/main/java/org/mts/imagesservice/services/MediaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images-service/src/main/java/org/mts/imagesservice/services/ServiceStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/images-service/src/main/java/org/mts/imagesservice/services/ServiceStorage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images-service/src/main/java/org/mts/imagesservice/web/MediaStoreController.java" beforeDir="false" afterPath="$PROJECT_DIR$/images-service/src/main/java/org/mts/imagesservice/web/MediaStoreController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/images-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui-angular/src/app/components/announce/announce.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/ui-angular/src/app/components/announce/announce.component.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui-angular/src/app/components/announce/announce.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/ui-angular/src/app/components/announce/announce.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui-angular/src/app/components/announce/announce.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ui-angular/src/app/components/announce/announce.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui-angular/src/app/components/app-toolbar/app-toolbar.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/ui-angular/src/app/components/app-toolbar/app-toolbar.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui-angular/src/app/components/app-toolbar/app-toolbar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/ui-angular/src/app/components/app-toolbar/app-toolbar.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui-angular/src/app/components/app-toolbar/app-toolbar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ui-angular/src/app/components/app-toolbar/app-toolbar.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui-angular/src/app/components/banner-pub/banner-pub.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/ui-angular/src/app/components/banner-pub/banner-pub.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui-angular/src/app/components/categories-dialog/categories-dialog.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/ui-angular/src/app/components/categories-dialog/categories-dialog.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui-angular/src/app/components/search-toolbar/search-toolbar.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/ui-angular/src/app/components/search-toolbar/search-toolbar.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui-angular/src/app/components/search-toolbar/search-toolbar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/ui-angular/src/app/components/search-toolbar/search-toolbar.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui-angular/src/app/components/section-announces/section-announces.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/ui-angular/src/app/components/section-announces/section-announces.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui-angular/src/app/components/section-announces/section-announces.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/ui-angular/src/app/components/section-announces/section-announces.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui-angular/src/app/components/section-announces/section-announces.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ui-angular/src/app/components/section-announces/section-announces.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui-angular/src/app/components/text-icon/text-icon.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ui-angular/src/app/components/text-icon/text-icon.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui-angular/src/app/models/Announce.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ui-angular/src/app/models/Announce.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui-angular/src/app/models/AnnounceType.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ui-angular/src/app/models/AnnounceType.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui-angular/src/app/models/CategoryField.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ui-angular/src/app/models/CategoryField.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui-angular/src/app/models/Field.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ui-angular/src/app/models/Field.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui-angular/src/app/models/Media.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ui-angular/src/app/models/Media.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui-angular/src/app/pages/announce-view/announce-view.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/ui-angular/src/app/pages/announce-view/announce-view.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui-angular/src/app/pages/announce-view/announce-view.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/ui-angular/src/app/pages/announce-view/announce-view.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui-angular/src/app/pages/announce-view/announce-view.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ui-angular/src/app/pages/announce-view/announce-view.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui-angular/src/app/pages/entry-home/entry-home.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/ui-angular/src/app/pages/entry-home/entry-home.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui-angular/src/app/pages/entry-home/entry-home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/ui-angular/src/app/pages/entry-home/entry-home.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui-angular/src/app/pages/home/home.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/ui-angular/src/app/pages/home/home.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui-angular/src/app/pages/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/ui-angular/src/app/pages/home/home.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui-angular/src/app/pages/search/search.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/ui-angular/src/app/pages/search/search.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui-angular/src/app/pages/search/search.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/ui-angular/src/app/pages/search/search.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui-angular/src/app/pages/search/search.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ui-angular/src/app/pages/search/search.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui-angular/src/app/services/announces.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ui-angular/src/app/services/announces.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui-angular/src/app/services/category.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ui-angular/src/app/services/category.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui-angular/src/app/services/location.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ui-angular/src/app/services/location.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui-angular/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/ui-angular/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui-angular/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/ui-angular/src/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui-angular/src/app/components/medias-view-slide/medias-view-slide.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/ui-angular/src/app/components/medias-view-slide/medias-view-slide.component.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,9 +29,9 @@
       <list>
         <option value="Enum" />
         <option value="Dockerfile" />
-        <option value="Class" />
         <option value="Interface" />
         <option value="TypeScript File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -444,7 +282,7 @@
       <workItem from="1728776690628" duration="11733000" />
       <workItem from="1728987301087" duration="4330000" />
       <workItem from="1729533049729" duration="601000" />
-      <workItem from="1730316143747" duration="631000" />
+      <workItem from="1730316143747" duration="28233000" />
     </task>
     <servers />
   </component>
