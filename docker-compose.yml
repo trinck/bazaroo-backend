@@ -133,3 +133,13 @@ services:
 
 
 
+  front-end:
+    container_name: front-end
+    build:
+      ./ui-angular
+    ports:
+      - '80:80'
+    expose:
+      - '80'
+
+
