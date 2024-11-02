@@ -8,7 +8,7 @@ import {BehaviorSubject, Subject} from "rxjs";
 })
 export class CategoryService {
 
-  baseUrl = "http://localhost:8888/ANNOUNCES-SERVICE/categories?"
+  baseUrl = "http://mts-gateway-service:8888/ANNOUNCES-SERVICE/categories?"
   categories:Category[]=[];
   constructor(private http: HttpClient) { }
   private selectedCategoryFormSource = new Subject<Category>();

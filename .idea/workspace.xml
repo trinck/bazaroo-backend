@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="136bb368-98eb-4a84-a825-a6951d1be4ec" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui-angular/src/app/services/announces.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ui-angular/src/app/services/announces.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui-angular/src/app/services/category.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ui-angular/src/app/services/category.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -272,7 +272,7 @@
       <workItem from="1728987301087" duration="4330000" />
       <workItem from="1729533049729" duration="601000" />
       <workItem from="1730316143747" duration="60860000" />
-      <workItem from="1730563117501" duration="10559000" />
+      <workItem from="1730563117501" duration="12007000" />
     </task>
     <servers />
   </component>
