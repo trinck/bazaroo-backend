@@ -22,7 +22,7 @@ export class LocationService {
 
 
   constructor(private http: HttpClient) { }
-  baseUrl = "http://localhost:8888/LOCATION-SERVICE/countries";
+  baseUrl = "http://193.203.191.159:8888/LOCATION-SERVICE/countries";
   streets: Street[] = [
     {id:"vb5r6b6r", name:"Pk8", cityId:"dv86rb", locations:[], zip:2700},
     {id:"5dv6ez68", name:"Akanda", cityId:"dv86rb", locations:[], zip:2700},

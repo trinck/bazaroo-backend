@@ -9,7 +9,7 @@ export class MediasUploadService {
 
    imagePreviews: string[] = [];
    images: File[]= [] ;
-  baseUrl = "http://localhost:8888/IMAGES-SERVICE/mediaStore/adverts/";
+  baseUrl = "http://193.203.191.159:8888/IMAGES-SERVICE/mediaStore/adverts/";
   constructor(private http:HttpClient) { }
 
   previewMedias(files: FileList) {

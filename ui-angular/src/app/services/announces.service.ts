@@ -13,7 +13,7 @@ import {MapListFromServer} from "../models/MapListFromServer";
 export class AnnouncesService {
 
 
-  baseUrl = "http://mts-gateway-service:8888/ANNOUNCES-SERVICE/announces";
+  baseUrl = "http://193.203.191.159:8888/ANNOUNCES-SERVICE/announces";
   private announcesSource = new Subject<MapListFromServer>();
   announces$ = this.announcesSource .asObservable();
 
