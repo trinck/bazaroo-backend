@@ -37,6 +37,7 @@ services:
     environment:
       - DISCOVERY_SERVICE_URL=http://mts-discovery-service:8761/eureka
       - CONFIG_SERVICE_URL=http://mts-config-service:9999
+      - CORS_ALLOWED_ORIGIN=http://193.203.191.159
     build:
       ./gateway-service
     ports:
