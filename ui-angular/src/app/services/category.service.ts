@@ -8,7 +8,7 @@ import {BehaviorSubject, Subject} from "rxjs";
 })
 export class CategoryService {
 
-  baseUrl = "http://193.203.191.159:8888/ANNOUNCES-SERVICE/categories?"
+  baseUrl = "http://193.203.191.159/api/ANNOUNCES-SERVICE/categories?"
   categories:Category[]=[];
   constructor(private http: HttpClient) { }
   private selectedCategoryFormSource = new Subject<Category>();
