@@ -27,7 +27,7 @@ FROM nginx:latest AS production
 COPY --from=build /app/dist/front-end/browser /usr/share/nginx/html
 
 # Copier le fichier de configuration Nginx (facultatif)
-#COPY nginx.conf /etc/nginx/nginx.conf
+COPY nginx.conf /etc/nginx/nginx.conf
 
 # Exposer le port 80 pour accéder à l'application
 EXPOSE 80
