@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Category} from "../models/Category";
 import {BehaviorSubject, Subject} from "rxjs";
+import {environment} from "../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
 })
 export class CategoryService {
 
-  baseUrl = "http://193.203.191.159:8888/ANNOUNCES-SERVICE/categories?"
+  baseUrl = environment.apiUrl+"/ANNOUNCES-SERVICE/categories?"
   categories:Category[]=[];
   constructor(private http: HttpClient) { }
   private selectedCategoryFormSource = new Subject<Category>();

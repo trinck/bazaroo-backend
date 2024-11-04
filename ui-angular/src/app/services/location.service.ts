@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Category} from "../models/Category";
 import {Country} from "../models/Country";
 import {City} from "../models/City";
 import {Street} from "../models/Street";
-import {Binary} from "@angular/compiler";
 import {BehaviorSubject} from "rxjs";
+import {environment} from "../../environments/environment";
+
 
 @Injectable({
   providedIn: 'root'
@@ -22,7 +22,7 @@ export class LocationService {
 
 
   constructor(private http: HttpClient) { }
-  baseUrl = "http://193.203.191.159:8888/LOCATION-SERVICE/countries";
+  baseUrl = environment.apiUrl+"/LOCATION-SERVICE/countries";
   streets: Street[] = [
     {id:"vb5r6b6r", name:"Pk8", cityId:"dv86rb", locations:[], zip:2700},
     {id:"5dv6ez68", name:"Akanda", cityId:"dv86rb", locations:[], zip:2700},

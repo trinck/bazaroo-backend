@@ -5,11 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="136bb368-98eb-4a84-a825-a6951d1be4ec" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/ui-angular/src/environments/environment.prod.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui-angular/src/environments/environment.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui-angular/nginx.conf" beforeDir="false" afterPath="$PROJECT_DIR$/ui-angular/nginx.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui-angular/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/ui-angular/angular.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui-angular/src/app/services/announces.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ui-angular/src/app/services/announces.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui-angular/src/app/services/category.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ui-angular/src/app/services/category.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui-angular/src/app/services/location.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ui-angular/src/app/services/location.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,9 +23,9 @@
       <list>
         <option value="Enum" />
         <option value="Interface" />
-        <option value="TypeScript File" />
         <option value="Class" />
         <option value="Dockerfile" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -275,7 +277,7 @@
       <workItem from="1728987301087" duration="4330000" />
       <workItem from="1729533049729" duration="601000" />
       <workItem from="1730316143747" duration="60860000" />
-      <workItem from="1730563117501" duration="23571000" />
+      <workItem from="1730563117501" duration="32449000" />
     </task>
     <servers />
   </component>

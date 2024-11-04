@@ -5,6 +5,7 @@ import {FormGroup} from "@angular/forms";
 import {AnnounceType} from "../models/AnnounceType";
 import {Subject} from "rxjs";
 import {MapListFromServer} from "../models/MapListFromServer";
+import {environment} from "../../environments/environment";
 
 
 @Injectable({
@@ -13,7 +14,7 @@ import {MapListFromServer} from "../models/MapListFromServer";
 export class AnnouncesService {
 
 
-  baseUrl = "http://193.203.191.159:8888/ANNOUNCES-SERVICE/announces";
+  apiUrl = environment.apiUrl+"/ANNOUNCES-SERVICE/announces";
   private announcesSource = new Subject<MapListFromServer>();
   announces$ = this.announcesSource .asObservable();
 
@@ -21,17 +22,17 @@ export class AnnouncesService {
 
 
   getAnnounces(size=5, page=0){
-     this.http.get(`${this.baseUrl}?size=${size}&page=${page}`).subscribe(value => {
+     this.http.get(`${this.apiUrl}?size=${size}&page=${page}`).subscribe(value => {
        this.announcesSource.next(value as MapListFromServer);
      })
   }
 
   getAnnounce(id:string){
-   return this.http.get(`${this.baseUrl}/${id}`);
+   return this.http.get(`${this.apiUrl}/${id}`);
   }
 
   createAnnounce(formGroup: FormGroup, type: AnnounceType|undefined){
-   return  this.http.post(`${this.baseUrl}/${type?.id}`,formGroup.value);
+   return  this.http.post(`${this.apiUrl}/${type?.id}`,formGroup.value);
   }
 
 
