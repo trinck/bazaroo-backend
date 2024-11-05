@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import {Subject} from "rxjs";
 import {HttpClient} from "@angular/common/http";
+import {environment} from "../../environments/environment";
+
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ export class MediasUploadService {
 
    imagePreviews: string[] = [];
    images: File[]= [] ;
-  baseUrl = "http://193.203.191.159:8888/IMAGES-SERVICE/mediaStore/adverts/";
+  baseUrl = environment.apiUrl+"/IMAGES-SERVICE/mediaStore/adverts/";
   constructor(private http:HttpClient) { }
 
   previewMedias(files: FileList) {
