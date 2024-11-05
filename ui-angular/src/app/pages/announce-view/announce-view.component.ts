@@ -22,13 +22,11 @@ export class AnnounceViewComponent implements OnInit{
   constructor(private activatedRoute: ActivatedRoute, private announcesService: AnnouncesService, private meta:Meta,private title:Title) {
      this.activatedRoute.paramMap.subscribe(value => {
        this.id = value.get("id")!
-        this.url = activatedRoute.root.snapshot.url.join("/");
-
-
      })
 
     activatedRoute.url.subscribe(value => {
-      this.url = environment.apiUrl+"/"+value.join("/");
+      const baseUrl = window.location.origin;
+      this.url = baseUrl+"/"+value.join("/");
     })
 
   }
@@ -36,7 +34,7 @@ export class AnnounceViewComponent implements OnInit{
   ngOnInit(): void {
 
      this.announcesService.getAnnounce(this.id).subscribe(value => {
-          this.announce = value as Announce;
+       this.announce = value as Announce;
           this.setPreviewParams();
      });
 
@@ -82,6 +80,7 @@ export class AnnounceViewComponent implements OnInit{
       { name: 'twitter:image', content: this.announce.medias?.at(0)?.url as string},
       { name: 'twitter:url', content: this.url }
     ]);
+
   }
 
 }
