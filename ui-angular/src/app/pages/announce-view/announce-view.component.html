@@ -7,17 +7,17 @@
         <div id="announce-details">
           <div id="section-1" style="display: flex;">
             <div>
-              <span style="" id="announce-title">{{announce.title}}</span>
+              <span style="" id="announce-title">{{announce?.title}}</span>
               <div class="flex-container" style="gap: 14px">
                 <span class="text-icon"  ><mat-icon class="mat-icon-f15" >place</mat-icon>
-                  {{ announce.street?.name }}</span>
-                <span class="text-icon"> <mat-icon class="mat-icon-f15">watch_later</mat-icon> {{announce.postedAt|amTimeAgo}}</span>
+                  {{ announce?.street?.name }}</span>
+                <span class="text-icon"> <mat-icon class="mat-icon-f15">watch_later</mat-icon> {{announce?.postedAt|amTimeAgo}}</span>
               </div>
             </div>
-            @if(announce.price){
+            @if(announce?.price){
               <span class="v-separator"></span>
               <div style="font-size: xx-large; color: var(--app-primary)">
-                {{announce.price.valueOf()| currency:'USD'}}
+                {{announce?.price?.valueOf()| currency:'USD'}}
               </div>
             }
           </div>
@@ -49,13 +49,13 @@
           <div id="section-3" style="display: flex; flex-direction: column; gap: 10px">
             <span mat-dialog-title style="font-size: large">Description</span>
             <div style="" id="announce-description">
-              {{announce.description}}
+              {{announce?.description}}
             </div>
           </div>
           <mat-divider></mat-divider>
 
           <div id="section-4" style="display: flex; white-space: wrap; flex-wrap: wrap;gap: 20px ">
-            <ng-template [ngIf]="fieldsDeep0.includes(field.type)" *ngFor="let field of announce.fields">
+            <ng-template [ngIf]="fieldsDeep0.includes(field.type)" *ngFor="let field of announce?.fields">
               <div   style="width:calc(50% - 10px); flex-shrink: 0;display: flex; justify-content: space-between ">
                 <span style="font-weight: 500">{{field.name}}</span>
                 @if (field.type === "RADIO"){

@@ -1,6 +1,6 @@
 <div  id="medias-container">
   <div #medias_view id="medias-view">
-    <div *ngFor="let media of announce.medias; " class="media-view" >
+    <div *ngFor="let media of announce?.medias; " class="media-view" >
       @if(media.type.includes('image')){
         <img style="object-fit: cover" [src]=media.url  (swiperight)="scrollingRight(medias_view)" alt="image" width="100%" height="100%" >
       } @else {
