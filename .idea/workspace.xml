@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="136bb368-98eb-4a84-a825-a6951d1be4ec" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui-angular/nginx.conf" beforeDir="false" afterPath="$PROJECT_DIR$/ui-angular/nginx.conf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +75,7 @@
     &quot;Spring Boot.UsersServiceApplication.executor&quot;: &quot;Run&quot;,
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
     &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;seo&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/trinc/IdeaProjects/bazaroo_v1/users-service/src/main/java/org/mts/usersservice&quot;,
@@ -273,7 +272,7 @@
       <workItem from="1729533049729" duration="601000" />
       <workItem from="1730316143747" duration="60860000" />
       <workItem from="1730563117501" duration="63929000" />
-      <workItem from="1730916554928" duration="1753000" />
+      <workItem from="1730916554928" duration="2128000" />
     </task>
     <servers />
   </component>
