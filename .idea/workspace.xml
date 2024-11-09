@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="136bb368-98eb-4a84-a825-a6951d1be4ec" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui-angular/nginx.conf" beforeDir="false" afterPath="$PROJECT_DIR$/ui-angular/nginx.conf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
