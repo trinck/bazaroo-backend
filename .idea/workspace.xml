@@ -6,11 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="136bb368-98eb-4a84-a825-a6951d1be4ec" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui-angular/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ui-angular/src/app/app-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui-angular/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ui-angular/src/app/app.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui-angular/src/app/pages/announce-view/announce-view.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/ui-angular/src/app/pages/announce-view/announce-view.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui-angular/src/app/pages/announce-view/announce-view.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ui-angular/src/app/pages/announce-view/announce-view.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui-angular/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/ui-angular/src/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
