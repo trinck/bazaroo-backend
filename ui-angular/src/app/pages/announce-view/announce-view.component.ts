@@ -86,7 +86,7 @@ export class AnnounceViewComponent implements OnInit{
       { name: 'twitter:description', content: this.announce.description as string },
       { name: 'twitter:image', content: this.announce.medias?.at(0)?.url as string},
       { name: 'twitter:url', content: this.url },
-      { name: 'fb:app_id', content: environment.app_id.fb}
+      { property: 'fb:app_id', content: environment.app_id.fb}
     ]);
 
   }
