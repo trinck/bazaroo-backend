@@ -78,11 +78,15 @@ export class AnnounceViewComponent implements OnInit{
       { property: 'og:image', content: this.announce.medias?.at(0)?.url as string },
       { property: 'og:url', content: this.url },
       { property: 'og:type', content: 'website' },
+      { property: 'og:image:width', content: '1200' },
+      { property: 'og:image:height', content: '630' },
+      { property: 'og:site_name', content: 'bazaroo' },
       { name: 'twitter:card', content: 'summary_large_image' },
       { name: 'twitter:title', content: this.announce.title as string },
       { name: 'twitter:description', content: this.announce.description as string },
       { name: 'twitter:image', content: this.announce.medias?.at(0)?.url as string},
-      { name: 'twitter:url', content: this.url }
+      { name: 'twitter:url', content: this.url },
+      { name: 'fb:app_id', content: environment.app_id.fb}
     ]);
 
   }
