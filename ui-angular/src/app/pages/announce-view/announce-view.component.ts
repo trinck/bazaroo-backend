@@ -18,6 +18,8 @@ export class AnnounceViewComponent implements OnInit{
   announces!: Announce[] ;
   announce! : Announce;
   url!:string;
+  prerenderStatus: boolean = false;
+  error = false;
   fieldsDeep0 = ['SHORT_TEXT', 'TEXT', 'BOOLEAN','RADIO'];
   constructor(private activatedRoute: ActivatedRoute, private announcesService: AnnouncesService, private meta:Meta,private title:Title) {
      this.activatedRoute.paramMap.subscribe(value => {
@@ -33,9 +35,10 @@ export class AnnounceViewComponent implements OnInit{
 
   ngOnInit(): void {
 
-     this.announcesService.getAnnounce(this.id).subscribe(value => {
-       this.announce = value as Announce;
-          this.setPreviewParams();
+     this.announcesService.getAnnounce(this.id).subscribe({
+      next: value => { this.announce = value as Announce;
+        this.setPreviewParams();this.prerenderStatus = true;},
+       error: err => {this.meta.addTags([{ name: 'prerender-status-code', content:"404"}]);this.error = true;this.prerenderStatus = true;}
      });
 
   }
@@ -55,6 +58,7 @@ export class AnnounceViewComponent implements OnInit{
   }
 
   protected readonly Object = Object;
+
 
   getCheckedRatioField(checkUnis: any[]){
     let listCheck = checkUnis as CheckUnit[];

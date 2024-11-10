@@ -63,6 +63,7 @@ import { BzrRadioComponent } from './components/bzr-radio/bzr-radio.component';
 import { CitySelectDialogComponent } from './components/city-select-dialog/city-select-dialog.component';
 import { PreviewAnnounceComponent } from './components/preview-announce/preview-announce.component';
 import { BzrCheckboxComponent } from './components/bzr-checkbox/bzr-checkbox.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -98,7 +99,8 @@ import { BzrCheckboxComponent } from './components/bzr-checkbox/bzr-checkbox.com
     BzrRadioComponent,
     CitySelectDialogComponent,
     PreviewAnnounceComponent,
-    BzrCheckboxComponent
+    BzrCheckboxComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
