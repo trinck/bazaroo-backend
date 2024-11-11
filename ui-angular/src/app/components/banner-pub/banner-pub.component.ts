@@ -8,7 +8,8 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 export class BannerPubComponent implements OnInit{
 
   ngOnInit(): void {
-
+    (window as any).adsbygoogle = (window as any).adsbygoogle || [];
+    (window as any).adsbygoogle.push({});
   }
 
 }
