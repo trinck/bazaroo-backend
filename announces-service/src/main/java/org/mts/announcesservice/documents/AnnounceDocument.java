@@ -26,11 +26,11 @@ public class AnnounceDocument {
     private String id;
 
     @org.springframework.data.elasticsearch.annotations.Field(type = FieldType.Object)
-    private AnnounceType type;
+    private String typeName;
     private Double price;
     private String streetId;
-    @org.springframework.data.elasticsearch.annotations.Field(type = FieldType.Object)
-    private GeoZone location;
+    //@org.springframework.data.elasticsearch.annotations.Field(type = FieldType.Object)
+    //private GeoZone location;
     private String title;
     private String tel;
     @org.springframework.data.elasticsearch.annotations.Field(type = FieldType.Date, format = DateFormat.basic_date_time)
@@ -40,9 +40,9 @@ public class AnnounceDocument {
     private String userId;
     private String status ;
 
-    @org.springframework.data.elasticsearch.annotations.Field(type = FieldType.Object)
-    private Category category;
-    @ToString.Exclude
-    @org.springframework.data.elasticsearch.annotations.Field(type = FieldType.Nested, dynamic = Dynamic.TRUE)
-    private List<Field> fields = new ArrayList<>();
+    //@org.springframework.data.elasticsearch.annotations.Field(type = FieldType.Object)
+    //private Category category;
+   // @ToString.Exclude
+   // @org.springframework.data.elasticsearch.annotations.Field(type = FieldType.Nested, dynamic = Dynamic.TRUE)
+    //private List<Field> fields = new ArrayList<>();
 }
