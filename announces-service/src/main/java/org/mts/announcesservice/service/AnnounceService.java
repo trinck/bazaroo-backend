@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.elasticsearch.core.ElasticsearchOperations;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -18,12 +19,12 @@ import java.util.List;
 public class AnnounceService implements IAnnounceService{
 
     private final AnnounceRepository repository;
-    private final ElasticAnnounceRepo elasticAnnounceRepo;
+    private final ElasticsearchOperations operations;
     private final ModelMapper mapper;
 
-    public AnnounceService(AnnounceRepository repository, ElasticAnnounceRepo elasticAnnounceRepo, ModelMapper mapper) {
+    public AnnounceService(AnnounceRepository repository, ElasticsearchOperations operations, ModelMapper mapper) {
         this.repository = repository;
-        this.elasticAnnounceRepo = elasticAnnounceRepo;
+        this.operations = operations;
         this.mapper = mapper;
     }
 
@@ -36,7 +37,7 @@ public class AnnounceService implements IAnnounceService{
 
         Announce saved = this.repository.save(announce);
         AnnounceDocument docToSave = this.mapper.map(saved, AnnounceDocument.class);
-        this.elasticAnnounceRepo.save(docToSave);
+        this.operations.save(docToSave);
         return saved;
     }
 
