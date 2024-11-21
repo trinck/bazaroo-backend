@@ -13,7 +13,7 @@ public interface StreetClient {
 
     @GetMapping("/streets/{id}")
     @CircuitBreaker(name = "streetBreaker", fallbackMethod = "getDefaultStreet")
-    public Street getStreet(@PathVariable String id);
+    public Street getStreet(@PathVariable("id") String id);
 
     default Street getDefaultStreet(String id, Throwable throwable){
         return Street.builder()

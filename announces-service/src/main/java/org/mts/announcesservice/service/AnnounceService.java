@@ -1,8 +1,13 @@
 package org.mts.announcesservice.service;
 
+import org.apache.catalina.mapper.Mapper;
+import org.modelmapper.ModelMapper;
+import org.mts.announcesservice.documents.AnnounceDocument;
 import org.mts.announcesservice.entities.Announce;
 import org.mts.announcesservice.repositories.AnnounceRepository;
+import org.mts.announcesservice.repositories.ElasticAnnounceRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -12,15 +17,27 @@ import java.util.List;
 @Service
 public class AnnounceService implements IAnnounceService{
 
-    @Autowired
-  private AnnounceRepository repository;
+    private final AnnounceRepository repository;
+    private final ElasticAnnounceRepo elasticAnnounceRepo;
+    private final ModelMapper mapper;
+
+    public AnnounceService(AnnounceRepository repository, ElasticAnnounceRepo elasticAnnounceRepo, ModelMapper mapper) {
+        this.repository = repository;
+        this.elasticAnnounceRepo = elasticAnnounceRepo;
+        this.mapper = mapper;
+    }
+
     /**
      * @param announce
      * @return
      */
     @Override
     public Announce create(Announce announce) {
-        return this.repository.save(announce);
+
+        Announce saved = this.repository.save(announce);
+        AnnounceDocument docToSave = this.mapper.map(saved, AnnounceDocument.class);
+        this.elasticAnnounceRepo.save(docToSave);
+        return saved;
     }
 
     /**

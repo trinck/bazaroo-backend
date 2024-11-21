@@ -5,15 +5,17 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.mts.announcesservice.enums.FieldType;
 
-@EqualsAndHashCode(callSuper = true)
+
 @Entity
-@Data
+@Getter
+@Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "texts")
 public class Text extends Field{
     @Column(length = 500, name = "textValue")
+    @org.springframework.data.elasticsearch.annotations.Field(type = org.springframework.data.elasticsearch.annotations.FieldType.Text)
     private String dataValue = "";
 
     @Enumerated(EnumType.STRING)
@@ -26,4 +28,5 @@ public class Text extends Field{
     public FieldType getType() {
         return this.type;
     }
+
 }

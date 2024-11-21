@@ -6,12 +6,12 @@ import org.mts.announcesservice.enums.FieldType;
 
 
 
-@EqualsAndHashCode(callSuper = true)
 @Entity
-@Data
+@Setter
+@Getter
 @NoArgsConstructor
-@Builder
 @Table(name = "checkbox")
+
 public class CheckBox extends Check{
 
     @Enumerated(EnumType.STRING)

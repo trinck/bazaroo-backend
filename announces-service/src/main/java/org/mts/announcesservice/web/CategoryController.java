@@ -48,17 +48,17 @@ public class CategoryController {
 
 
     @GetMapping("/{id}")
-    public CategoryOutputDTO getById(@PathVariable String id){
+    public CategoryOutputDTO getById(@PathVariable("id") String id){
         return this.modelMapper.map(this.categoryService.getByID(id),CategoryOutputDTO.class);
     }
 
     @DeleteMapping("/{id}")
-    public CategoryOutputDTO delete(@PathVariable String id){
+    public CategoryOutputDTO delete(@PathVariable("id") String id){
         return this.modelMapper.map(this.categoryService.deleteById(id),CategoryOutputDTO.class);
     }
 
     @GetMapping
-    public Map<String, Object> getAll(@RequestParam(defaultValue = "5") int size,@RequestParam(defaultValue = "0") int page){
+    public Map<String, Object> getAll(@RequestParam(defaultValue = "5",name = "size") int size,@RequestParam(defaultValue = "0",name = "page") int page){
 
         Page<Category> categories = this.categoryService.getCategories(PageRequest.of(page, size));
         Map<String, Object> map = WebUtils.pageToMap(categories);

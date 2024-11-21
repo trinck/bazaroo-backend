@@ -15,7 +15,7 @@ public interface MediasClient {
 
     @GetMapping("/mediaStore/adverts/{announceId}")
     @CircuitBreaker(name = "mediaBreaker", fallbackMethod = "getDefaultMedias")
-    public List<Media> getAdvertMedias(@PathVariable String announceId);
+    public List<Media> getAdvertMedias(@PathVariable("announceId") String announceId);
 
     default List<Media> getDefaultMedias(String announceId, Throwable throwable){
         return new ArrayList<>();

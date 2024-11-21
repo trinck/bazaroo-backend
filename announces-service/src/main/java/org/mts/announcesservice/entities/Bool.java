@@ -8,15 +8,17 @@ import jakarta.persistence.Table;
 import lombok.*;
 import org.mts.announcesservice.enums.FieldType;
 
-@EqualsAndHashCode(callSuper = true)
+
 @Entity
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 @Table(name = "booleans")
 public class Bool extends Field{
 
+    @org.springframework.data.elasticsearch.annotations.Field(type = org.springframework.data.elasticsearch.annotations.FieldType.Boolean)
     private Boolean dataValue = true;
     @Enumerated(EnumType.STRING)
     private final FieldType type = FieldType.BOOLEAN;
@@ -28,4 +30,5 @@ public class Bool extends Field{
     public FieldType getType() {
         return this.type;
     }
+
 }

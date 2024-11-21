@@ -5,11 +5,10 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.mts.announcesservice.enums.FieldType;
 
-@EqualsAndHashCode(callSuper = true)
 @Entity
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
-@Builder
 @Table(name = "radios")
 public class Radio extends Check{
 

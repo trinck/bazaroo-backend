@@ -1,20 +1,23 @@
 package org.mts.announcesservice.entities;
 
 
-import jakarta.persistence.*;
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Entity;
+import jakarta.persistence.OneToMany;
 import lombok.*;
-
 import java.util.ArrayList;
 import java.util.List;
 
-@EqualsAndHashCode(callSuper = true)
-@Data
+@Getter
+@Setter
+@ToString
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
 public abstract class Check extends Field {
 
     @OneToMany(mappedBy = "check", orphanRemoval = true, cascade = CascadeType.PERSIST)
+    @ToString.Exclude
     protected List<CheckUnit> checkUnits = new ArrayList<>();
 
 
@@ -27,4 +30,5 @@ public abstract class Check extends Field {
     }
 
     public abstract void check(Long id);
+
 }
