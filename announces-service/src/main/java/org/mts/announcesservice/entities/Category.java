@@ -30,7 +30,7 @@ public class Category {
     @Field(type = FieldType.Text)
     private String title;
     private String iconUrl;
-    @org.springframework.data.elasticsearch.annotations.Field(type = org.springframework.data.elasticsearch.annotations.FieldType.Text)
+    @Field(type = FieldType.Text)
     private String description;
 
     @OneToMany(mappedBy = "parentCategory", cascade = CascadeType.PERSIST)

@@ -25,6 +25,7 @@ public class AnnounceDocument {
     @Id
     private String id;
 
+    @org.springframework.data.elasticsearch.annotations.Field(type = FieldType.Object)
     private AnnounceType type;
     private Double price;
     private String streetId;

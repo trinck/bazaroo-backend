@@ -7,6 +7,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.elasticsearch.annotations.FieldType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +24,7 @@ public class AnnounceType {
     @GeneratedValue(strategy = GenerationType.UUID )
     private String id;
     @Column(nullable = false)
+    @org.springframework.data.elasticsearch.annotations.Field(type = FieldType.Text)
     private String name;
 
     @ManyToOne

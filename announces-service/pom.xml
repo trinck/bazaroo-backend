@@ -92,15 +92,22 @@
         <dependency>
             <groupId>co.elastic.clients</groupId>
             <artifactId>elasticsearch-java</artifactId>
-            <version>8.15.3</version>
+            <version>8.16.0</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.springframework.data/spring-data-elasticsearch -->
-        <dependency>
+        <!--<dependency>
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-elasticsearch</artifactId>
             <version>5.4.0</version>
+        </dependency>-->
+        <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-elasticsearch -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-elasticsearch</artifactId>
+            <version>3.3.5</version>
         </dependency>
+
 
     </dependencies>
     <dependencyManagement>
