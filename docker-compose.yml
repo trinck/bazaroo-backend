@@ -8,7 +8,7 @@ services:
     expose:
       - "8761"
     healthcheck:
-      test: ["CMD", "curl","-f" , "http://localhost:8761/actuator/health"]
+      test: [ "CMD", "curl","-f" , "http://localhost:8761/actuator/health" ]
       interval: 15s
 
 
@@ -24,7 +24,7 @@ services:
     expose:
       - "9999"
     healthcheck:
-      test: ["CMD", "curl","-f" , "http://localhost:9999/actuator/health"]
+      test: [ "CMD", "curl","-f" , "http://localhost:9999/actuator/health" ]
       interval: 10s
 
     depends_on:
@@ -134,13 +134,13 @@ services:
 
 
 
-  front-end:
-    container_name: front-end
-    build:
-      ./ui-angular
-    ports:
-      - '80:80'
-    expose:
-      - '80'
+#  front-end:
+#    container_name: front-end
+#    build:
+#      ./ui-angular
+#    ports:
+#      - '80:80'
+#    expose:
+#      - '80'
 
 
