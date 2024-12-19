@@ -92,7 +92,6 @@
         <dependency>
             <groupId>co.elastic.clients</groupId>
             <artifactId>elasticsearch-java</artifactId>
-            <version>8.16.0</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.springframework.data/spring-data-elasticsearch -->

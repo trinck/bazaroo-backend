@@ -2,15 +2,10 @@ package org.mts.announcesservice.documents;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.mts.announcesservice.entities.AnnounceType;
-import org.mts.announcesservice.entities.Category;
-import org.mts.announcesservice.entities.Field;
-import org.mts.announcesservice.entities.GeoZone;
-import org.mts.announcesservice.enums.AnnounceStatus;
-import org.springframework.data.elasticsearch.annotations.DateFormat;
-import org.springframework.data.elasticsearch.annotations.Document;
-import org.springframework.data.elasticsearch.annotations.Dynamic;
-import org.springframework.data.elasticsearch.annotations.FieldType;
+import org.mts.announcesservice.dtos.FieldOutputDTO;
+import org.mts.announcesservice.remote_entities.Media;
+import org.mts.announcesservice.remote_entities.Street;
+import org.springframework.data.elasticsearch.annotations.*;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -21,28 +16,43 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Document(indexName = "announces")
+//@Mapping(mappingPath = "mappings/announces")
 public class AnnounceDocument {
     @Id
+    @org.springframework.data.elasticsearch.annotations.Field(type = FieldType.Keyword)
     private String id;
 
-    @org.springframework.data.elasticsearch.annotations.Field(type = FieldType.Object)
+    @org.springframework.data.elasticsearch.annotations.Field(type = FieldType.Keyword)
     private String typeName;
+    @org.springframework.data.elasticsearch.annotations.Field(type = FieldType.Double)
     private Double price;
+    @org.springframework.data.elasticsearch.annotations.Field(type = FieldType.Text)
     private String streetId;
     //@org.springframework.data.elasticsearch.annotations.Field(type = FieldType.Object)
     //private GeoZone location;
+    @org.springframework.data.elasticsearch.annotations.Field(type = FieldType.Text)
     private String title;
+    @org.springframework.data.elasticsearch.annotations.Field(type = FieldType.Text)
     private String tel;
-    @org.springframework.data.elasticsearch.annotations.Field(type = FieldType.Date, format = DateFormat.basic_date_time)
+    @org.springframework.data.elasticsearch.annotations.Field(type = FieldType.Date, format = DateFormat.date_time)
     private Date postedAt;
+    @org.springframework.data.elasticsearch.annotations.Field(type = FieldType.Text)
     private String address;
+    @org.springframework.data.elasticsearch.annotations.Field(type = FieldType.Text)
     private String description;
+    @org.springframework.data.elasticsearch.annotations.Field(type = FieldType.Text)
     private String userId;
-    private String status ;
+    @org.springframework.data.elasticsearch.annotations.Field(type = FieldType.Text)
+    private String status;
+    @Field(type = FieldType.Object)
+    private Street street;
 
-    //@org.springframework.data.elasticsearch.annotations.Field(type = FieldType.Object)
-    //private Category category;
-   // @ToString.Exclude
-   // @org.springframework.data.elasticsearch.annotations.Field(type = FieldType.Nested, dynamic = Dynamic.TRUE)
-    //private List<Field> fields = new ArrayList<>();
+    @org.springframework.data.elasticsearch.annotations.Field(type = FieldType.Text)
+    private String categoryTitle;
+    @ToString.Exclude
+    @org.springframework.data.elasticsearch.annotations.Field(type = FieldType.Nested)
+    private List<FieldOutputDTO> fields = new ArrayList<>();
+
+    @Transient
+    private List<Media> medias = new ArrayList<>();
 }

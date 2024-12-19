@@ -1,10 +1,9 @@
 package org.mts.announcesservice.web;
 
 
+import co.elastic.clients.elasticsearch._types.SortOrder;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import lombok.AllArgsConstructor;
-import lombok.Data;
 import org.modelmapper.ModelMapper;
 import org.mts.announcesservice.clients.MediasClient;
 import org.mts.announcesservice.clients.StreetClient;
@@ -13,34 +12,36 @@ import org.mts.announcesservice.entities.*;
 import org.mts.announcesservice.enums.AnnounceStatus;
 import org.mts.announcesservice.remote_entities.Media;
 import org.mts.announcesservice.remote_entities.Street;
-import org.mts.announcesservice.service.IAnnounceService;
-import org.mts.announcesservice.service.IAnnounceTypeService;
-import org.mts.announcesservice.service.IFieldService;
+import org.mts.announcesservice.service.*;
 import org.mts.announcesservice.utilities.WebUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
 import java.util.*;
 
 @RestController
 @RequestMapping("announces")
 public class AnnounceController {
 
-    @Autowired
-    private ModelMapper modelMapper;
-    @Autowired
-    private IAnnounceService announceService;
-    @Autowired
-    private IFieldService fieldService;
-    @Autowired
-    private IAnnounceTypeService announceTypeService;
-    @Autowired
-    private MediasClient mediasClient;
-    @Autowired
-    private StreetClient streetClient;
+    private final ModelMapper modelMapper;
+    private final IAnnounceService announceService;
+    private final IFieldService fieldService;
+    private final IAnnounceTypeService announceTypeService;
+    private final MediasClient mediasClient;
+    private final StreetClient streetClient;
+    private final IAnnounceSearchService searchService;
 
+    public AnnounceController(ModelMapper modelMapper, IAnnounceService announceService, IFieldService fieldService, IAnnounceTypeService announceTypeService, MediasClient mediasClient, StreetClient streetClient, IAnnounceSearchService searchService) {
+        this.modelMapper = modelMapper;
+        this.announceService = announceService;
+        this.fieldService = fieldService;
+        this.announceTypeService = announceTypeService;
+        this.mediasClient = mediasClient;
+        this.streetClient = streetClient;
+        this.searchService = searchService;
+    }
 
 
     @PostMapping("/{type}")
@@ -150,6 +151,19 @@ public class AnnounceController {
             return ann;
         }).toList());
         return map;
+
+    }
+@GetMapping("/search")
+    public Map<String, Object> search(@RequestParam(required = false) String query,
+                                      @RequestParam(required = false) String category,
+                                      @RequestParam(required = false) String sortBy,
+                                      @RequestParam(defaultValue = "ASC") String order,
+                                      @RequestParam(defaultValue = "0") int page,
+                                      @RequestParam(defaultValue = "10") int size) throws IOException {
+
+
+        SortOrder sortOrder = "ASC".equalsIgnoreCase(order) ? SortOrder.Asc : SortOrder.Desc;
+        return searchService.searchAnnounces(query, category, sortBy, sortOrder, page, size);
 
     }
 

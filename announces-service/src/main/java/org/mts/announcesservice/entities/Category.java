@@ -27,10 +27,8 @@ public class Category {
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
     @Column(unique = true)
-    @Field(type = FieldType.Text)
     private String title;
     private String iconUrl;
-    @Field(type = FieldType.Text)
     private String description;
 
     @OneToMany(mappedBy = "parentCategory", cascade = CascadeType.PERSIST)

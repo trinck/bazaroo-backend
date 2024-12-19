@@ -5,6 +5,8 @@ import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
 import lombok.*;
+import org.springframework.data.elasticsearch.annotations.FieldType;
+
 import java.util.ArrayList;
 import java.util.List;
 

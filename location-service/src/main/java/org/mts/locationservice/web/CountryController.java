@@ -27,6 +27,11 @@ public class CountryController {
         return this.modelMapper.map(this.iCountryService.getCountryById(id), CountryOutputDTO.class);
     }
 
+    @GetMapping("/country")
+    public CountryOutputDTO getCountryByName(@RequestParam(name = "name", defaultValue = "gabon") String name){
+        return this.modelMapper.map(this.iCountryService.getCountryByName(name), CountryOutputDTO.class);
+    }
+
     @DeleteMapping("/{id}")
     public CountryOutputDTO deleteCountryById(@PathVariable String id){
         return convertToOutputDto(this.iCountryService.deleteCountryById(id));
@@ -36,8 +41,6 @@ public class CountryController {
     @GetMapping
     public List<CountryOutputDTO> getAllCountries(){
 
-        List<Country> countries =  this.iCountryService.getCountries();
-        if(countries.isEmpty())return new ArrayList<>();
         return  this.iCountryService.getCountries().stream().map(this::convertToOutputDto).toList();
     }
 

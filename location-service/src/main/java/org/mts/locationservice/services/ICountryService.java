@@ -15,7 +15,7 @@ public interface ICountryService {
     public Country save(Country country);
     public Country update(Country country);
     public Country deleteCountryById(String id);
-    public Page<Country> getCountryByName(String name, Pageable pageable);
+    public Country getCountryByName(String name);
     public Page<Country> getCountriesByCode(String code, Pageable pageable);
 
 }

@@ -79,8 +79,8 @@ public class CountryService implements ICountryService{
      * @return
      */
     @Override
-    public Page<Country> getCountryByName(String name, Pageable pageable) {
-        return this.countryRepository.findByNameContains(name, pageable);
+    public Country getCountryByName(String name) {
+        return this.countryRepository.findByNameIgnoreCase(name).orElseThrow();
     }
 
     /**

@@ -1,6 +1,7 @@
 package org.mts.announcesservice.entities;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.proxy.HibernateProxy;
@@ -18,9 +19,7 @@ import java.util.Objects;
 public abstract class Field {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    @org.springframework.data.elasticsearch.annotations.Field(type = org.springframework.data.elasticsearch.annotations.FieldType.Keyword)
     protected String id;
-    @org.springframework.data.elasticsearch.annotations.Field(type = org.springframework.data.elasticsearch.annotations.FieldType.Text)
     protected String name;
     @ManyToOne
     protected Announce announce;

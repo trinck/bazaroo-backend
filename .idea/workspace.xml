@@ -5,8 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="136bb368-98eb-4a84-a825-a6951d1be4ec" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/dtos/FieldSubDocument.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/service/AnnounceSearchService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/service/IAnnounceSearchService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/utilities/ElasticSearchDynamicQueryGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/announces-service/src/main/resources/mappings/announces.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/announces-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/AnnouncesServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/AnnouncesServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/configs/ElasticsearchConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/configs/ElasticsearchConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/documents/AnnounceDocument.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/documents/AnnounceDocument.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/dtos/FieldOutputDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/dtos/FieldOutputDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/entities/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/entities/Category.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/entities/Check.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/entities/Check.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/entities/CheckUnit.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/entities/CheckUnit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/entities/Field.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/entities/Field.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/entities/GeoZone.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/entities/GeoZone.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/remote_entities/Street.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/remote_entities/Street.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/web/AnnounceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/web/AnnounceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/web/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/web/CategoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/announces-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/repositories/CountryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/repositories/CountryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/services/CountryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/services/CountryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/services/ICountryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/services/ICountryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/web/CountryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/web/CountryController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +41,8 @@
         <option value="Enum" />
         <option value="Dockerfile" />
         <option value="TypeScript File" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -28,6 +50,18 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="SYNC" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;trinck&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/trinck/bazaroo-backend.git&quot;,
+    &quot;accountId&quot;: &quot;8af8ab0a-4ff0-4590-9bb8-70528cedaac0&quot;
+  }
+}</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="jar://$MAVEN_REPOSITORY$/jakarta/persistence/jakarta.persistence-api/3.1.0/jakarta.persistence-api-3.1.0-sources.jar!/jakarta/persistence/Column.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Temp/a97cd149-6da7-4565-9c8f-986d253865d7_elasticsearch-8.16.0-windows-x86_64.zip.5d7/elasticsearch-8.16.0/config/elasticsearch.yml" root0="FORCE_HIGHLIGHTING" />
@@ -86,7 +120,7 @@
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/trinc/IdeaProjects/bazaroo_v1/users-service/src/main/java/org/mts/usersservice&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/abdel/IdeaProjects/bazaroo-front&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -133,7 +167,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.AnnouncesServiceApplication">
+  <component name="RunManager" selected="Spring Boot.LocationServiceApplication">
     <configuration name="Angular Application (ui-angular)" type="JavascriptDebugType" uri="http://localhost:4200">
       <method v="2" />
     </configuration>
@@ -214,8 +248,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.21565.193" />
-        <option value="bundled-js-predefined-d6986cc7102b-e768b9ed790e-JavaScript-IU-243.21565.193" />
+        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.22562.145" />
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-IU-243.22562.145" />
       </set>
     </attachedChunks>
   </component>
@@ -301,6 +335,12 @@
       <workItem from="1731706946072" duration="6614000" />
       <workItem from="1731945047761" duration="36981000" />
       <workItem from="1732162578933" duration="1440000" />
+      <workItem from="1732295197041" duration="28299000" />
+      <workItem from="1732729901474" duration="12511000" />
+      <workItem from="1732945603595" duration="23584000" />
+      <workItem from="1733074085974" duration="45046000" />
+      <workItem from="1733857825739" duration="12172000" />
+      <workItem from="1734611398417" duration="1699000" />
     </task>
     <servers />
   </component>

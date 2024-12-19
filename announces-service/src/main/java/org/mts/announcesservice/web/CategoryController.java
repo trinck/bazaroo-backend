@@ -13,6 +13,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -66,4 +67,8 @@ public class CategoryController {
         return map;
     }
 
+    @GetMapping("/list")
+    public List<CategoryOutputDTO> getList(){
+        return this.categoryService.getAll().stream().map(c->this.modelMapper.map(c,CategoryOutputDTO.class)).toList();
+    }
 }

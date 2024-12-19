@@ -1,5 +1,6 @@
 package org.mts.announcesservice;
 
+import org.mts.announcesservice.configs.ElasticsearchConfig;
 import org.mts.announcesservice.entities.AnnounceType;
 import org.mts.announcesservice.entities.Category;
 import org.mts.announcesservice.entities.CategoryField;
@@ -25,7 +26,8 @@ public class AnnouncesServiceApplication implements CommandLineRunner {
     private IAnnounceTypeService announceTypeService;
     @Autowired
     private ICategoryFieldService categoryFieldService;
-
+    @Autowired
+    private ElasticsearchConfig elasticsearchConfig;
     public static void main(String[] args) {
         SpringApplication.run(AnnouncesServiceApplication.class, args);
     }
@@ -56,5 +58,7 @@ public class AnnouncesServiceApplication implements CommandLineRunner {
         type = this.announceTypeService.create(type);
         field.setAnnounceType(type);
         field = this.categoryFieldService.create(field);
+
+        this.elasticsearchConfig.createIndex();
     }
 }

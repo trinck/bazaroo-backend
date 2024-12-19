@@ -1,5 +1,6 @@
 package org.mts.announcesservice.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.*;
@@ -24,6 +25,7 @@ public class CheckUnit {
     private String dataValue;
     private Boolean checked = false;
     @ManyToOne
+    @JsonIgnore
     private Check check;
 
     @Override
