@@ -61,7 +61,7 @@ services:
     environment:
       - DISCOVERY_SERVICE_URL=http://mts-discovery-service:8761/eureka
       - CONFIG_SERVICE_URL=http://mts-config-service:9999
-      - CORS_ALLOWED_ORIGIN=http://bazaroo.work.gd
+      - CORS_ALLOWED_ORIGIN=https://bazaroo-angular-production.up.railway.app
     build:
       ./gateway-service
     ports:
