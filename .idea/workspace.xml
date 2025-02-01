@@ -5,21 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="136bb368-98eb-4a84-a825-a6951d1be4ec" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/dtos/GeoZoneOutputDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/AnnouncesServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/AnnouncesServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/documents/AnnounceDocument.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/documents/AnnounceDocument.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/dtos/AnnounceOutputDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/dtos/AnnounceOutputDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/dtos/CategoryInputDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/dtos/CategoryInputDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/dtos/CategoryOutputDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/dtos/CategoryOutputDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/entities/Announce.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/entities/Announce.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/entities/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/entities/Category.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/entities/GeoZone.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/entities/GeoZone.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/service/AnnounceSearchService.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/service/AnnounceSearchService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/web/AnnounceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/web/AnnounceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/announces-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -343,7 +329,7 @@
       <workItem from="1734611398417" duration="17523000" />
       <workItem from="1735305421672" duration="33248000" />
       <workItem from="1736349430884" duration="14865000" />
-      <workItem from="1737528296014" duration="9529000" />
+      <workItem from="1737528296014" duration="11397000" />
     </task>
     <servers />
   </component>
