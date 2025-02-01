@@ -19,5 +19,6 @@ public class CategoryInputDTO {
     private String iconUrl;
     private String description;
     private String parentId;
+    private String color;
 
 }

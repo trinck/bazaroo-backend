@@ -58,6 +58,7 @@ public class AnnounceController {
                 .tel(dto.getTel())
                 .price(dto.getPrice())
                 .title(dto.getTitle())
+                .location(dto.getLocation())
                 .description(dto.getDescription())
                 .postedAt(new Date())
                 .status(AnnounceStatus.ACTIVE)

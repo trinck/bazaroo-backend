@@ -28,7 +28,7 @@ public class AnnounceOutputDTO {
     private AnnounceTypeOutputDTO type;
     private Double price;
     private Street street;
-    private GeoZone location;
+    private GeoZoneOutputDTO location;
     private String title;
     private Date postedAt;
     private String address;

@@ -28,7 +28,8 @@ public class Announce {
     private AnnounceType type;
     private Double price;
     private String streetId;
-    @OneToOne(mappedBy = "announce")
+    @OneToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "location")
     private GeoZone location;
     private String title;
     private String tel;

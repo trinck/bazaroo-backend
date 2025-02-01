@@ -3,6 +3,8 @@ package org.mts.announcesservice.documents;
 import jakarta.persistence.*;
 import lombok.*;
 import org.mts.announcesservice.dtos.FieldOutputDTO;
+import org.mts.announcesservice.dtos.GeoZoneOutputDTO;
+import org.mts.announcesservice.entities.GeoZone;
 import org.mts.announcesservice.remote_entities.Media;
 import org.mts.announcesservice.remote_entities.Street;
 import org.springframework.data.elasticsearch.annotations.*;
@@ -16,7 +18,6 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Document(indexName = "announces")
-//@Mapping(mappingPath = "mappings/announces")
 public class AnnounceDocument {
     @Id
     @org.springframework.data.elasticsearch.annotations.Field(type = FieldType.Keyword)
@@ -28,8 +29,8 @@ public class AnnounceDocument {
     private Double price;
     @org.springframework.data.elasticsearch.annotations.Field(type = FieldType.Text)
     private String streetId;
-    //@org.springframework.data.elasticsearch.annotations.Field(type = FieldType.Object)
-    //private GeoZone location;
+    @org.springframework.data.elasticsearch.annotations.Field(type = FieldType.Object)
+    private GeoZoneOutputDTO location;
     @org.springframework.data.elasticsearch.annotations.Field(type = FieldType.Text)
     private String title;
     @org.springframework.data.elasticsearch.annotations.Field(type = FieldType.Text)

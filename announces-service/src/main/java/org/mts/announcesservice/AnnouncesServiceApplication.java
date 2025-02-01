@@ -41,11 +41,27 @@ public class AnnouncesServiceApplication implements CommandLineRunner {
 
         Category category = Category.builder()
                 .title("Computer")
-                .iconUrl("image")
+                .iconUrl("laptop")
+                .color("#2543be")
                 .description("Buy or sell un computer")
                 .build();
+
+        Category category1 = Category.builder()
+                .title("Marché")
+                .iconUrl("shop")
+                .color("#9d25be")
+                .description("Vent et achête des produits du marché Bazaroo")
+                .build();
+
+        AnnounceType typeC1 = AnnounceType.builder()
+                .name("Vente")
+                .build();
+
         AnnounceType type = AnnounceType.builder()
                 .name("Order")
+                .build();
+        AnnounceType type1 = AnnounceType.builder()
+                .name("Vente")
                 .build();
 
         CategoryField field = CategoryField.builder()
@@ -53,11 +69,32 @@ public class AnnouncesServiceApplication implements CommandLineRunner {
                 .type(FieldType.SHORT_TEXT)
                 .build();
 
+        CategoryField field1 = CategoryField.builder()
+                .fieldName("Capacité")
+                .type(FieldType.SHORT_TEXT)
+                .build();
+
+        CategoryField field2 = CategoryField.builder()
+                .fieldName("Taille de l'ecran")
+                .type(FieldType.SHORT_TEXT)
+                .build();
+
         category = this.categoryService.create(category);
+        category1 = this.categoryService.create(category1);
+        typeC1.setCategory(category1);
+        type1.setCategory(category);
         type.setCategory(category);
+
+        type1 = this.announceTypeService.create(type1);
         type = this.announceTypeService.create(type);
-        field.setAnnounceType(type);
+        typeC1 = this.announceTypeService.create(typeC1);
+
+        field.setAnnounceType(type1);
+        field1.setAnnounceType(type1);
+        field2.setAnnounceType(type1);
         field = this.categoryFieldService.create(field);
+        field1 = this.categoryFieldService.create(field1);
+        field2 = this.categoryFieldService.create(field2);
 
         this.elasticsearchConfig.createIndex();
     }

@@ -1,5 +1,6 @@
 package org.mts.announcesservice.service;
 
+import ch.qos.logback.core.joran.spi.ConsoleTarget;
 import co.elastic.clients.elasticsearch.ElasticsearchClient;
 import co.elastic.clients.elasticsearch._types.SortOrder;
 import co.elastic.clients.elasticsearch.core.SearchResponse;
@@ -45,6 +46,7 @@ public class AnnounceSearchService implements IAnnounceSearchService{
      */
     @Override
     public Map<String, Object> searchAnnounces(String query, String category, String sortBy, SortOrder order, int page, int size) throws IOException {
+        System.out.println(query);
         SearchResponse<AnnounceDocument> response = this.elasticsearchClient.search(s -> s
                         .index("announces")
                         .query(q -> q.bool(b -> {
@@ -74,7 +76,7 @@ public class AnnounceSearchService implements IAnnounceSearchService{
                             }
                             return b;
                         }))
-                        .source(src -> src.filter(f -> f.includes("id", "title", "description","typeName", "address","tel","price","categoryTitle","postedAt","streetId")))
+                        .source(src -> src.filter(f -> f.includes("id", "title", "description","typeName", "address","tel","price","categoryTitle","postedAt","streetId", "location")))
                         .sort(so -> {
                             if(sortBy!= null)return so.field(f -> f.field(sortBy).order(order));
                             return so.score(st->st.order(SortOrder.Desc));

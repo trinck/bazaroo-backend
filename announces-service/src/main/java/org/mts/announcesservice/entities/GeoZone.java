@@ -17,9 +17,10 @@ public class GeoZone {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
+    private String name;
     private Double latitude;
     private Double longitude;
-    @OneToOne
+    @OneToOne(mappedBy = "location")
     private Announce announce;
 
 }

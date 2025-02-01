@@ -1,4 +1,28 @@
 services:
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.15.3 # Remplacez par la version souhaitée
+    container_name: elasticsearch
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:9200" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false # Désactiver la sécurité (facultatif en dev/test)
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms1g -Xmx1g" # Allouer 1 Go de RAM à Elasticsearch
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - es_data:/usr/share/elasticsearch/data
+    ports:
+      - "9200:9200" # Port HTTP pour Elasticsearch
+      - "9300:9300" # Port pour le cluster (si nécessaire)
+
+
   mts-discovery-service:
     container_name: mts-discovery-service
     build:
@@ -86,40 +110,41 @@ services:
         condition: service_healthy
 
 
-  mts-mail-service:
-    container_name: mts-mail-service
-    environment:
-      - DISCOVERY_SERVICE_URL=http://mts-discovery-service:8761/eureka
-      - CONFIG_SERVICE_URL=http://mts-config-service:9999
-    build:
-      ./mail-service
-    ports:
-      - "8085:8085"
-    expose:
-      - "8085"
-    depends_on:
-      mts-config-service:
-        condition: service_healthy
+#  mts-mail-service:
+#    container_name: mts-mail-service
+#    environment:
+#      - DISCOVERY_SERVICE_URL=http://mts-discovery-service:8761/eureka
+#      - CONFIG_SERVICE_URL=http://mts-config-service:9999
+#    build:
+#      ./mail-service
+#    ports:
+#      - "8085:8085"
+#    expose:
+#      - "8085"
+#    depends_on:
+#      mts-config-service:
+#        condition: service_healthy
 
 
-  mts-users-service:
-    container_name: mts-users-service
-    environment:
-      - DISCOVERY_SERVICE_URL=http://mts-discovery-service:8761/eureka
-      - CONFIG_SERVICE_URL=http://mts-config-service:9999
-    build:
-      ./users-service
-    ports:
-      - "8082:8082"
-    expose:
-      - "8082"
-    depends_on:
-      mts-images-service:
-        condition: service_started
+#  mts-users-service:
+#    container_name: mts-users-service
+#    environment:
+#      - DISCOVERY_SERVICE_URL=http://mts-discovery-service:8761/eureka
+#      - CONFIG_SERVICE_URL=http://mts-config-service:9999
+#    build:
+#      ./users-service
+#    ports:
+#      - "8082:8082"
+#    expose:
+#      - "8082"
+#    depends_on:
+#      mts-images-service:
+#        condition: service_started
 
   mts-announces-service:
     container_name: mts-announces-service
     environment:
+      - ELASTICSEARCH_HOST=http://elasticsearch:9200
       - DISCOVERY_SERVICE_URL=http://mts-discovery-service:8761/eureka
       - CONFIG_SERVICE_URL=http://mts-config-service:9999
     build:
@@ -129,6 +154,8 @@ services:
     expose:
       - "8086"
     depends_on:
+      elasticsearch:
+        condition: service_started
       mts-images-service:
         condition: service_started
 

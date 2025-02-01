@@ -30,6 +30,7 @@ public class Category {
     private String title;
     private String iconUrl;
     private String description;
+    private String color;
 
     @OneToMany(mappedBy = "parentCategory", cascade = CascadeType.PERSIST)
     @ToString.Exclude

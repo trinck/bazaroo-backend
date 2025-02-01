@@ -20,6 +20,7 @@ public class CategoryOutputDTO {
     private String id;
     private String title;
     private String iconUrl;
+    private String color;
     private String description;
     private Set<CategoryOutputDTO> subCategories = new HashSet<>();
     private String parentCategoryId;
