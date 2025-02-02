@@ -159,6 +159,16 @@ services:
       mts-images-service:
         condition: service_started
 
+  nginx:
+    container_name: nginx
+    build:
+      ./nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      mts-gateway-service:
+        condition: service_started
 
 
 #  front-end:

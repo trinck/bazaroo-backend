@@ -5,6 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="136bb368-98eb-4a84-a825-a6951d1be4ec" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/nginx/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nginx/certs/selfsigned.crt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nginx/certs/selfsigned.key" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nginx/conf.d/nginx.conf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
@@ -17,10 +21,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Dockerfile" />
         <option value="TypeScript File" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="Dockerfile" />
       </list>
     </option>
   </component>
@@ -125,11 +129,11 @@
       <recent name="C:\Users\trinc\IdeaProjects\bazaroo_v1\users-service\src\main\java\org\mts\usersservice" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\abdel\IdeaProjects\bazaroo\nginx\certs" />
       <recent name="C:\Users\trinc\IdeaProjects\bazaroo_v1\gateway-service\src\main\resources" />
       <recent name="C:\Users\trinc\IdeaProjects\bazaroo_v1\ui-angular\public\assets\images" />
       <recent name="C:\Users\trinc\IdeaProjects\bazaroo_v1\ui-angular\public\assets\icons" />
       <recent name="C:\Users\trinc\IdeaProjects\bazaroo_v1\assets\adverts\fg4g5" />
-      <recent name="C:\Users\trinc\IdeaProjects\bazaroo_v1\assets\adverts" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="org.mts.mailservice.configs" />
@@ -329,7 +333,7 @@
       <workItem from="1734611398417" duration="17523000" />
       <workItem from="1735305421672" duration="33248000" />
       <workItem from="1736349430884" duration="14865000" />
-      <workItem from="1737528296014" duration="14501000" />
+      <workItem from="1737528296014" duration="19721000" />
     </task>
     <servers />
   </component>
