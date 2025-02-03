@@ -61,7 +61,7 @@ services:
     environment:
       - DISCOVERY_SERVICE_URL=http://mts-discovery-service:8761/eureka
       - CONFIG_SERVICE_URL=http://mts-config-service:9999
-      - CORS_ALLOWED_ORIGIN=https://bazaroo-angular-production.up.railway.app
+      - CORS_ALLOWED_ORIGIN=http://adryvo.com
     build:
       ./gateway-service
     ports:
@@ -159,26 +159,26 @@ services:
       mts-images-service:
         condition: service_started
 
-  nginx:
-    container_name: nginx
-    build:
-      ./nginx
-    ports:
-      - "80:80"
-      - "443:443"
-    depends_on:
-      mts-gateway-service:
-        condition: service_started
-
-
-#  front-end:
-#    container_name: front-end
+#  nginx:
+#    container_name: nginx
 #    build:
-#      ./ui-angular
+#      ./nginx
 #    ports:
-#      - '80:80'
-#    expose:
-#      - '80'
+#      - "80:80"
+#      - "443:443"
+#    depends_on:
+#      mts-gateway-service:
+#        condition: service_started
+
+
+  front-end:
+    container_name: front-end
+    build:
+      ./frontend
+    ports:
+      - '80:80'
+    expose:
+      - '80'
 
 
 volumes:
