@@ -5,22 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="136bb368-98eb-4a84-a825-a6951d1be4ec" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/database/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/announces-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/config-service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/announces-service-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/configs/announces-service-dev.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/announces-service.properties" beforeDir="false" afterPath="$PROJECT_DIR$/configs/announces-service.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/application-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/configs/application-dev.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/configs/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/images-service-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/configs/images-service-dev.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/images-service.properties" beforeDir="false" afterPath="$PROJECT_DIR$/configs/images-service.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/location-service-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/configs/location-service-dev.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/location-service.properties" beforeDir="false" afterPath="$PROJECT_DIR$/configs/location-service.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/images-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/location-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/location-service/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +25,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/configs" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="SYNC" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -138,7 +124,7 @@
     "aspect.path.notification.shown": "true",
     "dart.analysis.tool.window.visible": "false",
     "extract.method.default.visibility": "private",
-    "git-widget-placeholder": "Merging main",
+    "git-widget-placeholder": "main",
     "jdk.selected.JAVA_MODULE": "17",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/abdel/IdeaProjects/bazaroo-front",
@@ -373,7 +359,7 @@
       <workItem from="1735305421672" duration="33248000" />
       <workItem from="1736349430884" duration="14865000" />
       <workItem from="1737528296014" duration="27398000" />
-      <workItem from="1738558022665" duration="24774000" />
+      <workItem from="1738558022665" duration="25155000" />
     </task>
     <servers />
   </component>

@@ -41,6 +41,7 @@ services:
     environment:
       - DISCOVERY_SERVICE_URL=http://mts-discovery-service:8761/eureka
       - CONFIG_SERVICE_URL=http://mts-config-service:9999
+      - CONFIG_PROFILE:dev
     build:
       ./config-service
     ports:
@@ -199,7 +200,6 @@ services:
       MYSQL_ROOT_PASSWORD: adryvo
       MYSQL_USER: adryvo
       MYSQL_PASSWORD: adryvo
-      CONFIG_PROFILE: dev
     ports:
       - "3306:3306"
     volumes:
