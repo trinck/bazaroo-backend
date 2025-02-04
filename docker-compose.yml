@@ -88,6 +88,8 @@ services:
       test: [ "CMD", "curl","-f" , "http://localhost:8083/actuator/health" ]
       interval: 10s
     depends_on:
+      mysql:
+        condition: service_started
       mts-config-service:
         condition: service_healthy
 
@@ -107,6 +109,8 @@ services:
       test: [ "CMD", "curl","-f" , "http://localhost:8081/actuator/health" ]
       interval: 10s
     depends_on:
+      mysql:
+        condition: service_started
       mts-config-service:
         condition: service_healthy
 
@@ -155,6 +159,8 @@ services:
     expose:
       - "8086"
     depends_on:
+      mysql:
+        condition: service_started
       elasticsearch:
         condition: service_started
       mts-images-service:
@@ -184,6 +190,22 @@ services:
     expose:
       - '80'
 
+  mysql:
+    build:
+      ./database
+    container_name: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: adryvo
+      MYSQL_USER: adryvo
+      MYSQL_PASSWORD: adryvo
+      CONFIG_PROFILE: dev
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
 
 volumes:
   es_data:
+  mysql_data: {}
