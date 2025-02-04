@@ -173,6 +173,9 @@ services:
 
   front-end:
     container_name: front-end
+    depends_on:
+      mts-gateway-service:
+        condition: service_started
     build:
       ./frontend
     ports:
