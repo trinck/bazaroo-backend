@@ -13,4 +13,6 @@ public interface CountryRepository extends JpaRepository<Country, String> {
     public Page<Country> findAllByCodeContains(String code, Pageable pageable);
 
     public Optional<Country> findByNameIgnoreCase(String name);
+
+    boolean existsCountryByNameEqualsIgnoreCase(String name);
 }

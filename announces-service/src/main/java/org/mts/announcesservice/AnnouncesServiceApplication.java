@@ -5,6 +5,7 @@ import org.mts.announcesservice.entities.AnnounceType;
 import org.mts.announcesservice.entities.Category;
 import org.mts.announcesservice.entities.CategoryField;
 import org.mts.announcesservice.enums.FieldType;
+import org.mts.announcesservice.repositories.CategoryRepository;
 import org.mts.announcesservice.service.IAnnounceTypeService;
 import org.mts.announcesservice.service.ICategoryFieldService;
 import org.mts.announcesservice.service.ICategoryService;
@@ -28,6 +29,8 @@ public class AnnouncesServiceApplication implements CommandLineRunner {
     private ICategoryFieldService categoryFieldService;
     @Autowired
     private ElasticsearchConfig elasticsearchConfig;
+    @Autowired
+    private CategoryRepository categoryRepository;
     public static void main(String[] args) {
         SpringApplication.run(AnnouncesServiceApplication.class, args);
     }
@@ -38,6 +41,12 @@ public class AnnouncesServiceApplication implements CommandLineRunner {
      */
     @Override
     public void run(String... args) throws Exception {
+
+        boolean computer = this.categoryRepository.existsCategoryByTitleEqualsIgnoreCase("Computer");
+        if (computer)
+        {
+            return;
+        }
 
         Category category = Category.builder()
                 .title("Computer")

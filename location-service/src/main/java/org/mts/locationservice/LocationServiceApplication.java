@@ -3,6 +3,7 @@ package org.mts.locationservice;
 import org.mts.locationservice.entities.City;
 import org.mts.locationservice.entities.Country;
 import org.mts.locationservice.entities.Street;
+import org.mts.locationservice.repositories.CountryRepository;
 import org.mts.locationservice.services.ICityService;
 import org.mts.locationservice.services.ICountryService;
 import org.mts.locationservice.services.IStreetService;
@@ -28,6 +29,8 @@ public class LocationServiceApplication implements CommandLineRunner {
     private ICityService iCityService;
     @Autowired
     private IStreetService iStreetService;
+    @Autowired
+    private CountryRepository countryRepository;
     public static void main(String[] args) {
         SpringApplication.run(LocationServiceApplication.class, args);
     }
@@ -39,6 +42,10 @@ public class LocationServiceApplication implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
+        boolean exists = this.countryRepository.existsCountryByNameEqualsIgnoreCase("Gabon");
+        if(exists){
+            return;
+        }
         Country country = Country.builder()
                 .name("Gabon")
                 .code("GAB")

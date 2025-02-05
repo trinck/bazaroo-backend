@@ -79,6 +79,7 @@ services:
     environment:
       - DISCOVERY_SERVICE_URL=http://mts-discovery-service:8761/eureka
       - CONFIG_SERVICE_URL=http://mts-config-service:9999
+      - SPRING_PROFILES_ACTIVE=dev
     build:
       ./images-service
     ports:
@@ -100,6 +101,7 @@ services:
     environment:
       - DISCOVERY_SERVICE_URL=http://mts-discovery-service:8761/eureka
       - CONFIG_SERVICE_URL=http://mts-config-service:9999
+      - SPRING_PROFILES_ACTIVE=dev
     build:
       ./location-service
     ports:
