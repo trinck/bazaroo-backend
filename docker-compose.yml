@@ -153,6 +153,7 @@ services:
       - ELASTICSEARCH_HOST=http://elasticsearch:9200
       - DISCOVERY_SERVICE_URL=http://mts-discovery-service:8761/eureka
       - CONFIG_SERVICE_URL=http://mts-config-service:9999
+      - ENV_PROFILE:dev
     build:
       ./announces-service
     ports:
