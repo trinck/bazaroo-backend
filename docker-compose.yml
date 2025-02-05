@@ -62,7 +62,7 @@ services:
     environment:
       - DISCOVERY_SERVICE_URL=http://mts-discovery-service:8761/eureka
       - CONFIG_SERVICE_URL=http://mts-config-service:9999
-      - CORS_ALLOWED_ORIGIN=http://adryvo.com
+      - CORS_ALLOWED_ORIGIN=*
     build:
       ./gateway-service
     ports:

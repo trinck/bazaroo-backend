@@ -5,12 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="136bb368-98eb-4a84-a825-a6951d1be4ec" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/AnnouncesServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/AnnouncesServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/repositories/CategoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/repositories/CategoryRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/LocationServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/LocationServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/repositories/CountryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/repositories/CountryRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -363,7 +358,7 @@
       <workItem from="1735305421672" duration="33248000" />
       <workItem from="1736349430884" duration="14865000" />
       <workItem from="1737528296014" duration="27398000" />
-      <workItem from="1738558022665" duration="38476000" />
+      <workItem from="1738558022665" duration="39265000" />
     </task>
     <servers />
   </component>
