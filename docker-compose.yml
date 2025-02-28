@@ -180,7 +180,7 @@ services:
       - SPRING_PROFILES_ACTIVE=dev
       - REDIS_HOST:redis
       - REDIS_PORT:6379
-      - KAFKA_BOOTSTRAP_SERVERS:http://kafka:9092
+      - KAFKA_BOOTSTRAP_SERVERS:kafka:9092
     build:
       ./tracking-service
     ports:
