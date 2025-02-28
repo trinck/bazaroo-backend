@@ -180,7 +180,7 @@ services:
       - SPRING_PROFILES_ACTIVE=dev
       - REDIS_HOST=redis
       - REDIS_PORT=6379
-      - KAFKA_BOOTSTRAP_SERVERS:kafka:9092
+      - KAFKA_BOOTSTRAP_SERVERS=kafka:9092
     build:
       ./tracking-service
     ports:
@@ -215,7 +215,8 @@ services:
       - /etc/letsencrypt:/etc/letsencrypt:ro
 
   redis:
-    image: redis
+    image: redis:latest
+    container_name: redis
     ports:
       - "6379:6379"
 
