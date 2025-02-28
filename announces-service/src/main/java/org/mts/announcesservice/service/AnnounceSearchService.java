@@ -1,6 +1,5 @@
 package org.mts.announcesservice.service;
 
-import ch.qos.logback.core.joran.spi.ConsoleTarget;
 import co.elastic.clients.elasticsearch.ElasticsearchClient;
 import co.elastic.clients.elasticsearch._types.SortOrder;
 import co.elastic.clients.elasticsearch.core.SearchResponse;
@@ -8,7 +7,6 @@ import co.elastic.clients.elasticsearch.core.search.Hit;
 import org.mts.announcesservice.clients.MediasClient;
 import org.mts.announcesservice.clients.StreetClient;
 import org.mts.announcesservice.documents.AnnounceDocument;
-import org.mts.announcesservice.dtos.AnnounceOutputDTO;
 import org.mts.announcesservice.remote_entities.Media;
 import org.mts.announcesservice.remote_entities.Street;
 import org.slf4j.Logger;
@@ -46,7 +44,6 @@ public class AnnounceSearchService implements IAnnounceSearchService{
      */
     @Override
     public Map<String, Object> searchAnnounces(String query, String category, String sortBy, SortOrder order, int page, int size) throws IOException {
-        System.out.println(query);
         SearchResponse<AnnounceDocument> response = this.elasticsearchClient.search(s -> s
                         .index("announces")
                         .query(q -> q.bool(b -> {

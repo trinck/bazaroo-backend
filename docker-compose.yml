@@ -198,6 +198,20 @@ services:
     volumes:
       - /etc/letsencrypt:/etc/letsencrypt:ro
 
+#  redis:
+#    image: redis
+#    ports:
+#      - "6379:6379"
+
+#  kafka:
+#    image: confluentinc/cp-kafka
+#    environment:
+#      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+#      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092
+#    ports:
+#      - "9092:9092"
+
+
   mysql:
     build:
       ./database

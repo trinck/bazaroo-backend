@@ -1,13 +1,9 @@
 package org.mts.announcesservice.service;
 
-import org.apache.catalina.mapper.Mapper;
 import org.modelmapper.ModelMapper;
 import org.mts.announcesservice.documents.AnnounceDocument;
 import org.mts.announcesservice.entities.Announce;
 import org.mts.announcesservice.repositories.AnnounceRepository;
-import org.mts.announcesservice.repositories.ElasticAnnounceRepo;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.elasticsearch.core.ElasticsearchOperations;
