@@ -29,8 +29,7 @@ import java.util.function.Function;
 public class EventsConsumer {
 
 
-    @Autowired
-    private IRedisService redisService;
+   
     @Autowired
     private IStatsService statsService;
     @Autowired

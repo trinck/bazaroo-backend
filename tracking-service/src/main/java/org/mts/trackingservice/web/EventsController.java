@@ -25,12 +25,10 @@ public class EventsController {
 
     private StreamBridge bridge;
     private ModelMapper mapper;
-    private IRedisService redisService;
     private IStatsService statsService;
-    public EventsController(StreamBridge bridge, ModelMapper mapper, IRedisService redisService, IStatsService statsService) {
+    public EventsController(StreamBridge bridge, ModelMapper mapper,  IStatsService statsService) {
         this.bridge = bridge;
         this.mapper = mapper;
-        this.redisService = redisService;
         this.statsService = statsService;
     }
 

@@ -16,13 +16,12 @@ import java.util.Map;
 @Service
 public class BatchService implements IBatchService {
 
-    private IRedisService redisService;
+
     private IStatsService iStatsService;
     private IElasticsearchService elasticsearchService;
     private StreamBridge streamBridge;
 
-    public BatchService(IRedisService redisService, IStatsService iStatsService, IElasticsearchService elasticsearchService, StreamBridge streamBridge) {
-        this.redisService = redisService;
+    public BatchService(IStatsService iStatsService, IElasticsearchService elasticsearchService, StreamBridge streamBridge) {
         this.iStatsService = iStatsService;
         this.elasticsearchService = elasticsearchService;
         this.streamBridge = streamBridge;
@@ -33,11 +32,11 @@ public class BatchService implements IBatchService {
      */
     @Override
     public void persistTrackingEventsFromRedis() {
-        Map<String, List<TrackingEventDocument>> listMap = this.redisService.getAllTrackingEvents();
+       /* Map<String, List<TrackingEventDocument>> listMap = this.redisService.getAllTrackingEvents();
         for (String key: listMap.keySet() ){
             this.iStatsService.updateAllDailyStats(key, listMap.get(key));
             this.elasticsearchService.saveAll(listMap.get(key));
-        }
+        }*/
     }
 
     @Scheduled(fixedRate = 30000) // 🔄
