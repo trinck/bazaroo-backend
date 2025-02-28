@@ -221,7 +221,7 @@ services:
 
 
   zookeeper:
-    image: confluentinc/cp-zookeeper:latest
+    image: confluentinc/cp-zookeeper:7.3.0
     container_name: zookeeper
     restart: always
     environment:
@@ -231,7 +231,7 @@ services:
       - "2181:2181"
 
   kafka:
-    image: confluentinc/cp-kafka:latest
+    image: confluentinc/cp-kafka:7.3.0
     container_name: kafka
     restart: always
     depends_on:
