@@ -5,46 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="136bb368-98eb-4a84-a825-a6951d1be4ec" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/notification-service/.gitattributes" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notification-service/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notification-service/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notification-service/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notification-service/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notification-service/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notification-service/src/main/java/org/mts/notificationservice/NotificationServiceApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notification-service/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notification-service/src/test/java/org/mts/notificationservice/NotificationServiceApplicationTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tracking-service/src/main/java/org/mts/trackingservice/configs/Config.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tracking-service/src/main/java/org/mts/trackingservice/configs/ElasticsearchConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tracking-service/src/main/java/org/mts/trackingservice/configs/RedisConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tracking-service/src/main/java/org/mts/trackingservice/consumers/EventsConsumer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tracking-service/src/main/java/org/mts/trackingservice/documents/TrackingEventDocument.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tracking-service/src/main/java/org/mts/trackingservice/dtos/DailyStatsOutputDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tracking-service/src/main/java/org/mts/trackingservice/dtos/Geolocation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tracking-service/src/main/java/org/mts/trackingservice/dtos/TrackingEventInputDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tracking-service/src/main/java/org/mts/trackingservice/entities/DailyStats.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tracking-service/src/main/java/org/mts/trackingservice/enums/EventType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tracking-service/src/main/java/org/mts/trackingservice/repositories/DailyStatsRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tracking-service/src/main/java/org/mts/trackingservice/serdes/JsonSerde.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tracking-service/src/main/java/org/mts/trackingservice/serdes/ListTrackingEventDocumentSerde.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tracking-service/src/main/java/org/mts/trackingservice/services/BatchService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tracking-service/src/main/java/org/mts/trackingservice/services/ElasticsearchService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tracking-service/src/main/java/org/mts/trackingservice/services/IBatchService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tracking-service/src/main/java/org/mts/trackingservice/services/IElasticsearchService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tracking-service/src/main/java/org/mts/trackingservice/services/IRedisService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tracking-service/src/main/java/org/mts/trackingservice/services/IStatsService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tracking-service/src/main/java/org/mts/trackingservice/services/RedisService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tracking-service/src/main/java/org/mts/trackingservice/services/StatsService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tracking-service/src/main/java/org/mts/trackingservice/web/EventsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/service/AnnounceSearchService.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/service/AnnounceSearchService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/service/AnnounceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/service/AnnounceService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs" beforeDir="false" afterPath="$PROJECT_DIR$/configs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/images-service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tracking-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tracking-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tracking-service/src/main/java/org/mts/trackingservice/TrackingServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/tracking-service/src/main/java/org/mts/trackingservice/TrackingServiceApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tracking-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/tracking-service/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -419,7 +381,7 @@
       <workItem from="1737528296014" duration="27398000" />
       <workItem from="1738558022665" duration="59675000" />
       <workItem from="1740087748730" duration="37070000" />
-      <workItem from="1740316430527" duration="133175000" />
+      <workItem from="1740316430527" duration="136588000" />
     </task>
     <servers />
   </component>

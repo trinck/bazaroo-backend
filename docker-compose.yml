@@ -170,16 +170,32 @@ services:
       mts-images-service:
         condition: service_started
 
-#  nginx:
-#    container_name: nginx
-#    build:
-#      ./nginx
-#    ports:
-#      - "80:80"
-#      - "443:443"
-#    depends_on:
-#      mts-gateway-service:
-#        condition: service_started
+
+  mts-tracking-service:
+    container_name: mts-tracking-service
+    environment:
+      - ELASTICSEARCH_HOST=http://elasticsearch:9200
+      - DISCOVERY_SERVICE_URL=http://mts-discovery-service:8761/eureka
+      - CONFIG_SERVICE_URL=http://mts-config-service:9999
+      - SPRING_PROFILES_ACTIVE=dev
+      - REDIS_HOST:redis
+      - REDIS_PORT:6379
+      - KAFKA_BOOTSTRAP_SERVERS:http://kafka:9092
+    build:
+      ./tracking-service
+    ports:
+      - "8087:8087"
+    expose:
+      - "8087"
+    depends_on:
+      mysql:
+        condition: service_started
+      elasticsearch:
+        condition: service_started
+      redis:
+        condition: service_started
+
+
 
 
   front-end:
@@ -198,10 +214,39 @@ services:
     volumes:
       - /etc/letsencrypt:/etc/letsencrypt:ro
 
-#  redis:
-#    image: redis
-#    ports:
-#      - "6379:6379"
+  redis:
+    image: redis
+    ports:
+      - "6379:6379"
+
+
+  zookeeper:
+    image: confluentinc/cp-zookeeper:latest
+    container_name: zookeeper
+    restart: always
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+    ports:
+      - "2181:2181"
+
+  kafka:
+    image: confluentinc/cp-kafka:latest
+    container_name: kafka
+    restart: always
+    depends_on:
+      - zookeeper
+    ports:
+      - "9092:9092"
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:9092
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+
+
+
 
 #  kafka:
 #    image: confluentinc/cp-kafka
