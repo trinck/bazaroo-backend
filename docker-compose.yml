@@ -2,6 +2,7 @@ services:
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:8.15.3 # Remplacez par la version souhaitée
     container_name: elasticsearch
+    restart: always
     healthcheck:
       test: [ "CMD", "curl", "-f", "http://localhost:9200" ]
       interval: 10s
@@ -25,6 +26,7 @@ services:
 
   mts-discovery-service:
     container_name: mts-discovery-service
+    restart: always
     build:
       ./discovery-service
     ports:
@@ -42,6 +44,7 @@ services:
       - DISCOVERY_SERVICE_URL=http://mts-discovery-service:8761/eureka
       - CONFIG_SERVICE_URL=http://mts-config-service:9999
       - CONFIG_PROFILE:dev
+    restart: always
     build:
       ./config-service
     ports:
@@ -63,6 +66,7 @@ services:
       - DISCOVERY_SERVICE_URL=http://mts-discovery-service:8761/eureka
       - CONFIG_SERVICE_URL=http://mts-config-service:9999
       - CORS_ALLOWED_ORIGIN=*
+    restart: always
     build:
       ./gateway-service
     ports:
@@ -80,6 +84,7 @@ services:
       - DISCOVERY_SERVICE_URL=http://mts-discovery-service:8761/eureka
       - CONFIG_SERVICE_URL=http://mts-config-service:9999
       - SPRING_PROFILES_ACTIVE=dev
+    restart: always
     build:
       ./images-service
     ports:
@@ -102,6 +107,7 @@ services:
       - DISCOVERY_SERVICE_URL=http://mts-discovery-service:8761/eureka
       - CONFIG_SERVICE_URL=http://mts-config-service:9999
       - SPRING_PROFILES_ACTIVE=dev
+    restart: always
     build:
       ./location-service
     ports:
@@ -156,6 +162,7 @@ services:
       - DISCOVERY_SERVICE_URL=http://mts-discovery-service:8761/eureka
       - CONFIG_SERVICE_URL=http://mts-config-service:9999
       - SPRING_PROFILES_ACTIVE=dev
+    restart: always
     build:
       ./announces-service
     ports:
@@ -181,6 +188,7 @@ services:
       - REDIS_HOST=redis
       - REDIS_PORT=6379
       - KAFKA_BOOTSTRAP_SERVERS=kafka:9092
+    restart: always
     build:
       ./tracking-service
     ports:
@@ -203,6 +211,7 @@ services:
     depends_on:
       mts-gateway-service:
         condition: service_started
+    restart: always
     build:
       ./frontend
     ports:
@@ -236,6 +245,7 @@ services:
     container_name: kafka
     depends_on:
       - zookeeper
+    restart: always
     ports:
       - "9092:9092"
     environment:
