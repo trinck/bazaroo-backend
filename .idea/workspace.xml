@@ -5,45 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="136bb368-98eb-4a84-a825-a6951d1be4ec" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/jpa.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/schedulers/AnnounceScheduler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/schedulers/IAnnounceScheduler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/utilities/GeneratorAnnounceExpValue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/utilities/IGeneratorAnnounceExpValue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notification-service/src/main/java/org/mts/notificationservice/configs/Config.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notification-service/src/main/java/org/mts/notificationservice/configs/ElasticsearchConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notification-service/src/main/java/org/mts/notificationservice/configs/RedisConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notification-service/src/main/java/org/mts/notificationservice/consumers/NotificationAdminConsumers.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notification-service/src/main/java/org/mts/notificationservice/consumers/NotificationClientsConsumer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notification-service/src/main/java/org/mts/notificationservice/entities/Notification.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notification-service/src/main/java/org/mts/notificationservice/repositories/NotificationRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notification-service/src/main/java/org/mts/notificationservice/services/INotificationClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notification-service/src/main/java/org/mts/notificationservice/services/INotificationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notification-service/src/main/java/org/mts/notificationservice/services/IRedisService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notification-service/src/main/java/org/mts/notificationservice/services/NotificationClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notification-service/src/main/java/org/mts/notificationservice/services/NotificationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notification-service/src/main/java/org/mts/notificationservice/services/RedisService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/configs/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/configs/Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/config-service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notification-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/notification-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notification-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/notification-service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tracking-service/src/main/java/org/mts/trackingservice/web/EventsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/tracking-service/src/main/java/org/mts/trackingservice/web/EventsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tracking-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/tracking-service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/entities/Auth.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/entities/Auth.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/entities/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/entities/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/entities/Connection.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/entities/Connection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/entities/Contact.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/entities/Contact.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/entities/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/entities/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/entities/Preference.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/entities/Preference.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/entities/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/enums/EnumRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/enums/EnumRole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/repositories/AuthRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/repositories/AuthRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/services/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/services/AuthService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/services/IAuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/services/IAuthService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/web/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/web/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/web/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/web/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/images-service/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -444,7 +406,7 @@
       <workItem from="1740316430527" duration="168769000" />
       <workItem from="1741031916847" duration="218000" />
       <workItem from="1741032271381" duration="93555000" />
-      <workItem from="1742399968874" duration="8616000" />
+      <workItem from="1742399968874" duration="9321000" />
     </task>
     <servers />
   </component>
