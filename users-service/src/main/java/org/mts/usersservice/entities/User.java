@@ -2,10 +2,7 @@ package org.mts.usersservice.entities;
 
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.mts.usersservice.enums.Gender;
 
 import java.util.ArrayList;
@@ -14,7 +11,8 @@ import java.util.List;
 
 
 @Entity
-@Data
+@Getter
+@Setter
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public abstract class User {
 
@@ -23,16 +21,12 @@ public abstract class User {
     protected String id;
     protected String firstname;
     protected String lastname;
-    @Column(unique = true)
-    protected String email;
     protected Date birthday;
     protected String address;
     protected String avatar;
 
     @Enumerated(EnumType.STRING)
     protected Gender gender;
-    protected Boolean active;
-    protected Boolean verified;
     protected String profileUrl;
 
     @OneToOne(orphanRemoval = true)

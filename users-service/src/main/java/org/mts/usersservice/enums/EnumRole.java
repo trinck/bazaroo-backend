@@ -4,7 +4,7 @@ public enum EnumRole {
 
     USER,
     ADMIN,
-    Anonymous,
+    ANONYMOUS,
     MANAGER,
     SUPER_ADMIN
 

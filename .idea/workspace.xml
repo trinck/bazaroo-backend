@@ -5,8 +5,45 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="136bb368-98eb-4a84-a825-a6951d1be4ec" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/jpa.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/schedulers/AnnounceScheduler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/schedulers/IAnnounceScheduler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/utilities/GeneratorAnnounceExpValue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/utilities/IGeneratorAnnounceExpValue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notification-service/src/main/java/org/mts/notificationservice/configs/Config.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notification-service/src/main/java/org/mts/notificationservice/configs/ElasticsearchConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notification-service/src/main/java/org/mts/notificationservice/configs/RedisConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notification-service/src/main/java/org/mts/notificationservice/consumers/NotificationAdminConsumers.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notification-service/src/main/java/org/mts/notificationservice/consumers/NotificationClientsConsumer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notification-service/src/main/java/org/mts/notificationservice/entities/Notification.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notification-service/src/main/java/org/mts/notificationservice/repositories/NotificationRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notification-service/src/main/java/org/mts/notificationservice/services/INotificationClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notification-service/src/main/java/org/mts/notificationservice/services/INotificationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notification-service/src/main/java/org/mts/notificationservice/services/IRedisService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notification-service/src/main/java/org/mts/notificationservice/services/NotificationClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notification-service/src/main/java/org/mts/notificationservice/services/NotificationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notification-service/src/main/java/org/mts/notificationservice/services/RedisService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/configs/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/configs/Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/config-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notification-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/notification-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notification-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/notification-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tracking-service/src/main/java/org/mts/trackingservice/web/EventsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/tracking-service/src/main/java/org/mts/trackingservice/web/EventsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tracking-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/tracking-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/entities/Auth.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/entities/Auth.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/entities/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/entities/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/entities/Connection.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/entities/Connection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/entities/Contact.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/entities/Contact.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/entities/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/entities/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/entities/Preference.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/entities/Preference.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/entities/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/enums/EnumRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/enums/EnumRole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/repositories/AuthRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/repositories/AuthRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/services/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/services/AuthService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/services/IAuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/services/IAuthService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/web/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/web/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/web/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/web/UserController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,10 +55,11 @@
       <list>
         <option value="TypeScript File" />
         <option value="Enum" />
-        <option value="Class" />
         <option value="com.intellij.jpb.NewClass" />
-        <option value="Interface" />
         <option value="Dockerfile" />
+        <option value="Interface" />
+        <option value="Class" />
+        <option value="com.intellij.jpb.JpaRepository" />
       </list>
     </option>
   </component>
@@ -101,61 +139,64 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;DtoCreateDialog.EQUALS_HASH_CODE_INITIAL_PROP_KEY&quot;: &quot;false&quot;,
-    &quot;DtoCreateDialog.TO_STRING_INITIAL_PROP_KEY&quot;: &quot;false&quot;,
-    &quot;OverrideImplement.generate.javadoc&quot;: &quot;true&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Spring Boot.AnnouncesServiceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.ConfigServiceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.DiscoveryServiceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.GatewayServiceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.ImagesServiceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.LocationServiceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.MailServiceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.NotificationServiceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.TrackingServiceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.UsersServiceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;aspect.path.notification.shown&quot;: &quot;true&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/abdel/IdeaProjects/bazaroo/notification-service&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/trinc/IdeaProjects/bazaroo_v1/src/main/java/org/mts/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.editor&quot;,
-    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;46c40c74cf225bfa16501bed272b7a95&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\abdel\\IdeaProjects\\bazaroo\\ui-angular\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "DtoCreateDialog.EQUALS_HASH_CODE_INITIAL_PROP_KEY": "false",
+    "DtoCreateDialog.TO_STRING_INITIAL_PROP_KEY": "false",
+    "OverrideImplement.generate.javadoc": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.AnnouncesServiceApplication.executor": "Run",
+    "Spring Boot.ConfigServiceApplication.executor": "Run",
+    "Spring Boot.DiscoveryServiceApplication.executor": "Run",
+    "Spring Boot.GatewayServiceApplication.executor": "Run",
+    "Spring Boot.ImagesServiceApplication.executor": "Run",
+    "Spring Boot.LocationServiceApplication.executor": "Run",
+    "Spring Boot.MailServiceApplication.executor": "Run",
+    "Spring Boot.NotificationServiceApplication.executor": "Run",
+    "Spring Boot.TrackingServiceApplication.executor": "Run",
+    "Spring Boot.UsersServiceApplication.executor": "Run",
+    "WebServerToolWindowFactoryState": "false",
+    "aspect.path.notification.shown": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "extract.method.default.visibility": "private",
+    "git-widget-placeholder": "main",
+    "jdk.selected.JAVA_MODULE": "17",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/abdel/IdeaProjects/bazaroo-admin",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "C:/Users/trinc/IdeaProjects/bazaroo_v1/src/main/java/org/mts/Main.java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "run.configurations.included.in.services": "true",
+    "settings.editor.selected.configurable": "configurable.group.editor",
+    "show.migrate.to.gradle.popup": "false",
+    "spring.configuration.checksum": "46c40c74cf225bfa16501bed272b7a95",
+    "ts.external.directory.path": "C:\\Users\\abdel\\IdeaProjects\\bazaroo\\ui-angular\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="org.mts.announcesservice.utilities" />
+      <recent name="org.mts.announcesservice.schedulers" />
+      <recent name="org.mts.notificationservice.services" />
       <recent name="org.mts.trackingservice.documents" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
@@ -402,7 +443,8 @@
       <workItem from="1740087748730" duration="37070000" />
       <workItem from="1740316430527" duration="168769000" />
       <workItem from="1741031916847" duration="218000" />
-      <workItem from="1741032271381" duration="2840000" />
+      <workItem from="1741032271381" duration="93555000" />
+      <workItem from="1742399968874" duration="8616000" />
     </task>
     <servers />
   </component>

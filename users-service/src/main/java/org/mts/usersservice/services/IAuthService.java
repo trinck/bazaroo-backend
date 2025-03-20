@@ -10,11 +10,18 @@ public interface IAuthService {
 
 
     public Auth creatAuth(Auth auth);
-    public Auth getAuthById(Long id);
-    public Auth updateAuth(Auth auth);
-    public Auth deleteAuthById(Long id);
-    public Page<Auth> getAuths(Pageable pageable);
-    public List<Auth> getListAuths();
-   public Auth loadAuthByUsername(String username);
 
+    public Auth getAuthById(String id);
+
+    public Auth updateAuth(Auth auth);
+
+    public Auth deleteAuthById(String id);
+
+    public Page<Auth> getAuths(Pageable pageable);
+
+    public List<Auth> getListAuths();
+
+    public Auth loadAuthByUsername(String username);
+
+    public Auth loadAuthByUsernameOrEmailOrTel(String identifier);
 }

@@ -46,9 +46,9 @@ public class AuthController {
 
         Role role = this.iRoleService.getRoleById(authInputDTO.getRoleId());
         Auth auth = this.modelMapper.map(authInputDTO, Auth.class);
+        auth.setVerified(true);
+        auth.setActive(true);
         Client client = new Client();
-        client.setActive(true);
-        client.setVerified(true);
 
         //add default client preference and client entity
         Preference preference = this.modelMapper.map(clientPref, Preference.class);
@@ -81,8 +81,8 @@ public class AuthController {
         Role role = this.iRoleService.getRoleById(authInputDTO.getRoleId());
         Auth auth = this.modelMapper.map(authInputDTO, Auth.class);
         Employee employee = new Employee();
-        employee.setActive(true);
-        employee.setVerified(true);
+        auth.setVerified(true);
+        auth.setActive(true);
 
         //connection info
         Connection connection = new Connection();

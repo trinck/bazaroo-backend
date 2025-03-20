@@ -196,6 +196,8 @@ services:
     expose:
       - "8087"
     depends_on:
+      mts-config-service:
+        condition: service_healthy
       mysql:
         condition: service_started
       elasticsearch:

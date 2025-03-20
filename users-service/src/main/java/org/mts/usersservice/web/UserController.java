@@ -5,13 +5,10 @@ import org.modelmapper.ModelMapper;
 import org.mts.usersservice.dtos.*;
 import org.mts.usersservice.entities.Client;
 import org.mts.usersservice.entities.Employee;
-import org.mts.usersservice.entities.User;
 import org.mts.usersservice.services.IClientService;
 import org.mts.usersservice.services.IEmployeeService;
 import org.mts.usersservice.services.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

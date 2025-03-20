@@ -85,6 +85,13 @@ public class EventsController {
         return this.statsService.getDailyStatsForLot(lot).stream().map(stats -> this.mapper.map(stats, DailyStatsOutputDTO.class)).toList();
     }
 
+    @GetMapping("/notification")
+    public void notification(){
+        String newAd = "GGDKUI7D8YDUKHJKHUD7YD79E";
+        List<String> ads = List.of("ad1","ad2", "ad3");
+        this.bridge.send("notification-user-search", Map.of("userId", newAd,"ads",ads));
+    }
+
 
     @ExceptionHandler
     public String exception(Exception e){

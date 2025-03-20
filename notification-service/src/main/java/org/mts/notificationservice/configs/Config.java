@@ -1,13 +1,10 @@
-package org.mts.announcesservice.configs;
+package org.mts.notificationservice.configs;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.scheduling.annotation.EnableScheduling;
-
 
 @Configuration
-@EnableScheduling
 public class Config {
 
     @Bean

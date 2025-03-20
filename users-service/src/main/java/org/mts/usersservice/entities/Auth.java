@@ -1,14 +1,12 @@
 package org.mts.usersservice.entities;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 
 @Entity
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
@@ -19,12 +17,18 @@ public class Auth {
     private String id;
     @Column(unique = true)
     private String username;
+    @Column(unique = true)
+    protected String email;
+    @Column(unique = true)
+    protected String tel;
+    protected Boolean active;
     private String password;
+    protected Boolean verified;
     @OneToOne(mappedBy = "auth", cascade = CascadeType.ALL, orphanRemoval = true)
     private User user;
     @ManyToOne(cascade = CascadeType.PERSIST)
     private Role role;
-    @OneToOne(mappedBy ="auth" , cascade = CascadeType.PERSIST)
+    @OneToOne(mappedBy = "auth", cascade = CascadeType.PERSIST)
     private Connection connection;
 
 }

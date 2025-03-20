@@ -35,7 +35,7 @@ public class AuthService implements IAuthService{
      * @return
      */
     @Override
-    public Auth getAuthById(Long id) {
+    public Auth getAuthById(String id) {
         return null;
     }
 
@@ -53,7 +53,7 @@ public class AuthService implements IAuthService{
      * @return
      */
     @Override
-    public Auth deleteAuthById(Long id) {
+    public Auth deleteAuthById(String id) {
 
        Auth auth = this.authRepository.findById(id).orElseThrow();
        this.authRepository.deleteById(id);
@@ -86,7 +86,14 @@ public class AuthService implements IAuthService{
         return this.authRepository.findByUsername(username).orElseThrow();
     }
 
-
+    /**
+     * @param identifier
+     * @return
+     */
+    @Override
+    public Auth loadAuthByUsernameOrEmailOrTel(String identifier) {
+        return this.authRepository.findAuthByUsernameOrEmailOrTel(identifier, identifier, identifier).orElseThrow();
+    }
 
 
 }
