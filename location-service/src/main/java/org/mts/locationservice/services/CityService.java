@@ -30,6 +30,15 @@ public class CityService implements ICityService{
     }
 
     /**
+     * @return
+     */
+    @Override
+    public List<City> getCitiesByCountryName(String countryName) {
+        Country country = this.countryRepository.findByNameIgnoreCase(countryName).orElseThrow();
+        return this.cityRepository.findAllByCountryId(country.getId());
+    }
+
+    /**
      * @param pageable
      * @return
      */

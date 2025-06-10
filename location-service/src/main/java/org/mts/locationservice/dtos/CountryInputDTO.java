@@ -15,5 +15,6 @@ public class CountryInputDTO {
     private String id;
     private String name;
     private String code;
+    private String currency;
 
 }

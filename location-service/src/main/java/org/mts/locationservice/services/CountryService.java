@@ -1,5 +1,7 @@
 package org.mts.locationservice.services;
 
+import org.modelmapper.ModelMapper;
+import org.mts.locationservice.dtos.CountryOutputDTO;
 import org.mts.locationservice.entities.Country;
 import org.mts.locationservice.repositories.CountryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +18,9 @@ public class CountryService implements ICountryService{
 
     @Autowired
    private CountryRepository countryRepository;
+
+    @Autowired
+    private ModelMapper modelMapper;
 
 
     /**
@@ -67,11 +72,11 @@ public class CountryService implements ICountryService{
      * @return
      */
     @Override
-    public Country deleteCountryById(String id) {
-
+    public CountryOutputDTO deleteCountryById(String id) {
         Country country = this.countryRepository.findById(id).orElseThrow();
+        CountryOutputDTO dto = this.modelMapper.map(country, CountryOutputDTO.class); // 🟢 map AVANT delete
         this.countryRepository.deleteById(id);
-        return country;
+        return dto;
     }
 
     /**

@@ -1,6 +1,5 @@
 package org.mts.locationservice.services;
 
-import org.mts.locationservice.entities.City;
 import org.mts.locationservice.entities.Street;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

@@ -3,9 +3,7 @@ package org.mts.locationservice.dtos;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.util.ArrayList;
-import java.util.List;
+import org.mts.locationservice.entities.City;
 
 @Data
 @NoArgsConstructor
@@ -14,5 +12,5 @@ public class StreetOutputDTO {
     private String id;
     private String name;
     private Long zip;
-    private String cityId;
+    private City city;
 }

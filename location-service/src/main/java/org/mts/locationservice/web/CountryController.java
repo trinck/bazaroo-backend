@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 
-import java.util.ArrayList;
+
 import java.util.List;
 
 @RestController
@@ -34,7 +34,7 @@ public class CountryController {
 
     @DeleteMapping("/{id}")
     public CountryOutputDTO deleteCountryById(@PathVariable String id){
-        return convertToOutputDto(this.iCountryService.deleteCountryById(id));
+        return this.iCountryService.deleteCountryById(id);
     }
 
 
@@ -42,6 +42,11 @@ public class CountryController {
     public List<CountryOutputDTO> getAllCountries(){
 
         return  this.iCountryService.getCountries().stream().map(this::convertToOutputDto).toList();
+    }
+
+    @GetMapping("/withoutCities" )
+    public List<Country> getAllCountriesWithoutCities(){
+        return  this.iCountryService.getCountries().stream().toList();
     }
 
 
