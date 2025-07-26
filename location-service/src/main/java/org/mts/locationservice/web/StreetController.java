@@ -57,8 +57,5 @@ public class StreetController {
     private StreetOutputDTO convertToOutputDto(Street street) {
         return modelMapper.map(street, StreetOutputDTO.class);
     }
-    private Street convertToEntity(StreetInputDTO inputDTO) {
-        return modelMapper.map(inputDTO, Street.class);
-    }
 
 }

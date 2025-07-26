@@ -8,9 +8,14 @@
     <file url="file://$PROJECT_DIR$/gateway-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/gateway/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/images-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/keycloak-event-listener/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/keycloak-event-listener/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/keycloak-service/keycloak-event-listener/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/keycloak-service/keycloak-event-listener/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/location-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mail-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/notification-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/payement-stripe/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/tracking-service/src/main/java" charset="UTF-8" />

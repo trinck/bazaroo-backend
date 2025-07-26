@@ -4,10 +4,19 @@ spring:
       globalcors:
         cors-configurations:
           '[/**]':
-            allowed-origins: "${CORS_ALLOWED_ORIGIN:http://localhost:4200}"
-            allowed-headers: '*'
-            allowed-methods:
-              - GET
-              - POST
-              - DELETE
-              - PUT
+            #allowed-origins: "${CORS_ALLOWED_ORIGIN:http://localhost:4200}"
+            #allowed-origins: "http://localhost:4200"
+            allowed-headers: "${ALLOWED_HEADERS:*}"
+            allowed-methods: "${ALLOWED_METHODS:*}"
+            #allow-credentials: true
+            allowed-origin-patterns: "${CORS_ALLOWED_ORIGIN:*}"
+      routes:
+        - id: notification-sockjs-route
+          uri: lb://NOTIFICATION-SERVICE
+          predicates:
+            - Path=/NOTIFICATION-SERVICE/ws/**, /NOTIFICATION-SERVICE/ws/info/**
+          filters:
+            - RewritePath=/NOTIFICATION-SERVICE/(?<remaining>.*),/$\{remaining}
+#            - PreserveHostHeader
+#            # - SetPath=/ws/{segment}
+#            #- RewritePath=/NOTIFICATION-SERVICE/ws/(?<segment>.*), /ws/${segment}

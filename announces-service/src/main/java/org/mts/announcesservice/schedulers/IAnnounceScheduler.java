@@ -7,4 +7,5 @@ package org.mts.announcesservice.schedulers;
 public interface IAnnounceScheduler {
 
     public boolean checkAnnouncesExpired();
+    public boolean scheduleSearchWeekly();
 }

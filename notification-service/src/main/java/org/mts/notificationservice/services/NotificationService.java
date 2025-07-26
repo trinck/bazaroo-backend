@@ -1,17 +1,31 @@
 package org.mts.notificationservice.services;
 
+import org.modelmapper.ModelMapper;
+import org.mts.notificationservice.dtos.Message;
 import org.mts.notificationservice.entities.Notification;
+import org.mts.notificationservice.enums.NotificationAudience;
+import org.mts.notificationservice.enums.NotificationTargetType;
 import org.mts.notificationservice.repositories.NotificationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.messaging.simp.SimpMessageSendingOperations;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class NotificationService implements INotificationService {
+public  class NotificationService implements INotificationService {
 
-    @Autowired
-    private NotificationRepository notificationRepository;
+
+    private final NotificationRepository notificationRepository;
+    private final ModelMapper modelMapper;
+    private final SimpMessageSendingOperations sendingOperations;
+
+    public NotificationService(NotificationRepository notificationRepository, ModelMapper modelMapper, SimpMessageSendingOperations sendingOperations) {
+        this.notificationRepository = notificationRepository;
+        this.modelMapper = modelMapper;
+        this.sendingOperations = sendingOperations;
+    }
+
     /**
      * @param notification to save/persist
      * @return {@link Notification}
@@ -94,5 +108,56 @@ public class NotificationService implements INotificationService {
         List<Notification> notifications = this.notificationRepository.findAllById(ids);
        this.notificationRepository.deleteAllById(ids);
         return notifications;
+    }
+
+    /**
+     * @param userId
+     * @param notification
+     * @return
+     */
+    @Override
+    public boolean notifyUser(String userId,String destination ,Notification notification) {
+        this.sendingOperations.convertAndSendToUser(userId,destination,this.modelMapper.map(this.save(notification), Message.class));
+        return true;
+    }
+
+    /**
+     * @param notification
+     * @return
+     */
+    @Override
+    public boolean notifyAll(String destination,Notification notification) {
+        Notification saved = this.notificationRepository.save(notification);
+        this.sendingOperations.convertAndSend(destination,this.modelMapper.map(saved,Message.class));
+        return true;
+    }
+
+    /**
+     * @param id
+     * @param name
+     * @return
+     */
+    @Override
+    public Notification findByIdAndUserId(Long id, String name) {
+        return this.notificationRepository.findByIdAndUserId(id,name).orElseThrow();
+    }
+
+    /**
+     * @param name
+     * @return
+     */
+    @Override
+    public List<Notification> findByUserIdAndSeenFalse(String name) {
+        return this.notificationRepository.findAllByUserIdAndSeenFalse(name);
+    }
+
+    /**
+     * @param audience
+     * @param targetType
+     * @return
+     */
+    @Override
+    public List<Notification> findByAudienceAndTargetType(NotificationAudience audience, NotificationTargetType targetType) {
+        return this.notificationRepository.findByAudienceEqualsAndTargetTypeEquals(audience, targetType);
     }
 }

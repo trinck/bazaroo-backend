@@ -1,7 +1,6 @@
 package org.mts.imagesservice.configs;
 
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.lang.NonNull;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
@@ -13,8 +12,12 @@ import java.nio.file.Paths;
 public class MVCConfig implements WebMvcConfigurer {
 
 
-    @Autowired
-    private StorageMediasSources mediasSources;
+
+    private final StorageMediasSources mediasSources;
+
+    public MVCConfig(StorageMediasSources mediasSources) {
+        this.mediasSources = mediasSources;
+    }
 
     @Override
     public void addResourceHandlers(@NonNull ResourceHandlerRegistry registry) {

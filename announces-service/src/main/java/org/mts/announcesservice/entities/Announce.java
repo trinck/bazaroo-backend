@@ -2,6 +2,7 @@ package org.mts.announcesservice.entities;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.TenantId;
 import org.hibernate.proxy.HibernateProxy;
 import org.mts.announcesservice.enums.AnnounceStatus;
 import org.springframework.data.elasticsearch.annotations.Document;
@@ -22,12 +23,17 @@ public class Announce {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
+    @TenantId
+    @Column(name = "tenant_id", nullable = false)
+    private String tenantId;
+
 
     @ManyToOne
-    @JoinColumn(unique = false, name = "type_id")
+    @JoinColumn(name = "type_id")
     private AnnounceType type;
     private Double price;
     private String streetId;
+    private String cityId;
     @OneToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "location")
     private GeoZone location;
@@ -35,7 +41,9 @@ public class Announce {
     private String tel;
     private Date postedAt;
     private String address;
+    @Column(length = 355)
     private String description;
+    @Column(nullable = false)
     private String userId;
     @Enumerated(EnumType.STRING)
     @Column(name = "status")

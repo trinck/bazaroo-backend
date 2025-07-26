@@ -1,0 +1,67 @@
+{
+  "realm": "${REALM_NAME}",
+  "enabled": true,
+  "registrationAllowed": true,
+  "sslRequired": "none",
+  "clients": [
+    {
+      "clientId": "angular-front",
+      "enabled": true,
+      "protocol": "openid-connect",
+      "clientAuthenticatorType": "",
+      "secret": "angular-front",
+      "redirectUris": [
+        "http://localhost/*"
+      ],
+      "webOrigins": [
+        "http://localhost"
+      ],
+      "publicClient": true,
+      "bearerOnly": false,
+      "standardFlowEnabled": true,
+      "serviceAccountsEnabled": true,
+      "authorizationServicesEnabled": false
+    }
+  ],
+  "users": [
+    {
+      "username": "trinck",
+      "enabled": true,
+      "email": "trinckmouloungui@gmail.com",
+      "firstName": "Gontran",
+      "lastName": "MOULOUNGUI",
+      "credentials": [
+        {
+          "type": "password",
+          "value": "1234",
+          "temporary": false
+        }
+      ],
+      "realmRoles": [
+        "USER",
+        "ADMIN",
+        "default-roles-mts-adryvo"
+      ]
+    }
+  ],
+  "roles": {
+    "realm": [
+      {
+        "name": "USER",
+        "description": "User role"
+      },
+      {
+        "name": "ADMIN",
+        "description": "Admin role"
+      }
+    ]
+  },
+  "defaultRoles": [
+    "USER",
+    "default-roles-mts-adryvo"
+  ],
+  "eventsListeners": [
+    "jboss-logging",
+    "kafka-event-listener"
+  ]
+}

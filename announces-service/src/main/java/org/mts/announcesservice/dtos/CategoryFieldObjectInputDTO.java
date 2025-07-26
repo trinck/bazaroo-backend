@@ -10,7 +10,8 @@ import java.util.List;
 @EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
+@Getter
+@Setter
 public class CategoryFieldObjectInputDTO extends CategoryFieldInputDTO {
     private List<CategoryFieldCheckUnit> fieldCheckUnits = new ArrayList<>();
 }

@@ -1,6 +1,8 @@
 package org.mts.notificationservice.services;
 
 import org.mts.notificationservice.entities.Notification;
+import org.mts.notificationservice.enums.NotificationAudience;
+import org.mts.notificationservice.enums.NotificationTargetType;
 
 import java.util.List;
 
@@ -57,5 +59,11 @@ public interface INotificationService {
      * @return {@link List} of {@link Notification} deleted
      */
     public List<Notification> deleteAllByIds(List<Long> ids);
+    public boolean notifyUser(String userId,String destination ,Notification notification);
+    public boolean notifyAll(String destination,Notification notification);
 
+    public Notification findByIdAndUserId(Long id, String name);
+
+    public List<Notification> findByUserIdAndSeenFalse(String name);
+    public List<Notification> findByAudienceAndTargetType(NotificationAudience audience, NotificationTargetType targetType);
 }

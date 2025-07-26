@@ -17,7 +17,8 @@ public class AnnounceInputDTO {
     private String id;
     private Double price;
     private String streetId;
-    private GeoZone location;
+    private String cityId;
+    private GeoZoneInputDTO location;
     private String tel;
     private String title;
     private String address;

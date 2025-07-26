@@ -18,4 +18,6 @@ public interface ICountryService {
     public Country getCountryByName(String name);
     public Page<Country> getCountriesByCode(String code, Pageable pageable);
 
+    public Country getCountryByCode(String code);
+    public Country getCountryByCode();
 }

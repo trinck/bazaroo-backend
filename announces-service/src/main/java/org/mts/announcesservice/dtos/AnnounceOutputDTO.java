@@ -30,6 +30,7 @@ public class AnnounceOutputDTO {
     private Street street;
     private GeoZoneOutputDTO location;
     private String title;
+    private String streetId;
     private Date postedAt;
     private String address;
     private String description;

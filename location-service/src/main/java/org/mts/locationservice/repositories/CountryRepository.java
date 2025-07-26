@@ -15,4 +15,6 @@ public interface CountryRepository extends JpaRepository<Country, String> {
     public Optional<Country> findByNameIgnoreCase(String name);
 
     boolean existsCountryByNameEqualsIgnoreCase(String name);
+
+    Optional<Country> findCountryByCodeIgnoreCase(String code);
 }

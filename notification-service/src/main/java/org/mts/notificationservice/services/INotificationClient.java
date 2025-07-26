@@ -4,5 +4,6 @@ import org.mts.notificationservice.entities.Notification;
 
 public interface INotificationClient {
 
-    public void sendToUser(Notification notification);
+    public void sendToUser(String userId,Notification notification);
+    public void sendToAll(Notification notification);
 }

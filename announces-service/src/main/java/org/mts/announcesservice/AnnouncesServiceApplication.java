@@ -9,6 +9,7 @@ import org.mts.announcesservice.repositories.CategoryRepository;
 import org.mts.announcesservice.service.IAnnounceTypeService;
 import org.mts.announcesservice.service.ICategoryFieldService;
 import org.mts.announcesservice.service.ICategoryService;
+import org.mts.announcesservice.service.SchedulerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -31,6 +32,9 @@ public class AnnouncesServiceApplication implements CommandLineRunner {
     private ElasticsearchConfig elasticsearchConfig;
     @Autowired
     private CategoryRepository categoryRepository;
+
+    @Autowired
+    private SchedulerService schedulerService;
     public static void main(String[] args) {
         SpringApplication.run(AnnouncesServiceApplication.class, args);
     }
@@ -105,6 +109,6 @@ public class AnnouncesServiceApplication implements CommandLineRunner {
         field1 = this.categoryFieldService.create(field1);
         field2 = this.categoryFieldService.create(field2);
 
-        this.elasticsearchConfig.createIndex();
+        //this.elasticsearchConfig.createIndex();
     }
 }

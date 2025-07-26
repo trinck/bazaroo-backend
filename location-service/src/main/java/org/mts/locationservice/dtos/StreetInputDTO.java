@@ -2,17 +2,16 @@ package org.mts.locationservice.dtos;
 
 
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Data
+@Setter
+@Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class StreetInputDTO {
+public class StreetInputDTO extends GenericDto{
 
     private String id;
     private String name;

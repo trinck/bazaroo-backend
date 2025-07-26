@@ -1,5 +1,6 @@
 package org.mts.locationservice.services;
 
+import org.mts.locationservice.configs.CountryContext;
 import org.mts.locationservice.entities.Country;
 import org.mts.locationservice.repositories.CountryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,12 +11,11 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 
-
 @Service
-public class CountryService implements ICountryService{
+public class CountryService implements ICountryService {
 
     @Autowired
-   private CountryRepository countryRepository;
+    private CountryRepository countryRepository;
 
 
     /**
@@ -91,5 +91,24 @@ public class CountryService implements ICountryService{
     @Override
     public Page<Country> getCountriesByCode(String code, Pageable pageable) {
         return this.countryRepository.findAllByCodeContains(code, pageable);
+    }
+
+    /**
+     * @param code
+     * @return
+     */
+    @Override
+    public Country getCountryByCode(String code) {
+        return this.countryRepository.findCountryByCodeIgnoreCase(code).orElseThrow();
+    }
+
+
+    /**
+     *
+     * @return
+     */
+    @Override
+    public Country getCountryByCode() {
+        return this.countryRepository.findCountryByCodeIgnoreCase(CountryContext.getCountry()).orElseThrow();
     }
 }

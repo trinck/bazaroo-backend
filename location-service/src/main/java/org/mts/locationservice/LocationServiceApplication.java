@@ -1,5 +1,6 @@
 package org.mts.locationservice;
 
+import jakarta.transaction.Transactional;
 import org.mts.locationservice.entities.City;
 import org.mts.locationservice.entities.Country;
 import org.mts.locationservice.entities.Street;
@@ -48,7 +49,13 @@ public class LocationServiceApplication implements CommandLineRunner {
         }
         Country country = Country.builder()
                 .name("Gabon")
-                .code("GAB")
+                .code("GA")
+                .cities(new ArrayList<>())
+                .build();
+
+        Country countryTd = Country.builder()
+                .name("Tchad")
+                .code("TD")
                 .cities(new ArrayList<>())
                 .build();
         List<City> cities = new ArrayList<>();
@@ -56,8 +63,15 @@ public class LocationServiceApplication implements CommandLineRunner {
                 .name("LIBREVILLE")
                 .country(country)
                 .build();
+        City moundou = City.builder()
+                .name("MOUNDOU")
+                .country(countryTd)
+                .build();
         Street charbonnage = Street.builder().city(lbv).name("Charbonnage").build();
         lbv.setStreets(List.of(charbonnage));
+
+        Street Giekol = Street.builder().city(moundou).name("Giekol").build();
+        moundou.setStreets(List.of(Giekol));
 
         String[] citiesNames = {"FRANCEVILLE","PORT-GENTIL", "MAKOKOU","KOULAMOUTOU", "TCHIBANGA"};
         country.getCities().add(lbv);
@@ -71,6 +85,8 @@ public class LocationServiceApplication implements CommandLineRunner {
         }
 
         country.getCities().addAll(cities);
+        countryTd.getCities().add(moundou);
         this.iCountryService.save(country);
+        this.iCountryService.save(countryTd);
     }
 }

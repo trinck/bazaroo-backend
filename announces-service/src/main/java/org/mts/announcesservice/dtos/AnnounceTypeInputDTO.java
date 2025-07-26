@@ -8,6 +8,9 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -16,5 +19,6 @@ public class AnnounceTypeInputDTO {
     private String id;
     @NotEmpty(message = "Name type must be initialized")
     private String name;
+    private List<CategoryFieldObjectInputDTO> categoryFields;
 
 }

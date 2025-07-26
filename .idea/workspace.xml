@@ -5,7 +5,339 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="136bb368-98eb-4a84-a825-a6951d1be4ec" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/JPAMappingSettings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/configs/AutowiringSpringBeanJobFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/configs/CountryContext.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/configs/CountryContextFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/configs/CountryTenantIdentifierResolver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/configs/DynamicRealmJwtDecoder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/configs/FeignInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/configs/JwtAuthConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/configs/ScheduleConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/configs/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/consumers/AdvertEventsConsumer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/consumers/KeycloakEvents.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/documents/SavedSearchDocument.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/dtos/GeoZoneInputDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/dtos/SavedSearchInputDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/dtos/SavedSearchRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/dtos/SearchRequestDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/entities/Preference.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/entities/SavedSearch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/enums/AdvertEventType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/enums/KeycloakAdminEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/enums/KeycloakEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/enums/NotificationAudience.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/enums/NotificationTargetType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/enums/NotificationType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/enums/SavedSearchScheduleType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/enums/SearchTypes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/repositories/PreferenceRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/repositories/SavedSearchRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/schedulers/SearchJob.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/service/AuthService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/service/IAuthService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/service/IPercolateSearchService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/service/IPreferenceService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/service/ISchedulerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/service/PercolateSearchService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/service/PreferenceService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/service/SchedulerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/web/SearchController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/announces-service/src/test/java/org/mts/announcesservice/service/PercolateSearchServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/announces-service/src/test/java/org/mts/announcesservice/service/SchedulerServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gateway-service/src/main/java/org/mts/gatewayservice/filters/CustomGlobalFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images-service/src/main/java/org/mts/imagesservice/configs/FeignInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images-service/src/main/java/org/mts/imagesservice/configs/JwtAuthConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images-service/src/main/java/org/mts/imagesservice/configs/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/keycloak-service/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/keycloak-service/keycloak-event-listener/dependency-reduced-pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/keycloak-service/keycloak-event-listener/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/keycloak-service/keycloak-event-listener/src/main/java/org/mts/keycloak/KafkaEventListenerProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/keycloak-service/keycloak-event-listener/src/main/java/org/mts/keycloak/KafkaEventListenerProviderFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/keycloak-service/keycloak-event-listener/src/main/java/org/mts/keycloak/KafkaProducerConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/keycloak-service/keycloak-event-listener/src/main/resources/META-INF/services/org.keycloak.events.EventListenerProviderFactory" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/keycloak-service/realm-config.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/configs/CountryContext.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/configs/CountryContextFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/configs/CountryTenantIdentifierResolver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/configs/FeignInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/configs/JwtAuthConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/configs/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/dtos/GenericDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/dtos/GeoPointDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/entities/GeoPoint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/repositories/GeoPointRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notification-service/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notification-service/src/main/java/org/mts/notificationservice/configs/FeignInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notification-service/src/main/java/org/mts/notificationservice/configs/JwtAuthConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notification-service/src/main/java/org/mts/notificationservice/configs/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notification-service/src/main/java/org/mts/notificationservice/configs/SockJsCleanupFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notification-service/src/main/java/org/mts/notificationservice/configs/WebsocketConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notification-service/src/main/java/org/mts/notificationservice/consumers/KeycloakEvents.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notification-service/src/main/java/org/mts/notificationservice/consumers/NotificationsConsumer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notification-service/src/main/java/org/mts/notificationservice/dtos/Message.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notification-service/src/main/java/org/mts/notificationservice/entities/Preference.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notification-service/src/main/java/org/mts/notificationservice/enums/NotificationAudience.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notification-service/src/main/java/org/mts/notificationservice/enums/NotificationTargetType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notification-service/src/main/java/org/mts/notificationservice/enums/NotificationType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notification-service/src/main/java/org/mts/notificationservice/enums/PreferredCanal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notification-service/src/main/java/org/mts/notificationservice/repositories/PreferenceRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notification-service/src/main/java/org/mts/notificationservice/services/IPreferredService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notification-service/src/main/java/org/mts/notificationservice/services/PreferredService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notification-service/src/main/java/org/mts/notificationservice/utilities/HeaderRemovingResponseWrapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notification-service/src/main/java/org/mts/notificationservice/web/NotificationController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notification-service/src/main/java/org/mts/notificationservice/ws/UserHandshakeHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notification-service/src/main/java/org/mts/notificationservice/ws/WebSocketEventListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payement-stripe/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payement-stripe/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payement-stripe/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payement-stripe/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payement-stripe/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payement-stripe/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payement-stripe/qodana.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payement-stripe/src/main/java/com/payement/PayementStripeApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payement-stripe/src/main/java/com/payement/config/WebConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payement-stripe/src/main/java/com/payement/controller/HomeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payement-stripe/src/main/java/com/payement/controller/ProducktCheckoutController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payement-stripe/src/main/java/com/payement/dto/ProductRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payement-stripe/src/main/java/com/payement/dto/StripeResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payement-stripe/src/main/java/com/payement/service/StripeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payement-stripe/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payement-stripe/src/main/resources/templates/cancel.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payement-stripe/src/main/resources/templates/success.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payement-stripe/src/test/java/com/payement/PayementStripeApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tracking-service/src/main/java/org/mts/trackingservice/configs/FeignInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tracking-service/src/main/java/org/mts/trackingservice/configs/JwtAuthConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tracking-service/src/main/java/org/mts/trackingservice/configs/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/configs/FeignInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/configs/JwtAuthConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/configs/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/InsidiousConfiguration.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/InsidiousConfiguration.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jpa.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jpa.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/announces-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/announces-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/AnnouncesServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/AnnouncesServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/configs/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/configs/Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/configs/ElasticsearchConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/configs/ElasticsearchConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/documents/AnnounceDocument.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/documents/AnnounceDocument.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/dtos/AnnounceInputDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/dtos/AnnounceInputDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/dtos/AnnounceOutputDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/dtos/AnnounceOutputDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/dtos/AnnounceTypeInputDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/dtos/AnnounceTypeInputDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/dtos/AnnounceTypeOutputDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/dtos/AnnounceTypeOutputDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/dtos/CategoryFieldObjectInputDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/dtos/CategoryFieldObjectInputDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/dtos/CategoryFieldOutputDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/dtos/CategoryFieldOutputDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/dtos/CategoryOutputDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/dtos/CategoryOutputDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/dtos/FieldOutputDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/dtos/FieldOutputDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/dtos/GeoZoneOutputDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/dtos/GeoZoneOutputDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/entities/Announce.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/entities/Announce.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/entities/AnnounceType.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/entities/AnnounceType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/entities/CategoryField.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/entities/CategoryField.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/entities/CategoryFieldCheck.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/entities/CategoryFieldCheck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/entities/CategoryFieldCheckUnit.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/entities/CategoryFieldCheckUnit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/entities/GeoZone.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/entities/GeoZone.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/schedulers/AnnounceScheduler.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/schedulers/AnnounceScheduler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/schedulers/IAnnounceScheduler.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/schedulers/IAnnounceScheduler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/service/AnnounceSearchService.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/service/AnnounceSearchService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/service/AnnounceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/service/AnnounceService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/service/IAnnounceSearchService.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/service/IAnnounceSearchService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/utilities/ElasticSearchDynamicQueryGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/utilities/ElasticSearchDynamicQueryGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/web/AnnounceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/web/AnnounceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/web/AnnounceTypeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/web/AnnounceTypeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/web/CategoryFieldController.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/web/CategoryFieldController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/announces-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/announces-service/src/test/java/org/mts/announcesservice/AnnouncesServiceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/test/java/org/mts/announcesservice/AnnouncesServiceApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/.tsbuildinfo" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/.tsbuildinfo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/@angular_cdk_drag-drop.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/@angular_cdk_drag-drop.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/@angular_cdk_menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/@angular_cdk_menu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/@angular_cdk_overlay.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/@angular_cdk_overlay.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/@angular_cdk_tree.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/@angular_cdk_tree.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/@angular_material_badge.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/@angular_material_badge.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/@angular_material_bottom-sheet.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/@angular_material_bottom-sheet.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/@angular_material_button-toggle.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/@angular_material_button-toggle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/@angular_material_button.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/@angular_material_button.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/@angular_material_card.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/@angular_material_card.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/@angular_material_core.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/@angular_material_core.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/@angular_material_datepicker.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/@angular_material_datepicker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/@angular_material_dialog.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/@angular_material_dialog.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/@angular_material_divider.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/@angular_material_divider.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/@angular_material_form-field.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/@angular_material_form-field.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/@angular_material_icon.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/@angular_material_icon.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/@angular_material_input.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/@angular_material_input.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/@angular_material_list.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/@angular_material_list.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/@angular_material_menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/@angular_material_menu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/@angular_material_select.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/@angular_material_select.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/@angular_material_sidenav.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/@angular_material_sidenav.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/@angular_material_slide-toggle.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/@angular_material_slide-toggle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/@angular_material_stepper.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/@angular_material_stepper.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/@angular_material_toolbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/@angular_material_toolbar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/@angular_material_tooltip.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/@angular_material_tooltip.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/@angular_material_tree.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/@angular_material_tree.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/@angular_platform-browser_animations.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/@angular_platform-browser_animations.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/@angular_platform-browser_animations_async.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/@angular_platform-browser_animations_async.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/_metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/_metadata.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/browser-7JSA6FW5.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/browser-7JSA6FW5.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/chunk-2B4GJ7D2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/chunk-2B4GJ7D2.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/chunk-2RGQRCV3.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/chunk-2RGQRCV3.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/chunk-3W47AQHM.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/chunk-3W47AQHM.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/chunk-5NLCWAJM.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/chunk-5NLCWAJM.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/chunk-6222G4ZR.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/chunk-6222G4ZR.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/chunk-7RCOQFUE.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/chunk-7RCOQFUE.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/chunk-AC6Q3PDX.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/chunk-AC6Q3PDX.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/chunk-EVMBYAKA.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/chunk-EVMBYAKA.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/chunk-FI524HYE.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/chunk-FI524HYE.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/chunk-GZPYSQ2N.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/chunk-GZPYSQ2N.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/chunk-H2Q7GONI.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/chunk-H2Q7GONI.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/chunk-HQHYL74B.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/chunk-HQHYL74B.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/chunk-I64CCSBD.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/chunk-I64CCSBD.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/chunk-IU7UKWC4.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/chunk-IU7UKWC4.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/chunk-LLNME27I.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/chunk-LLNME27I.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/chunk-NRXZQ7T5.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/chunk-NRXZQ7T5.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/chunk-NV2Y5TCZ.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/chunk-NV2Y5TCZ.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/chunk-QRCCFM6V.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/chunk-QRCCFM6V.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/chunk-R364N5JQ.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/chunk-R364N5JQ.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/chunk-RJSCMESX.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/chunk-RJSCMESX.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/chunk-TI5P6GPH.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/chunk-TI5P6GPH.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/chunk-TN573BKQ.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/chunk-TN573BKQ.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/chunk-UBO5CX4D.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/chunk-UBO5CX4D.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/chunk-VAHBF3AW.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/chunk-VAHBF3AW.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/chunk-ZHQIASRJ.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/chunk-ZHQIASRJ.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/ngx-bottom-sheet-modal.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/ngx-bottom-sheet-modal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_api.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_avatar.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_avatar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_badge.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_badge.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_button.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_button.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_card.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_card.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_checkbox.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_checkbox.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_checkbox.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_checkbox.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_config.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_datepicker.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_datepicker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_dialog.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_dialog.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_divider.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_divider.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_drawer.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_drawer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_floatlabel.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_floatlabel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_fluid.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_fluid.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_iconfield.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_iconfield.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_iconfield.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_iconfield.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_inputicon.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_inputicon.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_inputicon.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_inputicon.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_inputtext.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_inputtext.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_menu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_message.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_message.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_overlaybadge.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_overlaybadge.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_overlaypanel.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_overlaypanel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_popover.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_popover.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_radiobutton.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_radiobutton.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_ripple.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_ripple.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_styleclass.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_styleclass.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_tieredmenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_tieredmenu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_toast.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_toast.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_toggleswitch.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_toggleswitch.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_toolbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_toolbar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_tooltip.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_tooltip.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/components/bzr-step/bzr-step.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/components/bzr-step/bzr-step.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/components/bzr-stepper/bzr-stepper.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/components/bzr-stepper/bzr-stepper.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/components/bzr-stepper/bzr-stepper.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/components/bzr-stepper/bzr-stepper.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/components/bzr-stepper/bzr-stepper.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/components/bzr-stepper/bzr-stepper.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/components/info-card/info-card.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/components/info-card/info-card.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/components/info-card/info-card.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/components/info-card/info-card.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/components/info-card/info-card.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/components/info-card/info-card.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/components/medias-uploader/medias-uploader.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/components/medias-uploader/medias-uploader.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/components/medias-uploader/medias-uploader.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/components/medias-uploader/medias-uploader.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/components/medias-uploader/medias-uploader.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/components/medias-uploader/medias-uploader.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/components/search-toolbar/search-toolbar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/components/search-toolbar/search-toolbar.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/components/search-toolbar/search-toolbar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/components/search-toolbar/search-toolbar.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/models/Street.ts" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/models/Street.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/pages/search/search.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/pages/search/search.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/services/location.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/services/location.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/config-service/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/config-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/discovery-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/discovery-service/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-service/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/images-service/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/images-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images-service/src/main/java/org/mts/imagesservice/configs/MVCConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/images-service/src/main/java/org/mts/imagesservice/configs/MVCConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images-service/src/main/java/org/mts/imagesservice/entities/GenericsFieldsEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/images-service/src/main/java/org/mts/imagesservice/entities/GenericsFieldsEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images-service/src/main/java/org/mts/imagesservice/entities/IconContent.java" beforeDir="false" afterPath="$PROJECT_DIR$/images-service/src/main/java/org/mts/imagesservice/entities/IconContent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images-service/src/main/java/org/mts/imagesservice/entities/ImageContent.java" beforeDir="false" afterPath="$PROJECT_DIR$/images-service/src/main/java/org/mts/imagesservice/entities/ImageContent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images-service/src/main/java/org/mts/imagesservice/entities/Media.java" beforeDir="false" afterPath="$PROJECT_DIR$/images-service/src/main/java/org/mts/imagesservice/entities/Media.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images-service/src/main/java/org/mts/imagesservice/web/MediaStoreController.java" beforeDir="false" afterPath="$PROJECT_DIR$/images-service/src/main/java/org/mts/imagesservice/web/MediaStoreController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/images-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/images-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/location-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/location-service/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/location-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/location-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/LocationServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/LocationServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/dtos/CityInputDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/dtos/CityInputDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/dtos/CityOutputDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/dtos/CityOutputDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/dtos/CountryInputDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/dtos/CountryInputDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/dtos/CountryOutputDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/dtos/CountryOutputDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/dtos/StreetInputDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/dtos/StreetInputDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/dtos/StreetOutputDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/dtos/StreetOutputDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/entities/City.java" beforeDir="false" afterPath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/entities/City.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/entities/Country.java" beforeDir="false" afterPath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/entities/Country.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/entities/GenericsFieldsEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/entities/GenericsFieldsEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/entities/Street.java" beforeDir="false" afterPath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/entities/Street.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/repositories/CountryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/repositories/CountryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/services/CountryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/services/CountryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/services/ICountryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/services/ICountryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/web/CountryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/web/CountryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/web/StreetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/location-service/src/main/java/org/mts/locationservice/web/StreetController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/location-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/location-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notification-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/notification-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notification-service/src/main/java/org/mts/notificationservice/consumers/NotificationAdminConsumers.java" beforeDir="false" afterPath="$PROJECT_DIR$/notification-service/src/main/java/org/mts/notificationservice/consumers/NotificationAdminConsumers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notification-service/src/main/java/org/mts/notificationservice/consumers/NotificationClientsConsumer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notification-service/src/main/java/org/mts/notificationservice/entities/Notification.java" beforeDir="false" afterPath="$PROJECT_DIR$/notification-service/src/main/java/org/mts/notificationservice/entities/Notification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notification-service/src/main/java/org/mts/notificationservice/repositories/NotificationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/notification-service/src/main/java/org/mts/notificationservice/repositories/NotificationRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notification-service/src/main/java/org/mts/notificationservice/services/INotificationClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/notification-service/src/main/java/org/mts/notificationservice/services/INotificationClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notification-service/src/main/java/org/mts/notificationservice/services/INotificationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/notification-service/src/main/java/org/mts/notificationservice/services/INotificationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notification-service/src/main/java/org/mts/notificationservice/services/NotificationClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/notification-service/src/main/java/org/mts/notificationservice/services/NotificationClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notification-service/src/main/java/org/mts/notificationservice/services/NotificationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/notification-service/src/main/java/org/mts/notificationservice/services/NotificationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notification-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/notification-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tracking-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/tracking-service/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tracking-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tracking-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tracking-service/src/main/java/org/mts/trackingservice/consumers/EventsConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/tracking-service/src/main/java/org/mts/trackingservice/consumers/EventsConsumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tracking-service/src/main/java/org/mts/trackingservice/repositories/DailyStatsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/tracking-service/src/main/java/org/mts/trackingservice/repositories/DailyStatsRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tracking-service/src/main/java/org/mts/trackingservice/web/EventsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/tracking-service/src/main/java/org/mts/trackingservice/web/EventsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tracking-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/tracking-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,13 +347,14 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript File" />
-        <option value="Enum" />
-        <option value="com.intellij.jpb.NewClass" />
         <option value="Dockerfile" />
+        <option value="JUnit5 Test Class" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="com.intellij.jpb.JpaRepository" />
+        <option value="com.intellij.jpb.NewClass" />
+        <option value="Class" />
+        <option value="Enum" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -36,6 +369,15 @@
   }
 }</component>
   <component name="GitToolBoxStore">
+    <option name="largeFiles">
+      <LargeFiles>
+        <option name="unlockedFilePaths">
+          <set>
+            <option value="$PROJECT_DIR$/bazaroo-frontend/package-lock.json" />
+          </set>
+        </option>
+      </LargeFiles>
+    </option>
     <option name="recentBranches">
       <RecentBranches>
         <option name="branchesForRepo">
@@ -58,6 +400,32 @@
                 </list>
               </option>
               <option name="repositoryRootUrl" value="file://$PROJECT_DIR$/configs" />
+            </RecentBranchesForRepo>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="main" />
+                    <option name="lastUsedInstant" value="1746877058" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$/adryvo" />
+            </RecentBranchesForRepo>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="migrate-19" />
+                    <option name="lastUsedInstant" value="1746878544" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="master" />
+                    <option name="lastUsedInstant" value="1746878543" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$/bazaroo-frontend" />
             </RecentBranchesForRepo>
           </list>
         </option>
@@ -94,7 +462,7 @@
   &quot;associatedIndex&quot;: 6
 }</component>
   <component name="ProjectId" id="2fG0EG4IR93mpeBZTB5WsROyIAb" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+  <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -104,8 +472,22 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Application.Main.executor": "Run",
+    "Application.org.mts.keycloak.Main.executor": "Run",
     "DtoCreateDialog.EQUALS_HASH_CODE_INITIAL_PROP_KEY": "false",
     "DtoCreateDialog.TO_STRING_INITIAL_PROP_KEY": "false",
+    "HTTP Request.rest-api | #1.executor": "Run",
+    "HTTP Request.rest-api | #2.executor": "Run",
+    "JUnit.AnnouncesServiceApplicationTests.contextLoads.executor": "Run",
+    "JUnit.PercolateSearchServiceTest.testAnnounceDocumentMappingToJsonData.executor": "Run",
+    "JUnit.SchedulerServiceTest.executor": "Run",
+    "JUnit.SchedulerServiceTest.testScheduleSearch_Daily.executor": "Run",
+    "JUnit.SchedulerServiceTest.testScheduleSearch_InvalidType_ShouldDoNothing.executor": "Run",
+    "JUnit.SchedulerServiceTest.testScheduleSearch_SchedulerException_ShouldThrow.executor": "Run",
+    "JUnit.SchedulerServiceTest.testScheduleSearch_Weekly.executor": "Run",
+    "Maven.announces-service [test].executor": "Run",
+    "Maven.keycloak-event-listener [clean].executor": "Run",
+    "Maven.keycloak-event-listener [package].executor": "Run",
     "OverrideImplement.generate.javadoc": "true",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
@@ -123,31 +505,35 @@
     "Spring Boot.LocationServiceApplication.executor": "Run",
     "Spring Boot.MailServiceApplication.executor": "Run",
     "Spring Boot.NotificationServiceApplication.executor": "Run",
+    "Spring Boot.PayementStripeApplication.executor": "Run",
     "Spring Boot.TrackingServiceApplication.executor": "Run",
     "Spring Boot.UsersServiceApplication.executor": "Run",
     "WebServerToolWindowFactoryState": "false",
     "aspect.path.notification.shown": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "dart.analysis.tool.window.visible": "false",
     "extract.method.default.visibility": "private",
     "git-widget-placeholder": "main",
     "jdk.selected.JAVA_MODULE": "17",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/abdel/IdeaProjects/bazaroo-admin",
+    "last_opened_file_path": "C:/Users/abdel/IdeaProjects/bazaroo/bazaroo-frontend/public/assets/images",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "onboarding.tips.debug.path": "C:/Users/trinc/IdeaProjects/bazaroo_v1/src/main/java/org/mts/Main.java",
-    "project.structure.last.edited": "Modules",
+    "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.2",
     "run.code.analysis.last.selected.profile": "pProject Default",
     "run.configurations.included.in.services": "true",
-    "settings.editor.selected.configurable": "configurable.group.editor",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
     "show.migrate.to.gradle.popup": "false",
     "spring.configuration.checksum": "46c40c74cf225bfa16501bed272b7a95",
-    "ts.external.directory.path": "C:\\Users\\abdel\\IdeaProjects\\bazaroo\\ui-angular\\node_modules\\typescript\\lib",
+    "ts.external.directory.path": "C:\\Users\\abdel\\IdeaProjects\\bazaroo\\bazaroo-frontend\\node_modules\\typescript\\lib",
+    "ts.rename.search.for.js.occurrences": "false",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -156,22 +542,34 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
-      <recent name="org.mts.announcesservice.utilities" />
-      <recent name="org.mts.announcesservice.schedulers" />
-      <recent name="org.mts.notificationservice.services" />
-      <recent name="org.mts.trackingservice.documents" />
+      <recent name="org.mts.announcesservice.enums" />
+      <recent name="org.mts.announcesservice.configs" />
+      <recent name="org.mts.announcesservice.service" />
+      <recent name="org.mts.trackingservice.enums" />
+      <recent name="org.mts.trackingservice.services" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\trinc\IdeaProjects\bazaroo_v1\users-service\src\main\java\org\mts\usersservice" />
+      <recent name="C:\Users\abdel\IdeaProjects\bazaroo\bazaroo-frontend\public\assets\images" />
+      <recent name="C:\Users\abdel\IdeaProjects\bazaroo\location-service\src\main\java\org\mts\locationservice\configs" />
+      <recent name="C:\Users\abdel\IdeaProjects\bazaroo\announces-service\src\main\java\org\mts\announcesservice\enums" />
+      <recent name="C:\Users\abdel\IdeaProjects\bazaroo\keycloak-service" />
+      <recent name="C:\Users\abdel\IdeaProjects\bazaroo\tracking-service\src\main\java\org\mts\trackingservice\configs" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\abdel\IdeaProjects\bazaroo\keycloak-service" />
       <recent name="C:\Users\abdel\IdeaProjects\bazaroo\nginx\certs" />
       <recent name="C:\Users\trinc\IdeaProjects\bazaroo_v1\gateway-service\src\main\resources" />
       <recent name="C:\Users\trinc\IdeaProjects\bazaroo_v1\ui-angular\public\assets\images" />
       <recent name="C:\Users\trinc\IdeaProjects\bazaroo_v1\ui-angular\public\assets\icons" />
-      <recent name="C:\Users\trinc\IdeaProjects\bazaroo_v1\assets\adverts\fg4g5" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="org.mts.announcesservice.service" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.mts.announcesservice.consumers" />
       <recent name="org.mts.mailservice.configs" />
       <recent name="org.mts.usersservice.configs" />
     </key>
@@ -184,27 +582,37 @@
         <option value="SpringBootApplicationConfigurationType" />
       </set>
     </option>
-    <option name="hiddenConfigurations">
-      <map>
-        <entry key="SpringBootApplicationConfigurationType">
-          <value>
-            <set>
-              <option value="MailServiceApplication" />
-              <option value="UsersServiceApplication" />
-            </set>
-          </value>
-        </entry>
-      </map>
-    </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.TrackingServiceApplication">
+  <component name="RunManager" selected="Spring Boot.ImagesServiceApplication">
+    <configuration name="PercolateSearchServiceTest.testAnnounceDocumentMappingToJsonData" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="announces-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.mts.announcesservice.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.mts.announcesservice.service" />
+      <option name="MAIN_CLASS_NAME" value="org.mts.announcesservice.service.PercolateSearchServiceTest" />
+      <option name="METHOD_NAME" value="testAnnounceDocumentMappingToJsonData" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Angular Application (ui-angular)" type="JavascriptDebugType" uri="http://localhost:4200">
       <method v="2" />
     </configuration>
-    <configuration name="AnnouncesServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+    <configuration name="AnnouncesServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="announces-service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="org.mts.announcesservice.AnnouncesServiceApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.mts.announcesservice.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -224,10 +632,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GatewayServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+    <configuration name="GatewayServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="gateway-service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="org.mts.gatewayservice.GatewayServiceApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.mts.gatewayservice.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -236,6 +650,12 @@
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="images-service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="org.mts.imagesservice.ImagesServiceApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.mts.imagesservice.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -244,6 +664,12 @@
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="location-service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="org.mts.locationservice.LocationServiceApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.mts.locationservice.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -260,6 +686,13 @@
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="notification-service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="org.mts.notificationservice.NotificationServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PayementStripeApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="payement-stripe" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.payement.PayementStripeApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -298,19 +731,25 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.GatewayServiceApplication" />
+        <item itemvalue="Spring Boot.AnnouncesServiceApplication" />
         <item itemvalue="Spring Boot.TrackingServiceApplication" />
+        <item itemvalue="JUnit.PercolateSearchServiceTest.testAnnounceDocumentMappingToJsonData" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.25659.39" />
-        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.25659.39" />
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.26927.53" />
+        <option value="bundled-js-predefined-d6986cc7102b-09060db00ec0-JavaScript-IU-251.26927.53" />
       </set>
     </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="StructureViewState">
+    <option name="selectedTab" value="Logical" />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="136bb368-98eb-4a84-a825-a6951d1be4ec" name="Changes" comment="" />
@@ -406,7 +845,52 @@
       <workItem from="1740316430527" duration="168769000" />
       <workItem from="1741031916847" duration="218000" />
       <workItem from="1741032271381" duration="93555000" />
-      <workItem from="1742399968874" duration="9321000" />
+      <workItem from="1742399968874" duration="10124000" />
+      <workItem from="1742491186983" duration="67550000" />
+      <workItem from="1743520964853" duration="74285000" />
+      <workItem from="1743937197232" duration="1377000" />
+      <workItem from="1743940060068" duration="28620000" />
+      <workItem from="1744844062662" duration="105865000" />
+      <workItem from="1745249376780" duration="596000" />
+      <workItem from="1745250253840" duration="43804000" />
+      <workItem from="1745429439426" duration="2014000" />
+      <workItem from="1745483667092" duration="48610000" />
+      <workItem from="1745881281484" duration="1236000" />
+      <workItem from="1745883512738" duration="5204000" />
+      <workItem from="1746090808458" duration="2924000" />
+      <workItem from="1746111736349" duration="54053000" />
+      <workItem from="1746620237536" duration="170368000" />
+      <workItem from="1747125192345" duration="10917000" />
+      <workItem from="1747139268929" duration="31600000" />
+      <workItem from="1747213347663" duration="170793000" />
+      <workItem from="1747816130710" duration="52446000" />
+      <workItem from="1748247384186" duration="176108000" />
+      <workItem from="1749674119164" duration="150274000" />
+      <workItem from="1750243255540" duration="1495000" />
+      <workItem from="1750257735678" duration="3996000" />
+      <workItem from="1750267673887" duration="403000" />
+      <workItem from="1750268126165" duration="255000" />
+      <workItem from="1750268452117" duration="51000" />
+      <workItem from="1750268727339" duration="925000" />
+      <workItem from="1750269723946" duration="428000" />
+      <workItem from="1750270180755" duration="2468000" />
+      <workItem from="1750273145023" duration="2155000" />
+      <workItem from="1750277505511" duration="756000" />
+      <workItem from="1750282415367" duration="602000" />
+      <workItem from="1750283342936" duration="590000" />
+      <workItem from="1750284012090" duration="575000" />
+      <workItem from="1750285290598" duration="2203000" />
+      <workItem from="1750329846621" duration="1764000" />
+      <workItem from="1750331769418" duration="49381000" />
+      <workItem from="1750702674610" duration="43340000" />
+      <workItem from="1751023194878" duration="41249000" />
+      <workItem from="1751301225104" duration="155643000" />
+      <workItem from="1751985273990" duration="7971000" />
+      <workItem from="1751993585006" duration="92129000" />
+      <workItem from="1752240886939" duration="538000" />
+      <workItem from="1752241454983" duration="16718000" />
+      <workItem from="1752650070366" duration="5680000" />
+      <workItem from="1752825867040" duration="12313000" />
     </task>
     <servers />
   </component>
@@ -414,7 +898,37 @@
     <option name="version" value="3" />
   </component>
   <component name="UnknownFeatures">
+    <option featureType="dependencySupport" implementationName="java:org.springframework:spring-core" />
+    <option featureType="dependencySupport" implementationName="java:jakarta.enterprise:jakarta.enterprise.cdi-api" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.kafka:kafka_2.13" />
+    <option featureType="dependencySupport" implementationName="javascript:npm:tailwindcss" />
+    <option featureType="dependencySupport" implementationName="java:io.smallrye.reactive:mutiny" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework.data:spring-data-commons" />
+    <option featureType="dependencySupport" implementationName="executable:kubectl" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework.cloud:spring-cloud-context" />
+    <option featureType="dependencySupport" implementationName="java:org.hibernate.validator:hibernate-validator" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework:spring-webmvc" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework:spring-websocket" />
+    <option featureType="dependencySupport" implementationName="executable:docker" />
+    <option featureType="dependencySupport" implementationName="java:jakarta.persistence:jakarta.persistence-api" />
+    <option featureType="dependencySupport" implementationName="java:io.grpc:grpc-api" />
     <option featureType="com.intellij.fileTypeFactory" implementationName="app.properties" />
+    <option featureType="dependencySupport" implementationName="java:io.quarkus:quarkus-core" />
+    <option featureType="dependencySupport" implementationName="javascript:npm:@angular/core" />
+    <option featureType="dependencySupport" implementationName="java:org.thymeleaf:thymeleaf" />
+    <option featureType="dependencySupport" implementationName="java:jakarta.ws.rs:jakarta.ws.rs-api" />
+    <option featureType="dependencySupport" implementationName="java:jakarta.xml.ws:jakarta.xml.ws-api" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework.security:spring-security-core" />
+    <option featureType="dependencySupport" implementationName="java:jakarta.validation:jakarta.validation-api" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework.integration:spring-integration-core" />
+    <option featureType="dependencySupport" implementationName="java:io.projectreactor:reactor-core" />
+    <option featureType="dependencySupport" implementationName="javascript:npm:karma" />
+    <option featureType="dependencySupport" implementationName="java:org.projectlombok:lombok" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework.cloud:spring-cloud-stream" />
+    <option featureType="dependencySupport" implementationName="java:io.reactivex.rxjava3:rxjava" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework:spring-messaging" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework.boot:spring-boot" />
+    <option featureType="dependencySupport" implementationName="javascript:npm:postcss" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">

@@ -1,19 +1,16 @@
 package org.mts.announcesservice.dtos;
 
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
-@Data
+@Setter
+@Getter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 public class GeoZoneOutputDTO {
 
-    private String name;
     private String id;
-    private Double latitude;
-    private Double longitude;
+    private Double lat;
+    private Double lon;
 }

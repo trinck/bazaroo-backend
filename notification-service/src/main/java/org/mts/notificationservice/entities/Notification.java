@@ -1,13 +1,11 @@
 package org.mts.notificationservice.entities;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.NoArgsConstructor;
+import jakarta.persistence.*;
+import lombok.*;
+import org.mts.notificationservice.enums.NotificationAudience;
+import org.mts.notificationservice.enums.NotificationTargetType;
+import org.mts.notificationservice.enums.NotificationType;
 
 import java.util.Date;
 
@@ -15,6 +13,8 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@Setter
+@Getter
 public class Notification {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,6 +22,22 @@ public class Notification {
     private String message;
     private String url;
     private String userId;
+    private String service;
+    @Enumerated(EnumType.STRING)
+    private NotificationAudience audience;
+    private String title;
+    @Enumerated(EnumType.STRING)
+    private NotificationTargetType targetType;
     private boolean seen;
+    private boolean clicked;
+    @Column(length = 1000)
+    private String data;
+    private String type;
     private Date createdAt = new Date();
+
+
+    @PrePersist
+    public void prePersist() {
+        this.createdAt = new Date();
+    }
 }

@@ -8,7 +8,8 @@ import java.util.List;
 
 @Entity
 @AllArgsConstructor
-@Data
+@Setter
+@Getter
 @Builder
 @NoArgsConstructor
 public class City extends GenericsFieldsEntity {
@@ -20,7 +21,6 @@ public class City extends GenericsFieldsEntity {
     private String name;
     @ManyToOne
     private Country country;
-
     @OneToMany(mappedBy = "city", cascade = CascadeType.PERSIST)
     private List<Street> streets = new ArrayList<>();
 

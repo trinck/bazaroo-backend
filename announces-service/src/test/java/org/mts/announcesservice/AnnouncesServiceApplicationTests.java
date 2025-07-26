@@ -8,6 +8,7 @@ class AnnouncesServiceApplicationTests {
 
     @Test
     void contextLoads() {
+
     }
 
 }

@@ -3,6 +3,9 @@ package org.mts.imagesservice.web;
 
 import com.cloudinary.Cloudinary;
 import com.cloudinary.utils.ObjectUtils;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.Size;
+import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.mts.imagesservice.configs.StorageMediasSources;
 import org.mts.imagesservice.dtos.ImageContentOutputDTO;
@@ -29,6 +32,7 @@ import java.util.NoSuchElementException;
 
 @RestController
 @RequestMapping("mediaStore")
+@Slf4j
 public class MediaStoreController {
 
     @Autowired
@@ -64,9 +68,9 @@ public class MediaStoreController {
 
     @PostMapping("/adverts/{id}/save-all")
     public List<MediaOutputDTO> addAdverts(@RequestParam List<MultipartFile> files, @PathVariable String id){
-
         List<Media> mediaList = serviceStorage.storeAll(files, mediasSources.getAdverts(), id,ImageContent.class);
         //mediaList.forEach(media ->media.setUrl("mediaStore/adverts/"+id+"/load/"));
+
         return this.mediaService.addAll(mediaList).stream().map(media -> modelMapper.map(media, MediaOutputDTO.class)).toList();
     }
 

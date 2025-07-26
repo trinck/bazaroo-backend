@@ -7,14 +7,15 @@ import org.mts.trackingservice.documents.TrackingEventDocument;
 import org.mts.trackingservice.dtos.DailyStatsOutputDTO;
 import org.mts.trackingservice.dtos.TrackingEventInputDTO;
 import org.mts.trackingservice.enums.EventType;
-import org.mts.trackingservice.services.IRedisService;
 import org.mts.trackingservice.services.IStatsService;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.stream.function.StreamBridge;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
 import java.util.List;
-import java.util.Map;
 import java.util.UUID;
 
 @Slf4j
@@ -23,9 +24,11 @@ import java.util.UUID;
 public class EventsController {
 
 
-    private StreamBridge bridge;
-    private ModelMapper mapper;
-    private IStatsService statsService;
+    private final StreamBridge bridge;
+    private final ModelMapper mapper;
+    private final IStatsService statsService;
+    @Value("${app.broker.topics.tracking-in}")
+    private String TOPIC_TRACKING_EVENTS_IN;
     public EventsController(StreamBridge bridge, ModelMapper mapper,  IStatsService statsService) {
         this.bridge = bridge;
         this.mapper = mapper;
@@ -35,19 +38,19 @@ public class EventsController {
 
     @PostMapping("/view")
     public boolean addView(@RequestBody TrackingEventInputDTO dto, HttpServletRequest request) {
-        return this.bridge.send("tracking-events", initTrackingEvent(dto, EventType.VIEW, request));
+        return this.bridge.send(this.TOPIC_TRACKING_EVENTS_IN, initTrackingEvent(dto, EventType.VIEW, request));
 
     }
 
     @PostMapping("/impression")
     public boolean addImpression(@RequestBody TrackingEventInputDTO dto, HttpServletRequest request) {
-        return this.bridge.send("tracking-events", initTrackingEvent(dto, EventType.IMPRESSION, request));
+        return this.bridge.send(this.TOPIC_TRACKING_EVENTS_IN, initTrackingEvent(dto, EventType.IMPRESSION, request));
 
     }
 
     @PostMapping("/share")
     public boolean addShare(@RequestBody TrackingEventInputDTO dto, HttpServletRequest request) {
-        return this.bridge.send("tracking-events", initTrackingEvent(dto, EventType.SHARE, request));
+        return this.bridge.send(this.TOPIC_TRACKING_EVENTS_IN, initTrackingEvent(dto, EventType.SHARE, request));
 
     }
 
@@ -56,16 +59,19 @@ public class EventsController {
     @PostMapping("/click")
     public boolean addClick(@RequestBody TrackingEventInputDTO dto, HttpServletRequest request) {
 
-
-        return this.bridge.send("tracking-events", initTrackingEvent(dto, EventType.CLICK, request));
+        return this.bridge.send(this.TOPIC_TRACKING_EVENTS_IN, initTrackingEvent(dto, EventType.CLICK, request));
 
     }
 
     private TrackingEventDocument initTrackingEvent(@RequestBody TrackingEventInputDTO dto, EventType eventType, HttpServletRequest request) {
+
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         TrackingEventDocument eventDocument = this.mapper.map(dto, TrackingEventDocument.class);
         eventDocument.setEventType(eventType);
         eventDocument.setTimestamp(new Date());
-        eventDocument.setUserId(UUID.randomUUID().toString());
+        if (authentication != null && authentication.isAuthenticated()){
+            eventDocument.setUserId(authentication.getName());
+        }
         eventDocument.setId(UUID.randomUUID().toString());
         String ipAddress = request.getHeader("X-Forwarded-For");
         if (ipAddress == null)ipAddress = request.getRemoteAddr();
@@ -85,12 +91,7 @@ public class EventsController {
         return this.statsService.getDailyStatsForLot(lot).stream().map(stats -> this.mapper.map(stats, DailyStatsOutputDTO.class)).toList();
     }
 
-    @GetMapping("/notification")
-    public void notification(){
-        String newAd = "GGDKUI7D8YDUKHJKHUD7YD79E";
-        List<String> ads = List.of("ad1","ad2", "ad3");
-        this.bridge.send("notification-user-search", Map.of("userId", newAd,"ads",ads));
-    }
+
 
 
     @ExceptionHandler

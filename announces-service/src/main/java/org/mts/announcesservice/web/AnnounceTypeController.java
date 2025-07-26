@@ -9,6 +9,8 @@ import org.mts.announcesservice.dtos.AnnounceTypeOutputDTO;
 import org.mts.announcesservice.dtos.CategoryOutputDTO;
 import org.mts.announcesservice.entities.AnnounceType;
 import org.mts.announcesservice.entities.Category;
+import org.mts.announcesservice.entities.CategoryField;
+import org.mts.announcesservice.entities.CategoryFieldCheck;
 import org.mts.announcesservice.service.IAnnounceTypeService;
 import org.mts.announcesservice.service.ICategoryService;
 import org.mts.announcesservice.utilities.WebUtils;
@@ -33,42 +35,61 @@ public class AnnounceTypeController {
 
 
     @PostMapping("/{id}")
-    public AnnounceTypeOutputDTO create(@PathVariable String id, @RequestBody AnnounceTypeInputDTO dto){
+    public AnnounceTypeOutputDTO create(@PathVariable String id, @RequestBody AnnounceTypeInputDTO dto) {
         AnnounceType announceType = this.modelMapper.map(dto, AnnounceType.class);
-        Category category = this.categoryService.getByID(id);
-        List<AnnounceType> exists =  category.getTypes().stream().filter(t->t.getName().equals(announceType.getName())).toList();
+        dto.getCategoryFields().forEach(fieldObject -> {
+            CategoryField categoryField = null;
+            switch (fieldObject.getType()) {
+                case CHECKBOX, RADIO -> {
+                    categoryField = this.modelMapper.map(dto, CategoryFieldCheck.class);
+                }
+                case TEXT, SHORT_TEXT, BOOLEAN -> {
+                    categoryField = this.modelMapper.map(dto, CategoryField.class);
+                }
+                default -> {
+                    throw new IllegalArgumentException("Field type error: "+fieldObject.getType().name());
+                }
+            }
 
-       if(!exists.isEmpty()){throw new IllegalArgumentException("Type with name "+announceType.getName()+" already exists");}
+                announceType.addCategoryField(categoryField);
+        });
+
+        Category category = this.categoryService.getByID(id);
+        List<AnnounceType> exists = category.getTypes().stream().filter(t -> t.getName().equals(announceType.getName())).toList();
+
+        if (!exists.isEmpty()) {
+            throw new IllegalArgumentException("Type with name " + announceType.getName() + " already exists");
+        }
 
         announceType.setCategory(category);
-        return  this.modelMapper.map(this.announceTypeService.create(announceType), AnnounceTypeOutputDTO.class);
+        return this.modelMapper.map(this.announceTypeService.create(announceType), AnnounceTypeOutputDTO.class);
     }
 
     @GetMapping("/{id}")
-    public AnnounceTypeOutputDTO getById(@PathVariable String id){
+    public AnnounceTypeOutputDTO getById(@PathVariable String id) {
         return this.modelMapper.map(this.announceTypeService.getByID(id), AnnounceTypeOutputDTO.class);
     }
 
 
     @PutMapping("/{id}")
-    public AnnounceTypeOutputDTO update(@PathVariable @NotEmpty String id, @RequestBody AnnounceTypeInputDTO dto){
-        AnnounceType  type = this.modelMapper.map(dto, AnnounceType.class);
+    public AnnounceTypeOutputDTO update(@PathVariable @NotEmpty String id, @RequestBody AnnounceTypeInputDTO dto) {
+        AnnounceType type = this.modelMapper.map(dto, AnnounceType.class);
         type.setId(id);
         return this.modelMapper.map(this.announceTypeService.update(type), AnnounceTypeOutputDTO.class);
     }
 
 
     @DeleteMapping("/{id}")
-    public  AnnounceTypeOutputDTO delete(@PathVariable String id){
+    public AnnounceTypeOutputDTO delete(@PathVariable String id) {
         return this.modelMapper.map(this.announceTypeService.deleteById(id), AnnounceTypeOutputDTO.class);
     }
 
     @GetMapping
-    public Map<String, Object> getAll(@RequestParam(defaultValue = "5") int size, @RequestParam(defaultValue = "0") int page){
+    public Map<String, Object> getAll(@RequestParam(defaultValue = "5") int size, @RequestParam(defaultValue = "0") int page) {
 
         Page<AnnounceType> types = this.announceTypeService.getAnnounceTypes(PageRequest.of(page, size));
         Map<String, Object> map = WebUtils.pageToMap(types);
-        map.put("content", types.getContent().stream().map(c->this.modelMapper.map(c, AnnounceTypeOutputDTO.class)).toList());
+        map.put("content", types.getContent().stream().map(c -> this.modelMapper.map(c, AnnounceTypeOutputDTO.class)).toList());
         return map;
     }
 

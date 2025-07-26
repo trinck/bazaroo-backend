@@ -2,21 +2,21 @@ package org.mts.locationservice.dtos;
 
 
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.mts.locationservice.entities.GenericsFieldsEntity;
 
 import java.util.List;
 
 @NoArgsConstructor
-@Data
+@Setter
+@Getter
 @AllArgsConstructor
-public class CityOutputDTO extends GenericsFieldsEntity {
+public class CityOutputDTO extends GenericDto {
 
     private String id;
     private String name;
     private String countryId;
+    private String countryName;
     private List<StreetOutputDTO> streets;
 
 }

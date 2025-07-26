@@ -23,6 +23,7 @@ public class AnnounceType {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID )
     private String id;
+
     @Column(nullable = false)
     @org.springframework.data.elasticsearch.annotations.Field(type = FieldType.Text)
     private String name;

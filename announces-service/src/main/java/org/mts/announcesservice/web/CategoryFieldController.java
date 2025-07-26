@@ -34,10 +34,17 @@ public class CategoryFieldController {
 
     @PostMapping("/{id}")
     public CategoryFieldOutputDTO create(@PathVariable String id, @RequestBody CategoryFieldObjectInputDTO dto){
-        CategoryField categoryField = null;
+        CategoryField categoryField;
         switch (dto.getType()){
-            case CHECKBOX, RADIO -> { categoryField = this.modelMapper.map(dto, CategoryFieldCheck.class); }
-            default -> { categoryField = this.modelMapper.map(dto, CategoryField.class); }
+            case CHECKBOX, RADIO -> {
+                categoryField = this.modelMapper.map(dto, CategoryFieldCheck.class);
+            }
+            case TEXT, SHORT_TEXT, BOOLEAN -> {
+                categoryField = this.modelMapper.map(dto, CategoryField.class);
+            }
+            default -> {
+                throw new IllegalArgumentException("Field type error");
+            }
         }
 
         AnnounceType announceType = this.announceTypeService.getByID(id);

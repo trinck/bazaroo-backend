@@ -11,13 +11,4 @@ import java.util.function.Consumer;
 public class NotificationAdminConsumers {
 
 
-
-    @Bean
-    public Consumer<String> newAd(){
-
-        return (adId)->{
-
-
-        };
-    }
 }

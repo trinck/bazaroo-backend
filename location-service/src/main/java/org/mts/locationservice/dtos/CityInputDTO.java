@@ -1,14 +1,15 @@
 package org.mts.locationservice.dtos;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import org.mts.locationservice.entities.GenericsFieldsEntity;
 
 @NoArgsConstructor
-@Data
 @AllArgsConstructor
-public class CityInputDTO {
+@Setter
+@Getter
+public class CityInputDTO extends GenericDto {
 
     private String id;
     private String name;
+
 }

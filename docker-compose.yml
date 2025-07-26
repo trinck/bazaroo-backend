@@ -27,34 +27,35 @@ services:
   mts-discovery-service:
     container_name: mts-discovery-service
     restart: always
-    build:
-      ./discovery-service
+    build: ./discovery-service
     ports:
       - "8761:8761"
     expose:
       - "8761"
     healthcheck:
       test: [ "CMD", "curl","-f" , "http://localhost:8761/actuator/health" ]
-      interval: 15s
+      interval: 20s
+      disable: false
+      retries: 10
 
 
   mts-config-service:
     container_name: mts-config-service
     environment:
-      - DISCOVERY_SERVICE_URL=http://mts-discovery-service:8761/eureka
-      - CONFIG_SERVICE_URL=http://mts-config-service:9999
-      - CONFIG_PROFILE:dev
+      DISCOVERY_SERVICE_URL: http://mts-discovery-service:8761/eureka
+      CONFIG_SERVICE_URL: http://mts-config-service:9999
+      CONFIG_SERVER_GIT_URI: https://github.com/trinck/bazaroo-configs-repo.git
     restart: always
-    build:
-      ./config-service
+    build: ./config-service
     ports:
       - "9999:9999"
     expose:
       - "9999"
     healthcheck:
       test: [ "CMD", "curl","-f" , "http://localhost:9999/actuator/health" ]
-      interval: 10s
-
+      interval: 20s
+      disable: false
+      retries: 10
     depends_on:
       mts-discovery-service:
         condition: service_healthy
@@ -63,30 +64,39 @@ services:
   mts-gateway-service:
     container_name: mts-gateway-service
     environment:
-      - DISCOVERY_SERVICE_URL=http://mts-discovery-service:8761/eureka
-      - CONFIG_SERVICE_URL=http://mts-config-service:9999
-      - CORS_ALLOWED_ORIGIN=*
+      DISCOVERY_SERVICE_URL: http://mts-discovery-service:8761/eureka
+      CONFIG_SERVICE_URL: http://mts-config-service:9999
+      CORS_ALLOWED_ORIGIN: "*"
+      ALLOWED_HEADERS: "*"
+      ALLOWED_METHODS: "*"
     restart: always
-    build:
-      ./gateway-service
+    build: ./gateway-service
     ports:
       - "8888:8888"
     expose:
       - "8888"
-
     depends_on:
       mts-config-service:
-        condition: service_healthy
+        condition: service_started
 
+  # Service media
   mts-images-service:
     container_name: mts-images-service
     environment:
-      - DISCOVERY_SERVICE_URL=http://mts-discovery-service:8761/eureka
-      - CONFIG_SERVICE_URL=http://mts-config-service:9999
-      - SPRING_PROFILES_ACTIVE=dev
+      DB_CLASS_NAME: com.mysql.cj.jdbc.Driver
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/mediadb?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: 1234
+      SPRING_JPA_PROPERTIES_HIBERNATE_DIALECT: org.hibernate.dialect.MySQLDialect
+      DISCOVERY_SERVICE_URL: http://mts-discovery-service:8761/eureka
+      CONFIG_SERVICE_URL: http://mts-config-service:9999
+      SPRING_PROFILES_ACTIVE: dev
+      # Configuration Keycloak pour Spring
+      SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_ISSUER_URI: http://localhost/auth/realms/mts-adryvo
+      SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_JWK_SET_URI: http://keycloak:8080/realms/mts-adryvo/protocol/openid-connect/certs
+
     restart: always
-    build:
-      ./images-service
+    build: ./images-service
     ports:
       - "8083:8083"
     expose:
@@ -98,18 +108,25 @@ services:
       mysql:
         condition: service_started
       mts-config-service:
-        condition: service_healthy
+        condition: service_started
 
 
   mts-location-service:
     container_name: mts-location-service
     environment:
-      - DISCOVERY_SERVICE_URL=http://mts-discovery-service:8761/eureka
-      - CONFIG_SERVICE_URL=http://mts-config-service:9999
-      - SPRING_PROFILES_ACTIVE=dev
+      DB_CLASS_NAME: com.mysql.cj.jdbc.Driver
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/locationdb?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: 1234
+      SPRING_JPA_PROPERTIES_HIBERNATE_DIALECT: org.hibernate.dialect.MySQLDialect
+      DISCOVERY_SERVICE_URL: http://mts-discovery-service:8761/eureka
+      CONFIG_SERVICE_URL: http://mts-config-service:9999
+      SPRING_PROFILES_ACTIVE: dev
+      # Configuration Keycloak pour Spring
+      SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_ISSUER_URI: http://localhost/auth/realms/mts-adryvo
+      SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_JWK_SET_URI: http://keycloak:8080/realms/mts-adryvo/protocol/openid-connect/certs
     restart: always
-    build:
-      ./location-service
+    build: ./location-service
     ports:
       - "8081:8081"
     expose:
@@ -121,7 +138,7 @@ services:
       mysql:
         condition: service_started
       mts-config-service:
-        condition: service_healthy
+        condition: service_started
 
 
 #  mts-mail-service:
@@ -155,21 +172,34 @@ services:
 #      mts-images-service:
 #        condition: service_started
 
+  # service des annonces
   mts-announces-service:
     container_name: mts-announces-service
     environment:
-      - ELASTICSEARCH_HOST=http://elasticsearch:9200
-      - DISCOVERY_SERVICE_URL=http://mts-discovery-service:8761/eureka
-      - CONFIG_SERVICE_URL=http://mts-config-service:9999
-      - SPRING_PROFILES_ACTIVE=dev
+      DB_CLASS_NAME: com.mysql.cj.jdbc.Driver
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/advertdb?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: 1234
+      SPRING_JPA_PROPERTIES_HIBERNATE_DIALECT: org.hibernate.dialect.MySQLDialect
+      ELASTICSEARCH_HOST: http://elasticsearch:9200
+      DISCOVERY_SERVICE_URL: http://mts-discovery-service:8761/eureka
+      CONFIG_SERVICE_URL: http://mts-config-service:9999
+      SPRING_PROFILES_ACTIVE: dev
+      KAFKA_BOOTSTRAP_SERVERS: kafka:9092
+      # Configuration Keycloak pour Spring
+      SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_ISSUER_URI: http://localhost/auth/realms/mts-adryvo
+      SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_JWK_SET_URI: http://keycloak:8080/realms/mts-adryvo/protocol/openid-connect/certs
     restart: always
-    build:
-      ./announces-service
+    build: ./announces-service
     ports:
       - "8086:8086"
     expose:
       - "8086"
     depends_on:
+      kafka:
+        condition: service_started
+      keycloak:
+        condition: service_started
       mysql:
         condition: service_started
       elasticsearch:
@@ -178,24 +208,68 @@ services:
         condition: service_started
 
 
+# service de notification
+  mts-notification-service:
+    container_name: mts-notification-service
+    environment:
+      DB_CLASS_NAME: com.mysql.cj.jdbc.Driver
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/notificationdb?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: 1234
+      SPRING_JPA_PROPERTIES_HIBERNATE_DIALECT: org.hibernate.dialect.MySQLDialect
+      ELASTICSEARCH_HOST: http://elasticsearch:9200
+      DISCOVERY_SERVICE_URL: http://mts-discovery-service:8761/eureka
+      CONFIG_SERVICE_URL: http://mts-config-service:9999
+      SPRING_PROFILES_ACTIVE: dev
+      KAFKA_BOOTSTRAP_SERVERS: kafka:9092
+      # Configuration Keycloak pour Spring
+      SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_ISSUER_URI: http://localhost/auth/realms/mts-adryvo
+      SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_JWK_SET_URI: http://keycloak:8080/realms/mts-adryvo/protocol/openid-connect/certs
+    restart: always
+    build: ./notification-service
+    ports:
+      - "8088:8088"
+    expose:
+      - "8088"
+    depends_on:
+      kafka:
+        condition: service_started
+      mysql:
+        condition: service_started
+      elasticsearch:
+        condition: service_started
+      mts-config-service:
+        condition: service_started
+
+
+  # Service de tracking
   mts-tracking-service:
     container_name: mts-tracking-service
     environment:
-      - ELASTICSEARCH_HOST=http://elasticsearch:9200
-      - DISCOVERY_SERVICE_URL=http://mts-discovery-service:8761/eureka
-      - CONFIG_SERVICE_URL=http://mts-config-service:9999
-      - SPRING_PROFILES_ACTIVE=dev
-      - REDIS_HOST=redis
-      - REDIS_PORT=6379
-      - KAFKA_BOOTSTRAP_SERVERS=kafka:9092
+      DB_CLASS_NAME: com.mysql.cj.jdbc.Driver
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/trackingdb?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: 1234
+      SPRING_JPA_PROPERTIES_HIBERNATE_DIALECT: org.hibernate.dialect.MySQLDialect
+      ELASTICSEARCH_HOST: http://elasticsearch:9200
+      DISCOVERY_SERVICE_URL: http://mts-discovery-service:8761/eureka
+      CONFIG_SERVICE_URL: http://mts-config-service:9999
+      SPRING_PROFILES_ACTIVE: dev
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      KAFKA_BOOTSTRAP_SERVERS: kafka:9092
+      # Configuration Keycloak pour Spring
+      SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_ISSUER_URI: http://localhost/auth/realms/mts-adryvo
+      SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_JWK_SET_URI: http://keycloak:8080/realms/mts-adryvo/protocol/openid-connect/certs
     restart: always
-    build:
-      ./tracking-service
+    build: ./tracking-service
     ports:
       - "8087:8087"
     expose:
       - "8087"
     depends_on:
+      kafka:
+        condition: service_started
       mts-config-service:
         condition: service_healthy
       mysql:
@@ -207,7 +281,7 @@ services:
 
 
 
-
+  # Client angular frontend
   front-end:
     container_name: front-end
     depends_on:
@@ -215,23 +289,29 @@ services:
         condition: service_started
     restart: always
     build:
-      ./frontend
+      context: ./bazaroo-frontend
+      args:
+        ENVIRONMENT: development
+    environment:
+      SERVER_NAME: ga.adryvo.com
+      ENVIRONMENT: development
     ports:
       - '80:80'
-      - '443:443'
+      #- '443:443'
     expose:
       - '80'
-      - '443'
+      #- '443'
     volumes:
       - /etc/letsencrypt:/etc/letsencrypt:ro
 
+  # Service redis pour le cache
   redis:
     image: redis:latest
     container_name: redis
     ports:
       - "6379:6379"
 
-
+  # Service zookeeper pour orchestrer kafka
   zookeeper:
     image: confluentinc/cp-zookeeper:7.3.0
     container_name: zookeeper
@@ -241,12 +321,21 @@ services:
       ZOOKEEPER_TICK_TIME: 2000
     ports:
       - "2181:2181"
+    healthcheck:
+      test: [ "CMD", "echo", "ruok", "|", "nc", "localhost", "2181" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    expose:
+      - "2181"
 
+  # Service kafka
   kafka:
     image: confluentinc/cp-kafka:7.3.0
     container_name: kafka
     depends_on:
-      - zookeeper
+      zookeeper:
+        condition: service_healthy
     restart: always
     ports:
       - "9092:9092"
@@ -261,31 +350,83 @@ services:
 
 
 
+  # Service Keycloak pour gerer les authentifications
+  keycloak:
+    build: ./keycloak-service
+    container_name: keycloak
+    environment:
+      KC_BOOTSTRAP_ADMIN_USERNAME: admin
+      KC_BOOTSTRAP_ADMIN_PASSWORD: 1234
+      KC_DB: mysql
+      KC_DB_URL: jdbc:mysql://mysql:3306/keycloak?createDatabaseIfNotExist=true
+      KC_DB_USERNAME: root
+      KC_DB_PASSWORD: 1234
+      REALM_NAME: mts-adryvo
+      KC_HOSTNAME_STRICT: "false"
+      KC_HOSTNAME_STRICT_HTTPS: "false"
+      #KEYCLOAK_FRONTEND_URL: http://localhost:auth/
+      KC_PROXY: edge
+      KC_HOSTNAME: http://ga.adryvo.com/auth
+      #KC_HOSTNAME_URL: http://localhost/auth
+      KAFKA_BOOTSTRAP_SERVERS: kafka:9092
+      #KC_HTTP_MANAGEMENT_RELATIVE_PATH: /auth
 
-#  kafka:
-#    image: confluentinc/cp-kafka
-#    environment:
-#      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
-#      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092
-#    ports:
-#      - "9092:9092"
+    volumes:
+      - ./keycloak-service/realm-config.json:/opt/keycloak/data/import/realm-config.json
+    command:
+      - start-dev
+      - --import-realm
+    ports:
+      - "8080:8080"
+    expose:
+      - "8080"
+    depends_on:
+      kafka:
+        condition: service_started
+      front-end:
+        condition: service_started
+      mysql:
+        condition: service_started
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:8080/health/ready" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
 
-
+  # Base de données mysql
   mysql:
-    build:
-      ./database
+    build: ./database
     container_name: mysql
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: adryvo
+      #MYSQL_ROOT_PASSWORD: adryvo
       MYSQL_USER: adryvo
+      MYSQL_DATABASE: keycloak
       MYSQL_PASSWORD: adryvo
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_ALLOW_EMPTY_PASSWORD: "true"
     ports:
       - "3306:3306"
     volumes:
       - mysql_data:/var/lib/mysql
 
+  # Service phpMyAdmin pour gérer la base de données MySQL
+  phpmyadmin:
+    image: phpmyadmin:latest
+    restart: always
+    container_name: phpmyadmin
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+    ports:
+      - "8180:80"
+    expose:
+      - "80"
+    depends_on:
+      - mysql
 
+
+# volumes elastic et mysql
 volumes:
   es_data:
   mysql_data: {}

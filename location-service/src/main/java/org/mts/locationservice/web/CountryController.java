@@ -1,6 +1,7 @@
 package org.mts.locationservice.web;
 
 import org.modelmapper.ModelMapper;
+import org.mts.locationservice.configs.CountryContext;
 import org.mts.locationservice.dtos.CountryInputDTO;
 import org.mts.locationservice.dtos.CountryOutputDTO;
 import org.mts.locationservice.entities.Country;
@@ -31,6 +32,19 @@ public class CountryController {
     public CountryOutputDTO getCountryByName(@RequestParam(name = "name", defaultValue = "gabon") String name){
         return this.modelMapper.map(this.iCountryService.getCountryByName(name), CountryOutputDTO.class);
     }
+
+    @GetMapping("/country-code/{code}")
+    public CountryOutputDTO getCountryByCode(@PathVariable String code){
+        return this.modelMapper.map(this.iCountryService.getCountryByCode(code), CountryOutputDTO.class);
+    }
+
+
+    @GetMapping("/country-tenant")
+    public CountryOutputDTO getCountry(){
+        return this.modelMapper.map(this.iCountryService.getCountryByCode(), CountryOutputDTO.class);
+    }
+
+
 
     @DeleteMapping("/{id}")
     public CountryOutputDTO deleteCountryById(@PathVariable String id){
