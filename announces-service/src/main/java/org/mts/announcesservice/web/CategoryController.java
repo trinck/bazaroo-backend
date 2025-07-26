@@ -76,9 +76,4 @@ public class CategoryController {
         return this.categoryService.getAll().stream().map(c->this.modelMapper.map(c,CategoryOutputDTO.class)).toList();
     }
 
-    @GetMapping("/withParent")
-    List<CategoryOutputDTO2> getListWithParent() {
-        return categoryService.getAll().stream().map(c->this.modelMapper.map(c,CategoryOutputDTO2.class)).toList();
-    }
-
 }

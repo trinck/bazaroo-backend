@@ -19,6 +19,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -36,15 +37,19 @@ public class AnnounceTypeController {
 
     @PostMapping("/{id}")
     public AnnounceTypeOutputDTO create(@PathVariable String id, @RequestBody AnnounceTypeInputDTO dto) {
-        AnnounceType announceType = this.modelMapper.map(dto, AnnounceType.class);
+        AnnounceType announceType = AnnounceType.builder()
+                .name(dto.getName())
+                .fields(new ArrayList<>())
+                .build();
+
         dto.getCategoryFields().forEach(fieldObject -> {
             CategoryField categoryField = null;
             switch (fieldObject.getType()) {
                 case CHECKBOX, RADIO -> {
-                    categoryField = this.modelMapper.map(dto, CategoryFieldCheck.class);
+                    categoryField = this.modelMapper.map(fieldObject, CategoryFieldCheck.class);
                 }
                 case TEXT, SHORT_TEXT, BOOLEAN -> {
-                    categoryField = this.modelMapper.map(dto, CategoryField.class);
+                    categoryField = this.modelMapper.map(fieldObject, CategoryField.class);
                 }
                 default -> {
                     throw new IllegalArgumentException("Field type error: "+fieldObject.getType().name());

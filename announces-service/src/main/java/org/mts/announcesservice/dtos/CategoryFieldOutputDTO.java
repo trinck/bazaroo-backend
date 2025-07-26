@@ -19,6 +19,7 @@ public class CategoryFieldOutputDTO {
     private String fieldName;
     private FieldType type;
     private List<CategoryFieldCheckUnit> fieldCheckUnits;
+    private AnnounceTypeOutputDTO announceType;
 
 
 }

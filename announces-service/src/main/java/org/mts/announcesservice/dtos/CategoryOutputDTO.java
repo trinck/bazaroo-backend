@@ -2,7 +2,9 @@ package org.mts.announcesservice.dtos;
 
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.*;
+import org.mts.announcesservice.entities.Category;
 
 
 import java.util.HashSet;
@@ -22,5 +24,8 @@ public class CategoryOutputDTO {
     private String description;
     private Set<CategoryOutputDTO> subCategories = new HashSet<>();
     private String parentCategoryId;
+    @JsonBackReference
+    private CategoryOutputDTO parentCategory;
+    @JsonBackReference
     private Set<AnnounceTypeOutputDTO> types = new HashSet<>();
 }

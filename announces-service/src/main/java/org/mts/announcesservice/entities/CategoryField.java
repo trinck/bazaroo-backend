@@ -15,6 +15,7 @@ import org.mts.announcesservice.enums.FieldType;
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "classe")
 @DiscriminatorValue("CategoryField")
+@ToString
 public class CategoryField {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
