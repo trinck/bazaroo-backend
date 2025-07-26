@@ -46,24 +46,38 @@ public class AnnouncesServiceApplication implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        boolean computer = this.categoryRepository.existsCategoryByTitleEqualsIgnoreCase("Computer");
+        boolean computer = this.categoryRepository.existsCategoryByTitleEqualsIgnoreCase("Immobilier");
         if (computer)
         {
             return;
         }
 
         Category category = Category.builder()
-                .title("Computer")
-                .iconUrl("laptop")
-                .color("#2543be")
-                .description("Buy or sell un computer")
+                .title("Immobilier")
+                .iconUrl("fa-solid fa-city")
+                .color("#009afa")
+                .description("Acheter ou vendre un immobilier")
                 .build();
 
         Category category1 = Category.builder()
-                .title("Marché")
-                .iconUrl("shop")
-                .color("#9d25be")
-                .description("Vent et achête des produits du marché Bazaroo")
+                .title("MarketPlace")
+                .iconUrl("fa-solid fa-cart-shopping")
+                .color("#2fc967")
+                .description("Acheter et vendre des produits du marché Adryvo")
+                .build();
+
+        Category category2 = Category.builder()
+                .title("Véhicules")
+                .iconUrl("fa-solid fa-car")
+                .color("#ff5563")
+                .description("Acheter et vendre des produits du marché Adryvo")
+                .build();
+
+        Category category3 = Category.builder()
+                .title("Emplois et Services")
+                .iconUrl("fa-solid fa-user-tie")
+                .color("#36b5a4")
+                .description("Acheter et vendre des produits du marché Adryvo")
                 .build();
 
         AnnounceType typeC1 = AnnounceType.builder()
@@ -71,29 +85,36 @@ public class AnnouncesServiceApplication implements CommandLineRunner {
                 .build();
 
         AnnounceType type = AnnounceType.builder()
-                .name("Order")
+                .name("Location")
                 .build();
         AnnounceType type1 = AnnounceType.builder()
                 .name("Vente")
                 .build();
 
         CategoryField field = CategoryField.builder()
-                .fieldName("ram")
+                .fieldName("Chambre")
                 .type(FieldType.SHORT_TEXT)
                 .build();
 
         CategoryField field1 = CategoryField.builder()
-                .fieldName("Capacité")
+                .fieldName("Douche")
                 .type(FieldType.SHORT_TEXT)
                 .build();
 
         CategoryField field2 = CategoryField.builder()
-                .fieldName("Taille de l'ecran")
+                .fieldName("Salon")
                 .type(FieldType.SHORT_TEXT)
+                .build();
+
+        CategoryField field3 = CategoryField.builder()
+                .fieldName("Meublé")
+                .type(FieldType.RADIO)
                 .build();
 
         category = this.categoryService.create(category);
         category1 = this.categoryService.create(category1);
+        category2 = this.categoryService.create(category2);
+        category3 = this.categoryService.create(category3);
         typeC1.setCategory(category1);
         type1.setCategory(category);
         type.setCategory(category);
@@ -105,9 +126,11 @@ public class AnnouncesServiceApplication implements CommandLineRunner {
         field.setAnnounceType(type1);
         field1.setAnnounceType(type1);
         field2.setAnnounceType(type1);
+        field3.setAnnounceType(type1);
         field = this.categoryFieldService.create(field);
         field1 = this.categoryFieldService.create(field1);
         field2 = this.categoryFieldService.create(field2);
+        field3 = this.categoryFieldService.create(field3);
 
         //this.elasticsearchConfig.createIndex();
     }

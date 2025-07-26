@@ -14,6 +14,5 @@ public class StreetOutputDTO extends GenericDto{
     private String id;
     private String name;
     private Long zip;
-    private String cityId;
-    private String cityName;
+    private City city;
 }

@@ -1,5 +1,6 @@
 package org.mts.locationservice.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.proxy.HibernateProxy;
@@ -26,6 +27,7 @@ public class Country extends GenericsFieldsEntity{
     private String code;
     private String currency;
     @OneToMany(mappedBy = "country", cascade = CascadeType.PERSIST, orphanRemoval = true)
+    @JsonIgnore
     private List<City> cities = new ArrayList<>();
 
     @Override

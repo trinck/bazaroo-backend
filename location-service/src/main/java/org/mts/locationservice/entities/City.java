@@ -1,5 +1,6 @@
 package org.mts.locationservice.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -21,7 +22,9 @@ public class City extends GenericsFieldsEntity {
     private String name;
     @ManyToOne
     private Country country;
-    @OneToMany(mappedBy = "city", cascade = CascadeType.PERSIST)
+
+    @OneToMany(mappedBy = "city", cascade = CascadeType.PERSIST, orphanRemoval = true)
+    @JsonIgnore
     private List<Street> streets = new ArrayList<>();
 
 }

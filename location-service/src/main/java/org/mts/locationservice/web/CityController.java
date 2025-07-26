@@ -29,6 +29,11 @@ public class CityController {
         return convertToOutputDto(this.iCityService.getCityById(id));
     }
 
+    @GetMapping("/country/{countryName}")
+    public List<City> getCitiesByCountryName(@PathVariable String countryName){
+        return this.iCityService.getCitiesByCountryName(countryName).stream().toList();
+    }
+
     @DeleteMapping("/{id}")
     public CityOutputDTO deleteCityById(@PathVariable String id){
         return convertToOutputDto(this.iCityService.deleteCiyById(id));
@@ -40,9 +45,13 @@ public class CityController {
         return  this.iCityService.getCities().stream().map(this::convertToOutputDto).toList();
     }
 
+    @GetMapping("/withCountry")
+    public List<City> getAllCitiesWithCountry(){
+        return this.iCityService.getCities().stream().toList();
+    }
 
     @PostMapping("/{countryId}")
-    public CityOutputDTO addCity(@PathVariable String countryId,@RequestBody CityInputDTO cityInputDTO){
+    public CityOutputDTO addCity(@PathVariable String countryId, @RequestBody CityInputDTO cityInputDTO){
 
         Country country = this.iCountryService.getCountryById(countryId);
         City city = convertToEntity(cityInputDTO);

@@ -41,6 +41,11 @@ public class StreetController {
         return  this.StreetService.getStreets().stream().map(this::convertToOutputDto).toList();
     }
 
+    @GetMapping("/withCity")
+    public List<Street> getAllStreetsWithCity(){
+        return  this.StreetService.getStreets().stream().toList();
+    }
+
 
     @PostMapping("/{cityId}")
     public StreetOutputDTO saveStreet(@PathVariable(required = true) String cityId,@RequestBody StreetInputDTO streetInputDTO){

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -28,9 +29,14 @@ public class CategoryService implements  ICategoryService{
      * @return
      */
     @Override
+    @Transactional
     public Category deleteById(String id) {
-
         Category category = this.repository.findById(id).orElseThrow();
+
+        // ⚠️ Initialisation des collections LAZY
+        category.getTypes().size();          // Accès explicite = initialise Hibernate proxy
+        category.getSubCategories().size();  // Même chose ici si besoin
+
         this.repository.deleteById(id);
         return category;
     }
