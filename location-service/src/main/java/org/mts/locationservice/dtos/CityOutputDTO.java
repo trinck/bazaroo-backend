@@ -18,7 +18,6 @@ public class CityOutputDTO extends GenericDto {
     private String name;
     private String countryId;
     private String countryName;
-    @JsonBackReference
     private List<StreetOutputDTO> streets;
 
 }

@@ -21,5 +21,6 @@ public class AnnounceTypeOutputDTO {
     private String name;
     @JsonBackReference
     private List<CategoryFieldOutputDTO> fields = new ArrayList<>();
+    @JsonBackReference
     private CategoryOutputDTO category;
 }

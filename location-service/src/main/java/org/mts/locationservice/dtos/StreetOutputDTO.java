@@ -1,5 +1,6 @@
 package org.mts.locationservice.dtos;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.*;
 import org.mts.locationservice.entities.City;
 
@@ -15,5 +16,6 @@ public class StreetOutputDTO extends GenericDto{
     private String id;
     private String name;
     private Long zip;
+    @JsonBackReference
     private CityOutputDTO city;
 }
