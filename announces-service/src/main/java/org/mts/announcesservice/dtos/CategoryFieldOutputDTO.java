@@ -2,6 +2,7 @@ package org.mts.announcesservice.dtos;
 
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.*;
 import org.mts.announcesservice.entities.CategoryFieldCheckUnit;
 import org.mts.announcesservice.enums.FieldType;
@@ -19,6 +20,7 @@ public class CategoryFieldOutputDTO {
     private String fieldName;
     private FieldType type;
     private List<CategoryFieldCheckUnit> fieldCheckUnits;
+    @JsonBackReference
     private AnnounceTypeOutputDTO announceType;
 
 

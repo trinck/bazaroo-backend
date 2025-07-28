@@ -16,6 +16,8 @@ public class StreetOutputDTO extends GenericDto{
     private String id;
     private String name;
     private Long zip;
+    private String cityName;
+    private String cityId;
     @JsonBackReference
     private CityOutputDTO city;
 }
