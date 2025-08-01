@@ -6,8 +6,11 @@ import jakarta.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.mts.announcesservice.entities.CategoryFieldCheckUnit;
 import org.mts.announcesservice.enums.FieldType;
 import org.springframework.data.elasticsearch.annotations.Field;
+
+import java.util.List;
 
 
 @Data
@@ -29,6 +32,7 @@ public class FieldOutputDTO {
     protected Boolean dataValueBoolean;
     @Field(type = org.springframework.data.elasticsearch.annotations.FieldType.Text)
     private  FieldType type;
+    private List<CheckUnitOutputDTO> fieldCheckUnits;
 
 
     // Méthode pour préparer l'entité avant l'indexation

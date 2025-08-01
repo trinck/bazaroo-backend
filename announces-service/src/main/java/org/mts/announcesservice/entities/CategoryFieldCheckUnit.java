@@ -1,6 +1,7 @@
 package org.mts.announcesservice.entities;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
@@ -20,7 +21,8 @@ public class CategoryFieldCheckUnit {
     @Column(nullable = false)
     private String name;
     private String dataValue = name;
+    private Boolean checked;
     @ManyToOne
-    @JsonIgnore
+    @JsonBackReference
     private CategoryFieldCheck categoryField;
 }

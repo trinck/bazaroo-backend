@@ -22,6 +22,7 @@ public class CategoryField {
     protected Long id;
     @NotEmpty
     protected String fieldName;
+    protected String icon;
     @Enumerated(EnumType.STRING)
     protected FieldType type;
     @ManyToOne

@@ -19,6 +19,8 @@ public class CategoryFieldOutputDTO {
     private Long id;
     private String fieldName;
     private FieldType type;
+    private Boolean checked;
+    private String icon;
     private List<CategoryFieldCheckUnit> fieldCheckUnits;
     @JsonBackReference
     private AnnounceTypeOutputDTO announceType;

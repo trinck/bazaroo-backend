@@ -18,6 +18,7 @@ import java.util.Objects;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+
 public class CategoryFieldCheck extends CategoryField{
     @OneToMany(mappedBy = "categoryField", cascade = CascadeType.PERSIST, orphanRemoval = true)
     private List<CategoryFieldCheckUnit> fieldCheckUnits = new ArrayList<>();

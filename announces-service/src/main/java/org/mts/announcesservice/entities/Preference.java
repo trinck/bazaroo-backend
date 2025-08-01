@@ -16,6 +16,9 @@ public class Preference {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private boolean beNotified;
+    private boolean expired;
+    private boolean active;
+    private boolean mail;
     @Column(nullable = false)
     private String userId;
     private String roles;

@@ -1,9 +1,7 @@
 package org.mts.announcesservice;
 
 import org.mts.announcesservice.configs.ElasticsearchConfig;
-import org.mts.announcesservice.entities.AnnounceType;
-import org.mts.announcesservice.entities.Category;
-import org.mts.announcesservice.entities.CategoryField;
+import org.mts.announcesservice.entities.*;
 import org.mts.announcesservice.enums.FieldType;
 import org.mts.announcesservice.repositories.CategoryRepository;
 import org.mts.announcesservice.service.IAnnounceTypeService;
@@ -16,6 +14,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
+
+import java.util.List;
 
 @SpringBootApplication
 @EnableFeignClients
@@ -106,10 +106,25 @@ public class AnnouncesServiceApplication implements CommandLineRunner {
                 .type(FieldType.SHORT_TEXT)
                 .build();
 
-        CategoryField field3 = CategoryField.builder()
-                .fieldName("Meublé")
-                .type(FieldType.RADIO)
+        CategoryFieldCheck field3 = new CategoryFieldCheck();
+        field3.setFieldName("Meublé");
+        field3.setType(FieldType.RADIO);
+        field3.setIcon("pi pi-box");
+
+        CategoryFieldCheckUnit check1 = CategoryFieldCheckUnit.builder()
+                .checked(true)
+                .name("Oui")
+                .categoryField((CategoryFieldCheck) field3)
+                .dataValue("Oui")
                 .build();
+
+        CategoryFieldCheckUnit check2 = CategoryFieldCheckUnit.builder()
+                .checked(false)
+                .name("Non")
+                .categoryField((CategoryFieldCheck) field3)
+                .dataValue("Non")
+                .build();
+        ((CategoryFieldCheck)field3).setFieldCheckUnits(List.of(check1,check2));
 
         category = this.categoryService.create(category);
         category1 = this.categoryService.create(category1);
@@ -130,7 +145,7 @@ public class AnnouncesServiceApplication implements CommandLineRunner {
         field = this.categoryFieldService.create(field);
         field1 = this.categoryFieldService.create(field1);
         field2 = this.categoryFieldService.create(field2);
-        field3 = this.categoryFieldService.create(field3);
+         this.categoryFieldService.create(field3);
 
         //this.elasticsearchConfig.createIndex();
     }

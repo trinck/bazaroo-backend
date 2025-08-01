@@ -24,4 +24,5 @@ public class Street {
     private Long zip;
     @Field(type = FieldType.Text)
     private String cityId;
+    private String cityName;
 }

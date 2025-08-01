@@ -2,6 +2,7 @@ package org.mts.announcesservice.entities;
 
 import jakarta.persistence.*;
 import lombok.*;
+import lombok.extern.slf4j.Slf4j;
 import org.hibernate.annotations.TenantId;
 import org.hibernate.proxy.HibernateProxy;
 import org.mts.announcesservice.enums.AnnounceStatus;
@@ -11,6 +12,7 @@ import org.springframework.data.elasticsearch.annotations.FieldType;
 
 import java.util.*;
 
+@Slf4j
 @Entity
 @Getter
 @Setter
@@ -83,22 +85,27 @@ public class Announce {
 
         if (this.type == null) throw new NullPointerException("Announce type is null");
 
-        List<CategoryField> list = this.type.getFields()
+        Optional<CategoryField> cf = this.type.getFields()
                 .stream().filter(f -> {
                     return f.getFieldName().equals(field.getName()) && f.getType() == field.getType();
-                }).toList();
+                }).toList().stream().findFirst();
 
-        if (list.size() != 1)
+        if (cf.isEmpty())
             throw new UnsupportedOperationException("No field with name " + field.getName() + " in category type");
         if (fields.stream().anyMatch(f -> field.getName().equals(f.getName())))
             throw new IllegalArgumentException("Element already present");
         field.setAnnounce(this);
 
         if (field instanceof Check) {
-            CategoryFieldCheck ch = (CategoryFieldCheck) list.stream().findFirst().orElseThrow();
-            if (((Check) field).getCheckUnits().size() != ch.getFieldCheckUnits().size())
-                throw new IllegalArgumentException("more or less required elements ");
-            testCheckUnitMatch((Check) field, ch);
+            log.info("Adding check announce :"+field.getName());
+
+            CategoryFieldCheck  cfo = (CategoryFieldCheck) cf.get();
+
+                if (((Check) field).getCheckUnits().size() != cfo.getFieldCheckUnits().size())
+                    throw new IllegalArgumentException("more or less required elements ");
+                testCheckUnitMatch((Check) field, cfo);
+
+
         }
         this.fields.add(field);
 
