@@ -17,6 +17,7 @@ public class CategoryFieldInputDTO {
     protected Long id;
     protected String fieldName;
     protected FieldType type;
+    protected String icon;
 
 
 }

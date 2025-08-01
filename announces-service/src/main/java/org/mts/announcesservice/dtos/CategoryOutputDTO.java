@@ -24,6 +24,7 @@ public class CategoryOutputDTO {
     private String description;
     private Set<CategoryOutputDTO> subCategories = new HashSet<>();
     private String parentCategoryId;
+    private String parentCategoryTitle;
     @JsonBackReference
     private CategoryOutputDTO parentCategory;
     private Set<AnnounceTypeOutputDTO> types = new HashSet<>();

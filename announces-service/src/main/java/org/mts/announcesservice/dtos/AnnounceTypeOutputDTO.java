@@ -20,6 +20,10 @@ public class AnnounceTypeOutputDTO {
     private String id;
     private String name;
     private List<CategoryFieldOutputDTO> fields = new ArrayList<>();
+    private String categoryId;
+    private String categoryTitle;
+    private String categoryIconUrl;
+    private String categoryColor;
     @JsonBackReference
     private CategoryOutputDTO category;
 }

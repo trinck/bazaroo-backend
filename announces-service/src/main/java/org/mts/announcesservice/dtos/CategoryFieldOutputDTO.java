@@ -22,6 +22,8 @@ public class CategoryFieldOutputDTO {
     private Boolean checked;
     private String icon;
     private List<CategoryFieldCheckUnit> fieldCheckUnits;
+    private String announceTypeId;
+    private String announceTypeName;
     @JsonBackReference
     private AnnounceTypeOutputDTO announceType;
 
