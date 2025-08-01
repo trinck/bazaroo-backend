@@ -23,6 +23,7 @@ public class AnnounceInputDTO {
     private String title;
     private String address;
     private String description;
+    private String AnnounceTypeId;
     private List<Object> ObjectFields = new ArrayList<>();
 
 }

@@ -93,17 +93,20 @@ public class AnnouncesServiceApplication implements CommandLineRunner {
 
         CategoryField field = CategoryField.builder()
                 .fieldName("Chambre")
+                .icon("pi pi-building-columns")
                 .type(FieldType.SHORT_TEXT)
                 .build();
 
         CategoryField field1 = CategoryField.builder()
                 .fieldName("Douche")
                 .type(FieldType.SHORT_TEXT)
+                .icon("pi pi-gift")
                 .build();
 
         CategoryField field2 = CategoryField.builder()
                 .fieldName("Salon")
                 .type(FieldType.SHORT_TEXT)
+                .icon("pi pi-building")
                 .build();
 
         CategoryFieldCheck field3 = new CategoryFieldCheck();
@@ -147,6 +150,5 @@ public class AnnouncesServiceApplication implements CommandLineRunner {
         field2 = this.categoryFieldService.create(field2);
          this.categoryFieldService.create(field3);
 
-        //this.elasticsearchConfig.createIndex();
     }
 }

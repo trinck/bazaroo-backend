@@ -60,6 +60,7 @@ public class Announce {
 
 
     public void setType(AnnounceType type) {
+        if (type == null) {return;}
         if (this.category != null) {
 
             List<Category> categories = new ArrayList<>();

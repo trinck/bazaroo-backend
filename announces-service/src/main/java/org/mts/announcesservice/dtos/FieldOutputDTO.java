@@ -32,7 +32,7 @@ public class FieldOutputDTO {
     protected Boolean dataValueBoolean;
     @Field(type = org.springframework.data.elasticsearch.annotations.FieldType.Text)
     private  FieldType type;
-    private List<CheckUnitOutputDTO> fieldCheckUnits;
+    private List<CheckUnitOutputDTO> checkUnits;
 
 
     // Méthode pour préparer l'entité avant l'indexation

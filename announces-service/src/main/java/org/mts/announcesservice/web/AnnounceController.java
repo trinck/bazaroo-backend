@@ -38,8 +38,9 @@ public class AnnounceController {
     private final StreetClient streetClient;
     private final IAnnounceSearchService searchService;
     private final IAuthService iAuthService;
+    private final ICategoryService categoryService;
 
-    public AnnounceController(ModelMapper modelMapper, IAnnounceService announceService, IFieldService fieldService, IAnnounceTypeService announceTypeService, MediasClient mediasClient, StreetClient streetClient, IAnnounceSearchService searchService, IAuthService iAuthService) {
+    public AnnounceController(ModelMapper modelMapper, IAnnounceService announceService, IFieldService fieldService, IAnnounceTypeService announceTypeService, MediasClient mediasClient, StreetClient streetClient, IAnnounceSearchService searchService, IAuthService iAuthService, ICategoryService categoryService) {
         this.modelMapper = modelMapper;
         this.announceService = announceService;
         this.fieldService = fieldService;
@@ -48,13 +49,21 @@ public class AnnounceController {
         this.streetClient = streetClient;
         this.searchService = searchService;
         this.iAuthService = iAuthService;
+        this.categoryService = categoryService;
     }
 
 
-    @PostMapping("/{type}")
+    @PostMapping("/{category}")
     @PreAuthorize("hasAnyAuthority('USER')")
-    public AnnounceOutputDTO create(@PathVariable String type, @RequestBody AnnounceInputDTO dto, Authentication authentication) {
-        AnnounceType announceType = this.announceTypeService.getByID(type);
+    public AnnounceOutputDTO create(@PathVariable(required = true) String category, @RequestBody AnnounceInputDTO dto, Authentication authentication) {
+        AnnounceType announceType = null;
+        Category category1 = null;
+        if (dto.getAnnounceTypeId() != null){
+            announceType = this.announceTypeService.getByID(dto.getAnnounceTypeId());
+            category1 = announceType.getCategory();
+        }else {
+            category1 = this.categoryService.getByID(category);
+        }
         /***
          * *************************************
          * * Initialization of announce entity**
@@ -75,7 +84,7 @@ public class AnnounceController {
                 .fields(new ArrayList<>())
                 .build();
 
-        announce.setCategory(announceType.getCategory());
+        announce.setCategory(category1);
         announce.setType(announceType);
 
 
