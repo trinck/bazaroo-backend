@@ -1,6 +1,9 @@
 package org.mts.usersservice.web;
 
+import lombok.extern.slf4j.Slf4j;
+import org.keycloak.representations.idm.UserRepresentation;
 import org.modelmapper.ModelMapper;
+import org.mts.usersservice.configs.CountryContext;
 import org.mts.usersservice.configs.DefaultClientPref;
 import org.mts.usersservice.dtos.AuthInputDTO;
 import org.mts.usersservice.dtos.AuthOutputDTO;
@@ -9,107 +12,46 @@ import org.mts.usersservice.dtos.EmployeeOutputDTO;
 import org.mts.usersservice.entities.*;
 import org.mts.usersservice.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
+import java.util.List;
 
+@Slf4j
 @RestController
-@RequestMapping("auths")
+@RequestMapping("users")
 public class AuthController {
 
 
 
     @Autowired
-    private IRoleService iRoleService;
-    @Autowired
-    private IConnectionService iConnectionService;
-    @Autowired
-    private IUserService userService;
-    @Autowired
-    private IAuthService iAuthService;
-    @Autowired
-    private ModelMapper modelMapper;
-    @Autowired
-    private IClientService clientService;
-    @Autowired
-    private IEmployeeService employeeService;
-    @Autowired
-    private PasswordEncoder passwordEncoder;
-    @Autowired
-    private IPreferenceService preferenceService;
-    @Autowired
-    DefaultClientPref clientPref;
-
-    @PostMapping("/clients/signup")
-    public ClientOutputDTO createClientAccount(@RequestBody AuthInputDTO authInputDTO){
-
-        Role role = this.iRoleService.getRoleById(authInputDTO.getRoleId());
-        Auth auth = this.modelMapper.map(authInputDTO, Auth.class);
-        auth.setVerified(true);
-        auth.setActive(true);
-        Client client = new Client();
-
-        //add default client preference and client entity
-        Preference preference = this.modelMapper.map(clientPref, Preference.class);
-        preference.setClient(client);
-
-        //connection info
-        Connection connection = new Connection();
-        connection.setAuth(auth);
-        connection.setLastConnection(new Date());
+    private IKeycloakService keycloakService;
 
 
-        client.setPreference(preference);
-        client.setAuth(auth);
-        auth.setRole(role);
-        auth.setUser(client);
-        auth.setPassword(passwordEncoder.encode(auth.getPassword()));
-        auth.setConnection(connection);
-        role.getAuths().add(auth);
 
 
-        auth = this.iAuthService.creatAuth(auth);
-        return this.modelMapper.map((Client)auth.getUser(), ClientOutputDTO.class);
+    @GetMapping
+    @PreAuthorize("hasAnyAuthority('ADMIN')")
+    public List<UserRepresentation> getUsers(@RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "10") int size){
+       log.warn("getUsers called in realm {}", CountryContext.getRealm());
+        return this.keycloakService.getAllUsers(page, size, CountryContext.getRealm());
+    }
+
+    @PutMapping
+    @PreAuthorize("hasAnyAuthority('USER')")
+    public UserRepresentation updateUser(UserRepresentation   user){
+        return this.keycloakService.updateUser(user, CountryContext.getRealm());
     }
 
 
 
-    @PostMapping("/employees/signup")
-    public EmployeeOutputDTO createEmployeeAccount(@RequestBody AuthInputDTO authInputDTO){
-
-        Role role = this.iRoleService.getRoleById(authInputDTO.getRoleId());
-        Auth auth = this.modelMapper.map(authInputDTO, Auth.class);
-        Employee employee = new Employee();
-        auth.setVerified(true);
-        auth.setActive(true);
-
-        //connection info
-        Connection connection = new Connection();
-        connection.setAuth(auth);
-        connection.setLastConnection(new Date());
-
-
-        auth.setUser(employee);
-        auth.setRole(role);
-        auth.setPassword(this.passwordEncoder.encode(auth.getPassword()));
-        auth.setConnection(connection);
-        role.getAuths().add(auth);
-        employee.setAuth(auth);
-
-
-
-        auth = this.iAuthService.creatAuth(auth);
-        return this.modelMapper.map((Employee)auth.getUser(), EmployeeOutputDTO.class);
+    @GetMapping("/{id}")
+    public UserRepresentation getUserById(@PathVariable String id){
+        return this.keycloakService.getUserById(id ,CountryContext.getRealm());
     }
-
-
-
-    @GetMapping("/login")
-    public AuthOutputDTO login(@RequestParam String username, @RequestParam String password){
-        return this.modelMapper.map(this.iAuthService.loadAuthByUsername(username), AuthOutputDTO.class);
-    }
-
 
 
 

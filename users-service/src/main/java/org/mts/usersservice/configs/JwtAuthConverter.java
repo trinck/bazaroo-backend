@@ -31,7 +31,7 @@ public class JwtAuthConverter implements Converter<Jwt, AbstractAuthenticationTo
                 jwtGrantedAuthoritiesConverter.convert(source).stream(),
                 extractResourceRoles(source).stream()
         ).collect(Collectors.toSet());
-        return new JwtAuthenticationToken(source, authorities, source.getClaimAsString("preferred_username"));
+        return new JwtAuthenticationToken(source, authorities, source.getClaimAsString("sub"));
     }
 
     private Collection<GrantedAuthority> extractResourceRoles(Jwt source) {

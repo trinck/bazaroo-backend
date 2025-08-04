@@ -2,6 +2,7 @@ package org.mts.usersservice.configs;
 
 import feign.RequestInterceptor;
 import feign.RequestTemplate;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationToken;
@@ -15,9 +16,16 @@ public class FeignInterceptor implements RequestInterceptor {
     @Override
     public void apply(RequestTemplate requestTemplate) {
 
-        SecurityContext context = SecurityContextHolder.getContext();
-        JwtAuthenticationToken authentication = (JwtAuthenticationToken) context.getAuthentication();
-        String jwtAccessToken = authentication.getToken().getTokenValue();
-        requestTemplate.header("Authorization", "Bearer "+jwtAccessToken);
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+
+        // ✅ Vérifier que l'authentification est bien de type JwtAuthenticationToken
+        if (authentication instanceof JwtAuthenticationToken jwtAuth) {
+            String jwtAccessToken = jwtAuth.getToken().getTokenValue();
+
+            if (jwtAccessToken != null && !jwtAccessToken.isEmpty()) {
+                requestTemplate.header("Authorization", "Bearer " + jwtAccessToken);
+            }
+        }
     }
+
 }
