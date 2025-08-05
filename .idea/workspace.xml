@@ -12,40 +12,52 @@
       <change afterPath="$PROJECT_DIR$/bazaroo-frontend/public/assets/logos/logo17.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/bazaroo-frontend/public/assets/logos/logo18.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/models/UserRepresentation.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/resolvers/current-user.resolver.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/resolvers/current-user.resolver.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/services/medias.service.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/services/medias.service.ts" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/services/url.service.spec.ts" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/services/url.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/configs/CountryContext.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/configs/CountryContextFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/configs/DynamicRealmJwtDecoder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/configs/KeycloakConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/configs/KeycloakProperties.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/services/IKeycloakService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/services/KeycloakService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/.tsbuildinfo" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/.tsbuildinfo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/@angular_cdk_drag-drop.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/@angular_cdk_drag-drop.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/@angular_cdk_menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/@angular_cdk_menu.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/@angular_cdk_overlay.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/@angular_cdk_overlay.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/_metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/_metadata.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/chunk-2MVEXXWK.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/chunk-2MVEXXWK.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/chunk-7KHGKEKF.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/chunk-7KHGKEKF.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/chunk-BSDUE4OA.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/chunk-BSDUE4OA.js.map" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/chunk-FHY52SEC.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/chunk-FHY52SEC.js.map" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/chunk-MG5V4HJJ.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/chunk-MG5V4HJJ.js.map" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/chunk-N2J2L35E.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/chunk-N2J2L35E.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_button.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_button.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_checkbox.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_checkbox.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_datepicker.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_datepicker.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_dialog.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_dialog.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_dialog.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_dialog.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_drawer.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_drawer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_inputtext.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_inputtext.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_menu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_message.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_message.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_message.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_message.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_overlaypanel.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_overlaypanel.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_panelmenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_panelmenu.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_password.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_password.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_radiobutton.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_radiobutton.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_sidebar.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_textarea.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_textarea.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_tieredmenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_tieredmenu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_toast.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_toast.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_togglebutton.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_togglebutton.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_toggleswitch.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_toggleswitch.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_tree.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/primeng_tree.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/app-routing.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/app.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/components/bzr-logo/bzr-logo.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/components/bzr-logo/bzr-logo.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/components/bzr-stepper/bzr-stepper.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/components/bzr-stepper/bzr-stepper.component.html" afterDir="false" />
@@ -60,18 +72,21 @@
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/pages/announce-view/announce-view.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/pages/announce-view/announce-view.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/pages/entry-home/entry-home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/pages/entry-home/entry-home.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/pages/entry-home/entry-home.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/pages/entry-home/entry-home.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/pages/personal-infos/personal-infos.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/pages/personal-infos/personal-infos.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/pages/personal-infos/personal-infos.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/pages/personal-infos/personal-infos.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/pages/preferences/preferences.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/pages/preferences/preferences.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/services/category.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/services/category.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/services/resolvers/category.resolver.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/resolvers/category.resolver.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/services/resolvers/category.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/resolvers/category.resolver.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/services/resolvers/city.resolver.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/resolvers/city.resolver.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/services/resolvers/city.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/resolvers/city.resolver.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/services/users.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/services/users.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/UsersServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/UsersServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/configs/FeignInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/configs/FeignInterceptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/configs/JwtAuthConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/configs/JwtAuthConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/web/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/web/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/web/ContactController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/web/EmployeeController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/web/RoleController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/web/UserController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/web/profileController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/config-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images-service/src/main/java/org/mts/imagesservice/services/IServiceStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/images-service/src/main/java/org/mts/imagesservice/services/IServiceStorage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images-service/src/main/java/org/mts/imagesservice/services/ServiceStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/images-service/src/main/java/org/mts/imagesservice/services/ServiceStorage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images-service/src/main/java/org/mts/imagesservice/services/ServiceStorageCloud.java" beforeDir="false" afterPath="$PROJECT_DIR$/images-service/src/main/java/org/mts/imagesservice/services/ServiceStorageCloud.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images-service/src/main/java/org/mts/imagesservice/web/MediaStoreController.java" beforeDir="false" afterPath="$PROJECT_DIR$/images-service/src/main/java/org/mts/imagesservice/web/MediaStoreController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/images-service/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +108,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/configs" />
     <option name="ROOT_SYNC" value="SYNC" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -116,25 +131,6 @@
       <RecentBranches>
         <option name="branchesForRepo">
           <list>
-            <RecentBranchesForRepo>
-              <option name="branches">
-                <list>
-                  <RecentBranch>
-                    <option name="branchName" value="main" />
-                    <option name="lastUsedInstant" value="1738709438" />
-                  </RecentBranch>
-                  <RecentBranch>
-                    <option name="branchName" value="prod" />
-                    <option name="lastUsedInstant" value="1738707044" />
-                  </RecentBranch>
-                  <RecentBranch>
-                    <option name="branchName" value="dev" />
-                    <option name="lastUsedInstant" value="1738706618" />
-                  </RecentBranch>
-                </list>
-              </option>
-              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$/configs" />
-            </RecentBranchesForRepo>
             <RecentBranchesForRepo>
               <option name="branches">
                 <list>
@@ -175,6 +171,29 @@
                 </list>
               </option>
               <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="develop" />
+                    <option name="lastUsedInstant" value="1754360467" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="main" />
+                    <option name="lastUsedInstant" value="1754360247" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="prod" />
+                    <option name="lastUsedInstant" value="1738707044" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="dev" />
+                    <option name="lastUsedInstant" value="1738706618" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$/configs" />
             </RecentBranchesForRepo>
           </list>
         </option>
@@ -263,7 +282,7 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "dart.analysis.tool.window.visible": "false",
     "extract.method.default.visibility": "private",
-    "git-widget-placeholder": "feature/user-service",
+    "git-widget-placeholder": "develop",
     "jdk.selected.JAVA_MODULE": "17",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/abdel/IdeaProjects/bazaroo/users-service/src/main/java/org/mts/usersservice/configs",
@@ -761,7 +780,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/web/AuthController.java</url>
           <line>44</line>
-          <properties class="org.mts.usersservice.web.AuthController" method="updateUser">
+          <properties class="org.mts.usersservice.web.AuthController">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>

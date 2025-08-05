@@ -54,8 +54,7 @@ public class MediaStoreController {
         if (!("image/png".equals(contentType) || "image/jpeg".equals(contentType))) {
             throw new IllegalArgumentException( "Only PNG and JPEG images are allowed");
         }
-        ImageContent media = (ImageContent) this.serviceStorage.store(file, file.getOriginalFilename(),id, Paths.get(mediasSources.getProfiles()),ImageContent.class);
-        media.setUrl("mediaStore/profiles/"+id+"/load/");
+        Media media =  this.serviceStorage.store(file, this.mediasSources.getProfiles(), id,ImageContent.class);
         return modelMapper.map(this.mediaService.save(media), ImageContentOutputDTO.class);
     }
 
@@ -69,10 +68,15 @@ public class MediaStoreController {
     @PostMapping("/adverts/{id}/save-all")
     public List<MediaOutputDTO> addAdverts(@RequestParam List<MultipartFile> files, @PathVariable String id){
         List<Media> mediaList = serviceStorage.storeAll(files, mediasSources.getAdverts(), id,ImageContent.class);
-        //mediaList.forEach(media ->media.setUrl("mediaStore/adverts/"+id+"/load/"));
-
         return this.mediaService.addAll(mediaList).stream().map(media -> modelMapper.map(media, MediaOutputDTO.class)).toList();
     }
+
+
+
+
+
+
+
 
 
     @PostMapping("/adverts/{id}/save")

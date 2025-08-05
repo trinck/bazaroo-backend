@@ -73,7 +73,7 @@ public class ServiceStorageCloud implements IServiceStorage{
         for (MultipartFile file : files) {
 
            // String fileName = file.getOriginalFilename();
-            Map params = ObjectUtils.asMap("folder","announces/"+id);
+            Map params = ObjectUtils.asMap("folder",source+"/"+id);
            try {
                Map uploadResult = cloudinary.uploader().upload(file.getBytes(), params);
                Media media = mediaType.getName().equals(ImageContent.class.getName()) ? new ImageContent() : new IconContent();
@@ -91,6 +91,34 @@ public class ServiceStorageCloud implements IServiceStorage{
         }
 
         return medias;
+    }
+
+    /**
+     * @param file
+     * @param source
+     * @param id
+     * @param mediaType
+     * @return
+     */
+    @Override
+    public Media store(MultipartFile file, String source, String id, Class<? extends Media> mediaType) {
+
+        // String fileName = file.getOriginalFilename();
+
+        try {
+            Map params = ObjectUtils.asMap("folder", source + "/" + id);
+            Map uploadResult = cloudinary.uploader().upload(file.getBytes(), params);
+            Media media = mediaType.getName().equals(ImageContent.class.getName()) ? new ImageContent() : new IconContent();
+            media.setSize(file.getSize());
+            media.setType(file.getContentType());
+            media.setName(file.getName());
+            media.setUrl(uploadResult.get("url").toString());
+            media.setPath(uploadResult.get("url").toString());
+            return media;
+        } catch (IOException e) {
+             throw new RuntimeException(e.getMessage());
+        }
+
     }
 
     /**
@@ -113,6 +141,9 @@ public class ServiceStorageCloud implements IServiceStorage{
      */
     @Override
     public Media store(MultipartFile file, String filename, String id, Path root, Class<? extends Media> mediaClass) {
+
+
+
         return null;
     }
 }

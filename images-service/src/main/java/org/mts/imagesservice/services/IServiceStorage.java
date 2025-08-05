@@ -18,6 +18,7 @@ public interface IServiceStorage {
     public void deleteAll(String source) ;
 
     public List<Media> storeAll(List<MultipartFile> files, String source,String id, Class<? extends Media> mediaType);
+    public Media store(MultipartFile file, String source,String id, Class<? extends Media> mediaType);
 
     public Stream<Path> loadAll(String source, int dept) ;
 

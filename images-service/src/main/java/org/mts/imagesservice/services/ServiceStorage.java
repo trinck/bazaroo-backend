@@ -116,6 +116,18 @@ public class ServiceStorage implements IServiceStorage {
         return medias;
     }
 
+    /**
+     * @param file
+     * @param source
+     * @param id
+     * @param mediaType
+     * @return
+     */
+    @Override
+    public Media store(MultipartFile file, String source, String id, Class<? extends Media> mediaType) {
+        return null;
+    }
+
 
     @Override
     public Stream<Path> loadAll(String source, int dept) {
