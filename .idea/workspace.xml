@@ -18,6 +18,7 @@
       <change afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/services/medias.service.ts" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/services/url.service.spec.ts" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/services/url.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/.tsbuildinfo" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/.tsbuildinfo" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/@angular_cdk_drag-drop.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/@angular_cdk_drag-drop.js" afterDir="false" />
@@ -81,6 +82,7 @@
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/services/resolvers/city.resolver.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/resolvers/city.resolver.spec.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/services/resolvers/city.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/resolvers/city.resolver.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/services/users.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/services/users.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/config-service/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +104,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/configs" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="SYNC" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -155,21 +157,6 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
-                    <option name="branchName" value="feature/user-service" />
-                    <option name="lastUsedInstant" value="1754142913" />
-                  </RecentBranch>
-                  <RecentBranch>
-                    <option name="branchName" value="main" />
-                    <option name="lastUsedInstant" value="1754142912" />
-                  </RecentBranch>
-                </list>
-              </option>
-              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
-            </RecentBranchesForRepo>
-            <RecentBranchesForRepo>
-              <option name="branches">
-                <list>
-                  <RecentBranch>
                     <option name="branchName" value="main" />
                     <option name="lastUsedInstant" value="1754361982" />
                   </RecentBranch>
@@ -188,6 +175,21 @@
                 </list>
               </option>
               <option name="repositoryRootUrl" value="file://$PROJECT_DIR$/configs" />
+            </RecentBranchesForRepo>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="main" />
+                    <option name="lastUsedInstant" value="1754362419" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="feature/user-service" />
+                    <option name="lastUsedInstant" value="1754142913" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
             </RecentBranchesForRepo>
           </list>
         </option>
@@ -231,74 +233,74 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Application.Main.executor": "Run",
-    "Application.org.mts.keycloak.Main.executor": "Run",
-    "DtoCreateDialog.EQUALS_HASH_CODE_INITIAL_PROP_KEY": "false",
-    "DtoCreateDialog.TO_STRING_INITIAL_PROP_KEY": "false",
-    "HTTP Request.rest-api | #1.executor": "Run",
-    "HTTP Request.rest-api | #2.executor": "Run",
-    "JUnit.AnnouncesServiceApplicationTests.contextLoads.executor": "Run",
-    "JUnit.PercolateSearchServiceTest.testAnnounceDocumentMappingToJsonData.executor": "Run",
-    "JUnit.SchedulerServiceTest.executor": "Run",
-    "JUnit.SchedulerServiceTest.testScheduleSearch_Daily.executor": "Run",
-    "JUnit.SchedulerServiceTest.testScheduleSearch_InvalidType_ShouldDoNothing.executor": "Run",
-    "JUnit.SchedulerServiceTest.testScheduleSearch_SchedulerException_ShouldThrow.executor": "Run",
-    "JUnit.SchedulerServiceTest.testScheduleSearch_Weekly.executor": "Run",
-    "Maven.announces-service [test].executor": "Run",
-    "Maven.keycloak-event-listener [clean].executor": "Run",
-    "Maven.keycloak-event-listener [package].executor": "Run",
-    "OverrideImplement.generate.javadoc": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.AnnouncesServiceApplication.executor": "Run",
-    "Spring Boot.ConfigServiceApplication.executor": "Run",
-    "Spring Boot.DiscoveryServiceApplication.executor": "Run",
-    "Spring Boot.GatewayServiceApplication.executor": "Run",
-    "Spring Boot.ImagesServiceApplication.executor": "Run",
-    "Spring Boot.LocationServiceApplication.executor": "Run",
-    "Spring Boot.MailServiceApplication.executor": "Run",
-    "Spring Boot.NotificationServiceApplication.executor": "Run",
-    "Spring Boot.PayementStripeApplication.executor": "Run",
-    "Spring Boot.TrackingServiceApplication.executor": "Run",
-    "Spring Boot.UsersServiceApplication.executor": "Run",
-    "WebServerToolWindowFactoryState": "false",
-    "aspect.path.notification.shown": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "dart.analysis.tool.window.visible": "false",
-    "extract.method.default.visibility": "private",
-    "git-widget-placeholder": "main",
-    "jdk.selected.JAVA_MODULE": "17",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/abdel/IdeaProjects/bazaroo/users-service/src/main/java/org/mts/usersservice/configs",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "C:/Users/trinc/IdeaProjects/bazaroo_v1/src/main/java/org/mts/Main.java",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "run.configurations.included.in.services": "true",
-    "settings.editor.selected.configurable": "vcs.Git",
-    "show.migrate.to.gradle.popup": "false",
-    "spring.configuration.checksum": "46c40c74cf225bfa16501bed272b7a95",
-    "ts.external.directory.path": "C:\\Users\\abdel\\IdeaProjects\\bazaroo\\bazaroo-frontend\\node_modules\\typescript\\lib",
-    "ts.rename.search.for.js.occurrences": "false",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.org.mts.keycloak.Main.executor&quot;: &quot;Run&quot;,
+    &quot;DtoCreateDialog.EQUALS_HASH_CODE_INITIAL_PROP_KEY&quot;: &quot;false&quot;,
+    &quot;DtoCreateDialog.TO_STRING_INITIAL_PROP_KEY&quot;: &quot;false&quot;,
+    &quot;HTTP Request.rest-api | #1.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.rest-api | #2.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AnnouncesServiceApplicationTests.contextLoads.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PercolateSearchServiceTest.testAnnounceDocumentMappingToJsonData.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SchedulerServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SchedulerServiceTest.testScheduleSearch_Daily.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SchedulerServiceTest.testScheduleSearch_InvalidType_ShouldDoNothing.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SchedulerServiceTest.testScheduleSearch_SchedulerException_ShouldThrow.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SchedulerServiceTest.testScheduleSearch_Weekly.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.announces-service [test].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.keycloak-event-listener [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.keycloak-event-listener [package].executor&quot;: &quot;Run&quot;,
+    &quot;OverrideImplement.generate.javadoc&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.AnnouncesServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ConfigServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.DiscoveryServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.GatewayServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ImagesServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.LocationServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.MailServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.NotificationServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.PayementStripeApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.TrackingServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.UsersServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;aspect.path.notification.shown&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/abdel/IdeaProjects/bazaroo/users-service/src/main/java/org/mts/usersservice/configs&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/trinc/IdeaProjects/bazaroo_v1/src/main/java/org/mts/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;46c40c74cf225bfa16501bed272b7a95&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\abdel\\IdeaProjects\\bazaroo\\bazaroo-frontend\\node_modules\\typescript\\lib&quot;,
+    &quot;ts.rename.search.for.js.occurrences&quot;: &quot;false&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -774,7 +776,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/web/AuthController.java</url>
           <line>44</line>
-          <properties class="org.mts.usersservice.web.AuthController">
+          <properties class="org.mts.usersservice.web.AuthController" method="updateUser">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
