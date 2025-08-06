@@ -42,7 +42,7 @@ public class AuthController {
 
     @PutMapping
     @PreAuthorize("hasAnyAuthority('USER')")
-    public UserRepresentation updateUser(UserRepresentation   user){
+    public UserRepresentation updateUser(@RequestBody UserRepresentation   user){
         return this.keycloakService.updateUser(user, CountryContext.getRealm());
     }
 

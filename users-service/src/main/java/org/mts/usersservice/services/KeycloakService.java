@@ -1,5 +1,6 @@
 package org.mts.usersservice.services;
 
+import lombok.extern.slf4j.Slf4j;
 import org.keycloak.admin.client.Keycloak;
 import org.keycloak.representations.idm.UserRepresentation;
 import org.springframework.stereotype.Service;
@@ -8,6 +9,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
+@Slf4j
 @Service
 public class KeycloakService implements IKeycloakService {
 
@@ -86,7 +88,9 @@ public class KeycloakService implements IKeycloakService {
                 throw new RuntimeException("User variable is null");
             }
             // Mettre à jour l'utilisateur dans Keycloak
+
             keycloak.realm(realm).users().get(user.getId()).update(user);
+
         } catch (jakarta.ws.rs.NotFoundException e) {
             throw new RuntimeException("Realm or user unknow", e);
         }

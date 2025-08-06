@@ -125,7 +125,7 @@ public class AnnounceSearchService implements IAnnounceSearchService {
                             b.filter(f -> f.bool(bo -> bo.must(fm -> fm.term(t -> t.field("tenantId").value(tenantId)))));
                             return b;
                         }))
-                        .source(src -> src.filter(f -> f.includes("id", "title", "description", "typeName", "address", "tel", "price", "categoryTitle", "postedAt", "streetId", "location")))
+                        .source(src -> src.filter(f -> f.includes("id", "title", "description", "typeName", "address", "tel", "price", "categoryTitle", "postedAt", "streetId", "location", "userId")))
                         .sort(so -> {
                             if (sortBy != null) return so.field(f -> f.field(sortBy).order(order));
                             return so.score(st -> st.order(SortOrder.Desc));
@@ -287,7 +287,7 @@ public class AnnounceSearchService implements IAnnounceSearchService {
                             b.filter(f -> f.bool(bo -> bo.must(fm -> fm.term(t -> t.field("tenantId").value(tenantId == null? CountryContext.getCountry():tenantId)))));
                             return b;
                         }))
-                        .source(src -> src.filter(f -> f.includes("id", "title", "description", "typeName", "address", "tel", "price", "categoryTitle", "postedAt", "streetId", "location")))
+                        .source(src -> src.filter(f -> f.includes("id", "title", "description", "typeName", "address", "tel", "price", "categoryTitle", "postedAt", "streetId", "location", "userId")))
                         .sort(so -> {
                             SortOrder sortOrder = "ASC".equalsIgnoreCase(searchRequest.getOrder()) ? SortOrder.Asc : SortOrder.Desc;
                             if (searchRequest.getSortBy() != null) {
