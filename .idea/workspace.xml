@@ -22,9 +22,6 @@
       <change afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/services/medias.service.ts" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/services/url.service.spec.ts" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/services/url.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/consumers/KeycloakEvents.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/enums/KeycloakAdminEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/enums/KeycloakEvent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/.tsbuildinfo" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/.tsbuildinfo" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/@angular_cdk_drag-drop.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/@angular_cdk_drag-drop.js" afterDir="false" />
@@ -102,6 +99,7 @@
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/app.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/components/announce/announce.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/components/announce/announce.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/components/announce/announce.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/components/announce/announce.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/components/app-toolbar/app-toolbar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/components/app-toolbar/app-toolbar.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/components/breadcrumb/breadcrumb.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/components/breadcrumb/breadcrumb.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/components/breadcrumb/breadcrumb.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/components/breadcrumb/breadcrumb.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/components/bzr-google-map/bzr-google-map.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/components/bzr-google-map/bzr-google-map.component.html" afterDir="false" />
@@ -127,6 +125,7 @@
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/pages/entry-home/entry-home.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/pages/entry-home/entry-home.component.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/pages/entry-home/entry-home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/pages/entry-home/entry-home.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/pages/entry-home/entry-home.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/pages/entry-home/entry-home.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/pages/favorites/favorites.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/pages/favorites/favorites.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/pages/notification/notification.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/pages/notification/notification.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/pages/notification/notification.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/pages/notification/notification.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/pages/personal-infos/personal-infos.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/pages/personal-infos/personal-infos.component.css" afterDir="false" />
@@ -134,6 +133,8 @@
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/pages/personal-infos/personal-infos.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/pages/personal-infos/personal-infos.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/pages/preferences/preferences.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/pages/preferences/preferences.component.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/pages/preferences/preferences.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/pages/preferences/preferences.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/pages/preferences/preferences.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/pages/preferences/preferences.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/pages/search/search.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/pages/search/search.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/pages/search/search.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/pages/search/search.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/services/announces.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/services/announces.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/services/category.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/services/category.service.ts" afterDir="false" />
@@ -143,59 +144,6 @@
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/services/resolvers/city.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/resolvers/city.resolver.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/services/users.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/services/users.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/dtos/AuthInputDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/dtos/AuthOutputDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/dtos/ClientInputDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/dtos/ClientOutputDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/dtos/ConnectionInputDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/dtos/ConnectionOutputDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/dtos/ContactInputDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/dtos/ContactOutputDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/dtos/EmployeeInputDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/dtos/EmployeeOutputDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/dtos/RoleInputDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/dtos/RoleOutputDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/dtos/UserInputDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/dtos/UserOutputDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/entities/Auth.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/entities/Client.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/entities/Connection.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/entities/Contact.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/entities/Employee.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/entities/Preference.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/entities/Preference.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/entities/Role.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/entities/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/enums/AccountType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/enums/EnumRole.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/enums/Gender.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/repositories/AuthRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/repositories/ClientRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/repositories/ConnectionRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/repositories/ContactRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/repositories/EmployeeRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/repositories/PreferenceRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/repositories/PreferenceRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/repositories/RoleRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/repositories/UserRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/services/AuthService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/services/ClientService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/services/ConnectionService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/services/ContactService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/services/EmployeeService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/services/IAuthService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/services/IClientService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/services/IConnectionService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/services/IContactService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/services/IEmployeeService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/services/IPreferenceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/services/IPreferenceService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/services/IRoleService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/services/IUserService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/services/PreferenceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/services/PreferenceService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/services/RoleService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/services/UserService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/web/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/web/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/web/PreferenceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/web/PreferenceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
