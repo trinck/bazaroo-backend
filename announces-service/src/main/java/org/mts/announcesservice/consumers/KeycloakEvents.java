@@ -13,6 +13,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.function.Consumer;
 
 @Component
@@ -48,25 +49,36 @@ public class KeycloakEvents {
             List<String> roles = objectMapper.convertValue(jsonNodes.get("roles"), List.class);
 
             if (jsonNodes.get("type").asText().equalsIgnoreCase(KeycloakAdminEvent.CREATE.name()) || jsonNodes.get("type").asText().equalsIgnoreCase(KeycloakEvent.REGISTER.name())) {
-                Preference preference = new Preference();
-                preference.setUserId(jsonNodes.get("userId").asText());
-                preference.setRoles(roles.stream().reduce((s, s2) -> s.concat(" " + s2)).get());
-                preference.setBeNotified(true);
-                preference.setEnabled(jsonNodes.get("enabled").asBoolean());
-                this.preferenceService.save(preference);
-
+                createPreference(jsonNodes, roles);
             } else if (jsonNodes.get("type").asText().equalsIgnoreCase(KeycloakAdminEvent.DELETE.name()) || jsonNodes.get("type").asText().equalsIgnoreCase(KeycloakEvent.DELETE_ACCOUNT.name())) {
                 this.preferenceService.deleteByUserId(jsonNodes.get("userId").asText());
                 this.searchService.deleteAllSavedSearchByUserId(jsonNodes.get("userId").asText());
             } else {
-                Preference preference = this.preferenceService.getPreferenceByUserId(jsonNodes.get("userId").asText());
-                preference.setRoles(roles.stream().reduce((s, s2) -> s.concat(" " + s2)).get());
-                preference.setEnabled(jsonNodes.get("enabled").asBoolean());
-                this.preferenceService.save(preference);
+                try {
+                    Preference preference = this.preferenceService.getPreferenceByUserId(jsonNodes.get("userId").asText());
+                    preference.setRoles(roles.stream().reduce((s, s2) -> s.concat(" " + s2)).get());
+                    preference.setEnabled(jsonNodes.get("enabled").asBoolean());
+                    this.preferenceService.save(preference);
+
+                }catch (NoSuchElementException ignored){
+                    Preference preference = createPreference(jsonNodes, roles);
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
             }
 
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+    }
+
+    private Preference createPreference(JsonNode jsonNodes, List<String> roles) {
+        Preference preference = new Preference();
+        preference.setUserId(jsonNodes.get("userId").asText());
+        preference.setRoles(roles.stream().reduce((s, s2) -> s.concat(" " + s2)).get());
+        preference.setBeNotified(true);
+        preference.setEnabled(jsonNodes.get("enabled").asBoolean());
+
+        return this.preferenceService.save(preference);
     }
 }

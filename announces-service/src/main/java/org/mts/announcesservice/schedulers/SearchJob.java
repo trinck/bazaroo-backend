@@ -69,7 +69,7 @@ public class SearchJob implements Job {
                 return;
             }
 
-            if (!preference.isEnabled()) {
+            if (!preference.getEnabled()) {
                 savedSearch.setActive(false);
                 this.searchService.update(savedSearch);
                 return;

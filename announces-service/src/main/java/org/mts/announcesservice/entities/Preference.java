@@ -1,6 +1,7 @@
 package org.mts.announcesservice.entities;
 
 import jakarta.persistence.*;
+import jakarta.ws.rs.DefaultValue;
 import lombok.*;
 
 @Entity
@@ -15,12 +16,13 @@ public class Preference {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private boolean beNotified;
-    private boolean expired;
-    private boolean active;
-    private boolean mail;
+    private Boolean beNotified = true;
+    private Boolean alertStatus = true;
+    private Boolean alertSearch = true;
+    private Boolean active = true;
+    private Boolean mail = true;
     @Column(nullable = false)
     private String userId;
     private String roles;
-    private boolean enabled;
+    private Boolean enabled = true;
 }

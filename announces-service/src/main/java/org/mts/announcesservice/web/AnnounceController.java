@@ -177,22 +177,6 @@ public class AnnounceController {
 
     }
 
-//    @GetMapping("/search")
-//    public Map<String, Object> search(@RequestParam(required = false) String query,
-//                                      @RequestParam(required = false) String category,
-//                                      @RequestParam(required = false) String sortBy,
-//                                      @RequestParam(defaultValue = "ASC") String order,
-//                                      @RequestParam(defaultValue = "0") int page,
-//                                      @RequestParam(defaultValue = "10") int size) throws IOException {
-//
-//
-//        SortOrder sortOrder = "ASC".equalsIgnoreCase(order) ? SortOrder.Asc : SortOrder.Desc;
-//
-//        return this.searchService.searchAnnounces(query, category, sortBy, sortOrder, page, size, null, null, CountryContext.getCountry());
-//
-//    }
-
-
     @PostMapping("/search")
     public Map<String, Object> search(@RequestBody SearchRequestDTO searchRequest) throws IOException {
 

@@ -56,6 +56,8 @@ public class AnnounceDocument {
 
     @org.springframework.data.elasticsearch.annotations.Field(type = FieldType.Keyword)
     private String categoryTitle;
+    @org.springframework.data.elasticsearch.annotations.Field(type = FieldType.Keyword)
+    private String categoryParentCategoryTitle;
     @ToString.Exclude
     @org.springframework.data.elasticsearch.annotations.Field(type = FieldType.Nested)
     private List<FieldOutputDTO> fields = new ArrayList<>();

@@ -5,12 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="136bb368-98eb-4a84-a825-a6951d1be4ec" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/web/PreferenceController.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/bazaroo-frontend/public/assets/logos/logo13.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/bazaroo-frontend/public/assets/logos/logo14.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/bazaroo-frontend/public/assets/logos/logo15.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/bazaroo-frontend/public/assets/logos/logo16.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/bazaroo-frontend/public/assets/logos/logo17.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/bazaroo-frontend/public/assets/logos/logo18.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/models/AnnouncesPreferences.ts" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/models/UserRepresentation.ts" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/resolvers/current-user.resolver.spec.ts" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/resolvers/current-user.resolver.ts" afterDir="false" />
@@ -19,8 +21,12 @@
       <change afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/services/url.service.spec.ts" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/services/url.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/service/AnnounceSearchService.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/service/AnnounceSearchService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bazaroo-frontend" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/consumers/KeycloakEvents.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/consumers/KeycloakEvents.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/documents/AnnounceDocument.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/documents/AnnounceDocument.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/documents/SavedSearchDocument.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/documents/SavedSearchDocument.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/entities/Preference.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/entities/Preference.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/schedulers/SearchJob.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/schedulers/SearchJob.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/web/AnnounceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/web/AnnounceController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/.tsbuildinfo" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/.tsbuildinfo" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/@angular_cdk_drag-drop.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/@angular_cdk_drag-drop.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/@angular_cdk_menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/@angular_cdk_menu.js" afterDir="false" />
@@ -97,6 +103,10 @@
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/app.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/components/announce/announce.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/components/announce/announce.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/components/announce/announce.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/components/announce/announce.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/components/breadcrumb/breadcrumb.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/components/breadcrumb/breadcrumb.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/components/breadcrumb/breadcrumb.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/components/breadcrumb/breadcrumb.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/components/bzr-google-map/bzr-google-map.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/components/bzr-google-map/bzr-google-map.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/components/bzr-google-map/bzr-google-map.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/components/bzr-google-map/bzr-google-map.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/components/bzr-logo/bzr-logo.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/components/bzr-logo/bzr-logo.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/components/bzr-stepper/bzr-stepper.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/components/bzr-stepper/bzr-stepper.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/components/category-card/category-card.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/components/category-card/category-card.component.html" afterDir="false" />
@@ -104,21 +114,29 @@
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/components/hamburger/hamburger.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/components/hamburger/hamburger.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/components/p-category-tree/p-category-tree.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/components/p-category-tree/p-category-tree.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/components/p-category-tree/p-category-tree.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/components/p-category-tree/p-category-tree.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/components/p-city-tree/p-city-tree.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/components/p-city-tree/p-city-tree.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/components/profile-picture/profile-picture.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/components/profile-picture/profile-picture.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/components/profile-picture/profile-picture.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/components/profile-picture/profile-picture.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/components/profile/profile.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/components/profile/profile.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/components/profile/profile.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/components/profile/profile.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/components/search-toolbar/search-toolbar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/components/search-toolbar/search-toolbar.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/components/section-announces/section-announces.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/components/section-announces/section-announces.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/models/Breadcrumb.ts" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/models/Breadcrumb.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/models/Category.ts" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/models/Category.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/pages/announce-view/announce-view.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/pages/announce-view/announce-view.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/pages/announce-view/announce-view.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/pages/announce-view/announce-view.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/pages/entry-home/entry-home.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/pages/entry-home/entry-home.component.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/pages/entry-home/entry-home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/pages/entry-home/entry-home.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/pages/entry-home/entry-home.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/pages/entry-home/entry-home.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/pages/notification/notification.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/pages/notification/notification.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/pages/notification/notification.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/pages/notification/notification.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/pages/personal-infos/personal-infos.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/pages/personal-infos/personal-infos.component.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/pages/personal-infos/personal-infos.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/pages/personal-infos/personal-infos.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/pages/personal-infos/personal-infos.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/pages/personal-infos/personal-infos.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/pages/preferences/preferences.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/pages/preferences/preferences.component.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/pages/preferences/preferences.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/pages/preferences/preferences.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/pages/search/search.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/pages/search/search.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/services/announces.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/services/announces.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/services/category.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/services/category.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/services/resolvers/category.resolver.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/resolvers/category.resolver.spec.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/services/resolvers/category.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/resolvers/category.resolver.ts" afterDir="false" />
@@ -126,8 +144,6 @@
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/services/resolvers/city.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/resolvers/city.resolver.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/services/users.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/services/users.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/services/KeycloakService.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/services/KeycloakService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/web/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/web/AuthController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -568,11 +584,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.LocationServiceApplication" />
         <item itemvalue="Spring Boot.AnnouncesServiceApplication" />
         <item itemvalue="Spring Boot.TrackingServiceApplication" />
         <item itemvalue="Spring Boot.UsersServiceApplication" />
         <item itemvalue="Spring Boot.NotificationServiceApplication" />
-        <item itemvalue="Spring Boot.LocationServiceApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -818,6 +834,11 @@
           <line>13</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/web/AuthController.java</url>
+          <line>50</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/web/AuthController.java</url>
           <line>44</line>
@@ -826,6 +847,15 @@
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/web/AuthController.java</url>
+          <line>51</line>
+          <properties class="org.mts.usersservice.web.AuthController" method="getUserById">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

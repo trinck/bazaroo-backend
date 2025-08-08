@@ -65,6 +65,8 @@ public class SavedSearchDocument {
 
     @Field(type = FieldType.Keyword)
     private String categoryTitle;
+    @Field(type = FieldType.Keyword)
+    private String categoryParentCategoryTitle;
     @ToString.Exclude
     @Field(type = FieldType.Nested)
     private List<FieldOutputDTO> fields = new ArrayList<>();
