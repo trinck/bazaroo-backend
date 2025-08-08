@@ -16,12 +16,13 @@ public class Preference {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-
-    private Boolean nightTheme;
+    private Boolean nightTheme = false;
+    private Boolean alertAccount = true;
     private String language;
-    private Boolean telVisible;
-    private Boolean whatsappVisible;
-    @OneToOne(mappedBy = "preference")
-    private Client client;
+    private Boolean telVisible = true;
+    private Boolean whatsappVisible = true;
+    private String userId;
+    private String roles;
+    private Boolean enabled = true;
 
 }

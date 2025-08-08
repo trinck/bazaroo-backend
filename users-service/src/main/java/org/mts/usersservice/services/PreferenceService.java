@@ -12,8 +12,12 @@ import java.util.List;
 @Service
 public class PreferenceService implements IPreferenceService{
 
-    @Autowired
-   private PreferenceRepository preferenceRepository;
+
+   private final PreferenceRepository preferenceRepository;
+
+    public PreferenceService(PreferenceRepository preferenceRepository) {
+        this.preferenceRepository = preferenceRepository;
+    }
 
     /**
      * @param preference
@@ -31,6 +35,26 @@ public class PreferenceService implements IPreferenceService{
     @Override
     public Preference getPreferenceById(Long id) {
         return this.preferenceRepository.findById(id).orElseThrow();
+    }
+
+    /**
+     * @param userId
+     * @return
+     */
+    @Override
+    public Preference getPreferenceByUserId(String userId) {
+        return this.preferenceRepository.findByUserId(userId).orElseThrow();
+    }
+
+    /**
+     * @param userId
+     * @return
+     */
+    @Override
+    public Preference deletePreferenceByUserId(String userId) {
+        Preference preference = this.preferenceRepository.findByUserId(userId).orElseThrow();
+        this.preferenceRepository.deleteByUserId(userId);
+        return preference;
     }
 
     /**

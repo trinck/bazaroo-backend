@@ -12,6 +12,8 @@ public interface IPreferenceService {
 
     public Preference creatPreference(Preference preference);
     public Preference getPreferenceById(Long id);
+    public Preference getPreferenceByUserId(String  userId);
+    public Preference deletePreferenceByUserId(String  userId);
     public Preference updatePreference(Preference preference);
     public Preference deletePreferenceById(Long id);
     public Page<Preference> getPreferences(Pageable pageable);
