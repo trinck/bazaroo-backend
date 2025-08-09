@@ -2,7 +2,6 @@ package org.mts.usersservice.services;
 
 import org.mts.usersservice.entities.Preference;
 import org.mts.usersservice.repositories.PreferenceRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -19,12 +18,43 @@ public class PreferenceService implements IPreferenceService{
         this.preferenceRepository = preferenceRepository;
     }
 
+
+    @Override
+    public List<String> getFavorites(String userId) {
+        return this.preferenceRepository.findByUserId(userId)
+                .map(Preference::getFavoriteAds)
+                .orElseThrow(() -> new RuntimeException("Preference not found"));
+    }
+
+
+    @Override
+    public void addFavorite(String userId, String adId) {
+        Preference preference = this.preferenceRepository.findByUserId(userId)
+                .orElseThrow(() -> new RuntimeException("Preference not found"));
+        if (!preference.getFavoriteAds().contains(adId)) {
+            preference.getFavoriteAds().add(adId);
+            this.preferenceRepository.save(preference);
+        }
+    }
+
+
+    @Override
+    public void removeFavorite(String userId, String adId) {
+        Preference preference = this.preferenceRepository.findByUserId(userId)
+                .orElseThrow(() -> new RuntimeException("Preference not found"));
+        if (preference.getFavoriteAds().remove(adId)) {
+            this.preferenceRepository.save(preference);
+        }
+    }
+
+
+
     /**
      * @param preference
      * @return
      */
     @Override
-    public Preference creatPreference(Preference preference) {
+    public Preference createPreference(Preference preference) {
         return this.preferenceRepository.save(preference);
     }
 

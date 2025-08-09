@@ -53,7 +53,7 @@ public class KeycloakEvents {
                     Preference preference = this.preferenceService.getPreferenceByUserId(jsonNodes.get("userId").asText());
                     preference.setRoles(roles.stream().reduce((s, s2) -> s.concat(" " + s2)).get());
                     preference.setEnabled(jsonNodes.get("enabled").asBoolean());
-                    this.preferenceService.creatPreference(preference);
+                    this.preferenceService.createPreference(preference);
 
                 }catch (NoSuchElementException ignored){
                      createPreference(jsonNodes, roles);
@@ -73,6 +73,6 @@ public class KeycloakEvents {
         preference.setRoles(roles.stream().reduce((s, s2) -> s.concat(" " + s2)).get());
         preference.setEnabled(jsonNodes.get("enabled").asBoolean());
 
-         this.preferenceService.creatPreference(preference);
+         this.preferenceService.createPreference(preference);
     }
 }

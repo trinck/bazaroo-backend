@@ -26,7 +26,6 @@ public class AuthController {
     @GetMapping
     @PreAuthorize("hasAnyAuthority('ADMIN')")
     public List<UserRepresentation> getUsers(@RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "10") int size){
-       log.warn("getUsers called in realm {}", CountryContext.getRealm());
         return this.keycloakService.getAllUsers(page, size, CountryContext.getRealm());
     }
 

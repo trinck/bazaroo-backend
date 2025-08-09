@@ -144,6 +144,11 @@
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/services/resolvers/city.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/resolvers/city.resolver.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/services/users.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/services/users.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/consumers/KeycloakEvents.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/consumers/KeycloakEvents.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/entities/Preference.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/entities/Preference.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/services/IPreferenceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/services/IPreferenceService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/services/PreferenceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/services/PreferenceService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/web/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/web/AuthController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

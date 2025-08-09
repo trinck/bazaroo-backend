@@ -4,6 +4,9 @@ package org.mts.usersservice.entities;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Getter
 @Setter
@@ -24,5 +27,7 @@ public class Preference {
     private String userId;
     private String roles;
     private Boolean enabled = true;
+    @ElementCollection
+    private List<String> favoriteAds = new ArrayList<>();
 
 }

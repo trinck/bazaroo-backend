@@ -9,8 +9,13 @@ import java.util.List;
 public interface IPreferenceService {
 
 
+    List<String> getFavorites(String userId);
 
-    public Preference creatPreference(Preference preference);
+    void addFavorite(String userId, String adId);
+
+    void removeFavorite(String userId, String adId);
+
+    public Preference createPreference(Preference preference);
     public Preference getPreferenceById(Long id);
     public Preference getPreferenceByUserId(String  userId);
     public Preference deletePreferenceByUserId(String  userId);
