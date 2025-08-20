@@ -4,5 +4,7 @@ public enum AnnounceStatus {
 
     ACTIVE,
     DISABLED,
-    ARCHIVED
+    ARCHIVED,
+    PENDING,
+    DELETED
 }

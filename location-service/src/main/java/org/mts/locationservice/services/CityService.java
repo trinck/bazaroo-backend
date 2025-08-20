@@ -7,7 +7,9 @@ import org.mts.locationservice.repositories.CountryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 import java.util.List;
 
@@ -43,8 +45,12 @@ public class CityService implements ICityService{
      * @return
      */
     @Override
-    public Page<City> getCitiesPages(Pageable pageable) {
-        return this.cityRepository.findAll(pageable);
+    public Page<City> getCitiesPages(Pageable pageable, String search) {
+        if (!StringUtils.hasText(search)) {
+            return cityRepository.findAll(pageable); // no spec needed
+        }
+        Specification<City> spec = buildSearchSpec(search);
+        return this.cityRepository.findAll(spec, pageable);
     }
 
     /**
@@ -94,4 +100,16 @@ public class CityService implements ICityService{
     public Page<City> getCitiesByName(String name, Pageable pageable) {
         return this.cityRepository.findAllByNameContains(name, pageable);
     }
+
+    private Specification<City> buildSearchSpec(String search) {
+        if (!StringUtils.hasText(search)) return null; // no filter -> all
+
+        final String like = "%" + search.toLowerCase() + "%";
+
+        return (root, query, cb) -> cb.or(
+                cb.like(cb.lower(root.get("id")), like),
+                cb.like(cb.lower(root.get("name")), like)
+        );
+    }
+
 }

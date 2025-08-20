@@ -6,9 +6,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.hibernate.annotations.TenantId;
 import org.hibernate.proxy.HibernateProxy;
 import org.mts.announcesservice.enums.AnnounceStatus;
-import org.springframework.data.elasticsearch.annotations.Document;
-import org.springframework.data.elasticsearch.annotations.Dynamic;
-import org.springframework.data.elasticsearch.annotations.FieldType;
 
 import java.util.*;
 

@@ -10,7 +10,7 @@ public interface ICountryService {
 
 
     public List<Country> getCountries();
-    public Page<Country> getCountriesPages(Pageable pageable);
+    public Page<Country> getCountriesPages(Pageable pageable, String search);
     public Country getCountryById(String id);
     public Country save(Country country);
     public Country update(Country country);

@@ -15,6 +15,7 @@ import org.mts.announcesservice.utilities.WebUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.*;
 
 
@@ -73,9 +74,21 @@ public class CategoryFieldController {
     }
 
     @GetMapping
-    public Map<String, Object> getAll(@RequestParam(defaultValue = "5") int size, @RequestParam(defaultValue = "0") int page){
+    public Map<String, Object> getAll(
+            @RequestParam(defaultValue = "5") int size,
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(required = false) String sortField,
+            @RequestParam(defaultValue = "asc") String sortOrder,
+            @RequestParam(required = false) String search) {
 
-        Page<CategoryField> fields = this.categoryFieldService.getCategoryFields(PageRequest.of(page, size));
+        Sort sort = Sort.unsorted();
+        if (sortField != null && !sortField.isBlank()) {
+            sort = "desc".equalsIgnoreCase(sortOrder)
+                    ? Sort.by(sortField).descending()
+                    : Sort.by(sortField).ascending();
+        }
+
+        Page<CategoryField> fields = this.categoryFieldService.getCategoryFields(PageRequest.of(page, size, sort), search);
         Map<String, Object> map = WebUtils.pageToMap(fields);
         map.put("content", fields.getContent().stream().map(c->this.modelMapper.map(c, CategoryFieldOutputDTO.class)).toList());
         return map;

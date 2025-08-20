@@ -6,7 +6,9 @@ import org.mts.announcesservice.repositories.AnnounceTypeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 import java.util.List;
 
@@ -61,8 +63,12 @@ public class AnnounceTypeService implements IAnnounceTypeService{
      * @return
      */
     @Override
-    public Page<AnnounceType> getAnnounceTypes(Pageable pageable) {
-        return this.repository.findAll(pageable);
+    public Page<AnnounceType> getAnnounceTypes(Pageable pageable, String search) {
+        if (!StringUtils.hasText(search)) {
+            return repository.findAll(pageable); // no spec needed
+        }
+        Specification<AnnounceType> spec = buildSearchSpec(search);
+        return this.repository.findAll(spec, pageable);
     }
 
     /**
@@ -82,4 +88,16 @@ public class AnnounceTypeService implements IAnnounceTypeService{
     public Page<AnnounceType> getByName(String name, Pageable pageable) {
         return this.repository.findAllByNameContains(name,pageable);
     }
+
+    private Specification<AnnounceType> buildSearchSpec(String search) {
+        if (!StringUtils.hasText(search)) return null; // no filter -> all
+
+        final String like = "%" + search.toLowerCase() + "%";
+
+        return (root, query, cb) -> cb.or(
+                cb.like(cb.lower(root.get("id")), like),
+                cb.like(cb.lower(root.get("name")), like)
+        );
+    }
+
 }

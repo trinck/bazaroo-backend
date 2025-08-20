@@ -3,10 +3,8 @@ package org.mts.announcesservice.web;
 
 import jakarta.validation.constraints.NotEmpty;
 import org.modelmapper.ModelMapper;
-import org.mts.announcesservice.dtos.AnnounceOutputDTO;
 import org.mts.announcesservice.dtos.AnnounceTypeInputDTO;
 import org.mts.announcesservice.dtos.AnnounceTypeOutputDTO;
-import org.mts.announcesservice.dtos.CategoryOutputDTO;
 import org.mts.announcesservice.entities.AnnounceType;
 import org.mts.announcesservice.entities.Category;
 import org.mts.announcesservice.entities.CategoryField;
@@ -17,6 +15,7 @@ import org.mts.announcesservice.utilities.WebUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -90,12 +89,29 @@ public class AnnounceTypeController {
     }
 
     @GetMapping
-    public Map<String, Object> getAll(@RequestParam(defaultValue = "5") int size, @RequestParam(defaultValue = "0") int page) {
+    public Map<String, Object> getAll(
+            @RequestParam(defaultValue = "5") int size,
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(required = false) String sortField,
+            @RequestParam(defaultValue = "asc") String sortOrder,
+            @RequestParam(required = false) String search) {
 
-        Page<AnnounceType> types = this.announceTypeService.getAnnounceTypes(PageRequest.of(page, size));
+        Sort sort = Sort.unsorted();
+        if (sortField != null && !sortField.isBlank()) {
+            sort = "desc".equalsIgnoreCase(sortOrder)
+                    ? Sort.by(sortField).descending()
+                    : Sort.by(sortField).ascending();
+        }
+
+        Page<AnnounceType> types = this.announceTypeService.getAnnounceTypes(PageRequest.of(page, size, sort), search);
         Map<String, Object> map = WebUtils.pageToMap(types);
         map.put("content", types.getContent().stream().map(c -> this.modelMapper.map(c, AnnounceTypeOutputDTO.class)).toList());
         return map;
+    }
+
+    @GetMapping("/list")
+    public List<AnnounceTypeOutputDTO> getList() {
+        return this.announceTypeService.getAll().stream().map(a->this.modelMapper.map(a,AnnounceTypeOutputDTO.class)).toList();
     }
 
 }

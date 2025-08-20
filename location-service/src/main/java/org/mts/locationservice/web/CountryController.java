@@ -4,14 +4,20 @@ import org.modelmapper.ModelMapper;
 import org.mts.locationservice.configs.CountryContext;
 import org.mts.locationservice.dtos.CountryInputDTO;
 import org.mts.locationservice.dtos.CountryOutputDTO;
+import org.mts.locationservice.entities.City;
 import org.mts.locationservice.entities.Country;
 import org.mts.locationservice.services.ICountryService;
+import org.mts.locationservice.utilities.WebUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.*;
 
 
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("countries")
@@ -58,9 +64,25 @@ public class CountryController {
         return  this.iCountryService.getCountries().stream().map(this::convertToOutputDto).toList();
     }
 
-    @GetMapping("/withoutCities" )
-    public List<Country> getAllCountriesWithoutCities(){
-        return  this.iCountryService.getCountries().stream().toList();
+    @GetMapping("/list")
+    public Map<String, Object> getList(
+            @RequestParam(defaultValue = "5",name = "size") int size,
+            @RequestParam(defaultValue = "0",name = "page") int page,
+            @RequestParam(required = false) String sortField,
+            @RequestParam(defaultValue = "asc") String sortOrder,
+            @RequestParam(required = false) String search){
+
+        Sort sort = Sort.unsorted();
+        if (sortField != null && !sortField.isBlank()) {
+            sort = "desc".equalsIgnoreCase(sortOrder)
+                    ? Sort.by(sortField).descending()
+                    : Sort.by(sortField).ascending();
+        }
+
+        Page<Country> countries = this.iCountryService.getCountriesPages(PageRequest.of(page, size, sort), search);
+        Map<String, Object> map = WebUtils.pageToMap(countries);
+        map.put("content", countries.getContent().stream().toList());
+        return map;
     }
 
 

@@ -13,6 +13,7 @@ import org.mts.announcesservice.utilities.WebUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -63,9 +64,21 @@ public class CategoryController {
     }
 
     @GetMapping
-    public Map<String, Object> getAll(@RequestParam(defaultValue = "5",name = "size") int size,@RequestParam(defaultValue = "0",name = "page") int page){
+    public Map<String, Object> getAll(
+            @RequestParam(defaultValue = "5",name = "size") int size,
+            @RequestParam(defaultValue = "0",name = "page") int page,
+            @RequestParam(required = false) String sortField,
+            @RequestParam(defaultValue = "asc") String sortOrder,
+            @RequestParam(required = false) String search) {
 
-        Page<Category> categories = this.categoryService.getCategories(PageRequest.of(page, size));
+        Sort sort = Sort.unsorted();
+        if (sortField != null && !sortField.isBlank()) {
+            sort = "desc".equalsIgnoreCase(sortOrder)
+                    ? Sort.by(sortField).descending()
+                    : Sort.by(sortField).ascending();
+        }
+
+        Page<Category> categories = this.categoryService.getCategories(PageRequest.of(page, size, sort), search);
         Map<String, Object> map = WebUtils.pageToMap(categories);
         map.put("content", categories.getContent().stream().map(c->this.modelMapper.map(c, CategoryOutputDTO.class)).toList());
         return map;
