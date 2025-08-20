@@ -6,7 +6,9 @@ import org.mts.locationservice.repositories.CountryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 import java.util.List;
 
@@ -31,8 +33,12 @@ public class CountryService implements ICountryService {
      * @return
      */
     @Override
-    public Page<Country> getCountriesPages(Pageable pageable) {
-        return this.countryRepository.findAll(pageable);
+    public Page<Country> getCountriesPages(Pageable pageable, String search) {
+        if (!StringUtils.hasText(search)) {
+            return countryRepository.findAll(pageable); // no spec needed
+        }
+        Specification<Country> spec = buildSearchSpec(search);
+        return this.countryRepository.findAll(spec, pageable);
     }
 
     /**
@@ -111,4 +117,18 @@ public class CountryService implements ICountryService {
     public Country getCountryByCode() {
         return this.countryRepository.findCountryByCodeIgnoreCase(CountryContext.getCountry()).orElseThrow();
     }
+
+    private Specification<Country> buildSearchSpec(String search) {
+        if (!StringUtils.hasText(search)) return null; // no filter -> all
+
+        final String like = "%" + search.toLowerCase() + "%";
+
+        return (root, query, cb) -> cb.or(
+                cb.like(cb.lower(root.get("id")), like),
+                cb.like(cb.lower(root.get("name")), like),
+                cb.like(cb.lower(root.get("code")), like),
+                cb.like(cb.lower(root.get("currency")), like)
+        );
+    }
+
 }

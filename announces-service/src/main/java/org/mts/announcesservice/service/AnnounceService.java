@@ -11,7 +11,9 @@ import org.springframework.cloud.stream.function.StreamBridge;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.elasticsearch.core.ElasticsearchOperations;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 import java.util.List;
 import java.util.Map;
@@ -95,8 +97,12 @@ public class AnnounceService implements IAnnounceService{
      * @return
      */
     @Override
-    public Page<Announce> getAnnounces(Pageable pageable) {
-        return this.repository.findAll(pageable);
+    public Page<Announce> getAnnounces(Pageable pageable, String search) {
+        if (!StringUtils.hasText(search)) {
+            return repository.findAll(pageable); // no spec needed
+        }
+        Specification<Announce> spec = buildSearchSpec(search);
+        return this.repository.findAll(spec, pageable);
     }
 
     /**
@@ -116,4 +122,18 @@ public class AnnounceService implements IAnnounceService{
     public Page<Announce> getByTitle(String title, Pageable pageable) {
         return this.repository.findAllByTitleContains(title, pageable);
     }
+
+    private Specification<Announce> buildSearchSpec(String search) {
+        if (!StringUtils.hasText(search)) return null; // no filter -> all
+
+        final String like = "%" + search.toLowerCase() + "%";
+
+        return (root, query, cb) -> cb.or(
+                cb.like(cb.lower(root.get("id")), like),
+                cb.like(cb.lower(root.get("title")), like),
+                cb.like(cb.lower(root.get("status")), like),
+                cb.like(cb.lower(root.get("tel")), like)
+        );
+    }
+
 }

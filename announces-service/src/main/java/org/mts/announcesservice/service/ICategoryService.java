@@ -12,7 +12,7 @@ public interface ICategoryService {
     public Category deleteById(String id);
     public Category getByID(String id);
     public Category update(Category category);
-    public Page<Category> getCategories(Pageable pageable);
+    public Page<Category> getCategories(Pageable pageable, String search);
     public List<Category> getAll();
     public Page<Category> getByName(String title, Pageable pageable);
 }

@@ -13,7 +13,7 @@ public interface ICategoryFieldService {
     public CategoryField deleteById(Long id);
     public CategoryField getByID(Long id);
     public CategoryField update(CategoryField categoryField);
-    public Page<CategoryField> getCategoryFields(Pageable pageable);
+    public Page<CategoryField> getCategoryFields(Pageable pageable, String search);
     public List<CategoryField> getAll();
     public Page<CategoryField> getByFieldName(String fieldName, Pageable pageable);
 }

@@ -1,11 +1,14 @@
 package org.mts.announcesservice.service;
 
+import org.mts.announcesservice.entities.AnnounceType;
 import org.mts.announcesservice.entities.CategoryField;
 import org.mts.announcesservice.repositories.CategoryFieldRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 import java.util.List;
 
@@ -60,8 +63,12 @@ public class CategoryFieldService implements ICategoryFieldService{
      * @return
      */
     @Override
-    public Page<CategoryField> getCategoryFields(Pageable pageable) {
-        return this.repository.findAll(pageable);
+    public Page<CategoryField> getCategoryFields(Pageable pageable, String search) {
+        if (!StringUtils.hasText(search)) {
+            return repository.findAll(pageable); // no spec needed
+        }
+        Specification<CategoryField> spec = buildSearchSpec(search);
+        return this.repository.findAll(spec, pageable);
     }
 
     /**
@@ -81,4 +88,17 @@ public class CategoryFieldService implements ICategoryFieldService{
     public Page<CategoryField> getByFieldName(String fieldName, Pageable pageable) {
         return this.repository.findAllByFieldNameContains(fieldName, pageable);
     }
+
+    private Specification<CategoryField> buildSearchSpec(String search) {
+        if (!StringUtils.hasText(search)) return null; // no filter -> all
+
+        final String like = "%" + search.toLowerCase() + "%";
+
+        return (root, query, cb) -> cb.or(
+                cb.like(cb.lower(root.get("id")), like),
+                cb.like(cb.lower(root.get("fieldName")), like),
+                cb.like(cb.lower(root.get("type")), like)
+        );
+    }
+
 }
