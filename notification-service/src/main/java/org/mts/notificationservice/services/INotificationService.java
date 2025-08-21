@@ -3,6 +3,8 @@ package org.mts.notificationservice.services;
 import org.mts.notificationservice.entities.Notification;
 import org.mts.notificationservice.enums.NotificationAudience;
 import org.mts.notificationservice.enums.NotificationTargetType;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 import java.util.List;
 
@@ -63,6 +65,8 @@ public interface INotificationService {
     public boolean notifyAll(String destination,Notification notification);
 
     public Notification findByIdAndUserId(Long id, String name);
+
+    public Page<Notification> getMessages(String userId, Pageable pageable, String search);
 
     public List<Notification> findByUserIdAndSeenFalse(String name);
     public List<Notification> findByAudienceAndTargetType(NotificationAudience audience, NotificationTargetType targetType);
