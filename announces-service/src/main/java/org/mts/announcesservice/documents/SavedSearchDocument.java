@@ -62,6 +62,14 @@ public class SavedSearchDocument {
     private String streetId;
     @Field(type = FieldType.Keyword)
     private String cityId;
+    @Field(type = FieldType.Long)
+    private Long views;
+    @Field(type = FieldType.Long)
+    private Long clicks;
+    @Field(type = FieldType.Long)
+    private Long impressions;
+    @Field(type = FieldType.Long)
+    private Long imagesLength;
 
     @Field(type = FieldType.Keyword)
     private String categoryTitle;

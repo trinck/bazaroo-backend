@@ -1,10 +1,13 @@
 package org.mts.announcesservice.service;
 
+import jakarta.transaction.Transactional;
+import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.mts.announcesservice.documents.AnnounceDocument;
 import org.mts.announcesservice.dtos.FieldOutputDTO;
 import org.mts.announcesservice.entities.Announce;
 import org.mts.announcesservice.enums.AdvertEventType;
+import org.mts.announcesservice.enums.AnnounceStatus;
 import org.mts.announcesservice.repositories.AnnounceRepository;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.stream.function.StreamBridge;
@@ -13,9 +16,11 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.elasticsearch.core.ElasticsearchOperations;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@Slf4j
 @Service
 public class AnnounceService implements IAnnounceService{
 
@@ -25,6 +30,8 @@ public class AnnounceService implements IAnnounceService{
     private final StreamBridge bridge;
     @Value("${app.broker.topics.advert}")
     private String TOPIC_ADVERT;
+    @Value("${app.broker.topics.ad-create-error}")
+    private String TOPIC_AD_CREATE_ERROR;
 
     public AnnounceService(AnnounceRepository repository, ElasticsearchOperations operations, ModelMapper mapper, StreamBridge bridge) {
         this.repository = repository;
@@ -38,15 +45,25 @@ public class AnnounceService implements IAnnounceService{
      * @return
      */
     @Override
+    @Transactional
     public Announce create(Announce announce) {
 
-        Announce saved = this.repository.save(announce);
-        AnnounceDocument docToSave = this.mapper.map(saved, AnnounceDocument.class);
-        docToSave.getFields().forEach(FieldOutputDTO::prepareForIndexing);
-        this.operations.save(docToSave);
+        Announce saved = null;
 
+        try {
+            saved = this.repository.save(announce);
+            AnnounceDocument docToSave = this.mapper.map(saved, AnnounceDocument.class);
+            docToSave.getFields().forEach(FieldOutputDTO::prepareForIndexing);
+            this.operations.save(docToSave);
+        } catch (Exception e) {
+            Map<String,Object> map = new HashMap<>();
+            map.put("message", e.getMessage());
+            map.put("adId", announce.getId());
+            log.error("Error saving announce {} with message {}",announce.getId(), e.getMessage());
+            this.bridge.send(TOPIC_AD_CREATE_ERROR, map);
+            throw new RuntimeException(e);
+        }
         // send notification to broker
-
         this.bridge.send(this.TOPIC_ADVERT, Map.of("adId",saved.getId(), "type",AdvertEventType.NEW.name()));
         return saved;
     }
@@ -73,6 +90,15 @@ public class AnnounceService implements IAnnounceService{
     }
 
     /**
+     * @param ids
+     * @return
+     */
+    @Override
+    public List<Announce> getByIds(List<String> ids) {
+        return this.repository.findByIdIn(ids);
+    }
+
+    /**
      * @param announce
      * @return
      */
@@ -81,7 +107,7 @@ public class AnnounceService implements IAnnounceService{
         try {
             Announce saved = this.repository.save(announce);
             AnnounceDocument docToSave = this.mapper.map(saved, AnnounceDocument.class);
-            this.operations.save(docToSave);
+            this.operations.update(docToSave);
             // send notification to broker
             this.bridge.send(this.TOPIC_ADVERT, Map.of("adId",saved.getId(), "type",AdvertEventType.UPDATED.name()));
             return saved;
@@ -105,6 +131,15 @@ public class AnnounceService implements IAnnounceService{
     @Override
     public List<Announce> getAll() {
         return this.repository.findAll();
+    }
+
+
+    /**
+     * @return
+     */
+    @Override
+    public List<Announce> getAllByUserId(String userId, AnnounceStatus status) {
+        return this.repository.findAnnouncesByUserIdAndStatus(userId, status);
     }
 
     /**

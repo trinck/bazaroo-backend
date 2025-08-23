@@ -17,6 +17,7 @@ public interface IMediaService {
     public Media update(Media media);
     public List<Media> addAll(List<Media> medias);
     public Media deleteMediaById(Long id);
+    public void deleteAllByAdId(String id);
     public List<Media> getMediasByPathContains(String path);
 
 }

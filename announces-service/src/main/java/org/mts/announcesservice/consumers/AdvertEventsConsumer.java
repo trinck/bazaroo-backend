@@ -10,6 +10,7 @@ import org.mts.announcesservice.entities.Announce;
 import org.mts.announcesservice.entities.Preference;
 import org.mts.announcesservice.entities.SavedSearch;
 import org.mts.announcesservice.enums.*;
+import org.mts.announcesservice.remote_entities.DailyStats;
 import org.mts.announcesservice.repositories.SavedSearchRepository;
 import org.mts.announcesservice.service.IAnnounceSearchService;
 import org.mts.announcesservice.service.IAnnounceService;
@@ -42,8 +43,6 @@ public class AdvertEventsConsumer {
     private final ElasticsearchOperations operations;
     @Value("${app.broker.topics.notification}")
     private  String NOTIFICATION_TOPIC;
-    @Value("${app.clients.front.urls.advert.detail}")
-    private String ADVERT_DETAIL;
     @Value("${spring.application.name}")
     private String APPLICATION_NAME;
 
@@ -72,6 +71,29 @@ public class AdvertEventsConsumer {
 
         });
     }
+
+
+    @Bean
+    public Consumer<DailyStats> adsDailyStats() {
+        return (stats) -> {
+            log.info("Updating adsDailyStats {}", stats);
+            Announce announce = this.announceService.getByID(stats.getAdId());
+            announce.setViews(stats.getViews());
+            announce.setClicks(stats.getClicks());
+            announce.setImpressions(stats.getImpressions());
+            try {
+                this.announceService.update(announce);
+            } catch (Exception e) {
+                log.error("Error on update announce stats for id {} , with message : {}",announce.getId(), e.getMessage());
+                // TODO send error to topic DLQ
+                throw new RuntimeException(e);
+
+            }
+
+        };
+    }
+
+
 
     private void notifySearchers(String adId) {
 

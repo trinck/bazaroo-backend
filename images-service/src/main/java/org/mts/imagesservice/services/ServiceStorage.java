@@ -97,6 +97,15 @@ public class ServiceStorage implements IServiceStorage {
         FileSystemUtils.deleteRecursively(rootMedia.toFile());
     }
 
+    /**
+     * @param path
+
+     */
+    @Override
+    public void deleteAllMedias(String path) {
+
+    }
+
 
     @Override
     public List<Media> storeAll(List<MultipartFile> files, String source, String id, Class<? extends Media> mediaType) {

@@ -1,7 +1,6 @@
 package org.mts.announcesservice.web;
 
 
-import co.elastic.clients.elasticsearch._types.SortOrder;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
@@ -9,6 +8,7 @@ import org.modelmapper.ModelMapper;
 import org.mts.announcesservice.clients.MediasClient;
 import org.mts.announcesservice.clients.StreetClient;
 import org.mts.announcesservice.configs.CountryContext;
+import org.mts.announcesservice.documents.AnnounceDocument;
 import org.mts.announcesservice.dtos.*;
 import org.mts.announcesservice.entities.*;
 import org.mts.announcesservice.enums.AnnounceStatus;
@@ -64,17 +64,21 @@ public class AnnounceController {
         }else {
             category1 = this.categoryService.getByID(category);
         }
-        /***
-         * *************************************
-         * * Initialization of announce entity**
-         * *************************************/
+
+        // Initialization of announce entity
 
         Announce announce = Announce.builder()
+                .id(dto.getId())
                 .address(dto.getAddress())
                 .streetId(dto.getStreetId())
+                .imagesLength(dto.getImagesLength())
                 .cityId(dto.getCityId())
+                .tenantId(CountryContext.getCountry())
                 .tel(dto.getTel())
                 .price(dto.getPrice())
+                .views(0L)
+                .clicks(0L)
+                .impressions(0L)
                 .title(dto.getTitle())
                 .location(this.modelMapper.map(dto.getLocation(),GeoZone.class))
                 .description(dto.getDescription())
@@ -83,15 +87,14 @@ public class AnnounceController {
                 .userId(authentication.getName())
                 .fields(new ArrayList<>())
                 .build();
+        log.info("Creating advert {} -> {}", announce.getId(),announce );
 
         announce.setCategory(category1);
         announce.setType(announceType);
 
 
-        /******************************************************
-         ** ****Mapping of different Field from Json to Entity **
-         *********Add fields to announce and save**************
-         * ******************************************************/
+       // Mapping of different Field from Json to Entity
+        //         Add fields to announce and save
         ObjectMapper objectMapper = new ObjectMapper();
         for (Object o : dto.getObjectFields()) {
             JsonNode node = objectMapper.convertValue(o, JsonNode.class);
@@ -174,6 +177,39 @@ public class AnnounceController {
             return ann;
         }).toList());
         return map;
+
+    }
+
+
+    @PostMapping("/in_list_ids")
+    public List<AnnounceDocument> getByIds(@RequestBody List<String> ids) {
+
+        List<Announce> announces = this.announceService.getByIds(ids);
+        return announces.stream().map(c -> {
+            AnnounceDocument ann = this.modelMapper.map(c, AnnounceDocument.class);
+            List<Media> medias = this.mediasClient.getAdvertMedias(ann.getId());
+            Street street = this.streetClient.getStreet(c.getStreetId());
+            ann.setMedias(medias);
+            ann.setStreet(street);
+            return ann;
+        }).toList();
+
+    }
+
+
+    @GetMapping("/ownAds")
+    @PreAuthorize("hasAuthority('USER')")
+    public List<AnnounceDocument> getByUserId(@RequestParam(required = false) AnnounceStatus status, Authentication authentication) {
+
+        List<Announce> announces = this.announceService.getAllByUserId(authentication.getName(), status);
+        return announces.stream().map(c -> {
+            AnnounceDocument ann = this.modelMapper.map(c, AnnounceDocument.class);
+            List<Media> medias = this.mediasClient.getAdvertMedias(ann.getId());
+            Street street = this.streetClient.getStreet(c.getStreetId());
+            ann.setMedias(medias);
+            ann.setStreet(street);
+            return ann;
+        }).toList();
 
     }
 

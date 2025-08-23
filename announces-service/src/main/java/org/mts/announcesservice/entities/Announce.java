@@ -23,7 +23,7 @@ import java.util.*;
 public class Announce {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+    //@GeneratedValue(strategy = GenerationType.UUID)
     private String id;
     @TenantId
     @Column(name = "tenant_id", nullable = false)
@@ -36,12 +36,16 @@ public class Announce {
     private Double price;
     private String streetId;
     private String cityId;
-    @OneToOne(cascade = CascadeType.PERSIST)
+    @OneToOne(cascade = {CascadeType.ALL}, orphanRemoval = true)
     @JoinColumn(name = "location")
     private GeoZone location;
     private String title;
     private String tel;
     private Date postedAt;
+    private Long views = 0L;
+    private Long clicks = 0L;
+    private Long impressions = 0L;
+    private Long imagesLength = 0L;
     private String address;
     @Column(length = 355)
     private String description;

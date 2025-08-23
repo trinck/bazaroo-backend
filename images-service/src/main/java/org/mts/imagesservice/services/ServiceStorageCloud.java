@@ -2,6 +2,7 @@ package org.mts.imagesservice.services;
 
 import com.cloudinary.Cloudinary;
 import com.cloudinary.utils.ObjectUtils;
+import lombok.extern.slf4j.Slf4j;
 import org.mts.imagesservice.entities.IconContent;
 import org.mts.imagesservice.entities.ImageContent;
 import org.mts.imagesservice.entities.Media;
@@ -18,6 +19,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Stream;
 
+@Slf4j
 @Service
 public class ServiceStorageCloud implements IServiceStorage{
     /**
@@ -58,6 +60,26 @@ public class ServiceStorageCloud implements IServiceStorage{
     @Override
     public void deleteAll(String source) {
 
+    }
+
+    /**
+     * @param path
+     */
+    @Override
+    public void deleteAllMedias(String path) {
+        try {
+            // 1. Supprimer toutes les ressources du dossier
+            Map deleteResourcesResult = cloudinary.api().deleteResourcesByPrefix(
+                    path, // toutes les ressources dans ce dossier
+                    ObjectUtils.emptyMap()
+            );
+            log.info("Deleted resources: {}", deleteResourcesResult);
+            // 2. Supprimer le dossier
+            Map deleteFolderResult = cloudinary.api().deleteFolder(path, ObjectUtils.emptyMap());
+            log.info("Deleted folder: {}", deleteFolderResult);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
     /**

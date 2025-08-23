@@ -54,6 +54,15 @@ public class AnnounceDocument {
     @Transient
     private Street street;
 
+    @org.springframework.data.elasticsearch.annotations.Field(type = FieldType.Long)
+    private Long views;
+    @org.springframework.data.elasticsearch.annotations.Field(type = FieldType.Long)
+    private Long clicks;
+    @org.springframework.data.elasticsearch.annotations.Field(type = FieldType.Long)
+    private Long impressions;
+    @org.springframework.data.elasticsearch.annotations.Field(type = FieldType.Long)
+    private Long imagesLength;
+
     @org.springframework.data.elasticsearch.annotations.Field(type = FieldType.Keyword)
     private String categoryTitle;
     @org.springframework.data.elasticsearch.annotations.Field(type = FieldType.Keyword)

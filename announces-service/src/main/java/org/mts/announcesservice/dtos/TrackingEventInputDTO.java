@@ -1,5 +1,6 @@
 package org.mts.announcesservice.dtos;
 
+
 import lombok.*;
 
 @Setter
@@ -8,7 +9,7 @@ import lombok.*;
 @AllArgsConstructor
 @Builder
 @ToString
-public class GeoZoneInputDTO {
-    private Double lat;
-    private Double lon;
+public class TrackingEventInputDTO {
+    private String adId;//announce id
+    private GeoZoneInputDTO geoLocation;
 }

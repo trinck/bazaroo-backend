@@ -1,5 +1,4 @@
 package org.mts.trackingservice.dtos;
-import jakarta.persistence.Embeddable;
 import lombok.*;
 
 @Setter
@@ -10,9 +9,8 @@ import lombok.*;
 @ToString
 public class Geolocation {
 
-    private Double latitude;
-    private Double longitude;
-    private String city;
-    private String country;
+    private Double lat;
+    private Double lon;
+
 
 }

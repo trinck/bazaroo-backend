@@ -24,6 +24,7 @@ public class AnnounceInputDTO {
     private String address;
     private String description;
     private String AnnounceTypeId;
+    private Long imagesLength;
     private List<Object> ObjectFields = new ArrayList<>();
 
 }

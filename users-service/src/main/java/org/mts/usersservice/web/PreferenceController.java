@@ -11,6 +11,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -46,4 +47,23 @@ public class PreferenceController {
         dtos.put("content", preferences.getContent());
         return dtos;
     }
+
+
+
+    @GetMapping("/{userId}/favorites")
+    public List<String> getFavorites(@PathVariable String userId) {
+        return this.preferenceService.getFavorites(userId);
+    }
+
+    @PostMapping("/{userId}/favorites/{adId}")
+    public void addFavorite(@PathVariable String userId, @PathVariable String adId) {
+        this.preferenceService.addFavorite(userId, adId);
+    }
+
+    @DeleteMapping("/{userId}/favorites/{adId}")
+    public void removeFavorite(@PathVariable String userId, @PathVariable String adId) {
+        this.preferenceService.removeFavorite(userId, adId);
+    }
+
+
 }

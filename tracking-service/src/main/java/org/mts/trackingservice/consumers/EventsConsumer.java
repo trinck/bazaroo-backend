@@ -16,6 +16,7 @@ import org.springframework.stereotype.Component;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.function.Consumer;
 import java.util.function.Function;
 
@@ -36,8 +37,8 @@ public class EventsConsumer {
     }
 
 
-    //@Bean
-    public Consumer<TrackingEventDocument> trackingEventConsumer(){
+  //@Bean
+    public Consumer<Map<String,Object>> announceCreateError(){
 
         return (input)->{
             //this.redisService.enqueueTrackingEvent(input);
@@ -76,10 +77,20 @@ public class EventsConsumer {
     private void saveToDatabase(KTable<Windowed<String>, List<TrackingEventDocument>> events) {
 
         events.toStream().filterNot((stringWindowed, list) -> stringWindowed.key().equals("HEARTBEAT")).foreach((stringWindowed, list) -> {
+
+            try {
                 this.statsService.updateAllDailyStats(stringWindowed.key(), list);
                 this.elasticsearchService.saveAll(list);
+            } catch (Exception e) {
+                log.error("Error on save tracking for adId: {}", stringWindowed.key(), e);
+
+                   //  TODO Send to a topic DLQ
+
+            }
 
         });
+
+
 
     }
 }

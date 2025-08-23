@@ -13,6 +13,7 @@ import org.mts.announcesservice.entities.GeoZone;
 import org.mts.announcesservice.enums.AnnounceStatus;
 import org.mts.announcesservice.remote_entities.Media;
 import org.mts.announcesservice.remote_entities.Street;
+import org.springframework.data.elasticsearch.annotations.FieldType;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -37,6 +38,13 @@ public class AnnounceOutputDTO {
     private String tel;
     private String userId;
     private AnnounceStatus status;
+
+    private Long views;
+
+    private Long clicks;
+    private Long impressions;
+
+    private Long imagesLength;
     private List<Media> medias = new ArrayList<>();
 
     private CategoryOutputDTO category;

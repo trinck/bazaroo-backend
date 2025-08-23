@@ -2,8 +2,11 @@ package org.mts.trackingservice.services;
 
 import org.mts.trackingservice.documents.TrackingEventDocument;
 import org.mts.trackingservice.entities.DailyStats;
+import org.mts.trackingservice.enums.EventType;
 import org.mts.trackingservice.repositories.DailyStatsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.stream.function.StreamBridge;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
@@ -14,8 +17,16 @@ import java.util.NoSuchElementException;
 public class StatsService implements IStatsService{
 
 
-    @Autowired
-    private DailyStatsRepository statsRepository;
+
+    private final DailyStatsRepository statsRepository;
+    private final StreamBridge  streamBridge;
+    @Value("${app.broker.topics.ads-daily-stats}")
+    private  String ADS_DAILY_STATE_TOPIC;
+
+    public StatsService(DailyStatsRepository statsRepository, StreamBridge streamBridge) {
+        this.statsRepository = statsRepository;
+        this.streamBridge = streamBridge;
+    }
 
     /**
      * @param event
@@ -26,6 +37,9 @@ public class StatsService implements IStatsService{
         DailyStats stats = statsRepository.findByAdId(event.getAdId())
                 .orElse(DailyStats.builder().adId(event.getAdId()).timestamp(new Date()).build());
         this.incrementTargetMetric(stats,event);
+
+        // send updated stats in topic
+        this.streamBridge.send(this.ADS_DAILY_STATE_TOPIC, stats);
 
         this.statsRepository.save(stats);
 
@@ -65,7 +79,10 @@ public class StatsService implements IStatsService{
            this.incrementTargetMetric(stats,event);
         }
 
+
         this.statsRepository.save(stats);
+        // send updated stats in topic
+        this.streamBridge.send(this.ADS_DAILY_STATE_TOPIC, stats);
 
     }
 

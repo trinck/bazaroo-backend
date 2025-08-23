@@ -1,6 +1,7 @@
 package org.mts.imagesservice.services;
 
 import jakarta.transaction.Transactional;
+import org.mts.imagesservice.configs.StorageMediasSources;
 import org.mts.imagesservice.entities.Media;
 import org.mts.imagesservice.repositories.MediaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,8 +14,16 @@ import java.util.List;
 @Service
 public class MediaService implements IMediaService{
 
-   @Autowired
-   private MediaRepository mediaRepository;
+
+   private final MediaRepository mediaRepository;
+   private final IServiceStorage serviceStorage;
+   private final StorageMediasSources mediasSources;
+
+    public MediaService(MediaRepository mediaRepository, IServiceStorage serviceStorage, StorageMediasSources mediasSources) {
+        this.mediaRepository = mediaRepository;
+        this.serviceStorage = serviceStorage;
+        this.mediasSources = mediasSources;
+    }
 
     /**
      * @param id
@@ -93,6 +102,23 @@ public class MediaService implements IMediaService{
         this.mediaRepository.deleteById(id);
 
         return media;
+    }
+
+    /**
+     * @param id
+     */
+    @Override
+    public void deleteAllByAdId(String id) {
+        try {
+            List<Media> media = this.getMediasByPathContains(this.mediasSources.getAdverts()+"/"+id+"/");
+
+            if (!media.isEmpty()) {
+                this.mediaRepository.deleteAll(media);
+                this.serviceStorage.deleteAllMedias(this.mediasSources.getAdverts()+"/"+id);
+            }
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
     /**

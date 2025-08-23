@@ -1,17 +1,16 @@
 package org.mts.announcesservice.entities;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.springframework.data.elasticsearch.annotations.FieldType;
 
-@Data
+@Setter
+@Getter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 @Entity
+@ToString
 public class GeoZone {
 
     @Id
@@ -20,6 +19,7 @@ public class GeoZone {
     private Double lat;
     private Double lon;
     @OneToOne(mappedBy = "location")
+    @ToString.Exclude
     private Announce announce;
 
 }
