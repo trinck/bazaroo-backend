@@ -5,33 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="136bb368-98eb-4a84-a825-a6951d1be4ec" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/dtos/TrackingEventInputDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/enums/AdTrackingType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/remote_entities/DailyStats.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/remote_entities/TrackingEventDocument.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/web/TrackingController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images-service/src/main/java/org/mts/imagesservice/consumers/AdvertsConsumers.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/clients/MediasClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/clients/StreetClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/remote_entities/Media.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/remote_entities/Street.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/configs/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/configs/Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/consumers/AdvertEventsConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/consumers/AdvertEventsConsumer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/documents/AnnounceDocument.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/documents/AnnounceDocument.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/documents/SavedSearchDocument.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/documents/SavedSearchDocument.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/dtos/AnnounceInputDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/dtos/AnnounceInputDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/dtos/AnnounceOutputDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/dtos/AnnounceOutputDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/dtos/GeoZoneInputDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/dtos/GeoZoneInputDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/entities/Announce.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/entities/Announce.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/entities/GeoZone.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/entities/GeoZone.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/enums/AnnounceStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/enums/AnnounceStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/repositories/AnnounceRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/repositories/AnnounceRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/service/AnnounceSearchService.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/service/AnnounceSearchService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/service/AnnounceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/service/AnnounceService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/service/IAnnounceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/service/IAnnounceService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/web/AnnounceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/java/org/mts/announcesservice/web/AnnounceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/announces-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/announces-service/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/.tsbuildinfo" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/.tsbuildinfo" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/@angular_cdk_clipboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/@angular_cdk_clipboard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/@angular_cdk_clipboard.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/.angular/cache/19.2.15/front-end/vite/deps/@angular_cdk_clipboard.js.map" afterDir="false" />
@@ -159,21 +132,6 @@
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/models/Announce.ts" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/models/Announce.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/models/AnnounceDocument.ts" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/models/AnnounceDocument.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bazaroo-frontend/src/app/services/ad-stats.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/bazaroo-frontend/src/app/services/ad-stats.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/images-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images-service/src/main/java/org/mts/imagesservice/services/IMediaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/images-service/src/main/java/org/mts/imagesservice/services/IMediaService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images-service/src/main/java/org/mts/imagesservice/services/IServiceStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/images-service/src/main/java/org/mts/imagesservice/services/IServiceStorage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images-service/src/main/java/org/mts/imagesservice/services/MediaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/images-service/src/main/java/org/mts/imagesservice/services/MediaService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images-service/src/main/java/org/mts/imagesservice/services/ServiceStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/images-service/src/main/java/org/mts/imagesservice/services/ServiceStorage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images-service/src/main/java/org/mts/imagesservice/services/ServiceStorageCloud.java" beforeDir="false" afterPath="$PROJECT_DIR$/images-service/src/main/java/org/mts/imagesservice/services/ServiceStorageCloud.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/images-service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tracking-service/src/main/java/org/mts/trackingservice/consumers/EventsConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/tracking-service/src/main/java/org/mts/trackingservice/consumers/EventsConsumer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tracking-service/src/main/java/org/mts/trackingservice/documents/TrackingEventDocument.java" beforeDir="false" afterPath="$PROJECT_DIR$/tracking-service/src/main/java/org/mts/trackingservice/documents/TrackingEventDocument.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tracking-service/src/main/java/org/mts/trackingservice/dtos/Geolocation.java" beforeDir="false" afterPath="$PROJECT_DIR$/tracking-service/src/main/java/org/mts/trackingservice/dtos/Geolocation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tracking-service/src/main/java/org/mts/trackingservice/services/StatsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/tracking-service/src/main/java/org/mts/trackingservice/services/StatsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tracking-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/tracking-service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/configs/FeignInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/configs/FeignInterceptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/configs/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/configs/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/web/PreferenceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/org/mts/usersservice/web/PreferenceController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -642,8 +600,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.TrackingServiceApplication" />
         <item itemvalue="Spring Boot.AnnouncesServiceApplication" />
+        <item itemvalue="Spring Boot.TrackingServiceApplication" />
         <item itemvalue="Spring Boot.NotificationServiceApplication" />
         <item itemvalue="Spring Boot.UsersServiceApplication" />
         <item itemvalue="Spring Boot.LocationServiceApplication" />
@@ -810,7 +768,7 @@
       <workItem from="1753543418749" duration="39681000" />
       <workItem from="1754050825512" duration="55358000" />
       <workItem from="1755679140376" duration="2880000" />
-      <workItem from="1755685140675" duration="68223000" />
+      <workItem from="1755685140675" duration="76763000" />
     </task>
     <servers />
   </component>

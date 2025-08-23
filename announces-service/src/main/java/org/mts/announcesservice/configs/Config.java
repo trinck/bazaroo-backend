@@ -21,27 +21,9 @@ public class Config {
 
     @Bean
     ModelMapper modelMapper(){
-        ModelMapper modelMapper = new ModelMapper();
 
-        // Converter personnalisé : Hibernate PersistentBag -> ArrayList
-        Converter<Collection<?>, List<?>> collectionToListConverter =
-                ctx -> ctx.getSource() == null ? null : new ArrayList<>(ctx.getSource());
-        modelMapper.addConverter(collectionToListConverter);
 
-        // Condition : ignorer les PersistentCollection non initialisées
-        Condition<?, ?> skipUninitializedCollections = new Condition<Object, Object>() {
-            @Override
-            public boolean applies(MappingContext<Object, Object> context) {
-                Object source = context.getSource();
-                if (source instanceof PersistentCollection) {
-                    return ((PersistentCollection<?>) source).wasInitialized();
-                }
-                return source != null;
-            }
-        };
-        modelMapper.getConfiguration().setPropertyCondition(skipUninitializedCollections);
-
-        return modelMapper;
+        return new ModelMapper();
     }
 
 }

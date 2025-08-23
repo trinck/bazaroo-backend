@@ -2,7 +2,11 @@ package org.mts.announcesservice.service;
 
 import jakarta.transaction.Transactional;
 import lombok.extern.slf4j.Slf4j;
+import org.hibernate.collection.spi.PersistentCollection;
+import org.modelmapper.Condition;
+import org.modelmapper.Converter;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.spi.MappingContext;
 import org.mts.announcesservice.documents.AnnounceDocument;
 import org.mts.announcesservice.dtos.FieldOutputDTO;
 import org.mts.announcesservice.entities.Announce;
@@ -18,9 +22,7 @@ import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Slf4j
 @Service
@@ -108,7 +110,23 @@ public class AnnounceService implements IAnnounceService{
     public Announce update(Announce announce) {
         try {
             Announce saved = this.repository.save(announce);
-            AnnounceDocument docToSave = this.mapper.map(saved, AnnounceDocument.class);
+            ModelMapper modelMapper = new ModelMapper();
+            // Converter personnalisé : Hibernate PersistentBag -> ArrayList
+            Converter<Collection<?>, List<?>> collectionToListConverter =
+                    ctx -> ctx.getSource() == null ? null : new ArrayList<>(ctx.getSource());
+            modelMapper.addConverter(collectionToListConverter);
+
+            // Condition : ignorer les PersistentCollection non initialisées
+            Condition<?, ?> skipUninitializedCollections = (Condition<Object, Object>) context -> {
+                Object source = context.getSource();
+                if (source instanceof PersistentCollection) {
+                    return ((PersistentCollection<?>) source).wasInitialized();
+                }
+                return source != null;
+            };
+            modelMapper.getConfiguration().setPropertyCondition(skipUninitializedCollections);
+
+            AnnounceDocument docToSave = modelMapper.map(saved, AnnounceDocument.class);
             this.operations.update(docToSave);
             // send notification to broker
             this.bridge.send(this.TOPIC_ADVERT, Map.of("adId",saved.getId(), "type",AdvertEventType.UPDATED.name()));
