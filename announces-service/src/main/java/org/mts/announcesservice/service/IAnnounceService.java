@@ -15,7 +15,7 @@ public interface IAnnounceService {
     public Announce getByID(String id);
     public List<Announce> getByIds(List<String> ids);
     public Announce update(Announce announce);
-    public Page<Announce> getAnnounces(Pageable pageable);
+    public Page<Announce> getAnnounces(Pageable pageable, String search);
     public List<Announce> getAll();
 
     List<Announce> getAllByUserId(String userId, AnnounceStatus status);

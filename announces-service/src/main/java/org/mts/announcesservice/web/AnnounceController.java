@@ -3,6 +3,8 @@ package org.mts.announcesservice.web;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotEmpty;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.mts.announcesservice.clients.MediasClient;
@@ -18,6 +20,8 @@ import org.mts.announcesservice.service.*;
 import org.mts.announcesservice.utilities.WebUtils;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
@@ -164,9 +168,21 @@ public class AnnounceController {
 
 
     @GetMapping
-    public Map<String, Object> getAll(@RequestParam(defaultValue = "5") int size, @RequestParam(defaultValue = "0") int page) {
+    public Map<String, Object> getAll(
+            @RequestParam(defaultValue = "5") int size,
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(required = false) String sortField,
+            @RequestParam(defaultValue = "desc") String sortOrder,
+            @RequestParam(required = false) String search) {
 
-        Page<Announce> announces = this.announceService.getAnnounces(PageRequest.of(page, size));
+        Sort sort = Sort.unsorted();
+        if (sortField != null && !sortField.isBlank()) {
+            sort = "desc".equalsIgnoreCase(sortOrder)
+                    ? Sort.by(sortField).descending()
+                    : Sort.by(sortField).ascending();
+        }
+
+        Page<Announce> announces = this.announceService.getAnnounces(PageRequest.of(page, size, sort), search);
         Map<String, Object> map = WebUtils.pageToMap(announces);
         map.put("content", announces.getContent().stream().map(c -> {
             AnnounceOutputDTO ann = this.modelMapper.map(c, AnnounceOutputDTO.class);
@@ -221,6 +237,13 @@ public class AnnounceController {
         log.info(searchRequest.toString());
         return this.searchService.searchAnnounces(searchRequest);
 
+    }
+
+    @PutMapping("/{id}")
+    public AnnounceOutputDTO updateStatus(@PathVariable @NotEmpty String id, @RequestBody @Valid String newStatus) throws IOException {
+        Announce announce = this.announceService.getByID(id);
+        announce.setStatus(AnnounceStatus.valueOf(newStatus));
+        return this.modelMapper.map(this.announceService.update(announce),AnnounceOutputDTO.class);
     }
 
 

@@ -10,7 +10,7 @@ import java.util.List;
 public interface IStreetService {
 
     public List<Street> getStreets();
-    public Page<Street> getStreetsPages(Pageable pageable);
+    public Page<Street> getStreetsPages(Pageable pageable, String search);
     public Street getStreetById(String id);
     public Street saveStreet(Street street);
     public Street updateStreet(Street street);

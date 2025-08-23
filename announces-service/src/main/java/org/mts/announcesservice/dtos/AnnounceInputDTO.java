@@ -2,7 +2,6 @@ package org.mts.announcesservice.dtos;
 
 
 import lombok.*;
-import org.mts.announcesservice.entities.GeoZone;
 
 import java.util.ArrayList;
 import java.util.List;

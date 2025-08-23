@@ -11,7 +11,7 @@ public interface ICityService {
 
 
     public List<City> getCities();
-    public Page<City> getCitiesPages(Pageable pageable);
+    public Page<City> getCitiesPages(Pageable pageable, String search);
     public City getCityById(String id);
     public List<City> getCitiesByCountryName(String countryName);
     public City saveCity(City city);

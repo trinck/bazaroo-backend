@@ -1,15 +1,10 @@
 package org.mts.announcesservice.dtos;
 
 
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.mts.announcesservice.entities.AnnounceType;
-import org.mts.announcesservice.entities.Category;
-import org.mts.announcesservice.entities.Field;
-import org.mts.announcesservice.entities.GeoZone;
 import org.mts.announcesservice.enums.AnnounceStatus;
 import org.mts.announcesservice.remote_entities.Media;
 import org.mts.announcesservice.remote_entities.Street;

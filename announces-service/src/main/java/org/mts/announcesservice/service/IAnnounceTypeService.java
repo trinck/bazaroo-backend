@@ -14,7 +14,7 @@ public interface IAnnounceTypeService {
     public AnnounceType getByID(String id);
     public AnnounceType deleteById(String id);
     public AnnounceType update(AnnounceType announceType);
-    public Page<AnnounceType> getAnnounceTypes(Pageable pageable);
+    public Page<AnnounceType> getAnnounceTypes(Pageable pageable, String search);
     public List<AnnounceType> getAll();
     public Page<AnnounceType> getByName(String name, Pageable pageable);
 }

@@ -8,10 +8,15 @@ import org.mts.locationservice.entities.City;
 import org.mts.locationservice.entities.Street;
 import org.mts.locationservice.services.ICityService;
 import org.mts.locationservice.services.IStreetService;
+import org.mts.locationservice.utilities.WebUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("streets")
@@ -41,9 +46,25 @@ public class StreetController {
         return  this.StreetService.getStreets().stream().map(this::convertToOutputDto).toList();
     }
 
-    @GetMapping("/withCity")
-    public List<Street> getAllStreetsWithCity(){
-        return  this.StreetService.getStreets().stream().toList();
+    @GetMapping("/list")
+    public Map<String, Object> getList(
+            @RequestParam(defaultValue = "5") int size,
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(required = false) String sortField,
+            @RequestParam(defaultValue = "asc") String sortOrder,
+            @RequestParam(required = false) String search) {
+
+        Sort sort = Sort.unsorted();
+        if (sortField != null && !sortField.isBlank()) {
+            sort = "desc".equalsIgnoreCase(sortOrder)
+                    ? Sort.by(sortField).descending()
+                    : Sort.by(sortField).ascending();
+        }
+
+        Page<Street> streets = this.StreetService.getStreetsPages(PageRequest.of(page, size, sort), search);
+        Map<String, Object> map = WebUtils.pageToMap(streets);
+        map.put("content", streets.getContent().stream().toList());
+        return map;
     }
 
 

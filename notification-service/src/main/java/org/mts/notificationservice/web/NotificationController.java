@@ -4,6 +4,10 @@ import org.modelmapper.ModelMapper;
 import org.mts.notificationservice.dtos.Message;
 import org.mts.notificationservice.entities.Notification;
 import org.mts.notificationservice.services.INotificationService;
+import org.mts.notificationservice.utilities.WebUtils;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.messaging.handler.annotation.DestinationVariable;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.Payload;
@@ -15,6 +19,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("notifications")
@@ -35,6 +40,31 @@ public class NotificationController {
     public List<Message> getMessages(Authentication authentication){
         return this.notificationService.findAllByUserId(authentication.getName()).stream().map((element) -> this.modelMapper.map(element, Message.class))
                 .toList();
+    }
+
+    @GetMapping("/list")
+    @PreAuthorize("hasAnyAuthority('USER')")
+    public Map<String, Object> getMessagesList(
+            Authentication authentication,
+            @RequestParam(defaultValue = "5") int size,
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(required = false) String sortField,
+            @RequestParam(defaultValue = "desc") String sortOrder,
+            @RequestParam(required = false) String search) {
+
+        Sort sort = Sort.unsorted();
+        if (sortField != null && !sortField.isBlank()) {
+            sort = "desc".equalsIgnoreCase(sortOrder)
+                    ? Sort.by(sortField).descending()
+                    : Sort.by(sortField).ascending();
+        }
+
+        Page<Notification> messages = this.notificationService.getMessages(authentication.getName(), PageRequest.of(page, size, sort), search);
+        Map<String, Object> map = WebUtils.pageToMap(messages);
+        map.put("content", messages.getContent().stream().map(c -> {
+            return this.modelMapper.map(c, Message.class);
+        }).toList());
+        return map;
     }
 
 
