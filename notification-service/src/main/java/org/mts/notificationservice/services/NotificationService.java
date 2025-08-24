@@ -147,21 +147,6 @@ public  class NotificationService implements INotificationService {
     }
 
     /**
-     * @param userId
-     * @param pageable
-     * @param search
-     * @return
-     */
-    @Override
-    public Page<Notification> getMessages(String userId, Pageable pageable, String search) {
-        if (!StringUtils.hasText(search)) {
-            return notificationRepository.findAllByUserId(userId, pageable); // no spec needed
-        }
-        Specification<Notification> spec = Specification.where(byUserId(userId)).and(buildSearchSpec(search));
-        return this.notificationRepository.findAll(spec, pageable); // no spec needed
-    }
-
-    /**
      * @param name
      * @return
      */
@@ -178,25 +163,6 @@ public  class NotificationService implements INotificationService {
     @Override
     public List<Notification> findByAudienceAndTargetType(NotificationAudience audience, NotificationTargetType targetType) {
         return this.notificationRepository.findByAudienceEqualsAndTargetTypeEquals(audience, targetType);
-    }
-
-    private Specification<Notification> buildSearchSpec(String search) {
-        if (!StringUtils.hasText(search)) return null; // no filter -> all
-
-        final String like = "%" + search.toLowerCase() + "%";
-
-        return (root, query, cb) -> cb.or(
-                cb.like(cb.lower(root.get("message")), like),
-                cb.like(cb.lower(root.get("url")), like),
-                cb.like(cb.lower(root.get("title")), like),
-                cb.like(cb.lower(root.get("audience")), like),
-                cb.like(cb.lower(root.get("targetType")), like),
-                cb.like(cb.lower(root.get("type")), like)
-        );
-    }
-
-    private Specification<Notification> byUserId(String userId) {
-        return (root, query, cb) -> cb.equal(root.get("userId"), userId);
     }
 
 }

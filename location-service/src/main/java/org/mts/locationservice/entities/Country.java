@@ -26,6 +26,9 @@ public class Country extends GenericsFieldsEntity{
     @Column(unique = true, nullable = false)
     private String code;
     private String currency;
+    private String currencyName;
+    @Column(unique = true, nullable = false)
+    private String telCode;
     @OneToMany(mappedBy = "country", cascade = CascadeType.PERSIST, orphanRemoval = true)
     @JsonIgnore
     private List<City> cities = new ArrayList<>();

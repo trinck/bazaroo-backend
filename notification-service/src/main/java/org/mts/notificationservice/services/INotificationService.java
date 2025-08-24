@@ -66,8 +66,6 @@ public interface INotificationService {
 
     public Notification findByIdAndUserId(Long id, String name);
 
-    public Page<Notification> getMessages(String userId, Pageable pageable, String search);
-
     public List<Notification> findByUserIdAndSeenFalse(String name);
     public List<Notification> findByAudienceAndTargetType(NotificationAudience audience, NotificationTargetType targetType);
 }

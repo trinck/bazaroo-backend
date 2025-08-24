@@ -16,6 +16,8 @@ public class CountryOutputDTO extends GenericsFieldsEntity {
     private String id;
     private String name;
     private String code;
+    private String telCode;
     private String currency;
+    private String currencyName;
     private List<CityOutputDTO> cities;
 }

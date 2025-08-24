@@ -42,32 +42,6 @@ public class NotificationController {
                 .toList();
     }
 
-    @GetMapping("/list")
-    @PreAuthorize("hasAnyAuthority('USER')")
-    public Map<String, Object> getMessagesList(
-            Authentication authentication,
-            @RequestParam(defaultValue = "5") int size,
-            @RequestParam(defaultValue = "0") int page,
-            @RequestParam(required = false) String sortField,
-            @RequestParam(defaultValue = "desc") String sortOrder,
-            @RequestParam(required = false) String search) {
-
-        Sort sort = Sort.unsorted();
-        if (sortField != null && !sortField.isBlank()) {
-            sort = "desc".equalsIgnoreCase(sortOrder)
-                    ? Sort.by(sortField).descending()
-                    : Sort.by(sortField).ascending();
-        }
-
-        Page<Notification> messages = this.notificationService.getMessages(authentication.getName(), PageRequest.of(page, size, sort), search);
-        Map<String, Object> map = WebUtils.pageToMap(messages);
-        map.put("content", messages.getContent().stream().map(c -> {
-            return this.modelMapper.map(c, Message.class);
-        }).toList());
-        return map;
-    }
-
-
     @MessageMapping("/sendMessage")
     @SendTo("/topic/public")
     public Message sendMessage(@Payload Message message) {

@@ -127,7 +127,9 @@ public class CountryService implements ICountryService {
                 cb.like(cb.lower(root.get("id")), like),
                 cb.like(cb.lower(root.get("name")), like),
                 cb.like(cb.lower(root.get("code")), like),
-                cb.like(cb.lower(root.get("currency")), like)
+                cb.like(cb.lower(root.get("telCode")), like),
+                cb.like(cb.lower(root.get("currency")), like),
+                cb.like(cb.lower(root.get("currencyName")), like)
         );
     }
 
